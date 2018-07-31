@@ -68,26 +68,26 @@ class MainWindow(QMainWindow):
 		#print(setup.setupCombo('ipCombo'))
 		for i in range(5):
 			for item in setup.setupCombo('axis'):
-				eval('self.axis_' + str(i)).addItem(item[0], item[1])
+				getattr(self, 'axis_' + str(i)).addItem(item[0], item[1])
 		for i in range(5):
 			for item in setup.setupCombo('direction'):
-				eval('self.stepDir_' + str(i)).addItem(item[0], item[1])
+				getattr(self, 'stepDir_' + str(i)).addItem(item[0], item[1])
 		for i in range(11):
 			for item in setup.setupCombo('input'):
-				eval('self.input_' + str(i)).addItem(item[0], item[1])
+				getattr(self, 'input_' + str(i)).addItem(item[0], item[1])
 		for i in range(5):
 			for item in setup.setupCombo('output'):
-				eval('self.output_' + str(i)).addItem(item[0], item[1])
+				getattr(self, 'output_' + str(i)).addItem(item[0], item[1])
 		for i in range(11):
 			for item in setup.setupCombo('axis'):
-				eval('self.inputaxis_' + str(i)).addItem(item[0], item[1])
+				getattr(self, 'inputaxis_' + str(i)).addItem(item[0], item[1])
 
 	def iniLoad(self):
 		# iniList section, item, value
 		for item in loadini.iniList():
 			if self.config.has_option(item[0], item[1]):
-				if isinstance(eval('self.' + item[2]), QLineEdit):
-					eval('self.' + item[2]).setText(self.config[item[0]][item[1]])
+				if isinstance(getattr(self, item[2]), QLineEdit):
+					getattr(self, item[2]).setText(self.config[item[0]][item[1]])
 
 if __name__ == "__main__":
 	app = QApplication(sys.argv)
