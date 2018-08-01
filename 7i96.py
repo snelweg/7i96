@@ -19,7 +19,7 @@ class MainWindow(QMainWindow):
 		self.configsDir = os.path.expanduser('~/linuxcnc/configs')
 
 		self.buildWidgets()
-
+		self.setupConnections()
 		self.show()
 
 	# Auto connected menu action callbacks
@@ -62,6 +62,18 @@ class MainWindow(QMainWindow):
 	@pyqtSlot()
 	def on_actionExit_triggered(self):
 		exit()
+
+	def setupConnections(self):
+		self.configName.textChanged[str].connect(self.onConfigNameChanged)
+
+	def onConfigNameChanged(self, text):
+		# update the iniDictionary when text is changed
+		if text:
+			self.configName = text.replace(' ','_')
+			self.configPath = self.configsDir + '/' + self.configName
+			self.pathLabel.setText(self.configPath)
+		else:
+			self.pathLabel.setText('')
 
 	def buildWidgets(self):
 		for item in setup.setupCombo('ipCombo'):
