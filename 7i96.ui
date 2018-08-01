@@ -303,16 +303,6 @@
          </rect>
         </property>
        </widget>
-       <widget class="QLineEdit" name="scale_0">
-        <property name="geometry">
-         <rect>
-          <x>300</x>
-          <y>60</y>
-          <width>71</width>
-          <height>23</height>
-         </rect>
-        </property>
-       </widget>
        <widget class="QLabel" name="label_43">
         <property name="geometry">
          <rect>
@@ -447,7 +437,7 @@
          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Mininum&lt;br/&gt;Limit&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="jointMinLimit_0">
+       <widget class="QLineEdit" name="minLimit_0">
         <property name="geometry">
          <rect>
           <x>400</x>
@@ -470,7 +460,7 @@
          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Maximum&lt;br/&gt;Limit&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="jointMaxLimit_0">
+       <widget class="QLineEdit" name="maxLimit_0">
         <property name="geometry">
          <rect>
           <x>490</x>
@@ -480,6 +470,217 @@
          </rect>
         </property>
        </widget>
+       <widget class="QLabel" name="label_72">
+        <property name="geometry">
+         <rect>
+          <x>300</x>
+          <y>120</y>
+          <width>121</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Maximum Velocity</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_73">
+        <property name="geometry">
+         <rect>
+          <x>270</x>
+          <y>150</y>
+          <width>141</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Maximum Acceleration</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="maxVelocity_0">
+        <property name="geometry">
+         <rect>
+          <x>430</x>
+          <y>120</y>
+          <width>71</width>
+          <height>23</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="maxAccel_0">
+        <property name="geometry">
+         <rect>
+          <x>430</x>
+          <y>150</y>
+          <width>71</width>
+          <height>23</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="scale_0">
+        <property name="geometry">
+         <rect>
+          <x>300</x>
+          <y>60</y>
+          <width>81</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="maximum">
+         <number>25000</number>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_82">
+        <property name="geometry">
+         <rect>
+          <x>448</x>
+          <y>220</y>
+          <width>71</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Home</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_83">
+        <property name="geometry">
+         <rect>
+          <x>450</x>
+          <y>250</y>
+          <width>91</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Home Offset</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_84">
+        <property name="geometry">
+         <rect>
+          <x>450</x>
+          <y>280</y>
+          <width>141</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Home Search Velocity</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_85">
+        <property name="geometry">
+         <rect>
+          <x>450</x>
+          <y>310</y>
+          <width>141</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Home Latch Velocity</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="homeUseIndex_0">
+        <property name="geometry">
+         <rect>
+          <x>450</x>
+          <y>330</y>
+          <width>141</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Home Use Index</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="homeIgnoreLimits_0">
+        <property name="geometry">
+         <rect>
+          <x>590</x>
+          <y>330</y>
+          <width>141</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Home Ignore Limits</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="home_0">
+        <property name="geometry">
+         <rect>
+          <x>590</x>
+          <y>220</y>
+          <width>113</width>
+          <height>23</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="homeOffset_0">
+        <property name="geometry">
+         <rect>
+          <x>590</x>
+          <y>250</y>
+          <width>113</width>
+          <height>23</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="homeSearchVel_0">
+        <property name="geometry">
+         <rect>
+          <x>590</x>
+          <y>280</y>
+          <width>113</width>
+          <height>23</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="homeLatchVel_0">
+        <property name="geometry">
+         <rect>
+          <x>590</x>
+          <y>310</y>
+          <width>113</width>
+          <height>23</height>
+         </rect>
+        </property>
+       </widget>
+       <zorder>stepper_0</zorder>
+       <zorder>axis_0</zorder>
+       <zorder>stepDir_0</zorder>
+       <zorder>stepTime_0</zorder>
+       <zorder>label_43</zorder>
+       <zorder>label_44</zorder>
+       <zorder>label_45</zorder>
+       <zorder>label_46</zorder>
+       <zorder>label_47</zorder>
+       <zorder>stepSpace_0</zorder>
+       <zorder>dirHold_0</zorder>
+       <zorder>dirSetup_0</zorder>
+       <zorder>label_48</zorder>
+       <zorder>label_49</zorder>
+       <zorder>label_62</zorder>
+       <zorder>minLimit_0</zorder>
+       <zorder>label_67</zorder>
+       <zorder>maxLimit_0</zorder>
+       <zorder>label_72</zorder>
+       <zorder>label_73</zorder>
+       <zorder>maxVelocity_0</zorder>
+       <zorder>maxAccel_0</zorder>
+       <zorder>scale_0</zorder>
+       <zorder>minLimit_</zorder>
+       <zorder>label_82</zorder>
+       <zorder>label_83</zorder>
+       <zorder>label_84</zorder>
+       <zorder>label_85</zorder>
+       <zorder>homeUseIndex_0</zorder>
+       <zorder>homeIgnoreLimits_0</zorder>
+       <zorder>home_0</zorder>
+       <zorder>homeOffset_0</zorder>
+       <zorder>homeSearchVel_0</zorder>
+       <zorder>homeLatchVel_0</zorder>
       </widget>
       <widget class="QWidget" name="tab_2">
        <attribute name="title">
@@ -514,16 +715,6 @@
           <x>110</x>
           <y>50</y>
           <width>79</width>
-          <height>23</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="scale_1">
-        <property name="geometry">
-         <rect>
-          <x>310</x>
-          <y>50</y>
-          <width>71</width>
           <height>23</height>
          </rect>
         </property>
@@ -672,7 +863,7 @@
          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Mininum&lt;br/&gt;Limit&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="jointMinLimit_1">
+       <widget class="QLineEdit" name="minLimit_1">
         <property name="geometry">
          <rect>
           <x>400</x>
@@ -695,7 +886,7 @@
          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Maximum&lt;br/&gt;Limit&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="jointMaxLimit_1">
+       <widget class="QLineEdit" name="maxLimit_1">
         <property name="geometry">
          <rect>
           <x>500</x>
@@ -705,6 +896,217 @@
          </rect>
         </property>
        </widget>
+       <widget class="QLabel" name="label_74">
+        <property name="geometry">
+         <rect>
+          <x>320</x>
+          <y>130</y>
+          <width>121</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Maximum Velocity</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="maxAccel_1">
+        <property name="geometry">
+         <rect>
+          <x>450</x>
+          <y>180</y>
+          <width>71</width>
+          <height>23</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="maxVelocity_1">
+        <property name="geometry">
+         <rect>
+          <x>450</x>
+          <y>130</y>
+          <width>71</width>
+          <height>23</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_75">
+        <property name="geometry">
+         <rect>
+          <x>290</x>
+          <y>180</y>
+          <width>141</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Maximum Acceleration</string>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="scale_1">
+        <property name="geometry">
+         <rect>
+          <x>300</x>
+          <y>50</y>
+          <width>81</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="maximum">
+         <number>25000</number>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="homeUseIndex_1">
+        <property name="geometry">
+         <rect>
+          <x>440</x>
+          <y>360</y>
+          <width>141</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Home Use Index</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_86">
+        <property name="geometry">
+         <rect>
+          <x>440</x>
+          <y>280</y>
+          <width>91</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Home Offset</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="homeOffset_1">
+        <property name="geometry">
+         <rect>
+          <x>580</x>
+          <y>280</y>
+          <width>113</width>
+          <height>23</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="homeSearchVel_1">
+        <property name="geometry">
+         <rect>
+          <x>580</x>
+          <y>310</y>
+          <width>113</width>
+          <height>23</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_87">
+        <property name="geometry">
+         <rect>
+          <x>440</x>
+          <y>310</y>
+          <width>141</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Home Search Velocity</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_88">
+        <property name="geometry">
+         <rect>
+          <x>438</x>
+          <y>250</y>
+          <width>71</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Home</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="homeLatchVel_1">
+        <property name="geometry">
+         <rect>
+          <x>580</x>
+          <y>340</y>
+          <width>113</width>
+          <height>23</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="homeIgnoreLimits_1">
+        <property name="geometry">
+         <rect>
+          <x>580</x>
+          <y>360</y>
+          <width>141</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Home Ignore Limits</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_89">
+        <property name="geometry">
+         <rect>
+          <x>440</x>
+          <y>340</y>
+          <width>141</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Home Latch Velocity</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="home_1">
+        <property name="geometry">
+         <rect>
+          <x>580</x>
+          <y>250</y>
+          <width>113</width>
+          <height>23</height>
+         </rect>
+        </property>
+       </widget>
+       <zorder>stepDir_1</zorder>
+       <zorder>stepper_1</zorder>
+       <zorder>axis_1</zorder>
+       <zorder>stepTime_1</zorder>
+       <zorder>label_39</zorder>
+       <zorder>label_40</zorder>
+       <zorder>label_41</zorder>
+       <zorder>label_42</zorder>
+       <zorder>label_50</zorder>
+       <zorder>dirSetup_1</zorder>
+       <zorder>label_51</zorder>
+       <zorder>stepSpace_1</zorder>
+       <zorder>dirHold_1</zorder>
+       <zorder>label_52</zorder>
+       <zorder>label_63</zorder>
+       <zorder>minLimit_1</zorder>
+       <zorder>label_68</zorder>
+       <zorder>maxLimit_1</zorder>
+       <zorder>label_74</zorder>
+       <zorder>maxAccel_1</zorder>
+       <zorder>maxVelocity_1</zorder>
+       <zorder>label_75</zorder>
+       <zorder>scale_1</zorder>
+       <zorder>maxLimit_1</zorder>
+       <zorder>homeUseIndex_1</zorder>
+       <zorder>label_86</zorder>
+       <zorder>homeOffset_1</zorder>
+       <zorder>homeSearchVel_1</zorder>
+       <zorder>label_87</zorder>
+       <zorder>label_88</zorder>
+       <zorder>homeLatchVel_1</zorder>
+       <zorder>homeIgnoreLimits_1</zorder>
+       <zorder>label_89</zorder>
+       <zorder>home_1</zorder>
       </widget>
       <widget class="QWidget" name="tab_3">
        <attribute name="title">
@@ -726,16 +1128,6 @@
           <x>220</x>
           <y>50</y>
           <width>79</width>
-          <height>23</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="scale_2">
-        <property name="geometry">
-         <rect>
-          <x>320</x>
-          <y>50</y>
-          <width>71</width>
           <height>23</height>
          </rect>
         </property>
@@ -897,7 +1289,7 @@
          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Mininum&lt;br/&gt;Limit&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="jointMinLimit_2">
+       <widget class="QLineEdit" name="minLimit_2">
         <property name="geometry">
          <rect>
           <x>410</x>
@@ -920,7 +1312,7 @@
          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Maximum&lt;br/&gt;Limit&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="jointMaxLimit_2">
+       <widget class="QLineEdit" name="maxLimit_2">
         <property name="geometry">
          <rect>
           <x>500</x>
@@ -930,6 +1322,217 @@
          </rect>
         </property>
        </widget>
+       <widget class="QLabel" name="label_76">
+        <property name="geometry">
+         <rect>
+          <x>310</x>
+          <y>110</y>
+          <width>121</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Maximum Velocity</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="maxAccel_2">
+        <property name="geometry">
+         <rect>
+          <x>440</x>
+          <y>160</y>
+          <width>71</width>
+          <height>23</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="maxVelocity_2">
+        <property name="geometry">
+         <rect>
+          <x>440</x>
+          <y>110</y>
+          <width>71</width>
+          <height>23</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_77">
+        <property name="geometry">
+         <rect>
+          <x>280</x>
+          <y>160</y>
+          <width>141</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Maximum Acceleration</string>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="scale_2">
+        <property name="geometry">
+         <rect>
+          <x>310</x>
+          <y>50</y>
+          <width>81</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="maximum">
+         <number>25000</number>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="homeUseIndex_2">
+        <property name="geometry">
+         <rect>
+          <x>450</x>
+          <y>350</y>
+          <width>141</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Home Use Index</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_90">
+        <property name="geometry">
+         <rect>
+          <x>450</x>
+          <y>270</y>
+          <width>91</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Home Offset</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="homeOffset_2">
+        <property name="geometry">
+         <rect>
+          <x>590</x>
+          <y>270</y>
+          <width>113</width>
+          <height>23</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="homeSearchVel_2">
+        <property name="geometry">
+         <rect>
+          <x>590</x>
+          <y>300</y>
+          <width>113</width>
+          <height>23</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_91">
+        <property name="geometry">
+         <rect>
+          <x>450</x>
+          <y>300</y>
+          <width>141</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Home Search Velocity</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_92">
+        <property name="geometry">
+         <rect>
+          <x>448</x>
+          <y>240</y>
+          <width>71</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Home</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="homeLatchVel_2">
+        <property name="geometry">
+         <rect>
+          <x>590</x>
+          <y>330</y>
+          <width>113</width>
+          <height>23</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="homeIgnoreLimits_2">
+        <property name="geometry">
+         <rect>
+          <x>590</x>
+          <y>350</y>
+          <width>141</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Home Ignore Limits</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_93">
+        <property name="geometry">
+         <rect>
+          <x>450</x>
+          <y>330</y>
+          <width>141</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Home Latch Velocity</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="home_2">
+        <property name="geometry">
+         <rect>
+          <x>590</x>
+          <y>240</y>
+          <width>113</width>
+          <height>23</height>
+         </rect>
+        </property>
+       </widget>
+       <zorder>axis_2</zorder>
+       <zorder>stepDir_2</zorder>
+       <zorder>stepTime_2</zorder>
+       <zorder>stepper_2</zorder>
+       <zorder>label_35</zorder>
+       <zorder>label_36</zorder>
+       <zorder>label_37</zorder>
+       <zorder>label_38</zorder>
+       <zorder>label_53</zorder>
+       <zorder>dirSetup_2</zorder>
+       <zorder>label_54</zorder>
+       <zorder>stepSpace_2</zorder>
+       <zorder>dirHold_2</zorder>
+       <zorder>label_55</zorder>
+       <zorder>label_64</zorder>
+       <zorder>minLimit_2</zorder>
+       <zorder>label_69</zorder>
+       <zorder>maxLimit_2</zorder>
+       <zorder>label_76</zorder>
+       <zorder>maxAccel_2</zorder>
+       <zorder>maxVelocity_2</zorder>
+       <zorder>label_77</zorder>
+       <zorder>scale_2</zorder>
+       <zorder>maxLimit_2</zorder>
+       <zorder>homeUseIndex_2</zorder>
+       <zorder>label_90</zorder>
+       <zorder>homeOffset_2</zorder>
+       <zorder>homeSearchVel_2</zorder>
+       <zorder>label_91</zorder>
+       <zorder>label_92</zorder>
+       <zorder>homeLatchVel_2</zorder>
+       <zorder>homeIgnoreLimits_2</zorder>
+       <zorder>label_93</zorder>
+       <zorder>home_2</zorder>
       </widget>
       <widget class="QWidget" name="tab_4">
        <attribute name="title">
@@ -964,16 +1567,6 @@
           <x>210</x>
           <y>40</y>
           <width>79</width>
-          <height>23</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="scale_3">
-        <property name="geometry">
-         <rect>
-          <x>310</x>
-          <y>40</y>
-          <width>71</width>
           <height>23</height>
          </rect>
         </property>
@@ -1122,7 +1715,7 @@
          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Mininum&lt;br/&gt;Limit&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="jointMinLimit_3">
+       <widget class="QLineEdit" name="minLimit_3">
         <property name="geometry">
          <rect>
           <x>400</x>
@@ -1145,7 +1738,7 @@
          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Maximum&lt;br/&gt;Limit&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="jointMaxLimit_3">
+       <widget class="QLineEdit" name="maxLimit_3">
         <property name="geometry">
          <rect>
           <x>500</x>
@@ -1155,21 +1748,222 @@
          </rect>
         </property>
        </widget>
-      </widget>
-      <widget class="QWidget" name="tab_5">
-       <attribute name="title">
-        <string>Joint 4</string>
-       </attribute>
-       <widget class="QLineEdit" name="scale_4">
+       <widget class="QLabel" name="label_78">
         <property name="geometry">
          <rect>
-          <x>320</x>
-          <y>50</y>
+          <x>300</x>
+          <y>100</y>
+          <width>121</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Maximum Velocity</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="maxAccel_3">
+        <property name="geometry">
+         <rect>
+          <x>430</x>
+          <y>150</y>
           <width>71</width>
           <height>23</height>
          </rect>
         </property>
        </widget>
+       <widget class="QLineEdit" name="maxVelocity_3">
+        <property name="geometry">
+         <rect>
+          <x>430</x>
+          <y>100</y>
+          <width>71</width>
+          <height>23</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_79">
+        <property name="geometry">
+         <rect>
+          <x>270</x>
+          <y>150</y>
+          <width>141</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Maximum Acceleration</string>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="scale_3">
+        <property name="geometry">
+         <rect>
+          <x>300</x>
+          <y>40</y>
+          <width>81</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="maximum">
+         <number>25000</number>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="homeUseIndex_3">
+        <property name="geometry">
+         <rect>
+          <x>430</x>
+          <y>360</y>
+          <width>141</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Home Use Index</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_94">
+        <property name="geometry">
+         <rect>
+          <x>430</x>
+          <y>280</y>
+          <width>91</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Home Offset</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="homeOffset_3">
+        <property name="geometry">
+         <rect>
+          <x>570</x>
+          <y>280</y>
+          <width>113</width>
+          <height>23</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="homeSearchVel_3">
+        <property name="geometry">
+         <rect>
+          <x>570</x>
+          <y>310</y>
+          <width>113</width>
+          <height>23</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_95">
+        <property name="geometry">
+         <rect>
+          <x>430</x>
+          <y>310</y>
+          <width>141</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Home Search Velocity</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_96">
+        <property name="geometry">
+         <rect>
+          <x>428</x>
+          <y>250</y>
+          <width>71</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Home</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="homeLatchVel_3">
+        <property name="geometry">
+         <rect>
+          <x>570</x>
+          <y>340</y>
+          <width>113</width>
+          <height>23</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="homeIgnoreLimits_3">
+        <property name="geometry">
+         <rect>
+          <x>570</x>
+          <y>360</y>
+          <width>141</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Home Ignore Limits</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_97">
+        <property name="geometry">
+         <rect>
+          <x>430</x>
+          <y>340</y>
+          <width>141</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Home Latch Velocity</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="home_3">
+        <property name="geometry">
+         <rect>
+          <x>570</x>
+          <y>250</y>
+          <width>113</width>
+          <height>23</height>
+         </rect>
+        </property>
+       </widget>
+       <zorder>stepper_3</zorder>
+       <zorder>axis_3</zorder>
+       <zorder>stepDir_3</zorder>
+       <zorder>stepTime_3</zorder>
+       <zorder>label_31</zorder>
+       <zorder>label_32</zorder>
+       <zorder>label_33</zorder>
+       <zorder>label_34</zorder>
+       <zorder>label_56</zorder>
+       <zorder>dirSetup_3</zorder>
+       <zorder>label_57</zorder>
+       <zorder>stepSpace_3</zorder>
+       <zorder>dirHold_3</zorder>
+       <zorder>label_58</zorder>
+       <zorder>label_65</zorder>
+       <zorder>minLimit_3</zorder>
+       <zorder>label_70</zorder>
+       <zorder>maxLimit_3</zorder>
+       <zorder>label_78</zorder>
+       <zorder>maxAccel_3</zorder>
+       <zorder>maxVelocity_3</zorder>
+       <zorder>label_79</zorder>
+       <zorder>scale_3</zorder>
+       <zorder>maxLimit_3</zorder>
+       <zorder>homeUseIndex_3</zorder>
+       <zorder>label_94</zorder>
+       <zorder>homeOffset_3</zorder>
+       <zorder>homeSearchVel_3</zorder>
+       <zorder>label_95</zorder>
+       <zorder>label_96</zorder>
+       <zorder>homeLatchVel_3</zorder>
+       <zorder>homeIgnoreLimits_3</zorder>
+       <zorder>label_97</zorder>
+       <zorder>home_3</zorder>
+      </widget>
+      <widget class="QWidget" name="tab_5">
+       <attribute name="title">
+        <string>Joint 4</string>
+       </attribute>
        <widget class="QLineEdit" name="stepTime_4">
         <property name="geometry">
          <rect>
@@ -1347,7 +2141,7 @@
          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Mininum&lt;br/&gt;Limit&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="jointMinLimit_4">
+       <widget class="QLineEdit" name="minLimit_4">
         <property name="geometry">
          <rect>
           <x>420</x>
@@ -1370,7 +2164,7 @@
          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Maximum&lt;br/&gt;Limit&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="jointMaxLimit_4">
+       <widget class="QLineEdit" name="maxLimit_4">
         <property name="geometry">
          <rect>
           <x>510</x>
@@ -1380,6 +2174,217 @@
          </rect>
         </property>
        </widget>
+       <widget class="QLabel" name="label_80">
+        <property name="geometry">
+         <rect>
+          <x>280</x>
+          <y>100</y>
+          <width>121</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Maximum Velocity</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="maxAccel_4">
+        <property name="geometry">
+         <rect>
+          <x>410</x>
+          <y>150</y>
+          <width>71</width>
+          <height>23</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="maxVelocity_4">
+        <property name="geometry">
+         <rect>
+          <x>410</x>
+          <y>100</y>
+          <width>71</width>
+          <height>23</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_81">
+        <property name="geometry">
+         <rect>
+          <x>250</x>
+          <y>150</y>
+          <width>141</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Maximum Acceleration</string>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="scale_4">
+        <property name="geometry">
+         <rect>
+          <x>310</x>
+          <y>50</y>
+          <width>81</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="maximum">
+         <number>25000</number>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="homeUseIndex_4">
+        <property name="geometry">
+         <rect>
+          <x>470</x>
+          <y>350</y>
+          <width>141</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Home Use Index</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_98">
+        <property name="geometry">
+         <rect>
+          <x>470</x>
+          <y>270</y>
+          <width>91</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Home Offset</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="homeOffset_4">
+        <property name="geometry">
+         <rect>
+          <x>610</x>
+          <y>270</y>
+          <width>113</width>
+          <height>23</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="homeSearchVel_4">
+        <property name="geometry">
+         <rect>
+          <x>610</x>
+          <y>300</y>
+          <width>113</width>
+          <height>23</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_99">
+        <property name="geometry">
+         <rect>
+          <x>470</x>
+          <y>300</y>
+          <width>141</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Home Search Velocity</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_100">
+        <property name="geometry">
+         <rect>
+          <x>468</x>
+          <y>240</y>
+          <width>71</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Home</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="homeLatchVel_4">
+        <property name="geometry">
+         <rect>
+          <x>610</x>
+          <y>330</y>
+          <width>113</width>
+          <height>23</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="homeIgnoreLimits_4">
+        <property name="geometry">
+         <rect>
+          <x>610</x>
+          <y>350</y>
+          <width>141</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Home Ignore Limits</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_101">
+        <property name="geometry">
+         <rect>
+          <x>470</x>
+          <y>330</y>
+          <width>141</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Home Latch Velocity</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="home_4">
+        <property name="geometry">
+         <rect>
+          <x>610</x>
+          <y>240</y>
+          <width>113</width>
+          <height>23</height>
+         </rect>
+        </property>
+       </widget>
+       <zorder>stepTime_4</zorder>
+       <zorder>stepper_4</zorder>
+       <zorder>axis_4</zorder>
+       <zorder>stepDir_4</zorder>
+       <zorder>label_4</zorder>
+       <zorder>label_7</zorder>
+       <zorder>label_6</zorder>
+       <zorder>label_5</zorder>
+       <zorder>label_59</zorder>
+       <zorder>dirSetup_4</zorder>
+       <zorder>label_60</zorder>
+       <zorder>stepSpace_4</zorder>
+       <zorder>dirHold_4</zorder>
+       <zorder>label_61</zorder>
+       <zorder>label_66</zorder>
+       <zorder>minLimit_4</zorder>
+       <zorder>label_71</zorder>
+       <zorder>maxLimit_4</zorder>
+       <zorder>label_80</zorder>
+       <zorder>maxAccel_4</zorder>
+       <zorder>maxVelocity_4</zorder>
+       <zorder>label_81</zorder>
+       <zorder>scale_4</zorder>
+       <zorder>maxLimit_4</zorder>
+       <zorder>homeUseIndex_4</zorder>
+       <zorder>label_98</zorder>
+       <zorder>homeOffset_4</zorder>
+       <zorder>homeSearchVel_4</zorder>
+       <zorder>label_99</zorder>
+       <zorder>label_100</zorder>
+       <zorder>homeLatchVel_4</zorder>
+       <zorder>homeIgnoreLimits_4</zorder>
+       <zorder>label_101</zorder>
+       <zorder>home_4</zorder>
       </widget>
      </widget>
     </widget>

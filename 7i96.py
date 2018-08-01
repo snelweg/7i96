@@ -6,7 +6,8 @@ version = 0.8
 import sys, os, configparser
 from PyQt5 import uic
 from PyQt5.QtCore import pyqtSlot
-from PyQt5.QtWidgets import (QApplication, QMainWindow, QFileDialog, QLineEdit)
+from PyQt5.QtWidgets import (QApplication, QMainWindow, QFileDialog, QLineEdit,
+	QSpinBox, QCheckBox)
 import setup, loadini
 
 class MainWindow(QMainWindow):
@@ -86,8 +87,17 @@ class MainWindow(QMainWindow):
 		# iniList section, item, value
 		for item in loadini.iniList():
 			if self.config.has_option(item[0], item[1]):
+				#print(item[0], item[1])
 				if isinstance(getattr(self, item[2]), QLineEdit):
 					getattr(self, item[2]).setText(self.config[item[0]][item[1]])
+				if isinstance(getattr(self, item[2]), QSpinBox):
+					getattr(self, item[2]).setValue(int(self.config[item[0]][item[1]]))
+				if isinstance(getattr(self, item[2]), QCheckBox):
+					#print(self.config[item[0]][item[1]])
+					if self.config[item[0]][item[1]] in ['YES', 'yes']:
+						getattr(self, item[2]).setChecked(True)
+					else:
+						getattr(self, item[2]).setChecked(False)
 
 if __name__ == "__main__":
 	app = QApplication(sys.argv)
