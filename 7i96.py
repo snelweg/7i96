@@ -4,11 +4,12 @@
 version = 0.8
 
 import sys, os, configparser
-from PyQt5 import uic
+from PyQt5 import uic, QtWidgets
 from PyQt5.QtCore import pyqtSlot
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QFileDialog, QLineEdit,
 	QSpinBox, QCheckBox, QComboBox)
-import setup, loadini
+import setup, loadini, checkit, buildini, buildhal
+from dialog import Ui_Dialog as errorDialog
 
 class MainWindow(QMainWindow):
 	def __init__(self):
@@ -17,10 +18,11 @@ class MainWindow(QMainWindow):
 		self.config = configparser.ConfigParser(strict=False)
 		self.linuxcncDir = os.path.expanduser('~/linuxcnc')
 		self.configsDir = os.path.expanduser('~/linuxcnc/configs')
-
+		self.checkConfig = checkit.config
 		self.buildWidgets()
 		self.setupConnections()
 		self.show()
+
 
 	# Auto connected menu action callbacks
 	@pyqtSlot()
@@ -49,7 +51,10 @@ class MainWindow(QMainWindow):
 
 	@pyqtSlot()
 	def on_actionCheck_triggered(self):
-		pass
+		if self.checkConfig(self):
+			print('OkDokey')
+		else:
+			self.dialog(self.checkConfig.result)
 
 	@pyqtSlot()
 	def on_actionBuild_triggered(self):
@@ -117,6 +122,13 @@ class MainWindow(QMainWindow):
 #index = self.debugCombo.findData(self.config[item[0]][item[1]])
 #self.debugCombo.setCurrentIndex(index)
 
+	def dialog(self, text):
+		dialog = QtWidgets.QDialog()
+		dialog.ui = errorDialog()
+		dialog.ui.setupUi(dialog)
+		#dialog.ui.windowTitle('Configuration Errors')
+		dialog.ui.label.setText(text)
+		dialog.exec_()
 
 
 if __name__ == "__main__":
