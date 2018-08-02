@@ -3,6 +3,10 @@ def iniList():
 	iniList = []
 	iniList.append(['EMC', 'VERSION', 'version'])
 	iniList.append(['EMC', 'MACHINE', 'configName'])
+	iniList.append(['EMC', 'DEBUG', 'configName'])
+
+	iniList.append(['HOSTMOT2', 'IPADDRESS', 'ipCombo'])
+
 	iniList.append(['JOINT_0', 'STEPLEN', 'stepTime_0'])
 	iniList.append(['JOINT_0', 'STEPSPACE', 'stepSpace_0'])
 	iniList.append(['JOINT_0', 'DIRSETUP', 'dirSetup_0'])

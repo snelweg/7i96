@@ -7,7 +7,7 @@ import sys, os, configparser
 from PyQt5 import uic
 from PyQt5.QtCore import pyqtSlot
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QFileDialog, QLineEdit,
-	QSpinBox, QCheckBox)
+	QSpinBox, QCheckBox, QComboBox)
 import setup, loadini
 
 class MainWindow(QMainWindow):
@@ -78,7 +78,6 @@ class MainWindow(QMainWindow):
 	def buildWidgets(self):
 		for item in setup.setupCombo('ipCombo'):
 			self.ipCombo.addItem(item[0], item[1])
-		#print(setup.setupCombo('ipCombo'))
 		for i in range(5):
 			for item in setup.setupCombo('axis'):
 				getattr(self, 'axis_' + str(i)).addItem(item[0], item[1])
@@ -94,12 +93,13 @@ class MainWindow(QMainWindow):
 		for i in range(11):
 			for item in setup.setupCombo('axis'):
 				getattr(self, 'inputaxis_' + str(i)).addItem(item[0], item[1])
+		for item in setup.setupCombo('debug'):
+			self.debugCombo.addItem(item[0], item[1])
 
 	def iniLoad(self):
 		# iniList section, item, value
 		for item in loadini.iniList():
 			if self.config.has_option(item[0], item[1]):
-				#print(item[0], item[1])
 				if isinstance(getattr(self, item[2]), QLineEdit):
 					getattr(self, item[2]).setText(self.config[item[0]][item[1]])
 				if isinstance(getattr(self, item[2]), QSpinBox):
@@ -110,6 +110,14 @@ class MainWindow(QMainWindow):
 						getattr(self, item[2]).setChecked(True)
 					else:
 						getattr(self, item[2]).setChecked(False)
+				if isinstance(getattr(self, item[2]), QComboBox):
+					index = getattr(self, item[2]).findData(self.config[item[0]][item[1]])
+					getattr(self, item[2]).setCurrentIndex(index)
+
+#index = self.debugCombo.findData(self.config[item[0]][item[1]])
+#self.debugCombo.setCurrentIndex(index)
+
+
 
 if __name__ == "__main__":
 	app = QApplication(sys.argv)

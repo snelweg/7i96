@@ -906,62 +906,6 @@
          <string>Max Error</string>
         </property>
        </widget>
-       <zorder>stepper_0</zorder>
-       <zorder>axis_0</zorder>
-       <zorder>stepDir_0</zorder>
-       <zorder>stepTime_0</zorder>
-       <zorder>label_43</zorder>
-       <zorder>label_44</zorder>
-       <zorder>label_45</zorder>
-       <zorder>label_46</zorder>
-       <zorder>label_47</zorder>
-       <zorder>stepSpace_0</zorder>
-       <zorder>dirHold_0</zorder>
-       <zorder>dirSetup_0</zorder>
-       <zorder>label_48</zorder>
-       <zorder>label_49</zorder>
-       <zorder>label_62</zorder>
-       <zorder>minLimit_0</zorder>
-       <zorder>label_67</zorder>
-       <zorder>maxLimit_0</zorder>
-       <zorder>label_72</zorder>
-       <zorder>label_73</zorder>
-       <zorder>maxVelocity_0</zorder>
-       <zorder>maxAccel_0</zorder>
-       <zorder>scale_0</zorder>
-       <zorder>minLimit_</zorder>
-       <zorder>label_82</zorder>
-       <zorder>label_83</zorder>
-       <zorder>label_84</zorder>
-       <zorder>label_85</zorder>
-       <zorder>homeUseIndex_0</zorder>
-       <zorder>homeIgnoreLimits_0</zorder>
-       <zorder>home_0</zorder>
-       <zorder>homeOffset_0</zorder>
-       <zorder>homeSearchVel_0</zorder>
-       <zorder>homeLatchVel_0</zorder>
-       <zorder>label_102</zorder>
-       <zorder>label_213</zorder>
-       <zorder>label_214</zorder>
-       <zorder>label_215</zorder>
-       <zorder>label_216</zorder>
-       <zorder>label_217</zorder>
-       <zorder>label_218</zorder>
-       <zorder>label_219</zorder>
-       <zorder>label_220</zorder>
-       <zorder>deadband_0</zorder>
-       <zorder>i_0</zorder>
-       <zorder>d_0</zorder>
-       <zorder>ff0_0</zorder>
-       <zorder>ff1_0</zorder>
-       <zorder>ff2_0</zorder>
-       <zorder>p_0</zorder>
-       <zorder>label_221</zorder>
-       <zorder>label_222</zorder>
-       <zorder>bias_0</zorder>
-       <zorder>maxOutput_0</zorder>
-       <zorder>maxError_0</zorder>
-       <zorder>label_223</zorder>
       </widget>
       <widget class="QWidget" name="tab_2">
        <attribute name="title">
@@ -1627,7 +1571,6 @@
        <zorder>label_63</zorder>
        <zorder>minLimit_1</zorder>
        <zorder>label_68</zorder>
-       <zorder>maxLimit_1</zorder>
        <zorder>label_74</zorder>
        <zorder>maxAccel_1</zorder>
        <zorder>maxVelocity_1</zorder>
@@ -2331,7 +2274,6 @@
        <zorder>label_64</zorder>
        <zorder>minLimit_2</zorder>
        <zorder>label_69</zorder>
-       <zorder>maxLimit_2</zorder>
        <zorder>label_76</zorder>
        <zorder>maxAccel_2</zorder>
        <zorder>maxVelocity_2</zorder>
@@ -3035,7 +2977,6 @@
        <zorder>label_65</zorder>
        <zorder>minLimit_3</zorder>
        <zorder>label_70</zorder>
-       <zorder>maxLimit_3</zorder>
        <zorder>label_78</zorder>
        <zorder>maxAccel_3</zorder>
        <zorder>maxVelocity_3</zorder>
@@ -3739,7 +3680,6 @@
        <zorder>label_66</zorder>
        <zorder>minLimit_4</zorder>
        <zorder>label_71</zorder>
-       <zorder>maxLimit_4</zorder>
        <zorder>label_80</zorder>
        <zorder>maxAccel_4</zorder>
        <zorder>maxVelocity_4</zorder>
@@ -4369,7 +4309,7 @@
        <string>ClassicLadder PLC</string>
       </property>
      </widget>
-     <widget class="QComboBox" name="debug">
+     <widget class="QComboBox" name="debugCombo">
       <property name="geometry">
        <rect>
         <x>468</x>
@@ -4377,6 +4317,19 @@
         <width>241</width>
         <height>23</height>
        </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_107">
+      <property name="geometry">
+       <rect>
+        <x>500</x>
+        <y>10</y>
+        <width>181</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Debug Options sent to dmesg</string>
       </property>
      </widget>
     </widget>
