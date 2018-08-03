@@ -19,6 +19,7 @@ class MainWindow(QMainWindow):
 		self.linuxcncDir = os.path.expanduser('~/linuxcnc')
 		self.configsDir = os.path.expanduser('~/linuxcnc/configs')
 		self.checkConfig = checkit.config
+		self.buildini = buildini.buildini
 		self.buildWidgets()
 		self.setupConnections()
 		self.show()
@@ -58,7 +59,10 @@ class MainWindow(QMainWindow):
 
 	@pyqtSlot()
 	def on_actionBuild_triggered(self):
-		pass
+		# this fails if there is any text in confgName
+		print(self.configName.text())
+		#if self.checkPath():
+			#self.buildini(self)
 
 	@pyqtSlot()
 	def on_actionSaveAs_triggered(self):
@@ -121,6 +125,12 @@ class MainWindow(QMainWindow):
 
 #index = self.debugCombo.findData(self.config[item[0]][item[1]])
 #self.debugCombo.setCurrentIndex(index)
+
+	def checkPath(self):
+		pass
+		#print(self.configName.text())
+		#print(os.path.join(self.configsDir, self.configName.text()))
+
 
 	def dialog(self, text):
 		dialog = QtWidgets.QDialog()
