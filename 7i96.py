@@ -78,8 +78,8 @@ class MainWindow(QMainWindow):
 	def onConfigNameChanged(self, text):
 		# update the iniDictionary when text is changed
 		if text:
-			self.configName = text.replace(' ','_')
-			self.configPath = self.configsDir + '/' + self.configName
+			configName = text.replace(' ','_')
+			self.configPath = self.configsDir + '/' + configName
 			self.pathLabel.setText(self.configPath)
 		else:
 			self.pathLabel.setText('')
