@@ -236,6 +236,113 @@
          </rect>
         </property>
        </widget>
+       <widget class="QComboBox" name="boardCB">
+        <property name="geometry">
+         <rect>
+          <x>510</x>
+          <y>110</y>
+          <width>79</width>
+          <height>23</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_32">
+        <property name="geometry">
+         <rect>
+          <x>410</x>
+          <y>110</y>
+          <width>59</width>
+          <height>15</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Board</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_33">
+        <property name="geometry">
+         <rect>
+          <x>390</x>
+          <y>160</y>
+          <width>111</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Step Generators</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_34">
+        <property name="geometry">
+         <rect>
+          <x>400</x>
+          <y>200</y>
+          <width>59</width>
+          <height>15</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Encoders</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_35">
+        <property name="geometry">
+         <rect>
+          <x>400</x>
+          <y>240</y>
+          <width>91</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>SSerial Port</string>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="encodersSB">
+        <property name="geometry">
+         <rect>
+          <x>530</x>
+          <y>190</y>
+          <width>47</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="maximum">
+         <number>1</number>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="stepgensSB">
+        <property name="geometry">
+         <rect>
+          <x>530</x>
+          <y>160</y>
+          <width>47</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="minimum">
+         <number>1</number>
+        </property>
+        <property name="maximum">
+         <number>5</number>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="sserialSB">
+        <property name="geometry">
+         <rect>
+          <x>530</x>
+          <y>240</y>
+          <width>47</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="minimum">
+         <number>1</number>
+        </property>
+        <property name="maximum">
+         <number>1</number>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="axis">
        <attribute name="title">

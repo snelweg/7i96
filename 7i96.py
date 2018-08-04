@@ -59,10 +59,7 @@ class MainWindow(QMainWindow):
 
 	@pyqtSlot()
 	def on_actionBuild_triggered(self):
-		# this fails if there is any text in confgName
-		print(self.configName.text())
-		#if self.checkPath():
-			#self.buildini(self)
+		self.buildini(self)
 
 	@pyqtSlot()
 	def on_actionSaveAs_triggered(self):
@@ -87,6 +84,8 @@ class MainWindow(QMainWindow):
 	def buildWidgets(self):
 		for item in setup.setupCombo('ipCombo'):
 			self.ipCombo.addItem(item[0], item[1])
+		for item in setup.setupCombo('board'):
+			self.boardCB.addItem(item[0], item[1])
 		for i in range(5):
 			for item in setup.setupCombo('axis'):
 				getattr(self, 'axis_' + str(i)).addItem(item[0], item[1])
@@ -122,15 +121,6 @@ class MainWindow(QMainWindow):
 				if isinstance(getattr(self, item[2]), QComboBox):
 					index = getattr(self, item[2]).findData(self.config[item[0]][item[1]])
 					getattr(self, item[2]).setCurrentIndex(index)
-
-#index = self.debugCombo.findData(self.config[item[0]][item[1]])
-#self.debugCombo.setCurrentIndex(index)
-
-	def checkPath(self):
-		pass
-		#print(self.configName.text())
-		#print(os.path.join(self.configsDir, self.configName.text()))
-
 
 	def dialog(self, text):
 		dialog = QtWidgets.QDialog()

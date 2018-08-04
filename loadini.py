@@ -3,7 +3,7 @@ def iniList():
 	iniList = []
 	iniList.append(['EMC', 'VERSION', 'version'])
 	iniList.append(['EMC', 'MACHINE', 'configName'])
-	iniList.append(['EMC', 'DEBUG', 'configName'])
+	iniList.append(['EMC', 'DEBUG', 'debugCombo'])
 
 	iniList.append(['HOSTMOT2', 'IPADDRESS', 'ipCombo'])
 

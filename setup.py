@@ -73,4 +73,8 @@ def setupCombo(combo):
 								['Debug Unconditional', '0x40000000'],
 								['Debug All', '0x7FFFFFFF']]
 
+	if combo == 'board':
+		comboList = [['7i96', '7i96']]
+
+
 	return comboList
