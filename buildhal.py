@@ -29,7 +29,8 @@ def buildhal(parent):
 	halContents.append('addf hm2_[HOSTMOT2](BOARD).0.read servo-thread\n')
 	halContents.append('addf motion-command-handler servo-thread\n')
 	halContents.append('addf motion-controller servo-thread\n')
-	halContents.append('addf pid.0.do-pid-calcs servo-thread\n')
+	for index in range(len(parent.coordinatesL.text())):
+		halContents.append('addf pid.{}.do-pid-calcs servo-thread\n'.format(str(index)))
 	halContents.append('addf hm2_[HOSTMOT2](BOARD).0.write servo-thread\n\n')
 	for index in range(len(parent.coordinatesL.text())):
 		halContents.append('# Joint {0}\n\n'.format(str(index)))
