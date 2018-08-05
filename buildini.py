@@ -22,11 +22,88 @@ def buildini(parent):
 	# build the [HOSTMOT2] section
 	iniContents.append('\n[HOSTMOT2]\n')
 	iniContents.append('DRIVER = {}\n'.format('hm2_eth'))
-	iniContents.append('IPADDRESS = {}\n'.format(parent.ipCombo.itemData(parent.ipCombo.currentIndex())))
+	iniContents.append('IPADDRESS = {}\n'.format(parent.ipAddressCB.itemData(parent.ipAddressCB.currentIndex())))
 	iniContents.append('BOARD = {}\n'.format(parent.boardCB.itemData(parent.boardCB.currentIndex())))
 	iniContents.append('STEPGENS = {}\n'.format(str(parent.stepgensSB.value())))
 	iniContents.append('ENCODERS = {}\n'.format(str(parent.encodersSB.value())))
 	iniContents.append('SSERIAL_PORT = {}\n'.format(str(parent.sserialSB.value())))
+
+	# build the [DISPLAY] section maxFeedOverrideLE
+	iniContents.append('\n[DISPLAY]\n')
+	iniContents.append('DISPLAY = {}\n'.format(parent.guiCB.itemData(parent.guiCB.currentIndex())))
+	iniContents.append('POSITION_OFFSET = {}\n'.format(parent.positionOffsetCB.itemData(parent.positionOffsetCB.currentIndex())))
+	iniContents.append('POSITION_FEEDBACK = {}\n'.format(parent.positionFeedbackCB.itemData(parent.positionFeedbackCB.currentIndex())))
+	iniContents.append('CYCLE_TIME = {}\n'.format('0.1'))
+	iniContents.append('INTRO_GRAPHIC = {}\n'.format('emc2.gif'))
+	iniContents.append('INTRO_TIME = {}\n'.format('0'))
+	iniContents.append('OPEN_FILE = "{}"\n'.format(''))
+
+	# build the [KINS] section
+	iniContents.append('\n[KINS]\n')
+	iniContents.append('KINEMATICS = {}\n'.format('trivkins'))
+	iniContents.append('JOINTS = {}\n'.format(len(parent.coordinatesL.text())))
+
+	# build the [EMCIO] section
+	iniContents.append('\n[EMCIO]\n')
+	iniContents.append('EMCIO = {}\n'.format('io'))
+	iniContents.append('CYCLE_TIME = {}\n'.format('0.100'))
+	iniContents.append('TOOL_TABLE = {}.tbl\n'.format(parent.configNameUnderscored))
+
+	# build the [RS274NGC] section
+	iniContents.append('\n[RS274NGC]\n')
+	iniContents.append('PARAMETER_FILE = {}.var\n'.format(parent.configNameUnderscored))
+
+	# build the [EMCMOT] section
+	iniContents.append('\n[EMCMOT]\n')
+	iniContents.append('EMCMOT = {}\n'.format('motmod'))
+	iniContents.append('SERVO_PERIOD = {}\n'.format('1000000'))
+
+	# build the [TASK] section
+	iniContents.append('\n[TASK]\n')
+	iniContents.append('TASK = {}\n'.format('milltask'))
+	iniContents.append('CYCLE_TIME = {}\n'.format('0.010'))
+
+	# build the [TRAJ] section
+	iniContents.append('\n[TRAJ]\n')
+	iniContents.append('COORDINATES = {}\n'.format(parent.coordinatesL.text()))
+	iniContents.append('LINEAR_UNITS = {}\n'.format(parent.linearUnitsCB.itemData(parent.linearUnitsCB.currentIndex())))
+	iniContents.append('ANGULAR_UNITS = {}\n'.format(parent.angularUnitsCB.itemData(parent.angularUnitsCB.currentIndex())))
+
+	# build the [HAL] section
+	iniContents.append('\n[HAL]\n')
+	iniContents.append('HALFILE = {}.hal\n'.format(parent.configNameUnderscored))
+
+	# build the [HALUI] section
+	iniContents.append('\n[HALUI]\n')
+
+	if 'X' in parent.coordinatesL.text():
+		iniContents.append('\n[AXIS_X]\n')
+
+	if 'Y' in parent.coordinatesL.text():
+		iniContents.append('\n[AXIS_Y]\n')
+
+	if 'Z' in parent.coordinatesL.text():
+		iniContents.append('\n[AXIS_Z]\n')
+
+	if 'A' in parent.coordinatesL.text():
+		iniContents.append('\n[AXIS_A]\n')
+
+	if 'B' in parent.coordinatesL.text():
+		iniContents.append('\n[AXIS_B]\n')
+
+	if 'C' in parent.coordinatesL.text():
+		iniContents.append('\n[AXIS_C]\n')
+
+	if 'U' in parent.coordinatesL.text():
+		iniContents.append('\n[AXIS_U]\n')
+
+	if 'V' in parent.coordinatesL.text():
+		iniContents.append('\n[AXIS_V]\n')
+
+	if 'W' in parent.coordinatesL.text():
+		iniContents.append('\n[AXIS_W]\n')
+
+
 
 	with open(iniFilePath, 'w') as iniFile:
 		iniFile.writelines(iniContents)
@@ -34,30 +111,7 @@ def buildini(parent):
 	return True
 	"""
 
-	# build the [DISPLAY] section
-	iniContents.append('\n[DISPLAY]\n')
-	iniContents.append('DISPLAY = {}\n'.format(data['DISPLAY']['DISPLAY']))
-	iniContents.append('POSITION_OFFSET = {}\n'.format(data['DISPLAY']['POSITION_OFFSET']))
-	iniContents.append('POSITION_FEEDBACK = {}\n'.format(data['DISPLAY']['POSITION_FEEDBACK']))
-	iniContents.append('CYCLE_TIME = {}\n'.format(data['DISPLAY']['CYCLE_TIME']))
-	iniContents.append('INTRO_GRAPHIC = {}\n'.format(data['DISPLAY']['INTRO_GRAPHIC']))
-	iniContents.append('INTRO_TIME = {}\n'.format(data['DISPLAY']['INTRO_TIME']))
-	iniContents.append('OPEN_FILE = "{}"\n'.format(data['DISPLAY']['OPEN_FILE']))
 
-	# build the [KINS] section
-	iniContents.append('\n[KINS]\n')
-	iniContents.append('KINEMATICS = {}\n'.format(data['KINS']['KINEMATICS']))
-	iniContents.append('JOINTS = {}\n'.format(data['KINS']['JOINTS']))
-
-	# build the [EMCIO] section
-	iniContents.append('\n[EMCIO]\n')
-	iniContents.append('EMCIO = {}\n'.format(data['EMCIO']['EMCIO']))
-	iniContents.append('CYCLE_TIME = {}\n'.format(data['EMCIO']['CYCLE_TIME']))
-	iniContents.append('TOOL_TABLE = {}\n'.format(data['EMCIO']['TOOL_TABLE']))
-
-	# build the [RS274NGC] section
-	iniContents.append('\n[RS274NGC]\n')
-	iniContents.append('PARAMETER_FILE = {}\n'.format(data['RS274NGC']['PARAMETER_FILE']))
 	if data['RS274NGC']['RS274NGC_STARTUP_CODE']:
 		iniContents.append('RS274NGC_STARTUP_CODE = {}\n'.format(data['RS274NGC']['RS274NGC_STARTUP_CODE']))
 	if data['RS274NGC']['SUBROUTINE_PATH']:
@@ -65,25 +119,12 @@ def buildini(parent):
 	if data['RS274NGC']['USER_M_PATH']:
 		iniContents.append('USER_M_PATH = {}\n'.format(data['RS274NGC']['USER_M_PATH']))
 
-	# build the [EMCMOT] section
-	iniContents.append('\n[EMCMOT]\n')
-	iniContents.append('EMCMOT = {}\n'.format(data['EMCMOT']['EMCMOT']))
-	iniContents.append('SERVO_PERIOD = {}\n'.format(data['EMCMOT']['SERVO_PERIOD']))
-
-	# build the [TASK] section
-	iniContents.append('\n[TASK]\n')
-	iniContents.append('TASK = {}\n'.format(data['TASK']['TASK']))
-	iniContents.append('CYCLE_TIME = {}\n'.format(data['TASK']['CYCLE_TIME']))
-
 	# build the [TRAJ] section
 	iniContents.append('\n[TRAJ]\n')
 	iniContents.append('COORDINATES = {}\n'.format(data['TRAJ']['COORDINATES']))
 	iniContents.append('LINEAR_UNITS = {}\n'.format(data['TRAJ']['LINEAR_UNITS']))
 	iniContents.append('ANGULAR_UNITS = {}\n'.format(data['TRAJ']['ANGULAR_UNITS']))
 
-	# build the [HAL] section
-	iniContents.append('\n[HAL]\n')
-	iniContents.append('HALFILE = {}\n'.format(data['HAL']['HALFILE']))
 	if data['HAL']['HALUI']:
 		iniContents.append('HALUI = {}\n'.format(data['HAL']['HALUI']))
 	if data['HAL']['POSTGUI_HALFILE']:
@@ -91,8 +132,7 @@ def buildini(parent):
 	if data['HAL']['SHUTDOWN']:
 		iniContents.append('SHUTDOWN = {}\n'.format(data['HAL']['SHUTDOWN']))
 
-	# build the [HALUI] section
-	iniContents.append('\n[HALUI]\n')
+
 	if data['HALUI']['MDI_COMMAND']:
 		iniContents.append('MDI_COMMAND = {}\n'.format(data['HALUI']['MDI_COMMAND']))
 

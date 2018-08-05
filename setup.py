@@ -1,25 +1,48 @@
 def setupCombo(combo):
-	if combo == 'ipCombo':
+	comboList = []
+	if combo == 'ipAddress':
 		comboList = [['Select an IP Address', False],
 								['10.10.10.10', '"10.10.10.10"'],
 								['192.168.1.121', '"192.168.1.121"']]
 
 	if combo == 'axis':
 		comboList = [['None', False],
-								['X', 'x'],
-								['Y', 'y'],
-								['Z', 'z'],
-								['A', 'a'],
-								['B', 'b'],
-								['C', 'c'],
-								['U', 'u'],
-								['V', 'v'],
-								['W', 'w'],]
+								['X', 'X'],
+								['Y', 'Y'],
+								['Z', 'Z'],
+								['A', 'A'],
+								['B', 'B'],
+								['C', 'C'],
+								['U', 'U'],
+								['V', 'V'],
+								['W', 'W'],]
 
 	if combo == 'direction':
 		comboList = [['None', False],
 								['CW', 'cw'],
 								['CCW', 'ccw'],]
+
+	if combo == 'display':
+		comboList = [['Select a GUI', False],
+								['Axis', 'axis'],
+								['Touchy', 'touchy'],]
+
+	if combo == 'linearUnits':
+		comboList = [['Select Units', False],
+								['Imperial', 'imperial'],
+								['Metric', 'metric'],]
+
+	if combo == 'angularUnits':
+		comboList = [['Degree', 'degree'],]
+
+
+	if combo == 'positionOffset':
+		comboList = [['Relative', 'RELATIVE'],
+								['Machine', 'MACHINE'],]
+
+	if combo == 'positionFeedback':
+		comboList = [['Commanded', 'COMMANDED'],
+								['Actual', 'ACTUAL'],]
 
 	if combo == 'input':
 		comboList = [['None', False],
@@ -76,5 +99,7 @@ def setupCombo(combo):
 	if combo == 'board':
 		comboList = [['7i96', '7i96']]
 
+	if combo == 'driver':
+		comboList = [['HostMot2 Ethernet', 'hm2_eth']]
 
 	return comboList

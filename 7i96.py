@@ -7,7 +7,7 @@ import sys, os, configparser
 from PyQt5 import uic, QtWidgets
 from PyQt5.QtCore import pyqtSlot
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QFileDialog, QLineEdit,
-	QSpinBox, QCheckBox, QComboBox)
+	QSpinBox, QCheckBox, QComboBox, QLabel)
 import setup, loadini, checkit, buildini, buildhal
 from dialog import Ui_Dialog as errorDialog
 
@@ -18,10 +18,12 @@ class MainWindow(QMainWindow):
 		self.config = configparser.ConfigParser(strict=False)
 		self.linuxcncDir = os.path.expanduser('~/linuxcnc')
 		self.configsDir = os.path.expanduser('~/linuxcnc/configs')
+		self.configNameUnderscored = ''
 		self.checkConfig = checkit.config
 		self.buildini = buildini.buildini
-		self.buildWidgets()
+		self.buildCB()
 		self.setupConnections()
+		self.axisList = ['axisCB_0', 'axisCB_1', 'axisCB_2', 'axisCB_3', 'axisCB_4']
 		self.show()
 
 
@@ -71,24 +73,51 @@ class MainWindow(QMainWindow):
 
 	def setupConnections(self):
 		self.configName.textChanged[str].connect(self.onConfigNameChanged)
+		self.axisCB_0.activated.connect(self.onAxisChanged)
+		self.axisCB_1.activated.connect(self.onAxisChanged)
+		self.axisCB_2.activated.connect(self.onAxisChanged)
+		self.axisCB_3.activated.connect(self.onAxisChanged)
+		self.axisCB_4.activated.connect(self.onAxisChanged)
 
 	def onConfigNameChanged(self, text):
 		# update the iniDictionary when text is changed
 		if text:
-			configName = text.replace(' ','_')
-			self.configPath = self.configsDir + '/' + configName
+			self.configNameUnderscored = text.replace(' ','_')
+			self.configPath = self.configsDir + '/' + self.configNameUnderscored
 			self.pathLabel.setText(self.configPath)
 		else:
 			self.pathLabel.setText('')
 
-	def buildWidgets(self):
-		for item in setup.setupCombo('ipCombo'):
-			self.ipCombo.addItem(item[0], item[1])
+	def onAxisChanged(self):
+		coordList = []
+		for item in self.axisList:
+			if getattr(self,item).itemData(getattr(self,item).currentIndex()):
+				coordList.append(getattr(self,item).itemData(getattr(self,item).currentIndex()))
+		self.coordinatesL.setText(''.join(coordList))
+
+
+	def buildCB(self):
+		for item in setup.setupCombo('ipAddress'):
+			self.ipAddressCB.addItem(item[0], item[1])
 		for item in setup.setupCombo('board'):
 			self.boardCB.addItem(item[0], item[1])
+		for item in setup.setupCombo('driver'):
+			self.driverCB.addItem(item[0], item[1])
+		for item in setup.setupCombo('display'):
+			self.guiCB.addItem(item[0], item[1])
+		for item in setup.setupCombo('linearUnits'):
+			self.linearUnitsCB.addItem(item[0], item[1])
+		for item in setup.setupCombo('angularUnits'):
+			self.angularUnitsCB.addItem(item[0], item[1])
+		for item in setup.setupCombo('positionOffset'):
+			self.positionOffsetCB.addItem(item[0], item[1])
+		for item in setup.setupCombo('positionFeedback'):
+			self.positionFeedbackCB.addItem(item[0], item[1])
+
+
 		for i in range(5):
 			for item in setup.setupCombo('axis'):
-				getattr(self, 'axis_' + str(i)).addItem(item[0], item[1])
+				getattr(self, 'axisCB_' + str(i)).addItem(item[0], item[1])
 		for i in range(5):
 			for item in setup.setupCombo('direction'):
 				getattr(self, 'stepDir_' + str(i)).addItem(item[0], item[1])
@@ -108,6 +137,8 @@ class MainWindow(QMainWindow):
 		# iniList section, item, value
 		for item in loadini.iniList():
 			if self.config.has_option(item[0], item[1]):
+				if isinstance(getattr(self, item[2]), QLabel):
+					getattr(self, item[2]).setText(self.config[item[0]][item[1]])
 				if isinstance(getattr(self, item[2]), QLineEdit):
 					getattr(self, item[2]).setText(self.config[item[0]][item[1]])
 				if isinstance(getattr(self, item[2]), QSpinBox):

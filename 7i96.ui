@@ -81,136 +81,12 @@
          <rect>
           <x>10</x>
           <y>80</y>
-          <width>59</width>
-          <height>15</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Units</string>
-        </property>
-       </widget>
-       <widget class="QRadioButton" name="radioButton">
-        <property name="geometry">
-         <rect>
-          <x>140</x>
-          <y>80</y>
-          <width>100</width>
-          <height>21</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Inch</string>
-        </property>
-        <attribute name="buttonGroup">
-         <string notr="true">unitsGroup</string>
-        </attribute>
-       </widget>
-       <widget class="QRadioButton" name="radioButton_2">
-        <property name="geometry">
-         <rect>
-          <x>250</x>
-          <y>80</y>
-          <width>100</width>
-          <height>21</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Metric</string>
-        </property>
-        <attribute name="buttonGroup">
-         <string notr="true">unitsGroup</string>
-        </attribute>
-       </widget>
-       <widget class="QLabel" name="label_8">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>170</y>
-          <width>71</width>
+          <width>81</width>
           <height>16</height>
          </rect>
         </property>
         <property name="text">
-         <string>Step Space</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_9">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>210</y>
-          <width>91</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Direction Hold</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_10">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>240</y>
-          <width>101</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Direction Setup</string>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="stepSpace">
-        <property name="geometry">
-         <rect>
-          <x>120</x>
-          <y>170</y>
-          <width>113</width>
-          <height>23</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="directionHold">
-        <property name="geometry">
-         <rect>
-          <x>120</x>
-          <y>210</y>
-          <width>113</width>
-          <height>23</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="directionSetup">
-        <property name="geometry">
-         <rect>
-          <x>120</x>
-          <y>240</y>
-          <width>113</width>
-          <height>23</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_27">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>110</y>
-          <width>71</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>IP Address</string>
-        </property>
-       </widget>
-       <widget class="QComboBox" name="ipCombo">
-        <property name="geometry">
-         <rect>
-          <x>120</x>
-          <y>110</y>
-          <width>151</width>
-          <height>23</height>
-         </rect>
+         <string>Linear Units</string>
         </property>
        </widget>
        <widget class="QLabel" name="label_30">
@@ -236,111 +112,256 @@
          </rect>
         </property>
        </widget>
-       <widget class="QComboBox" name="boardCB">
+       <widget class="QComboBox" name="linearUnitsCB">
         <property name="geometry">
          <rect>
-          <x>510</x>
-          <y>110</y>
-          <width>79</width>
+          <x>110</x>
+          <y>80</y>
+          <width>111</width>
           <height>23</height>
          </rect>
         </property>
        </widget>
-       <widget class="QLabel" name="label_32">
+       <widget class="QGroupBox" name="gridGroupBox">
         <property name="geometry">
          <rect>
-          <x>410</x>
+          <x>450</x>
+          <y>100</y>
+          <width>281</width>
+          <height>201</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>Board Setup</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_26">
+         <item row="4" column="1">
+          <widget class="QSpinBox" name="encodersSB">
+           <property name="maximum">
+            <number>1</number>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QSpinBox" name="stepgensSB">
+           <property name="minimum">
+            <number>1</number>
+           </property>
+           <property name="maximum">
+            <number>5</number>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_36">
+           <property name="text">
+            <string>Driver</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QComboBox" name="ipAddressCB"/>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_33">
+           <property name="text">
+            <string>Step Generators</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QComboBox" name="boardCB"/>
+         </item>
+         <item row="0" column="1">
+          <widget class="QComboBox" name="driverCB"/>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="label_34">
+           <property name="text">
+            <string>Encoders</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_32">
+           <property name="text">
+            <string>Board</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_27">
+           <property name="text">
+            <string>IP Address</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="0">
+          <widget class="QLabel" name="label_35">
+           <property name="text">
+            <string>SSerial Port</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="1">
+          <widget class="QSpinBox" name="sserialSB">
+           <property name="minimum">
+            <number>1</number>
+           </property>
+           <property name="maximum">
+            <number>1</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QLabel" name="label_8">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
           <y>110</y>
-          <width>59</width>
-          <height>15</height>
+          <width>81</width>
+          <height>16</height>
          </rect>
         </property>
         <property name="text">
-         <string>Board</string>
+         <string>Angular Units</string>
         </property>
        </widget>
-       <widget class="QLabel" name="label_33">
+       <widget class="QComboBox" name="angularUnitsCB">
         <property name="geometry">
          <rect>
-          <x>390</x>
-          <y>160</y>
+          <x>110</x>
+          <y>110</y>
           <width>111</width>
-          <height>20</height>
+          <height>23</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_10">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>150</y>
+          <width>91</width>
+          <height>16</height>
          </rect>
         </property>
         <property name="text">
-         <string>Step Generators</string>
+         <string>Coordinates</string>
         </property>
        </widget>
-       <widget class="QLabel" name="label_34">
+       <widget class="QLabel" name="coordinatesL">
         <property name="geometry">
          <rect>
-          <x>400</x>
-          <y>200</y>
+          <x>110</x>
+          <y>150</y>
+          <width>111</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Box</enum>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_8">
+       <attribute name="title">
+        <string>Display</string>
+       </attribute>
+       <widget class="QLabel" name="label_40">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>30</y>
           <width>59</width>
           <height>15</height>
          </rect>
         </property>
         <property name="text">
-         <string>Encoders</string>
+         <string>GUI</string>
         </property>
        </widget>
-       <widget class="QLabel" name="label_35">
+       <widget class="QComboBox" name="guiCB">
         <property name="geometry">
          <rect>
-          <x>400</x>
-          <y>240</y>
-          <width>91</width>
-          <height>20</height>
+          <x>140</x>
+          <y>30</y>
+          <width>161</width>
+          <height>23</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_41">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>80</y>
+          <width>101</width>
+          <height>16</height>
          </rect>
         </property>
         <property name="text">
-         <string>SSerial Port</string>
+         <string>Position Offset</string>
         </property>
        </widget>
-       <widget class="QSpinBox" name="encodersSB">
+       <widget class="QLabel" name="label_42">
         <property name="geometry">
          <rect>
-          <x>530</x>
-          <y>190</y>
-          <width>47</width>
-          <height>24</height>
+          <x>30</x>
+          <y>110</y>
+          <width>121</width>
+          <height>16</height>
          </rect>
         </property>
-        <property name="maximum">
-         <number>1</number>
+        <property name="text">
+         <string>Position Feedback</string>
         </property>
        </widget>
-       <widget class="QSpinBox" name="stepgensSB">
+       <widget class="QComboBox" name="positionOffsetCB">
         <property name="geometry">
          <rect>
-          <x>530</x>
-          <y>160</y>
-          <width>47</width>
-          <height>24</height>
+          <x>190</x>
+          <y>80</y>
+          <width>121</width>
+          <height>23</height>
          </rect>
-        </property>
-        <property name="minimum">
-         <number>1</number>
-        </property>
-        <property name="maximum">
-         <number>5</number>
         </property>
        </widget>
-       <widget class="QSpinBox" name="sserialSB">
+       <widget class="QComboBox" name="positionFeedbackCB">
         <property name="geometry">
          <rect>
-          <x>530</x>
-          <y>240</y>
-          <width>47</width>
-          <height>24</height>
+          <x>190</x>
+          <y>110</y>
+          <width>121</width>
+          <height>23</height>
          </rect>
         </property>
-        <property name="minimum">
-         <number>1</number>
+       </widget>
+       <widget class="QLabel" name="label_9">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>150</y>
+          <width>161</width>
+          <height>16</height>
+         </rect>
         </property>
-        <property name="maximum">
-         <number>1</number>
+        <property name="text">
+         <string>Maximum Feed Override</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="maxFeedOverrideLE">
+        <property name="geometry">
+         <rect>
+          <x>200</x>
+          <y>150</y>
+          <width>113</width>
+          <height>23</height>
+         </rect>
         </property>
        </widget>
       </widget>
@@ -363,7 +384,7 @@
           <property name="currentIndex">
            <number>0</number>
           </property>
-          <widget class="QWidget" name="tab">
+          <widget class="QWidget" name="joint0tab">
            <attribute name="title">
             <string>Joint 0</string>
            </attribute>
@@ -399,7 +420,7 @@
                 <number>5</number>
                </property>
                <item row="1" column="1">
-                <widget class="QComboBox" name="axis_0"/>
+                <widget class="QComboBox" name="axisCB_0"/>
                </item>
                <item row="0" column="5">
                 <widget class="QLabel" name="label_62">
@@ -1018,12 +1039,69 @@
                  </property>
                 </widget>
                </item>
+               <item row="0" column="3">
+                <spacer name="horizontalSpacer">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="1" column="3">
+                <spacer name="horizontalSpacer_2">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="2" column="3">
+                <spacer name="horizontalSpacer_3">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="3" column="3">
+                <spacer name="horizontalSpacer_4">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
               </layout>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QGroupBox" name="gridGroupBox">
+              <layout class="QGridLayout" name="gridLayout_27"/>
              </widget>
             </item>
            </layout>
           </widget>
-          <widget class="QWidget" name="tab_2">
+          <widget class="QWidget" name="joint1tab">
            <attribute name="title">
             <string>Joint 1</string>
            </attribute>
@@ -1050,7 +1128,7 @@
                 <number>5</number>
                </property>
                <item row="1" column="1">
-                <widget class="QComboBox" name="axis_1"/>
+                <widget class="QComboBox" name="axisCB_1"/>
                </item>
                <item row="0" column="5">
                 <widget class="QLabel" name="label_63">
@@ -1546,16 +1624,6 @@
                <property name="spacing">
                 <number>5</number>
                </property>
-               <item row="0" column="0">
-                <widget class="QLabel" name="label_103">
-                 <property name="text">
-                  <string>Step Time</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                 </property>
-                </widget>
-               </item>
                <item row="0" column="1">
                 <widget class="QLineEdit" name="stepTime_1">
                  <property name="inputMask">
@@ -1563,6 +1631,16 @@
                  </property>
                  <property name="text">
                   <string/>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="0">
+                <widget class="QLabel" name="label_103">
+                 <property name="text">
+                  <string>Step Time</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1669,12 +1747,25 @@
                  </property>
                 </widget>
                </item>
+               <item row="0" column="3">
+                <spacer name="horizontalSpacer_5">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
               </layout>
              </widget>
             </item>
            </layout>
           </widget>
-          <widget class="QWidget" name="tab_3">
+          <widget class="QWidget" name="joint2tab">
            <attribute name="title">
             <string>Joint 2</string>
            </attribute>
@@ -1701,7 +1792,7 @@
                 <number>5</number>
                </property>
                <item row="1" column="1">
-                <widget class="QComboBox" name="axis_2"/>
+                <widget class="QComboBox" name="axisCB_2"/>
                </item>
                <item row="0" column="5">
                 <widget class="QLabel" name="label_64">
@@ -2320,12 +2411,25 @@
                  </property>
                 </widget>
                </item>
+               <item row="0" column="3">
+                <spacer name="horizontalSpacer_6">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
               </layout>
              </widget>
             </item>
            </layout>
           </widget>
-          <widget class="QWidget" name="tab_4">
+          <widget class="QWidget" name="joint3tab">
            <attribute name="title">
             <string>Joint 3</string>
            </attribute>
@@ -2352,7 +2456,7 @@
                 <number>5</number>
                </property>
                <item row="1" column="1">
-                <widget class="QComboBox" name="axis_3"/>
+                <widget class="QComboBox" name="axisCB_3"/>
                </item>
                <item row="0" column="5">
                 <widget class="QLabel" name="label_65">
@@ -2858,6 +2962,16 @@
                  </property>
                 </widget>
                </item>
+               <item row="1" column="2">
+                <widget class="QLabel" name="label_127">
+                 <property name="text">
+                  <string>ns</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
                <item row="0" column="1">
                 <widget class="QLineEdit" name="stepTime_3">
                  <property name="inputMask">
@@ -2898,16 +3012,6 @@
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="2">
-                <widget class="QLabel" name="label_127">
-                 <property name="text">
-                  <string>ns</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
                  </property>
                 </widget>
                </item>
@@ -2971,12 +3075,25 @@
                  </property>
                 </widget>
                </item>
+               <item row="0" column="3">
+                <spacer name="horizontalSpacer_7">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
               </layout>
              </widget>
             </item>
            </layout>
           </widget>
-          <widget class="QWidget" name="tab_5">
+          <widget class="QWidget" name="joint4tab">
            <attribute name="title">
             <string>Joint 4</string>
            </attribute>
@@ -3003,7 +3120,7 @@
                 <number>5</number>
                </property>
                <item row="1" column="1">
-                <widget class="QComboBox" name="axis_4"/>
+                <widget class="QComboBox" name="axisCB_4"/>
                </item>
                <item row="0" column="5">
                 <widget class="QLabel" name="label_66">
@@ -3621,6 +3738,19 @@
                   <set>Qt::AlignCenter</set>
                  </property>
                 </widget>
+               </item>
+               <item row="0" column="3">
+                <spacer name="horizontalSpacer_8">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
                </item>
               </layout>
              </widget>
@@ -4348,18 +4478,12 @@
  </widget>
  <layoutdefault spacing="5" margin="8"/>
  <tabstops>
-  <tabstop>tabWidget</tabstop>
   <tabstop>configName</tabstop>
   <tabstop>version</tabstop>
-  <tabstop>radioButton</tabstop>
-  <tabstop>radioButton_2</tabstop>
-  <tabstop>ipCombo</tabstop>
-  <tabstop>stepSpace</tabstop>
-  <tabstop>directionHold</tabstop>
-  <tabstop>directionSetup</tabstop>
+  <tabstop>ipAddressCB</tabstop>
   <tabstop>tabWidget_2</tabstop>
   <tabstop>stepper_0</tabstop>
-  <tabstop>axis_0</tabstop>
+  <tabstop>axisCB_0</tabstop>
   <tabstop>stepDir_0</tabstop>
   <tabstop>scale_0</tabstop>
   <tabstop>minLimit_0</tabstop>
@@ -4387,7 +4511,7 @@
   <tabstop>homeLatchVel_0</tabstop>
   <tabstop>homeIgnoreLimits_0</tabstop>
   <tabstop>stepper_1</tabstop>
-  <tabstop>axis_1</tabstop>
+  <tabstop>axisCB_1</tabstop>
   <tabstop>stepDir_1</tabstop>
   <tabstop>scale_1</tabstop>
   <tabstop>minLimit_1</tabstop>
@@ -4415,7 +4539,7 @@
   <tabstop>homeLatchVel_1</tabstop>
   <tabstop>homeIgnoreLimits_1</tabstop>
   <tabstop>stepper_2</tabstop>
-  <tabstop>axis_2</tabstop>
+  <tabstop>axisCB_2</tabstop>
   <tabstop>stepDir_2</tabstop>
   <tabstop>scale_2</tabstop>
   <tabstop>minLimit_2</tabstop>
@@ -4443,7 +4567,7 @@
   <tabstop>homeLatchVel_2</tabstop>
   <tabstop>homeIgnoreLimits_2</tabstop>
   <tabstop>stepper_3</tabstop>
-  <tabstop>axis_3</tabstop>
+  <tabstop>axisCB_3</tabstop>
   <tabstop>stepDir_3</tabstop>
   <tabstop>scale_3</tabstop>
   <tabstop>minLimit_3</tabstop>
@@ -4471,7 +4595,7 @@
   <tabstop>homeLatchVel_3</tabstop>
   <tabstop>homeIgnoreLimits_3</tabstop>
   <tabstop>stepper_4</tabstop>
-  <tabstop>axis_4</tabstop>
+  <tabstop>axisCB_4</tabstop>
   <tabstop>stepDir_4</tabstop>
   <tabstop>scale_4</tabstop>
   <tabstop>minLimit_4</tabstop>

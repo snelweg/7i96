@@ -5,8 +5,21 @@ def iniList():
 	iniList.append(['EMC', 'MACHINE', 'configName'])
 	iniList.append(['EMC', 'DEBUG', 'debugCombo'])
 
-	iniList.append(['HOSTMOT2', 'IPADDRESS', 'ipCombo'])
+	iniList.append(['HOSTMOT2', 'DRIVER', 'driverCB'])
+	iniList.append(['HOSTMOT2', 'IPADDRESS', 'ipAddressCB'])
+	iniList.append(['HOSTMOT2', 'BOARD', 'boardCB'])
+	iniList.append(['HOSTMOT2', 'STEPGENS', 'stepgensSB'])
+	iniList.append(['HOSTMOT2', 'ENCODERS', 'encodersSB'])
+	iniList.append(['HOSTMOT2', 'SSERIAL_PORT', 'sserialSB'])
 
+	iniList.append(['DISPLAY', 'DISPLAY', 'guiCB'])
+	iniList.append(['DISPLAY', 'POSITION_OFFSET', 'positionOffsetCB'])
+	iniList.append(['DISPLAY', 'POSITION_FEEDBACK', 'positionFeedbackCB'])
+
+	iniList.append(['TRAJ', 'LINEAR_UNITS', 'linearUnitsCB'])
+	iniList.append(['TRAJ', 'COORDINATES', 'coordinatesL'])
+
+	iniList.append(['JOINT_0', 'AXIS', 'axisCB_0'])
 	iniList.append(['JOINT_0', 'STEPLEN', 'stepTime_0'])
 	iniList.append(['JOINT_0', 'STEPSPACE', 'stepSpace_0'])
 	iniList.append(['JOINT_0', 'DIRSETUP', 'dirSetup_0'])
@@ -33,6 +46,7 @@ def iniList():
 	iniList.append(['JOINT_0', 'MAX_OUTPUT', 'maxOutput_0'])
 	iniList.append(['JOINT_0', 'MAX_ERROR', 'maxError_0'])
 
+	iniList.append(['JOINT_1', 'AXIS', 'axisCB_1'])
 	iniList.append(['JOINT_1', 'STEPLEN', 'stepTime_1'])
 	iniList.append(['JOINT_1', 'STEPSPACE', 'stepSpace_1'])
 	iniList.append(['JOINT_1', 'DIRSETUP', 'dirSetup_1'])
@@ -59,6 +73,7 @@ def iniList():
 	iniList.append(['JOINT_1', 'MAX_OUTPUT', 'maxOutput_1'])
 	iniList.append(['JOINT_1', 'MAX_ERROR', 'maxError_1'])
 
+	iniList.append(['JOINT_2', 'AXIS', 'axisCB_2'])
 	iniList.append(['JOINT_2', 'STEPLEN', 'stepTime_2'])
 	iniList.append(['JOINT_2', 'STEPSPACE', 'stepSpace_2'])
 	iniList.append(['JOINT_2', 'DIRSETUP', 'dirSetup_2'])
@@ -85,6 +100,7 @@ def iniList():
 	iniList.append(['JOINT_2', 'MAX_OUTPUT', 'maxOutput_2'])
 	iniList.append(['JOINT_2', 'MAX_ERROR', 'maxError_2'])
 
+	iniList.append(['JOINT_3', 'AXIS', 'axisCB_3'])
 	iniList.append(['JOINT_3', 'STEPLEN', 'stepTime_3'])
 	iniList.append(['JOINT_3', 'STEPSPACE', 'stepSpace_3'])
 	iniList.append(['JOINT_3', 'DIRSETUP', 'dirSetup_3'])
@@ -111,6 +127,7 @@ def iniList():
 	iniList.append(['JOINT_3', 'MAX_OUTPUT', 'maxOutput_3'])
 	iniList.append(['JOINT_3', 'MAX_ERROR', 'maxError_3'])
 
+	iniList.append(['JOINT_4', 'AXIS', 'axisCB_4'])
 	iniList.append(['JOINT_4', 'STEPLEN', 'stepTime_4'])
 	iniList.append(['JOINT_4', 'STEPSPACE', 'stepSpace_4'])
 	iniList.append(['JOINT_4', 'DIRSETUP', 'dirSetup_4'])
