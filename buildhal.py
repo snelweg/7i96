@@ -30,7 +30,7 @@ def buildhal(parent):
 	halContents.append('addf motion-command-handler servo-thread\n')
 	halContents.append('addf motion-controller servo-thread\n')
 	halContents.append('addf pid.0.do-pid-calcs servo-thread\n')
-	halContents.append('addf hm2_[HOSTMOT2](BOARD).0.write servo-thread\n')
+	halContents.append('addf hm2_[HOSTMOT2](BOARD).0.write servo-thread\n\n')
 	for index in range(len(parent.coordinatesL.text())):
 		halContents.append('# Joint {0}\n\n'.format(str(index)))
 		halContents.append('# axis enable chain\n')
@@ -42,8 +42,18 @@ def buildhal(parent):
 		halContents.append('net emcmot.{0}.pos-cmd joint.{0}.motor-pos-cmd => pid.{0}.command\n'.format(str(index)))
 		halContents.append('net emcmot.{0}.vel-cmd joint.{0}.vel-cmd => pid.{0}.command-deriv\n'.format(str(index)))
 		halContents.append('net motor.{0}.pos-fb <= hm2_[HOSTMOT2](BOARD).0.stepgen.0{0}.position-fb joint.{0}.motor-pos-fb pid.{0}.feedback\n'.format(str(index)))
-		halContents.append('net motor.{0}.command pid.{0}.output hm2_[HOSTMOT2](BOARD).0.stepgen.0{0}.velocity-cmd\n'.format(str(index)))
+		halContents.append('net motor.{0}.command pid.{0}.output hm2_[HOSTMOT2](BOARD).0.stepgen.0{0}.velocity-cmd\n\n'.format(str(index)))
 		halContents.append('setp pid.{0}.error-previous-target true\n'.format(str(index)))
+		halContents.append('setp pid.0.Pgain [JOINT_{}]P\n'.format(str(index)))
+		halContents.append('setp pid.0.Igain [JOINT_{}]I\n'.format(str(index)))
+		halContents.append('setp pid.0.Dgain [JOINT_{}]D\n'.format(str(index)))
+		halContents.append('setp pid.0.bias [JOINT_{}]BIAS\n'.format(str(index)))
+		halContents.append('setp pid.0.FF0 [JOINT_{}]FF0\n'.format(str(index)))
+		halContents.append('setp pid.0.FF1 [JOINT_{}]FF1\n'.format(str(index)))
+		halContents.append('setp pid.0.FF2 [JOINT_{}]FF2\n'.format(str(index)))
+		halContents.append('setp pid.0.deadband [JOINT_{}]DEADBAND\n'.format(str(index)))
+		halContents.append('setp pid.0.maxoutput [JOINT_{}]MAX_OUTPUT\n'.format(str(index)))
+		halContents.append('setp pid.0.maxerror [JOINT_{}]MAX_ERROR\n'.format(str(index)))
 
 		halContents.append('\n')
 
