@@ -73,11 +73,11 @@ class MainWindow(QMainWindow):
 
 	def setupConnections(self):
 		self.configName.textChanged[str].connect(self.onConfigNameChanged)
-		self.axisCB_0.activated.connect(self.onAxisChanged)
-		self.axisCB_1.activated.connect(self.onAxisChanged)
-		self.axisCB_2.activated.connect(self.onAxisChanged)
-		self.axisCB_3.activated.connect(self.onAxisChanged)
-		self.axisCB_4.activated.connect(self.onAxisChanged)
+		self.axisCB_0.currentIndexChanged.connect(self.onAxisChanged)
+		self.axisCB_1.currentIndexChanged.connect(self.onAxisChanged)
+		self.axisCB_2.currentIndexChanged.connect(self.onAxisChanged)
+		self.axisCB_3.currentIndexChanged.connect(self.onAxisChanged)
+		self.axisCB_4.currentIndexChanged.connect(self.onAxisChanged)
 
 	def onConfigNameChanged(self, text):
 		# update the iniDictionary when text is changed
@@ -92,7 +92,13 @@ class MainWindow(QMainWindow):
 		coordList = []
 		for item in self.axisList:
 			if getattr(self,item).itemData(getattr(self,item).currentIndex()):
-				coordList.append(getattr(self,item).itemData(getattr(self,item).currentIndex()))
+				jointTab = getattr(self,item).objectName()[7]
+				axisLetter = getattr(self,item).itemData(getattr(self,item).currentIndex())
+				coordList.append(axisLetter)
+				if axisLetter in ['X', 'Y', 'Z']:
+					getattr(self, 'axisType_' + jointTab).setText('LINEAR')
+				else:
+					getattr(self, 'axisType_' + jointTab).setText('ANGULAR')
 		self.coordinatesL.setText(''.join(coordList))
 
 

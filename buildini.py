@@ -166,150 +166,130 @@ def buildini(parent):
 			iniContents.append('MAX_ACCELERATION = {}\n'.format(getattr(parent, 'maxAccel_' + jointTab).text()))
 			break
 
+	# build the [JOINT_0] section
+	if parent.axisCB_0.itemData(parent.axisCB_0.currentIndex()):
+		iniContents.append('\n[JOINT_0]\n')
+		iniContents.append('TYPE = {}\n'.format(parent.axisType_0.text()))
+		iniContents.append('SCALE = {}\n'.format(str(parent.scale_0.value())))
+		iniContents.append('STEPGEN_MAX_VEL = {}\n'.format(str(int(parent.maxVelocity_0.text()) * 1.2)))
+		iniContents.append('STEPGEN_MAX_ACC = {}\n'.format(str(int(parent.maxAccel_0.text()) * 1.2)))
+		iniContents.append('FERROR = {}\n'.format('0.0002'))
+		iniContents.append('MIN_FERROR = {}\n'.format('0.0001'))
+		iniContents.append('DIRSETUP = {}\n'.format(parent.dirSetup_0.text()))
+		iniContents.append('DIRHOLD = {}\n'.format(parent.dirHold_0.text()))
+		iniContents.append('STEPLEN = {}\n'.format(parent.stepTime_0.text()))
+		iniContents.append('STEPSPACE = {}\n'.format(parent.stepSpace_0.text()))
+		iniContents.append('DEADBAND = {}\n'.format(parent.deadband_0.text()))
+		iniContents.append('P = {}\n'.format(parent.p_0.text()))
+		iniContents.append('I = {}\n'.format(parent.i_0.text()))
+		iniContents.append('D = {}\n'.format(parent.d_0.text()))
+		iniContents.append('FF0 = {}\n'.format(parent.ff0_0.text()))
+		iniContents.append('FF1 = {}\n'.format(parent.ff1_0.text()))
+		iniContents.append('FF2 = {}\n'.format(parent.ff2_0.text()))
+		iniContents.append('BIAS = {}\n'.format(parent.bias_0.text()))
+		iniContents.append('MAX_OUTPUT = {}\n'.format(parent.maxOutput_0.text()))
+		iniContents.append('MAX_ERROR = {}\n'.format(parent.maxError_0.text()))
+
+	# build the [JOINT_1] section
+	if parent.axisCB_1.itemData(parent.axisCB_1.currentIndex()):
+		iniContents.append('\n[JOINT_1]\n')
+		iniContents.append('TYPE = {}\n'.format(parent.axisType_1.text()))
+		iniContents.append('SCALE = {}\n'.format(str(parent.scale_1.value())))
+		iniContents.append('STEPGEN_MAX_VEL = {}\n'.format(str(int(parent.maxVelocity_1.text()) * 1.2)))
+		iniContents.append('STEPGEN_MAX_ACC = {}\n'.format(str(int(parent.maxAccel_1.text()) * 1.2)))
+		iniContents.append('FERROR = {}\n'.format('0.0002'))
+		iniContents.append('MIN_FERROR = {}\n'.format('0.0001'))
+		iniContents.append('DIRSETUP = {}\n'.format(parent.dirSetup_1.text()))
+		iniContents.append('DIRHOLD = {}\n'.format(parent.dirHold_1.text()))
+		iniContents.append('STEPLEN = {}\n'.format(parent.stepTime_1.text()))
+		iniContents.append('STEPSPACE = {}\n'.format(parent.stepSpace_1.text()))
+		iniContents.append('DEADBAND = {}\n'.format(parent.deadband_1.text()))
+		iniContents.append('P = {}\n'.format(parent.p_1.text()))
+		iniContents.append('I = {}\n'.format(parent.i_1.text()))
+		iniContents.append('D = {}\n'.format(parent.d_1.text()))
+		iniContents.append('FF1 = {}\n'.format(parent.ff0_1.text()))
+		iniContents.append('FF1 = {}\n'.format(parent.ff1_1.text()))
+		iniContents.append('FF2 = {}\n'.format(parent.ff2_1.text()))
+		iniContents.append('BIAS = {}\n'.format(parent.bias_1.text()))
+		iniContents.append('MAX_OUTPUT = {}\n'.format(parent.maxOutput_1.text()))
+		iniContents.append('MAX_ERROR = {}\n'.format(parent.maxError_1.text()))
+
+	# build the [JOINT_2] section
+	if parent.axisCB_2.itemData(parent.axisCB_2.currentIndex()):
+		iniContents.append('\n[JOINT_2]\n')
+		iniContents.append('TYPE = {}\n'.format(parent.axisType_2.text()))
+		iniContents.append('SCALE = {}\n'.format(str(parent.scale_2.value())))
+		iniContents.append('STEPGEN_MAX_VEL = {}\n'.format(str(int(parent.maxVelocity_2.text()) * 1.2)))
+		iniContents.append('STEPGEN_MAX_ACC = {}\n'.format(str(int(parent.maxAccel_2.text()) * 1.2)))
+		iniContents.append('FERROR = {}\n'.format('0.0002'))
+		iniContents.append('MIN_FERROR = {}\n'.format('0.0001'))
+		iniContents.append('DIRSETUP = {}\n'.format(parent.dirSetup_2.text()))
+		iniContents.append('DIRHOLD = {}\n'.format(parent.dirHold_2.text()))
+		iniContents.append('STEPLEN = {}\n'.format(parent.stepTime_2.text()))
+		iniContents.append('STEPSPACE = {}\n'.format(parent.stepSpace_2.text()))
+		iniContents.append('DEADBAND = {}\n'.format(parent.deadband_2.text()))
+		iniContents.append('P = {}\n'.format(parent.p_2.text()))
+		iniContents.append('I = {}\n'.format(parent.i_2.text()))
+		iniContents.append('D = {}\n'.format(parent.d_2.text()))
+		iniContents.append('FF1 = {}\n'.format(parent.ff0_2.text()))
+		iniContents.append('FF1 = {}\n'.format(parent.ff1_2.text()))
+		iniContents.append('FF2 = {}\n'.format(parent.ff2_2.text()))
+		iniContents.append('BIAS = {}\n'.format(parent.bias_2.text()))
+		iniContents.append('MAX_OUTPUT = {}\n'.format(parent.maxOutput_2.text()))
+		iniContents.append('MAX_ERROR = {}\n'.format(parent.maxError_2.text()))
+
+	# build the [JOINT_3] section
+	if parent.axisCB_3.itemData(parent.axisCB_3.currentIndex()):
+		iniContents.append('\n[JOINT_3]\n')
+		iniContents.append('TYPE = {}\n'.format(parent.axisType_3.text()))
+		iniContents.append('SCALE = {}\n'.format(str(parent.scale_3.value())))
+		iniContents.append('STEPGEN_MAX_VEL = {}\n'.format(str(int(parent.maxVelocity_3.text()) * 1.2)))
+		iniContents.append('STEPGEN_MAX_ACC = {}\n'.format(str(int(parent.maxAccel_3.text()) * 1.2)))
+		iniContents.append('FERROR = {}\n'.format('0.0002'))
+		iniContents.append('MIN_FERROR = {}\n'.format('0.0001'))
+		iniContents.append('DIRSETUP = {}\n'.format(parent.dirSetup_3.text()))
+		iniContents.append('DIRHOLD = {}\n'.format(parent.dirHold_3.text()))
+		iniContents.append('STEPLEN = {}\n'.format(parent.stepTime_3.text()))
+		iniContents.append('STEPSPACE = {}\n'.format(parent.stepSpace_3.text()))
+		iniContents.append('DEADBAND = {}\n'.format(parent.deadband_3.text()))
+		iniContents.append('P = {}\n'.format(parent.p_3.text()))
+		iniContents.append('I = {}\n'.format(parent.i_3.text()))
+		iniContents.append('D = {}\n'.format(parent.d_3.text()))
+		iniContents.append('FF1 = {}\n'.format(parent.ff0_3.text()))
+		iniContents.append('FF1 = {}\n'.format(parent.ff1_3.text()))
+		iniContents.append('FF2 = {}\n'.format(parent.ff2_3.text()))
+		iniContents.append('BIAS = {}\n'.format(parent.bias_3.text()))
+		iniContents.append('MAX_OUTPUT = {}\n'.format(parent.maxOutput_3.text()))
+		iniContents.append('MAX_ERROR = {}\n'.format(parent.maxError_3.text()))
+
+	# build the [JOINT_4] section
+	if parent.axisCB_4.itemData(parent.axisCB_4.currentIndex()):
+		iniContents.append('\n[JOINT_4]\n')
+		iniContents.append('TYPE = {}\n'.format(parent.axisType_4.text()))
+		iniContents.append('SCALE = {}\n'.format(str(parent.scale_4.value())))
+		iniContents.append('STEPGEN_MAX_VEL = {}\n'.format(str(int(parent.maxVelocity_4.text()) * 1.2)))
+		iniContents.append('STEPGEN_MAX_ACC = {}\n'.format(str(int(parent.maxAccel_4.text()) * 1.2)))
+		iniContents.append('FERROR = {}\n'.format('0.0002'))
+		iniContents.append('MIN_FERROR = {}\n'.format('0.0001'))
+		iniContents.append('DIRSETUP = {}\n'.format(parent.dirSetup_4.text()))
+		iniContents.append('DIRHOLD = {}\n'.format(parent.dirHold_4.text()))
+		iniContents.append('STEPLEN = {}\n'.format(parent.stepTime_4.text()))
+		iniContents.append('STEPSPACE = {}\n'.format(parent.stepSpace_4.text()))
+		iniContents.append('DEADBAND = {}\n'.format(parent.deadband_4.text()))
+		iniContents.append('P = {}\n'.format(parent.p_4.text()))
+		iniContents.append('I = {}\n'.format(parent.i_4.text()))
+		iniContents.append('D = {}\n'.format(parent.d_4.text()))
+		iniContents.append('FF1 = {}\n'.format(parent.ff0_4.text()))
+		iniContents.append('FF1 = {}\n'.format(parent.ff1_4.text()))
+		iniContents.append('FF2 = {}\n'.format(parent.ff2_4.text()))
+		iniContents.append('BIAS = {}\n'.format(parent.bias_4.text()))
+		iniContents.append('MAX_OUTPUT = {}\n'.format(parent.maxOutput_4.text()))
+		iniContents.append('MAX_ERROR = {}\n'.format(parent.maxError_4.text()))
+
 	with open(iniFilePath, 'w') as iniFile:
 		iniFile.writelines(iniContents)
 	buildini.result = 'Sucess {} file was created'.format(iniFilePath)
 	return True
-	"""
-
-
-	if data['RS274NGC']['RS274NGC_STARTUP_CODE']:
-		iniContents.append('RS274NGC_STARTUP_CODE = {}\n'.format(data['RS274NGC']['RS274NGC_STARTUP_CODE']))
-	if data['RS274NGC']['SUBROUTINE_PATH']:
-		iniContents.append('SUBROUTINE_PATH = {}\n'.format(data['RS274NGC']['SUBROUTINE_PATH']))
-	if data['RS274NGC']['USER_M_PATH']:
-		iniContents.append('USER_M_PATH = {}\n'.format(data['RS274NGC']['USER_M_PATH']))
-
-	# build the [TRAJ] section
-	iniContents.append('\n[TRAJ]\n')
-	iniContents.append('COORDINATES = {}\n'.format(data['TRAJ']['COORDINATES']))
-	iniContents.append('LINEAR_UNITS = {}\n'.format(data['TRAJ']['LINEAR_UNITS']))
-	iniContents.append('ANGULAR_UNITS = {}\n'.format(data['TRAJ']['ANGULAR_UNITS']))
-
-	if data['HAL']['HALUI']:
-		iniContents.append('HALUI = {}\n'.format(data['HAL']['HALUI']))
-	if data['HAL']['POSTGUI_HALFILE']:
-		iniContents.append('POSTGUI_HALFILE = {}\n'.format(data['HAL']['POSTGUI_HALFILE']))
-	if data['HAL']['SHUTDOWN']:
-		iniContents.append('SHUTDOWN = {}\n'.format(data['HAL']['SHUTDOWN']))
-
-
-	if data['HALUI']['MDI_COMMAND']:
-		iniContents.append('MDI_COMMAND = {}\n'.format(data['HALUI']['MDI_COMMAND']))
-
-	# build the [JOINT_0] section
-	if data['JOINT_0']['ENABLED']:
-		iniContents.append('\n[JOINT_0]\n')
-		iniContents.append('AXIS = {}\n'.format(data['JOINT_0']['AXIS']))
-		iniContents.append('SCALE = {}\n'.format(data['JOINT_0']['SCALE']))
-
-	# build the [JOINT_1] section
-	if data['JOINT_1']['ENABLED']:
-		iniContents.append('\n[JOINT_1]\n')
-		iniContents.append('AXIS = {}\n'.format(data['JOINT_1']['AXIS']))
-		iniContents.append('SCALE = {}\n'.format(data['JOINT_1']['SCALE']))
-
-	# build the [JOINT_2] section
-	if data['JOINT_2']['ENABLED']:
-		iniContents.append('\n[JOINT_2]\n')
-		iniContents.append('AXIS = {}\n'.format(data['JOINT_2']['AXIS']))
-		iniContents.append('SCALE = {}\n'.format(data['JOINT_2']['SCALE']))
-
-	# build the [JOINT_3] section
-	if data['JOINT_3']['ENABLED']:
-		iniContents.append('\n[JOINT_3]\n')
-		iniContents.append('AXIS = {}\n'.format(data['JOINT_3']['AXIS']))
-		iniContents.append('SCALE = {}\n'.format(data['JOINT_3']['SCALE']))
-
-	# build the [JOINT_4] section
-	if data['JOINT_4']['ENABLED']:
-		iniContents.append('\n[JOINT_4]\n')
-		iniContents.append('AXIS = {}\n'.format(data['JOINT_4']['AXIS']))
-		iniContents.append('SCALE = {}\n'.format(data['JOINT_4']['SCALE']))
-
-	# build the [AXIS_X] section
-	if data['AXIS_X']['ENABLED']:
-		iniContents.append('\n[AXIS_X]\n')
-		iniContents.append('MIN_LIMIT = {}\n'.format(data['AXIS_X']['MIN_LIMIT']))
-		iniContents.append('MAX_LIMIT = {}\n'.format(data['AXIS_X']['MAX_LIMIT']))
-		iniContents.append('MAX_VELOCITY = {}\n'.format(data['AXIS_X']['MAX_VELOCITY']))
-		iniContents.append('MAX_ACCELERATION = {}\n'.format(data['AXIS_X']['MAX_ACCELERATION']))
-
-	# build the [AXIS_Y] section
-	if data['AXIS_Y']['ENABLED']:
-		iniContents.append('\n[AXIS_Y]\n')
-		iniContents.append('MIN_LIMIT = {}\n'.format(data['AXIS_Y']['MIN_LIMIT']))
-		iniContents.append('MAX_LIMIT = {}\n'.format(data['AXIS_Y']['MAX_LIMIT']))
-		iniContents.append('MAX_VELOCITY = {}\n'.format(data['AXIS_Y']['MAX_VELOCITY']))
-		iniContents.append('MAX_ACCELERATION = {}\n'.format(data['AXIS_Y']['MAX_ACCELERATION']))
-
-	# build the [AXIS_Z] section
-	if data['AXIS_Z']['ENABLED']:
-		iniContents.append('\n[AXIS_Z]\n')
-		iniContents.append('MIN_LIMIT = {}\n'.format(data['AXIS_Z']['MIN_LIMIT']))
-		iniContents.append('MAX_LIMIT = {}\n'.format(data['AXIS_Z']['MAX_LIMIT']))
-		iniContents.append('MAX_VELOCITY = {}\n'.format(data['AXIS_Z']['MAX_VELOCITY']))
-		iniContents.append('MAX_ACCELERATION = {}\n'.format(data['AXIS_Z']['MAX_ACCELERATION']))
-
-	# build the [AXIS_A] section
-	if data['AXIS_A']['ENABLED']:
-		iniContents.append('\n[AXIS_A]\n')
-		iniContents.append('MIN_LIMIT = {}\n'.format(data['AXIS_A']['MIN_LIMIT']))
-		iniContents.append('MAX_LIMIT = {}\n'.format(data['AXIS_A']['MAX_LIMIT']))
-		iniContents.append('MAX_VELOCITY = {}\n'.format(data['AXIS_A']['MAX_VELOCITY']))
-		iniContents.append('MAX_ACCELERATION = {}\n'.format(data['AXIS_A']['MAX_ACCELERATION']))
-
-	# build the [AXIS_B] section
-	if data['AXIS_B']['ENABLED']:
-		iniContents.append('\n[AXIS_B]\n')
-		iniContents.append('MIN_LIMIT = {}\n'.format(data['AXIS_B']['MIN_LIMIT']))
-		iniContents.append('MAX_LIMIT = {}\n'.format(data['AXIS_B']['MAX_LIMIT']))
-		iniContents.append('MAX_VELOCITY = {}\n'.format(data['AXIS_B']['MAX_VELOCITY']))
-		iniContents.append('MAX_ACCELERATION = {}\n'.format(data['AXIS_B']['MAX_ACCELERATION']))
-
-	# build the [AXIS_C] section
-	if data['AXIS_C']['ENABLED']:
-		iniContents.append('\n[AXIS_C]\n')
-		iniContents.append('MIN_LIMIT = {}\n'.format(data['AXIS_C']['MIN_LIMIT']))
-		iniContents.append('MAX_LIMIT = {}\n'.format(data['AXIS_C']['MAX_LIMIT']))
-		iniContents.append('MAX_VELOCITY = {}\n'.format(data['AXIS_C']['MAX_VELOCITY']))
-		iniContents.append('MAX_ACCELERATION = {}\n'.format(data['AXIS_C']['MAX_ACCELERATION']))
-
-	# build the [AXIS_U] section
-
-	# build the [AXIS_V] section
-
-	# build the [AXIS_W] section
-"""
-
-
-	#print(iniFileName)
-	# for now just write over the file if it exists.
-	# fuck the configparser just fucking write the file...
-	
-	#config = configparser.ConfigParser(strict=False, allow_no_value=True)
-	#config.optionxform = str
-	#config.sections()
-	#config['INFORMATION'] = '# This file was created by the 7i96 Wizard'
-	#config['EMC'] = {'MACHINE' : data['EMC']['MACHINE'],
-	#								'DEBUG' : '0x00000000'}
-
-	#with open(iniFileName, 'w') as configfile:
-	#	config.write(configfile)
-
-	#print(data['EMC']['MACHINE'])
-	
-	
-
-
-
-	"""
-	if data['EMC']['MACHINE']: # might just check this before calling buildini
-	
-	iniContents.append('\n[]\n')
-	iniContents.append(' = \n'.format(data['']['']))
-
-"""
 
 def buildHal(data, path, name):
 	halFileName = os.path.join(path, name + '.hal')
@@ -346,5 +326,5 @@ def buildHal(data, path, name):
 	with open(halFileName, 'w') as iniFile:
 		iniFile.writelines(halContents)
 
-	buildHal.result = ''	
+	buildHal.result = ''
 	return True

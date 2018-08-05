@@ -371,7 +371,7 @@
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_2">
         <item>
-         <widget class="QTabWidget" name="tabWidget_2">
+         <widget class="QTabWidget" name="jointType_3">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -552,13 +552,20 @@
                  </property>
                 </widget>
                </item>
-               <item row="1" column="2">
-                <widget class="QComboBox" name="stepgen_0"/>
-               </item>
                <item row="0" column="2">
                 <widget class="QLabel" name="label_4">
                  <property name="text">
-                  <string>StepGen</string>
+                  <string>Axis Type</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="2">
+                <widget class="QLabel" name="axisType_0">
+                 <property name="frameShape">
+                  <enum>QFrame::Box</enum>
+                 </property>
+                 <property name="text">
+                  <string/>
                  </property>
                 </widget>
                </item>
@@ -1263,12 +1270,19 @@
                <item row="0" column="2">
                 <widget class="QLabel" name="label_5">
                  <property name="text">
-                  <string>StepGen</string>
+                  <string>Axis Type</string>
                  </property>
                 </widget>
                </item>
                <item row="1" column="2">
-                <widget class="QComboBox" name="stepgen_1"/>
+                <widget class="QLabel" name="axisType_1">
+                 <property name="frameShape">
+                  <enum>QFrame::Box</enum>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                </widget>
                </item>
               </layout>
              </widget>
@@ -1924,13 +1938,20 @@
                  </property>
                 </widget>
                </item>
-               <item row="1" column="2">
-                <widget class="QComboBox" name="stepgen_2"/>
-               </item>
                <item row="0" column="2">
                 <widget class="QLabel" name="label_6">
                  <property name="text">
-                  <string>StepGen</string>
+                  <string>Axis Type</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="2">
+                <widget class="QLabel" name="axisType_2">
+                 <property name="frameShape">
+                  <enum>QFrame::Box</enum>
+                 </property>
+                 <property name="text">
+                  <string/>
                  </property>
                 </widget>
                </item>
@@ -2588,13 +2609,20 @@
                  </property>
                 </widget>
                </item>
-               <item row="1" column="2">
-                <widget class="QComboBox" name="stepgen_3"/>
-               </item>
                <item row="0" column="2">
                 <widget class="QLabel" name="label_7">
                  <property name="text">
-                  <string>StepGen</string>
+                  <string>Axis Type</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="2">
+                <widget class="QLabel" name="axisType_3">
+                 <property name="frameShape">
+                  <enum>QFrame::Box</enum>
+                 </property>
+                 <property name="text">
+                  <string/>
                  </property>
                 </widget>
                </item>
@@ -3252,13 +3280,20 @@
                  </property>
                 </widget>
                </item>
-               <item row="1" column="2">
-                <widget class="QComboBox" name="stepgen_4"/>
-               </item>
                <item row="0" column="2">
                 <widget class="QLabel" name="label_31">
                  <property name="text">
-                  <string>StepGen</string>
+                  <string>Axis Type</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="2">
+                <widget class="QLabel" name="axisType_4">
+                 <property name="frameShape">
+                  <enum>QFrame::Box</enum>
+                 </property>
+                 <property name="text">
+                  <string/>
                  </property>
                 </widget>
                </item>
@@ -4481,7 +4516,7 @@
   <tabstop>configName</tabstop>
   <tabstop>version</tabstop>
   <tabstop>ipAddressCB</tabstop>
-  <tabstop>tabWidget_2</tabstop>
+  <tabstop>jointType_3</tabstop>
   <tabstop>stepper_0</tabstop>
   <tabstop>axisCB_0</tabstop>
   <tabstop>stepDir_0</tabstop>
