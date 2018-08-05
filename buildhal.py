@@ -47,14 +47,10 @@ def buildhal(parent):
 
 		halContents.append('\n')
 
-
 	"""
 		halContents.append('\n')
 		halContents.append('\n'.format(str(index)))
 	"""
-
-
-
 
 	halContents.append('# Standard I/O Block - EStop, Etc\n\n')
 	halContents.append('# create a signal for the estop loopback\n')
@@ -63,16 +59,30 @@ def buildhal(parent):
 	halContents.append('net tool-prep-loop iocontrol.0.tool-prepare => iocontrol.0.tool-prepared\n')
 	halContents.append('net tool-change-loop iocontrol.0.tool-change => iocontrol.0.tool-changed\n')
 
-
-
-
-
-
-
-
-
-
 	with open(halFilePath, 'w') as halFile:
 		halFile.writelines(halContents)
 	return True
 
+def buildtool(parent):
+	configPath = os.path.join(parent.configsDir, parent.configName.text())
+	toolFilePath = os.path.join(configPath, parent.configName.text() + '.tbl')
+	toolContents = []
+	toolContents = [';\n']
+	toolContents.append('T1 P1\n')
+	try:
+		with open(toolFilePath, 'x') as toolFile:
+			toolFile.writelines(toolContents)
+	except FileExistsError:
+		pass
+
+	return True
+
+def buildvar(parent): #just create an empty file if it does not exist
+	configPath = os.path.join(parent.configsDir, parent.configName.text())
+	varFilePath = os.path.join(configPath, parent.configName.text() + '.var')
+	try:
+		open(varFilePath, 'x')
+	except FileExistsError:
+		pass
+
+	return True
