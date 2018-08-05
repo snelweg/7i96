@@ -18,6 +18,8 @@ def iniList():
 
 	iniList.append(['TRAJ', 'LINEAR_UNITS', 'linearUnitsCB'])
 	iniList.append(['TRAJ', 'COORDINATES', 'coordinatesL'])
+	iniList.append(['TRAJ', 'MAX_LINEAR_VELOCITY', 'maxLinearVelocity'])
+
 
 	iniList.append(['JOINT_0', 'AXIS', 'axisCB_0'])
 	iniList.append(['JOINT_0', 'STEPLEN', 'stepTime_0'])

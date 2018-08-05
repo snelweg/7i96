@@ -68,6 +68,7 @@ def buildini(parent):
 	iniContents.append('COORDINATES = {}\n'.format(parent.coordinatesL.text()))
 	iniContents.append('LINEAR_UNITS = {}\n'.format(parent.linearUnitsCB.itemData(parent.linearUnitsCB.currentIndex())))
 	iniContents.append('ANGULAR_UNITS = {}\n'.format(parent.angularUnitsCB.itemData(parent.angularUnitsCB.currentIndex())))
+	iniContents.append('MAX_LINEAR_VELOCITY = {}\n'.format(parent.maxLinearVelocity.text()))
 
 	# build the [HAL] section
 	iniContents.append('\n[HAL]\n')
