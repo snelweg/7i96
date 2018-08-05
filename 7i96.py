@@ -21,6 +21,7 @@ class MainWindow(QMainWindow):
 		self.configNameUnderscored = ''
 		self.checkConfig = checkit.config
 		self.buildini = buildini.buildini
+		self.buildhal = buildhal.buildhal
 		self.buildCB()
 		self.setupConnections()
 		self.axisList = ['axisCB_0', 'axisCB_1', 'axisCB_2', 'axisCB_3', 'axisCB_4']
@@ -62,6 +63,7 @@ class MainWindow(QMainWindow):
 	@pyqtSlot()
 	def on_actionBuild_triggered(self):
 		self.buildini(self)
+		self.buildhal(self)
 
 	@pyqtSlot()
 	def on_actionSaveAs_triggered(self):
