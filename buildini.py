@@ -76,34 +76,95 @@ def buildini(parent):
 	# build the [HALUI] section
 	iniContents.append('\n[HALUI]\n')
 
-	if 'X' in parent.coordinatesL.text():
-		iniContents.append('\n[AXIS_X]\n')
+	for item in parent.axisList:
+		if getattr(parent,item).itemData(getattr(parent,item).currentIndex()) == 'X':
+			jointTab = getattr(parent,item).objectName()[7]
+			iniContents.append('\n[AXIS_X]\n')
+			iniContents.append('MIN_LIMIT = {}\n'.format(getattr(parent, 'minLimit_' + jointTab).text()))
+			iniContents.append('MAX_LIMIT = {}\n'.format(getattr(parent, 'maxLimit_' + jointTab).text()))
+			iniContents.append('MAX_VELOCITY = {}\n'.format(getattr(parent, 'maxVelocity_' + jointTab).text()))
+			iniContents.append('MAX_ACCELERATION = {}\n'.format(getattr(parent, 'maxAccel_' + jointTab).text()))
+			break
 
-	if 'Y' in parent.coordinatesL.text():
-		iniContents.append('\n[AXIS_Y]\n')
+	for item in parent.axisList:
+		if getattr(parent,item).itemData(getattr(parent,item).currentIndex()) == 'Y':
+			jointTab = getattr(parent,item).objectName()[7]
+			iniContents.append('\n[AXIS_Y]\n')
+			iniContents.append('MIN_LIMIT = {}\n'.format(getattr(parent, 'minLimit_' + jointTab).text()))
+			iniContents.append('MAX_LIMIT = {}\n'.format(getattr(parent, 'maxLimit_' + jointTab).text()))
+			iniContents.append('MAX_VELOCITY = {}\n'.format(getattr(parent, 'maxVelocity_' + jointTab).text()))
+			iniContents.append('MAX_ACCELERATION = {}\n'.format(getattr(parent, 'maxAccel_' + jointTab).text()))
+			break
 
-	if 'Z' in parent.coordinatesL.text():
-		iniContents.append('\n[AXIS_Z]\n')
+	for item in parent.axisList:
+		if getattr(parent,item).itemData(getattr(parent,item).currentIndex()) == 'Z':
+			jointTab = getattr(parent,item).objectName()[7]
+			iniContents.append('\n[AXIS_Z]\n')
+			iniContents.append('MIN_LIMIT = {}\n'.format(getattr(parent, 'minLimit_' + jointTab).text()))
+			iniContents.append('MAX_LIMIT = {}\n'.format(getattr(parent, 'maxLimit_' + jointTab).text()))
+			iniContents.append('MAX_VELOCITY = {}\n'.format(getattr(parent, 'maxVelocity_' + jointTab).text()))
+			iniContents.append('MAX_ACCELERATION = {}\n'.format(getattr(parent, 'maxAccel_' + jointTab).text()))
+			break
 
-	if 'A' in parent.coordinatesL.text():
-		iniContents.append('\n[AXIS_A]\n')
+	for item in parent.axisList:
+		if getattr(parent,item).itemData(getattr(parent,item).currentIndex()) == 'A':
+			jointTab = getattr(parent,item).objectName()[7]
+			iniContents.append('\n[AXIS_A]\n')
+			iniContents.append('MIN_LIMIT = {}\n'.format(getattr(parent, 'minLimit_' + jointTab).text()))
+			iniContents.append('MAX_LIMIT = {}\n'.format(getattr(parent, 'maxLimit_' + jointTab).text()))
+			iniContents.append('MAX_VELOCITY = {}\n'.format(getattr(parent, 'maxVelocity_' + jointTab).text()))
+			iniContents.append('MAX_ACCELERATION = {}\n'.format(getattr(parent, 'maxAccel_' + jointTab).text()))
+			break
 
-	if 'B' in parent.coordinatesL.text():
-		iniContents.append('\n[AXIS_B]\n')
+	for item in parent.axisList:
+		if getattr(parent,item).itemData(getattr(parent,item).currentIndex()) == 'B':
+			jointTab = getattr(parent,item).objectName()[7]
+			iniContents.append('\n[AXIS_B]\n')
+			iniContents.append('MIN_LIMIT = {}\n'.format(getattr(parent, 'minLimit_' + jointTab).text()))
+			iniContents.append('MAX_LIMIT = {}\n'.format(getattr(parent, 'maxLimit_' + jointTab).text()))
+			iniContents.append('MAX_VELOCITY = {}\n'.format(getattr(parent, 'maxVelocity_' + jointTab).text()))
+			iniContents.append('MAX_ACCELERATION = {}\n'.format(getattr(parent, 'maxAccel_' + jointTab).text()))
+			break
 
-	if 'C' in parent.coordinatesL.text():
-		iniContents.append('\n[AXIS_C]\n')
+	for item in parent.axisList:
+		if getattr(parent,item).itemData(getattr(parent,item).currentIndex()) == 'C':
+			jointTab = getattr(parent,item).objectName()[7]
+			iniContents.append('\n[AXIS_C]\n')
+			iniContents.append('MIN_LIMIT = {}\n'.format(getattr(parent, 'minLimit_' + jointTab).text()))
+			iniContents.append('MAX_LIMIT = {}\n'.format(getattr(parent, 'maxLimit_' + jointTab).text()))
+			iniContents.append('MAX_VELOCITY = {}\n'.format(getattr(parent, 'maxVelocity_' + jointTab).text()))
+			iniContents.append('MAX_ACCELERATION = {}\n'.format(getattr(parent, 'maxAccel_' + jointTab).text()))
+			break
 
-	if 'U' in parent.coordinatesL.text():
-		iniContents.append('\n[AXIS_U]\n')
+	for item in parent.axisList:
+		if getattr(parent,item).itemData(getattr(parent,item).currentIndex()) == 'U':
+			jointTab = getattr(parent,item).objectName()[7]
+			iniContents.append('\n[AXIS_U]\n')
+			iniContents.append('MIN_LIMIT = {}\n'.format(getattr(parent, 'minLimit_' + jointTab).text()))
+			iniContents.append('MAX_LIMIT = {}\n'.format(getattr(parent, 'maxLimit_' + jointTab).text()))
+			iniContents.append('MAX_VELOCITY = {}\n'.format(getattr(parent, 'maxVelocity_' + jointTab).text()))
+			iniContents.append('MAX_ACCELERATION = {}\n'.format(getattr(parent, 'maxAccel_' + jointTab).text()))
+			break
 
-	if 'V' in parent.coordinatesL.text():
-		iniContents.append('\n[AXIS_V]\n')
+	for item in parent.axisList:
+		if getattr(parent,item).itemData(getattr(parent,item).currentIndex()) == 'V':
+			jointTab = getattr(parent,item).objectName()[7]
+			iniContents.append('\n[AXIS_V]\n')
+			iniContents.append('MIN_LIMIT = {}\n'.format(getattr(parent, 'minLimit_' + jointTab).text()))
+			iniContents.append('MAX_LIMIT = {}\n'.format(getattr(parent, 'maxLimit_' + jointTab).text()))
+			iniContents.append('MAX_VELOCITY = {}\n'.format(getattr(parent, 'maxVelocity_' + jointTab).text()))
+			iniContents.append('MAX_ACCELERATION = {}\n'.format(getattr(parent, 'maxAccel_' + jointTab).text()))
+			break
 
-	if 'W' in parent.coordinatesL.text():
-		iniContents.append('\n[AXIS_W]\n')
-
-
+	for item in parent.axisList:
+		if getattr(parent,item).itemData(getattr(parent,item).currentIndex()) == 'W':
+			jointTab = getattr(parent,item).objectName()[7]
+			iniContents.append('\n[AXIS_W]\n')
+			iniContents.append('MIN_LIMIT = {}\n'.format(getattr(parent, 'minLimit_' + jointTab).text()))
+			iniContents.append('MAX_LIMIT = {}\n'.format(getattr(parent, 'maxLimit_' + jointTab).text()))
+			iniContents.append('MAX_VELOCITY = {}\n'.format(getattr(parent, 'maxVelocity_' + jointTab).text()))
+			iniContents.append('MAX_ACCELERATION = {}\n'.format(getattr(parent, 'maxAccel_' + jointTab).text()))
+			break
 
 	with open(iniFilePath, 'w') as iniFile:
 		iniFile.writelines(iniContents)
