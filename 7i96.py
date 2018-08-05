@@ -84,6 +84,11 @@ class MainWindow(QMainWindow):
 		self.axisCB_2.currentIndexChanged.connect(self.onAxisChanged)
 		self.axisCB_3.currentIndexChanged.connect(self.onAxisChanged)
 		self.axisCB_4.currentIndexChanged.connect(self.onAxisChanged)
+		self.pidDefault_0.clicked.connect(self.pidSetDefault)
+		self.pidDefault_1.clicked.connect(self.pidSetDefault)
+		self.pidDefault_2.clicked.connect(self.pidSetDefault)
+		self.pidDefault_3.clicked.connect(self.pidSetDefault)
+		self.pidDefault_4.clicked.connect(self.pidSetDefault)
 
 	def onConfigNameChanged(self, text):
 		# update the iniDictionary when text is changed
@@ -106,6 +111,19 @@ class MainWindow(QMainWindow):
 				else:
 					getattr(self, 'axisType_' + jointTab).setText('ANGULAR')
 		self.coordinatesL.setText(''.join(coordList))
+
+	def pidSetDefault(self):
+		tab = self.sender().objectName()[11]
+		getattr(self, 'p_' + tab).setText('1000')
+		getattr(self, 'i_' + tab).setText('0')
+		getattr(self, 'd_' + tab).setText('0')
+		getattr(self, 'ff0_' + tab).setText('0')
+		getattr(self, 'ff1_' + tab).setText('1')
+		getattr(self, 'ff2_' + tab).setText('0.00013')
+		getattr(self, 'bias_' + tab).setText('0')
+		getattr(self, 'maxOutput_' + tab).setText('0')
+		getattr(self, 'maxError_' + tab).setText('0.0005')
+		getattr(self, 'deadband_' + tab).setText('0')
 
 	def buildCB(self):
 		for item in setup.setupCombo('ipAddress'):
