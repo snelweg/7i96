@@ -18,6 +18,7 @@ class MainWindow(QMainWindow):
 		self.config = configparser.ConfigParser(strict=False)
 		self.linuxcncDir = os.path.expanduser('~/linuxcnc')
 		self.configsDir = os.path.expanduser('~/linuxcnc/configs')
+		self.setWindowTitle('7i96 Configuration Tool Version {}'.format(str(version)))
 		self.configNameUnderscored = ''
 		self.checkConfig = checkit.config
 		self.buildini = buildini.buildini
@@ -28,7 +29,6 @@ class MainWindow(QMainWindow):
 		self.setupConnections()
 		self.axisList = ['axisCB_0', 'axisCB_1', 'axisCB_2', 'axisCB_3', 'axisCB_4']
 		self.show()
-
 
 	# Auto connected menu action callbacks
 	@pyqtSlot()
@@ -107,7 +107,6 @@ class MainWindow(QMainWindow):
 					getattr(self, 'axisType_' + jointTab).setText('ANGULAR')
 		self.coordinatesL.setText(''.join(coordList))
 
-
 	def buildCB(self):
 		for item in setup.setupCombo('ipAddress'):
 			self.ipAddressCB.addItem(item[0], item[1])
@@ -125,7 +124,6 @@ class MainWindow(QMainWindow):
 			self.positionOffsetCB.addItem(item[0], item[1])
 		for item in setup.setupCombo('positionFeedback'):
 			self.positionFeedbackCB.addItem(item[0], item[1])
-
 
 		for i in range(5):
 			for item in setup.setupCombo('axis'):
@@ -172,7 +170,6 @@ class MainWindow(QMainWindow):
 		#dialog.ui.windowTitle('Configuration Errors')
 		dialog.ui.label.setText(text)
 		dialog.exec_()
-
 
 if __name__ == "__main__":
 	app = QApplication(sys.argv)
