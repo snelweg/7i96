@@ -101,7 +101,7 @@ class MainWindow(QMainWindow):
 				jointTab = getattr(self,item).objectName()[7]
 				axisLetter = getattr(self,item).itemData(getattr(self,item).currentIndex())
 				coordList.append(axisLetter)
-				if axisLetter in ['X', 'Y', 'Z']:
+				if axisLetter in ['X', 'Y', 'Z', 'U', 'V', 'W']:
 					getattr(self, 'axisType_' + jointTab).setText('LINEAR')
 				else:
 					getattr(self, 'axisType_' + jointTab).setText('ANGULAR')
