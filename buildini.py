@@ -170,6 +170,7 @@ def buildini(parent):
 	# build the [JOINT_0] section
 	if parent.axisCB_0.itemData(parent.axisCB_0.currentIndex()):
 		iniContents.append('\n[JOINT_0]\n')
+		iniContents.append('AXIS = {}\n'.format(parent.axisCB_0.itemData(parent.axisCB_0.currentIndex())))
 		iniContents.append('TYPE = {}\n'.format(parent.axisType_0.text()))
 		iniContents.append('SCALE = {}\n'.format(str(parent.scale_0.value())))
 		iniContents.append('STEPGEN_MAX_VEL = {}\n'.format(str(int(parent.maxVelocity_0.text()) * 1.2)))
@@ -194,6 +195,7 @@ def buildini(parent):
 	# build the [JOINT_1] section
 	if parent.axisCB_1.itemData(parent.axisCB_1.currentIndex()):
 		iniContents.append('\n[JOINT_1]\n')
+		iniContents.append('AXIS = {}\n'.format(parent.axisCB_1.itemData(parent.axisCB_1.currentIndex())))
 		iniContents.append('TYPE = {}\n'.format(parent.axisType_1.text()))
 		iniContents.append('SCALE = {}\n'.format(str(parent.scale_1.value())))
 		iniContents.append('STEPGEN_MAX_VEL = {}\n'.format(str(int(parent.maxVelocity_1.text()) * 1.2)))
@@ -218,6 +220,7 @@ def buildini(parent):
 	# build the [JOINT_2] section
 	if parent.axisCB_2.itemData(parent.axisCB_2.currentIndex()):
 		iniContents.append('\n[JOINT_2]\n')
+		iniContents.append('AXIS = {}\n'.format(parent.axisCB_2.itemData(parent.axisCB_2.currentIndex())))
 		iniContents.append('TYPE = {}\n'.format(parent.axisType_2.text()))
 		iniContents.append('SCALE = {}\n'.format(str(parent.scale_2.value())))
 		iniContents.append('STEPGEN_MAX_VEL = {}\n'.format(str(int(parent.maxVelocity_2.text()) * 1.2)))
@@ -242,6 +245,7 @@ def buildini(parent):
 	# build the [JOINT_3] section
 	if parent.axisCB_3.itemData(parent.axisCB_3.currentIndex()):
 		iniContents.append('\n[JOINT_3]\n')
+		iniContents.append('AXIS = {}\n'.format(parent.axisCB_3.itemData(parent.axisCB_3.currentIndex())))
 		iniContents.append('TYPE = {}\n'.format(parent.axisType_3.text()))
 		iniContents.append('SCALE = {}\n'.format(str(parent.scale_3.value())))
 		iniContents.append('STEPGEN_MAX_VEL = {}\n'.format(str(int(parent.maxVelocity_3.text()) * 1.2)))
@@ -266,6 +270,7 @@ def buildini(parent):
 	# build the [JOINT_4] section
 	if parent.axisCB_4.itemData(parent.axisCB_4.currentIndex()):
 		iniContents.append('\n[JOINT_4]\n')
+		iniContents.append('AXIS = {}\n'.format(parent.axisCB_4.itemData(parent.axisCB_4.currentIndex())))
 		iniContents.append('TYPE = {}\n'.format(parent.axisType_4.text()))
 		iniContents.append('SCALE = {}\n'.format(str(parent.scale_4.value())))
 		iniContents.append('STEPGEN_MAX_VEL = {}\n'.format(str(int(parent.maxVelocity_4.text()) * 1.2)))
