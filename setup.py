@@ -75,7 +75,6 @@ def setupCombo(combo):
 								['Spindle On', 'spindleon'],
 								['Spindle CW', 'spindlecw'],
 								['Spindle CCW', 'spindleccw'],
-								['Spindle PWM', 'spindlepwm'],
 								['Spindle Brake', 'spindlebrake'],
 								['E-Stop Out', 'estopout'],
 								['Digital Out 0', 'digitalout0'],
