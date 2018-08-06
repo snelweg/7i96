@@ -8,7 +8,7 @@ from PyQt5 import uic, QtWidgets
 from PyQt5.QtCore import pyqtSlot
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QFileDialog, QLineEdit,
 	QSpinBox, QCheckBox, QComboBox, QLabel)
-import setup, loadini, checkit, buildini, buildhal
+import setup, loadini, checkit, buildini, buildhal, buildio
 from dialog import Ui_Dialog as errorDialog
 
 class MainWindow(QMainWindow):
@@ -23,11 +23,17 @@ class MainWindow(QMainWindow):
 		self.checkConfig = checkit.config
 		self.buildini = buildini.buildini
 		self.buildhal = buildhal.buildhal
+		self.buildio = buildio.buildio
 		self.buildtool = buildhal.buildtool
 		self.buildvar = buildhal.buildvar
 		self.buildCB()
 		self.setupConnections()
 		self.axisList = ['axisCB_0', 'axisCB_1', 'axisCB_2', 'axisCB_3', 'axisCB_4']
+
+		# for testing
+		self.config.read('/home/john/linuxcnc/configs/7i96_sample.ini')
+		self.iniLoad()
+
 		self.show()
 
 	# Auto connected menu action callbacks
@@ -66,6 +72,7 @@ class MainWindow(QMainWindow):
 	def on_actionBuild_triggered(self):
 		self.buildini(self)
 		self.buildhal(self)
+		self.buildio(self)
 		self.buildtool(self)
 		self.buildvar(self)
 
@@ -152,12 +159,12 @@ class MainWindow(QMainWindow):
 		for i in range(11):
 			for item in setup.setupCombo('input'):
 				getattr(self, 'input_' + str(i)).addItem(item[0], item[1])
+		for i in range(11):
+			for item in setup.setupCombo('joint'):
+				getattr(self, 'inputJoint_' + str(i)).addItem(item[0], item[1])
 		for i in range(5):
 			for item in setup.setupCombo('output'):
 				getattr(self, 'output_' + str(i)).addItem(item[0], item[1])
-		for i in range(11):
-			for item in setup.setupCombo('axis'):
-				getattr(self, 'inputaxis_' + str(i)).addItem(item[0], item[1])
 		for item in setup.setupCombo('debug'):
 			self.debugCombo.addItem(item[0], item[1])
 

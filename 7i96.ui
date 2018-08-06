@@ -4217,17 +4217,20 @@
        <widget class="QLabel" name="label_29">
         <property name="geometry">
          <rect>
-          <x>240</x>
+          <x>220</x>
           <y>20</y>
           <width>59</width>
           <height>15</height>
          </rect>
         </property>
         <property name="text">
-         <string>Axis</string>
+         <string>Joint</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
         </property>
        </widget>
-       <widget class="QComboBox" name="inputaxis_0">
+       <widget class="QComboBox" name="inputJoint_0">
         <property name="geometry">
          <rect>
           <x>210</x>
@@ -4237,7 +4240,7 @@
          </rect>
         </property>
        </widget>
-       <widget class="QComboBox" name="inputaxis_1">
+       <widget class="QComboBox" name="inputJoint_1">
         <property name="geometry">
          <rect>
           <x>210</x>
@@ -4247,7 +4250,7 @@
          </rect>
         </property>
        </widget>
-       <widget class="QComboBox" name="inputaxis_2">
+       <widget class="QComboBox" name="inputJoint_2">
         <property name="geometry">
          <rect>
           <x>210</x>
@@ -4257,7 +4260,7 @@
          </rect>
         </property>
        </widget>
-       <widget class="QComboBox" name="inputaxis_3">
+       <widget class="QComboBox" name="inputJoint_3">
         <property name="geometry">
          <rect>
           <x>210</x>
@@ -4267,7 +4270,7 @@
          </rect>
         </property>
        </widget>
-       <widget class="QComboBox" name="inputaxis_4">
+       <widget class="QComboBox" name="inputJoint_4">
         <property name="geometry">
          <rect>
           <x>210</x>
@@ -4277,7 +4280,7 @@
          </rect>
         </property>
        </widget>
-       <widget class="QComboBox" name="inputaxis_5">
+       <widget class="QComboBox" name="inputJoint_5">
         <property name="geometry">
          <rect>
           <x>210</x>
@@ -4287,7 +4290,7 @@
          </rect>
         </property>
        </widget>
-       <widget class="QComboBox" name="inputaxis_6">
+       <widget class="QComboBox" name="inputJoint_6">
         <property name="geometry">
          <rect>
           <x>210</x>
@@ -4297,7 +4300,7 @@
          </rect>
         </property>
        </widget>
-       <widget class="QComboBox" name="inputaxis_7">
+       <widget class="QComboBox" name="inputJoint_7">
         <property name="geometry">
          <rect>
           <x>210</x>
@@ -4307,7 +4310,7 @@
          </rect>
         </property>
        </widget>
-       <widget class="QComboBox" name="inputaxis_8">
+       <widget class="QComboBox" name="inputJoint_8">
         <property name="geometry">
          <rect>
           <x>210</x>
@@ -4317,7 +4320,7 @@
          </rect>
         </property>
        </widget>
-       <widget class="QComboBox" name="inputaxis_9">
+       <widget class="QComboBox" name="inputJoint_9">
         <property name="geometry">
          <rect>
           <x>210</x>
@@ -4327,7 +4330,7 @@
          </rect>
         </property>
        </widget>
-       <widget class="QComboBox" name="inputaxis_10">
+       <widget class="QComboBox" name="inputJoint_10">
         <property name="geometry">
          <rect>
           <x>210</x>
@@ -4335,6 +4338,19 @@
           <width>79</width>
           <height>23</height>
          </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_142">
+        <property name="geometry">
+         <rect>
+          <x>420</x>
+          <y>60</y>
+          <width>181</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;going to get probe and&lt;/p&gt;&lt;p&gt;digital inputs working first&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
       </widget>
@@ -4811,17 +4827,17 @@
   <tabstop>input_8</tabstop>
   <tabstop>input_9</tabstop>
   <tabstop>input_10</tabstop>
-  <tabstop>inputaxis_0</tabstop>
-  <tabstop>inputaxis_1</tabstop>
-  <tabstop>inputaxis_2</tabstop>
-  <tabstop>inputaxis_3</tabstop>
-  <tabstop>inputaxis_4</tabstop>
-  <tabstop>inputaxis_5</tabstop>
-  <tabstop>inputaxis_6</tabstop>
-  <tabstop>inputaxis_7</tabstop>
-  <tabstop>inputaxis_8</tabstop>
-  <tabstop>inputaxis_9</tabstop>
-  <tabstop>inputaxis_10</tabstop>
+  <tabstop>inputJoint_0</tabstop>
+  <tabstop>inputJoint_1</tabstop>
+  <tabstop>inputJoint_2</tabstop>
+  <tabstop>inputJoint_3</tabstop>
+  <tabstop>inputJoint_4</tabstop>
+  <tabstop>inputJoint_5</tabstop>
+  <tabstop>inputJoint_6</tabstop>
+  <tabstop>inputJoint_7</tabstop>
+  <tabstop>inputJoint_8</tabstop>
+  <tabstop>inputJoint_9</tabstop>
+  <tabstop>inputJoint_10</tabstop>
   <tabstop>output_0</tabstop>
   <tabstop>output_1</tabstop>
   <tabstop>output_2</tabstop>

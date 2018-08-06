@@ -73,6 +73,7 @@ def buildini(parent):
 	# build the [HAL] section
 	iniContents.append('\n[HAL]\n')
 	iniContents.append('HALFILE = {}.hal\n'.format(parent.configNameUnderscored))
+	iniContents.append('HALFILE = io.hal\n')
 	iniContents.append('HALFILE = custom.hal\n')
 	iniContents.append('HALFILE = postgui.hal\n')
 

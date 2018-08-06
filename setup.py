@@ -15,22 +15,30 @@ def setupCombo(combo):
 								['C', 'C'],
 								['U', 'U'],
 								['V', 'V'],
-								['W', 'W'],]
+								['W', 'W']]
+
+	if combo == 'joint':
+		comboList = [['None', False],
+								['Joint 0', '0'],
+								['Joint 1', '1'],
+								['Joint 2', '2'],
+								['Joint 3', '3'],
+								['Joint 4', '4']]
 
 	if combo == 'direction':
 		comboList = [['None', False],
 								['CW', 'cw'],
-								['CCW', 'ccw'],]
+								['CCW', 'ccw']]
 
 	if combo == 'display':
 		comboList = [['Select a GUI', False],
 								['Axis', 'axis'],
-								['Touchy', 'touchy'],]
+								['Touchy', 'touchy']]
 
 	if combo == 'linearUnits':
 		comboList = [['Select Units', False],
 								['Imperial', 'imperial'],
-								['Metric', 'metric'],]
+								['Metric', 'metric']]
 
 	if combo == 'angularUnits':
 		comboList = [['Degree', 'degree'],]
@@ -54,11 +62,11 @@ def setupCombo(combo):
 								['Home & Limit', 'homelimit'],
 								['Min Limit & Home', 'minlimithome'],
 								['Max Limit & Home', 'maxlimithome'],
-								['Probe', 'probe'],
-								['Digital 0', 'digitalin0'],
-								['Digital 1', 'digitalin1'],
-								['Digital 2', 'digitalin2'],
-								['Digital 3', 'digitalin3']]
+								['Probe', 'motion.probe-input'],
+								['Digital In 0', 'motion.digital-in-00'],
+								['Digital In 1', 'motion.digital-in-01'],
+								['Digital In 2', 'motion.digital-in-02'],
+								['Digital In 3', 'motion.digital-in-03']]
 
 	if combo == 'output':
 		comboList = [['None', False],
