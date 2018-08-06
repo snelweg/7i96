@@ -915,17 +915,34 @@
                  </property>
                 </widget>
                </item>
-               <item row="4" column="0">
+               <item row="5" column="0">
                 <widget class="QCheckBox" name="homeUseIndex_0">
                  <property name="text">
                   <string>Home Use Index</string>
                  </property>
                 </widget>
                </item>
-               <item row="4" column="1">
+               <item row="5" column="1">
                 <widget class="QCheckBox" name="homeIgnoreLimits_0">
                  <property name="text">
                   <string>Home Ignore Limits</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <widget class="QLabel" name="label_38">
+                 <property name="text">
+                  <string>Home Sequence</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="1">
+                <widget class="QLineEdit" name="homeSequence_0">
+                 <property name="toolTip">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Home sequences start at 0 and do not skip a number.&lt;/p&gt;&lt;p&gt;Multiple joint axis use a negative number.&lt;/p&gt;&lt;p&gt;Leave blank to home the joint manually.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                 </widget>
                </item>
@@ -1569,18 +1586,18 @@
                <property name="spacing">
                 <number>5</number>
                </property>
-               <item row="0" column="0">
-                <widget class="QLabel" name="label_86">
-                 <property name="text">
-                  <string>Home</string>
-                 </property>
+               <item row="0" column="1">
+                <widget class="QLineEdit" name="home_1">
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
                 </widget>
                </item>
-               <item row="0" column="1">
-                <widget class="QLineEdit" name="home_1">
+               <item row="0" column="0">
+                <widget class="QLabel" name="label_86">
+                 <property name="text">
+                  <string>Home</string>
+                 </property>
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
@@ -1603,18 +1620,18 @@
                  </property>
                 </widget>
                </item>
-               <item row="2" column="0">
-                <widget class="QLabel" name="label_88">
-                 <property name="text">
-                  <string>Home Search Velocity</string>
-                 </property>
+               <item row="2" column="1">
+                <widget class="QLineEdit" name="homeSearchVel_1">
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
                 </widget>
                </item>
-               <item row="2" column="1">
-                <widget class="QLineEdit" name="homeSearchVel_1">
+               <item row="2" column="0">
+                <widget class="QLabel" name="label_88">
+                 <property name="text">
+                  <string>Home Search Velocity</string>
+                 </property>
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
@@ -1637,17 +1654,34 @@
                  </property>
                 </widget>
                </item>
-               <item row="4" column="0">
+               <item row="5" column="0">
                 <widget class="QCheckBox" name="homeUseIndex_1">
                  <property name="text">
                   <string>Home Use Index</string>
                  </property>
                 </widget>
                </item>
-               <item row="4" column="1">
+               <item row="5" column="1">
                 <widget class="QCheckBox" name="homeIgnoreLimits_1">
                  <property name="text">
                   <string>Home Ignore Limits</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="1">
+                <widget class="QLineEdit" name="homeSequence_1">
+                 <property name="toolTip">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Home sequences start at 0 and do not skip a number.&lt;/p&gt;&lt;p&gt;Multiple joint axis use a negative number.&lt;/p&gt;&lt;p&gt;Leave blank to home the joint manually.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <widget class="QLabel" name="label_39">
+                 <property name="text">
+                  <string>Home Sequence</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
                 </widget>
                </item>
@@ -2315,17 +2349,34 @@
                  </property>
                 </widget>
                </item>
-               <item row="4" column="0">
+               <item row="5" column="0">
                 <widget class="QCheckBox" name="homeUseIndex_2">
                  <property name="text">
                   <string>Home Use Index</string>
                  </property>
                 </widget>
                </item>
-               <item row="4" column="1">
+               <item row="5" column="1">
                 <widget class="QCheckBox" name="homeIgnoreLimits_2">
                  <property name="text">
                   <string>Home Ignore Limits</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="1">
+                <widget class="QLineEdit" name="homeSequence_2">
+                 <property name="toolTip">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Home sequences start at 0 and do not skip a number.&lt;/p&gt;&lt;p&gt;Multiple joint axis use a negative number.&lt;/p&gt;&lt;p&gt;Leave blank to home the joint manually.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <widget class="QLabel" name="label_139">
+                 <property name="text">
+                  <string>Home Sequence</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
                 </widget>
                </item>
@@ -2925,6 +2976,13 @@
                <property name="spacing">
                 <number>5</number>
                </property>
+               <item row="1" column="1">
+                <widget class="QLineEdit" name="homeOffset_3">
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                </widget>
+               </item>
                <item row="0" column="0">
                 <widget class="QLabel" name="label_94">
                  <property name="text">
@@ -2947,13 +3005,6 @@
                  <property name="text">
                   <string>Home Offset</string>
                  </property>
-                 <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="1">
-                <widget class="QLineEdit" name="homeOffset_3">
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
@@ -2993,17 +3044,34 @@
                  </property>
                 </widget>
                </item>
-               <item row="4" column="0">
+               <item row="5" column="0">
                 <widget class="QCheckBox" name="homeUseIndex_3">
                  <property name="text">
                   <string>Home Use Index</string>
                  </property>
                 </widget>
                </item>
-               <item row="4" column="1">
+               <item row="5" column="1">
                 <widget class="QCheckBox" name="homeIgnoreLimits_3">
                  <property name="text">
                   <string>Home Ignore Limits</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="1">
+                <widget class="QLineEdit" name="homeSequence_3">
+                 <property name="toolTip">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Home sequences start at 0 and do not skip a number.&lt;/p&gt;&lt;p&gt;Multiple joint axis use a negative number.&lt;/p&gt;&lt;p&gt;Leave blank to home the joint manually.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <widget class="QLabel" name="label_140">
+                 <property name="text">
+                  <string>Home Sequence</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
                 </widget>
                </item>
@@ -3671,17 +3739,34 @@
                  </property>
                 </widget>
                </item>
-               <item row="4" column="0">
+               <item row="5" column="0">
                 <widget class="QCheckBox" name="homeUseIndex_4">
                  <property name="text">
                   <string>Home Use Index</string>
                  </property>
                 </widget>
                </item>
-               <item row="4" column="1">
+               <item row="5" column="1">
                 <widget class="QCheckBox" name="homeIgnoreLimits_4">
                  <property name="text">
                   <string>Home Ignore Limits</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="1">
+                <widget class="QLineEdit" name="homeSequence_4">
+                 <property name="toolTip">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Home sequences start at 0 and do not skip a number.&lt;/p&gt;&lt;p&gt;Multiple joint axis use a negative number.&lt;/p&gt;&lt;p&gt;Leave blank to home the joint manually.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <widget class="QLabel" name="label_141">
+                 <property name="text">
+                  <string>Home Sequence</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
                 </widget>
                </item>

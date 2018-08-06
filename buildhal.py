@@ -85,26 +85,42 @@ def buildhal(parent):
 		halFile.writelines(halContents)
 	return True
 
+def buildio(parent):
+	configPath = os.path.join(parent.configsDir, parent.configName.text())
+	ioFilePath = os.path.join(configPath, 'io.hal')
+	ioContents = []
+	ioContents = ['# This file was created with the 7i96 Wizard on ']
+	ioContents.append(datetime.now().strftime('%b %d %Y %H:%M:%S') + '\n')
+	ioContents.append('# If you make changes to this file your screwed\n\n')
+
+	ioContents = ['\n']
+	ioContents.append('\n')
+	try:
+		with open(ioFilePath, 'w') as toolFile:
+			ioContents.writelines(toolContents)
+	except FileExistsError:
+		pass
+	return True
+
+
 def buildtool(parent):
 	configPath = os.path.join(parent.configsDir, parent.configName.text())
 	toolFilePath = os.path.join(configPath, parent.configName.text() + '.tbl')
 	toolContents = []
 	toolContents = [';\n']
 	toolContents.append('T1 P1\n')
-	try:
+	try: # if this file exists don't write over it
 		with open(toolFilePath, 'x') as toolFile:
 			toolFile.writelines(toolContents)
 	except FileExistsError:
 		pass
-
 	return True
 
 def buildvar(parent): #just create an empty file if it does not exist
 	configPath = os.path.join(parent.configsDir, parent.configName.text())
 	varFilePath = os.path.join(configPath, parent.configName.text() + '.var')
-	try:
+	try: # if this file exists don't write over it
 		open(varFilePath, 'x')
 	except FileExistsError:
 		pass
-
 	return True
