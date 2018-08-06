@@ -48,7 +48,6 @@ def buildio(parent):
 		outputText = getattr(parent, 'output_' + str(index)).currentText()
 		if outputText == 'Coolant Flood':
 			ioContents.append('net flood-output iocontrol.0.coolant-flood => hm2_7i96.0.ssr.00.out-0{}\n'.format(index))
-			print('here')
 		if outputText == 'Coolant Mist':
 			ioContents.append('net flood-output iocontrol.0.coolant-mist => hm2_7i96.0.ssr.00.out-0{}\n'.format(index))
 		if outputText == 'Spindle On':

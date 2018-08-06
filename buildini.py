@@ -331,6 +331,43 @@ def buildini(parent):
 		iniContents.append('HOME_USE_INDEX = {}\n'.format(parent.homeUseIndex_4.isChecked()))
 		iniContents.append('HOME_IGNORE_LIMITS = {}\n'.format(parent.homeIgnoreLimits_4.isChecked()))
 
+	# build the [INPUTS] section
+	iniContents.append('\n[INPUTS]\n')
+	iniContents.append('# DO NOT change the input text\n')
+	iniContents.append('INPUT_0 = {}\n'.format(parent.input_0.currentText()))
+	iniContents.append('INPUT_JOINT_0 = {}\n'.format(parent.inputJoint_0.currentText()))
+	iniContents.append('INPUT_1 = {}\n'.format(parent.input_1.currentText()))
+	iniContents.append('INPUT_JOINT_1 = {}\n'.format(parent.inputJoint_1.currentText()))
+	iniContents.append('INPUT_2 = {}\n'.format(parent.input_2.currentText()))
+	iniContents.append('INPUT_JOINT_2 = {}\n'.format(parent.inputJoint_2.currentText()))
+	iniContents.append('INPUT_3 = {}\n'.format(parent.input_3.currentText()))
+	iniContents.append('INPUT_JOINT_3 = {}\n'.format(parent.inputJoint_3.currentText()))
+	iniContents.append('INPUT_4 = {}\n'.format(parent.input_4.currentText()))
+	iniContents.append('INPUT_JOINT_4 = {}\n'.format(parent.inputJoint_4.currentText()))
+	iniContents.append('INPUT_5 = {}\n'.format(parent.input_5.currentText()))
+	iniContents.append('INPUT_JOINT_5 = {}\n'.format(parent.inputJoint_5.currentText()))
+	iniContents.append('INPUT_6 = {}\n'.format(parent.input_6.currentText()))
+	iniContents.append('INPUT_JOINT_6 = {}\n'.format(parent.inputJoint_6.currentText()))
+	iniContents.append('INPUT_7 = {}\n'.format(parent.input_7.currentText()))
+	iniContents.append('INPUT_JOINT_7 = {}\n'.format(parent.inputJoint_7.currentText()))
+	iniContents.append('INPUT_8 = {}\n'.format(parent.input_8.currentText()))
+	iniContents.append('INPUT_JOINT_8 = {}\n'.format(parent.inputJoint_8.currentText()))
+	iniContents.append('INPUT_9 = {}\n'.format(parent.input_9.currentText()))
+	iniContents.append('INPUT_JOINT_9 = {}\n'.format(parent.inputJoint_9.currentText()))
+	iniContents.append('INPUT_10 = {}\n'.format(parent.input_10.currentText()))
+	iniContents.append('INPUT_JOINT_10 = {}\n'.format(parent.inputJoint_10.currentText()))
+
+
+	# build the [OUTPUTS] section
+	iniContents.append('\n[OUTPUTS]\n')
+	iniContents.append('# DO NOT change the output text\n')
+	iniContents.append('OUTPUT_0 = {}\n'.format(parent.output_0.currentText()))
+	iniContents.append('OUTPUT_1 = {}\n'.format(parent.output_1.currentText()))
+	iniContents.append('OUTPUT_2 = {}\n'.format(parent.output_2.currentText()))
+	iniContents.append('OUTPUT_3 = {}\n'.format(parent.output_3.currentText()))
+	iniContents.append('OUTPUT_4 = {}\n'.format(parent.output_4.currentText()))
+
+
 	with open(iniFilePath, 'w') as iniFile:
 		iniFile.writelines(iniContents)
 	buildini.result = 'Sucess {} file was created'.format(iniFilePath)
