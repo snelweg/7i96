@@ -4993,6 +4993,19 @@
          <string>Leave at 0 for default settings to be used</string>
         </property>
        </widget>
+       <widget class="QLabel" name="label_178">
+        <property name="geometry">
+         <rect>
+          <x>350</x>
+          <y>150</y>
+          <width>261</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;At this time Options are not saved&lt;br/&gt;and will have to be entered next time&lt;br/&gt;you run this tool.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
       </widget>
      </widget>
     </item>
