@@ -194,7 +194,7 @@ def iniList():
 	iniList.append(['OPTIONS', 'HALUI', 'haluiCB'])
 	iniList.append(['OPTIONS', 'PYVCP', 'pyvcpCB'])
 	iniList.append(['OPTIONS', 'GLADEVCP', 'gladevcpCB'])
-	iniList.append(['OPTIONS', 'LADDER', 'ladderCB'])
+	iniList.append(['OPTIONS', 'LADDER', 'ladderGB'])
 
 	return iniList
 

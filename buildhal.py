@@ -75,9 +75,26 @@ def buildhal(parent):
 		halContents.append('net tool-prep-loop iocontrol.0.tool-prepare => iocontrol.0.tool-prepared\n')
 		halContents.append('net tool-change-loop iocontrol.0.tool-change => iocontrol.0.tool-changed\n')
 
-	if parent.ladderCB.isChecked():
-		ladderFilePath = os.path.join(configPath, parent.configName.text() + '.clp')
+	if parent.ladderGB.isChecked():
 		halContents.append('\n# # Load Classicladder without GUI\n')
+		# this line needs to be built from the options if any are above 0
+		ladderOptionsList = ['ladderRungsSB', 'ladderBitsSB', 'ladderWordsSB',
+			'ladderTimersSB', 'iecTimerSB', 'ladderMonostablesSB', 'ladderCountersSB',
+			'ladderInputsSB', 'ladderOutputsSB', 'ladderExpresionsSB',
+			'ladderSectionsSB', 'ladderSymbolsSB', 'ladderS32InputsSB',
+			'ladderS32OuputsSB', 'ladderFloatInputsSB', 'ladderFloatOutputsSB']
+		halOptions = []
+
+		for option in ladderOptionsList:
+			if getattr(parent, option).value() > 0:
+				halOptions.append(getattr(parent, option).property('option') + '=' + str(getattr(parent, option).value()))
+		print(len(halOptions))
+		print(' '.join(halOptions))
+		if halOptions:
+			halContents.append('loadrt classicladder_rt {}\n'.format(' '.join(halOptions)))
+		else:
+			halContents.append('loadrt classicladder_rt\n')
+		halContents.append('addf classicladder.0.refresh servo-thread 1\n')
 		halContents.append('loadusr classicladder --nogui {}.clp\n'.format(parent.configName.text()))
 
 	with open(halFilePath, 'w') as halFile:
@@ -129,19 +146,23 @@ def buildmisc(parent):
 		pyvcpContents.append('<pyvcp>\n')
 		pyvcpContents.append('<!--\n')
 		pyvcpContents.append('Build your PyVCP panel between the <pyvcp></pyvcp> tags.\n')
-		pyvcpContents.append('Make sure your outside the comment tags <!-- -->.\n')
+		pyvcpContents.append('Make sure your outside the comment tags.\n')
 		pyvcpContents.append('The contents of this file will not be overwritten\n')
 		pyvcpContents.append('when you run this wizard again.\n')
 		pyvcpContents.append('-->\n')
+		pyvcpContents.append('<label>\n')
+		pyvcpContents.append('<text>"This is a Sample Label:"</text>\n')
+		pyvcpContents.append('<font>("Helvetica",20)</font>\n')
+		pyvcpContents.append('</label>\n')
 		pyvcpContents.append('</pyvcp>\n')
-	try: # if this file exists don't write over it
-		with open(pyvcpFilePath, 'x') as pyvcpFile:
-			pyvcpFile.writelines(pyvcpContents)
-	except FileExistsError:
-		pass
+		try: # if this file exists don't write over it
+			with open(pyvcpFilePath, 'x') as pyvcpFile:
+				pyvcpFile.writelines(pyvcpContents)
+		except FileExistsError:
+			pass
 
 	# create the clp file if selected
-	if parent.ladderCB.isChecked():
+	if parent.ladderGB.isChecked():
 		ladderFilePath = os.path.join(configPath, parent.configName.text() + '.clp')
 		ladderContents = """_FILES_CLASSICLADDER
 _FILE-symbols.csv
@@ -259,10 +280,10 @@ _/FILE-general.txt
 _/FILES_CLASSICLADDER
 """
 
-	try: # if this file exists don't write over it
-		with open(ladderFilePath, 'x') as ladderFile:
-			ladderFile.writelines(ladderContents)
-	except FileExistsError:
-		pass
+		try: # if this file exists don't write over it
+			with open(ladderFilePath, 'x') as ladderFile:
+				ladderFile.writelines(ladderContents)
+		except FileExistsError:
+			pass
 
 

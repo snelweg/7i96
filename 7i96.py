@@ -7,7 +7,7 @@ import sys, os, configparser
 from PyQt5 import uic, QtWidgets
 from PyQt5.QtCore import pyqtSlot
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QFileDialog, QLineEdit,
-	QSpinBox, QCheckBox, QComboBox, QLabel)
+	QSpinBox, QCheckBox, QComboBox, QLabel, QGroupBox)
 import setup, loadini, checkit, buildini, buildhal, buildio
 from dialog import Ui_Dialog as errorDialog
 
@@ -30,7 +30,7 @@ class MainWindow(QMainWindow):
 		self.axisList = ['axisCB_0', 'axisCB_1', 'axisCB_2', 'axisCB_3', 'axisCB_4']
 
 		# for testing
-		#self.config.read('/home/john/linuxcnc/configs/7i96_sample.ini')
+		#self.config.read('/home/john/linuxcnc/configs/fred/fred.ini')
 		#self.iniLoad()
 
 		self.show()
@@ -178,6 +178,8 @@ class MainWindow(QMainWindow):
 				if isinstance(getattr(self, item[2]), QSpinBox):
 					getattr(self, item[2]).setValue(int(self.config[item[0]][item[1]]))
 				if isinstance(getattr(self, item[2]), QCheckBox):
+					getattr(self, item[2]).setChecked(eval(self.config[item[0]][item[1]]))
+				if isinstance(getattr(self, item[2]), QGroupBox):
 					getattr(self, item[2]).setChecked(eval(self.config[item[0]][item[1]]))
 					#print(self.config[item[0]][item[1]])
 				if isinstance(getattr(self, item[2]), QComboBox):
