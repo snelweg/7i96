@@ -192,6 +192,9 @@ def iniList():
 
 	iniList.append(['OPTIONS', 'MANUAL_TOOL_CHANGE', 'manualToolChangeCB'])
 	iniList.append(['OPTIONS', 'HALUI', 'haluiCB'])
+	iniList.append(['OPTIONS', 'PYVCP', 'pyvcpCB'])
+
+
 	return iniList
 
 #iniList.append(['', '', ''])

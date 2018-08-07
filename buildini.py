@@ -37,6 +37,8 @@ def buildini(parent):
 	iniContents.append('INTRO_GRAPHIC = {}\n'.format('emc2.gif'))
 	iniContents.append('INTRO_TIME = {}\n'.format('0'))
 	iniContents.append('OPEN_FILE = "{}"\n'.format(''))
+	if parent.pyvcpCB.isChecked():
+		iniContents.append('PYVCP = {}.xml\n'.format(parent.configName.text()))
 
 	# build the [KINS] section
 	iniContents.append('\n[KINS]\n')
@@ -393,6 +395,8 @@ def buildini(parent):
 	iniContents.append('\n[OPTIONS]\n')
 	iniContents.append('MANUAL_TOOL_CHANGE = {}\n'.format(parent.manualToolChangeCB.isChecked()))
 	iniContents.append('HALUI = {}\n'.format(parent.haluiCB.isChecked()))
+	iniContents.append('PYVCP = {}\n'.format(parent.haluiCB.isChecked()))
+
 
 	with open(iniFilePath, 'w') as iniFile:
 		iniFile.writelines(iniContents)

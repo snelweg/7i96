@@ -24,7 +24,7 @@ class MainWindow(QMainWindow):
 		self.buildini = buildini.buildini
 		self.buildhal = buildhal.buildhal
 		self.buildio = buildio.buildio
-		self.buildtool = buildhal.buildtool
+		self.buildmisc = buildhal.buildmisc
 		self.buildvar = buildhal.buildvar
 		self.buildCB()
 		self.setupConnections()
@@ -73,7 +73,7 @@ class MainWindow(QMainWindow):
 		self.buildini(self)
 		self.buildhal(self)
 		self.buildio(self)
-		self.buildtool(self)
+		self.buildmisc(self)
 		self.buildvar(self)
 
 	@pyqtSlot()

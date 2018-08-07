@@ -103,6 +103,45 @@ def buildio(parent):
 		pass
 	return True
 
+def buildmisc(parent):
+	configPath = os.path.join(parent.configsDir, parent.configName.text())
+
+	# create the tool file if not there
+	toolFilePath = os.path.join(configPath, parent.configName.text() + '.tbl')
+	toolContents = []
+	toolContents = [';\n']
+	toolContents.append('T1 P1\n')
+	try: # if this file exists don't write over it
+		with open(toolFilePath, 'x') as toolFile:
+			toolFile.writelines(toolContents)
+	except FileExistsError:
+		pass
+
+	# create the var file if not there
+	varFilePath = os.path.join(configPath, parent.configName.text() + '.var')
+	try: #
+		open(varFilePath, 'x')
+	except FileExistsError:
+		pass
+
+	# create the pyvcp panel if checked and not there
+	if parent.pyvcpCB.isChecked():
+		pyvcpFilePath = os.path.join(configPath, parent.configName.text() + '.xml')
+		pyvcpContents = ["<?xml version='1.0' encoding='UTF-8'?>\n"]
+		pyvcpContents.append('<pyvcp>\n')
+		pyvcpContents.append('<!--\n')
+		pyvcpContents.append('Build your PyVCP panel between the <pyvcp></pyvcp> tags.\n')
+		pyvcpContents.append('Make sure your outside the comment tags <!-- -->.\n')
+		pyvcpContents.append('The contents of this file will not be overwritten\n')
+		pyvcpContents.append('when you run this wizard again.\n')
+		pyvcpContents.append('-->\n')
+		pyvcpContents.append('</pyvcp>\n')
+	try: # if this file exists don't write over it
+		with open(pyvcpFilePath, 'x') as pyvcpFile:
+			pyvcpFile.writelines(pyvcpContents)
+	except FileExistsError:
+		pass
+
 
 def buildtool(parent):
 	configPath = os.path.join(parent.configsDir, parent.configName.text())
@@ -125,3 +164,10 @@ def buildvar(parent): #just create an empty file if it does not exist
 	except FileExistsError:
 		pass
 	return True
+
+def buildpyvcp(parent):
+	if parent.pyvcpCB.isChecked():
+		pass
+
+
+
