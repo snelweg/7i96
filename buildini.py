@@ -395,8 +395,9 @@ def buildini(parent):
 	iniContents.append('\n[OPTIONS]\n')
 	iniContents.append('MANUAL_TOOL_CHANGE = {}\n'.format(parent.manualToolChangeCB.isChecked()))
 	iniContents.append('HALUI = {}\n'.format(parent.haluiCB.isChecked()))
-	iniContents.append('PYVCP = {}\n'.format(parent.haluiCB.isChecked()))
-
+	iniContents.append('PYVCP = {}\n'.format(parent.pyvcpCB.isChecked()))
+	iniContents.append('GLADEVCP = {}\n'.format(parent.gladevcpCB.isChecked()))
+	iniContents.append('LADDER = {}\n'.format(parent.ladderCB.isChecked()))
 
 	with open(iniFilePath, 'w') as iniFile:
 		iniFile.writelines(iniContents)

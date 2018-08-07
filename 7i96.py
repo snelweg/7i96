@@ -25,7 +25,6 @@ class MainWindow(QMainWindow):
 		self.buildhal = buildhal.buildhal
 		self.buildio = buildio.buildio
 		self.buildmisc = buildhal.buildmisc
-		self.buildvar = buildhal.buildvar
 		self.buildCB()
 		self.setupConnections()
 		self.axisList = ['axisCB_0', 'axisCB_1', 'axisCB_2', 'axisCB_3', 'axisCB_4']
@@ -74,7 +73,6 @@ class MainWindow(QMainWindow):
 		self.buildhal(self)
 		self.buildio(self)
 		self.buildmisc(self)
-		self.buildvar(self)
 
 	@pyqtSlot()
 	def on_actionSaveAs_triggered(self):

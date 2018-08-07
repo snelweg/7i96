@@ -67,20 +67,18 @@ def buildhal(parent):
 		halContents.append('setp pid.{0}.maxoutput [JOINT_{0}]MAX_OUTPUT\n'.format(str(index)))
 		halContents.append('setp pid.{0}.maxerror [JOINT_{0}]MAX_ERROR\n'.format(str(index)))
 
-		halContents.append('\n')
-
-	"""
-		halContents.append('\n')
-		halContents.append('\n'.format(str(index)))
-	"""
-
 	halContents.append('# Standard I/O Block - EStop, Etc\n\n')
 	halContents.append('# create a signal for the estop loopback\n')
 	halContents.append('net estop-loop iocontrol.0.user-enable-out => iocontrol.0.emc-enable-in\n\n')
 	if parent.manualToolChangeCB.isChecked():
-		halContents.append('# create signals for tool loading loopback\n')
+		halContents.append('\n# create signals for tool loading loopback\n')
 		halContents.append('net tool-prep-loop iocontrol.0.tool-prepare => iocontrol.0.tool-prepared\n')
 		halContents.append('net tool-change-loop iocontrol.0.tool-change => iocontrol.0.tool-changed\n')
+
+	if parent.ladderCB.isChecked():
+		ladderFilePath = os.path.join(configPath, parent.configName.text() + '.clp')
+		halContents.append('\n# # Load Classicladder without GUI\n')
+		halContents.append('loadusr classicladder --nogui {}.clp\n'.format(parent.configName.text()))
 
 	with open(halFilePath, 'w') as halFile:
 		halFile.writelines(halContents)
@@ -142,32 +140,129 @@ def buildmisc(parent):
 	except FileExistsError:
 		pass
 
+	# create the clp file if selected
+	if parent.ladderCB.isChecked():
+		ladderFilePath = os.path.join(configPath, parent.configName.text() + '.clp')
+		ladderContents = """_FILES_CLASSICLADDER
+_FILE-symbols.csv
+#VER=1.0
+_/FILE-symbols.csv
+_FILE-modbusioconf.csv
+#VER=1.0
+_/FILE-modbusioconf.csv
+_FILE-com_params.txt
+MODBUS_MASTER_SERIAL_PORT=
+MODBUS_MASTER_SERIAL_SPEED=9600
+MODBUS_ELEMENT_OFFSET=0
+MODBUS_MASTER_SERIAL_USE_RTS_TO_SEND=0
+MODBUS_MASTER_TIME_INTER_FRAME=100
+MODBUS_MASTER_TIME_OUT_RECEIPT=500
+MODBUS_MASTER_TIME_AFTER_TRANSMIT=0
+MODBUS_DEBUG_LEVEL=0
+MODBUS_MAP_COIL_READ=0
+MODBUS_MAP_COIL_WRITE=0
+MODBUS_MAP_INPUT=0
+MODBUS_MAP_HOLDING=0
+MODBUS_MAP_REGISTER_READ=0
+MODBUS_MAP_REGISTER_WRITE=0
+_/FILE-com_params.txt
+_FILE-timers_iec.csv
+1,0,0
+1,0,0
+1,0,0
+1,0,0
+1,0,0
+1,0,0
+1,0,0
+1,0,0
+1,0,0
+1,0,0
+_/FILE-timers_iec.csv
+_FILE-timers.csv
+1,0
+1,0
+1,0
+1,0
+1,0
+1,0
+1,0
+1,0
+1,0
+1,0
+_/FILE-timers.csv
+_FILE-counters.csv
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+_/FILE-counters.csv
+_FILE-sections.csv
+#VER=1.0
+#NAME000=Prog1
+000,0,-1,0,0,0
+_/FILE-sections.csv
+_FILE-arithmetic_expressions.csv
+#VER=2.0
+_/FILE-arithmetic_expressions.csv
+_FILE-rung_0.csv
+#VER=2.0
+#LABEL=
+#COMMENT=
+#PREVRUNG=0
+#NEXTRUNG=0
+0-0-0/0 , 0-0-0/0 , 0-0-0/0 , 0-0-0/0 , 0-0-0/0 , 0-0-0/0 , 0-0-0/0 , 0-0-0/0 , 0-0-0/0 , 0-0-0/0
+0-0-0/0 , 0-0-0/0 , 0-0-0/0 , 0-0-0/0 , 0-0-0/0 , 0-0-0/0 , 0-0-0/0 , 0-0-0/0 , 0-0-0/0 , 0-0-0/0
+0-0-0/0 , 0-0-0/0 , 0-0-0/0 , 0-0-0/0 , 0-0-0/0 , 0-0-0/0 , 0-0-0/0 , 0-0-0/0 , 0-0-0/0 , 0-0-0/0
+0-0-0/0 , 0-0-0/0 , 0-0-0/0 , 0-0-0/0 , 0-0-0/0 , 0-0-0/0 , 0-0-0/0 , 0-0-0/0 , 0-0-0/0 , 0-0-0/0
+0-0-0/0 , 0-0-0/0 , 0-0-0/0 , 0-0-0/0 , 0-0-0/0 , 0-0-0/0 , 0-0-0/0 , 0-0-0/0 , 0-0-0/0 , 0-0-0/0
+0-0-0/0 , 0-0-0/0 , 0-0-0/0 , 0-0-0/0 , 0-0-0/0 , 0-0-0/0 , 0-0-0/0 , 0-0-0/0 , 0-0-0/0 , 0-0-0/0
+_/FILE-rung_0.csv
+_FILE-ioconf.csv
+#VER=1.0
+_/FILE-ioconf.csv
+_FILE-monostables.csv
+1,0
+1,0
+1,0
+1,0
+1,0
+1,0
+1,0
+1,0
+1,0
+1,0
+_/FILE-monostables.csv
+_FILE-sequential.csv
+#VER=1.0
+_/FILE-sequential.csv
+_FILE-general.txt
+PERIODIC_REFRESH=50
+SIZE_NBR_RUNGS=100
+SIZE_NBR_BITS=500
+SIZE_NBR_WORDS=100
+SIZE_NBR_TIMERS=10
+SIZE_NBR_MONOSTABLES=10
+SIZE_NBR_COUNTERS=10
+SIZE_NBR_TIMERS_IEC=10
+SIZE_NBR_PHYS_INPUTS=15
+SIZE_NBR_PHYS_OUTPUTS=15
+SIZE_NBR_ARITHM_EXPR=100
+SIZE_NBR_SECTIONS=10
+SIZE_NBR_SYMBOLS=100
+_/FILE-general.txt
+_/FILES_CLASSICLADDER
+"""
 
-def buildtool(parent):
-	configPath = os.path.join(parent.configsDir, parent.configName.text())
-	toolFilePath = os.path.join(configPath, parent.configName.text() + '.tbl')
-	toolContents = []
-	toolContents = [';\n']
-	toolContents.append('T1 P1\n')
 	try: # if this file exists don't write over it
-		with open(toolFilePath, 'x') as toolFile:
-			toolFile.writelines(toolContents)
+		with open(ladderFilePath, 'x') as ladderFile:
+			ladderFile.writelines(ladderContents)
 	except FileExistsError:
 		pass
-	return True
-
-def buildvar(parent): #just create an empty file if it does not exist
-	configPath = os.path.join(parent.configsDir, parent.configName.text())
-	varFilePath = os.path.join(configPath, parent.configName.text() + '.var')
-	try: # if this file exists don't write over it
-		open(varFilePath, 'x')
-	except FileExistsError:
-		pass
-	return True
-
-def buildpyvcp(parent):
-	if parent.pyvcpCB.isChecked():
-		pass
-
 
 

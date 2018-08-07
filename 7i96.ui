@@ -4533,7 +4533,7 @@
          <string>GladeVCP Panel</string>
         </property>
        </widget>
-       <widget class="QCheckBox" name="classicladderCB">
+       <widget class="QCheckBox" name="ladderCB">
         <property name="geometry">
          <rect>
           <x>20</x>
@@ -4850,7 +4850,7 @@
   <tabstop>haluiCB</tabstop>
   <tabstop>pyvcpCB</tabstop>
   <tabstop>gladevcpCB</tabstop>
-  <tabstop>classicladderCB</tabstop>
+  <tabstop>ladderCB</tabstop>
   <tabstop>debugCombo</tabstop>
  </tabstops>
  <resources/>
