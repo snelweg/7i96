@@ -11,7 +11,7 @@ def buildini(parent):
 
 	iniContents = ['# This file was created with the 7i96 Wizard on ']
 	iniContents.append(datetime.now().strftime('%b %d %Y %H:%M:%S') + '\n')
-	iniContents.append('# If you make changes to this file your screwed\n')
+	iniContents.append('# Changes to most things are ok and will be read by the wizard\n')
 
 	# build the [EMC] section
 	iniContents.append('\n[EMC]\n')
@@ -174,6 +174,10 @@ def buildini(parent):
 	if parent.axisCB_0.itemData(parent.axisCB_0.currentIndex()):
 		iniContents.append('\n[JOINT_0]\n')
 		iniContents.append('AXIS = {}\n'.format(parent.axisCB_0.itemData(parent.axisCB_0.currentIndex())))
+		iniContents.append('MIN_LIMIT = {}\n'.format(parent.minLimit_0.text()))
+		iniContents.append('MAX_LIMIT = {}\n'.format(parent.maxLimit_0.text()))
+		iniContents.append('MAX_VELOCITY = {}\n'.format(parent.maxVelocity_0.text()))
+		iniContents.append('MAX_ACCELERATION = {}\n'.format(parent.maxAccel_0.text()))
 		iniContents.append('TYPE = {}\n'.format(parent.axisType_0.text()))
 		iniContents.append('SCALE = {}\n'.format(str(parent.scale_0.value())))
 		iniContents.append('STEPGEN_MAX_VEL = {}\n'.format(str(int(parent.maxVelocity_0.text()) * 1.2)))
@@ -207,6 +211,10 @@ def buildini(parent):
 	if parent.axisCB_1.itemData(parent.axisCB_1.currentIndex()):
 		iniContents.append('\n[JOINT_1]\n')
 		iniContents.append('AXIS = {}\n'.format(parent.axisCB_1.itemData(parent.axisCB_1.currentIndex())))
+		iniContents.append('MIN_LIMIT = {}\n'.format(parent.minLimit_1.text()))
+		iniContents.append('MAX_LIMIT = {}\n'.format(parent.maxLimit_1.text()))
+		iniContents.append('MAX_VELOCITY = {}\n'.format(parent.maxVelocity_1.text()))
+		iniContents.append('MAX_ACCELERATION = {}\n'.format(parent.maxAccel_1.text()))
 		iniContents.append('TYPE = {}\n'.format(parent.axisType_1.text()))
 		iniContents.append('SCALE = {}\n'.format(str(parent.scale_1.value())))
 		iniContents.append('STEPGEN_MAX_VEL = {}\n'.format(str(int(parent.maxVelocity_1.text()) * 1.2)))
@@ -239,6 +247,10 @@ def buildini(parent):
 	if parent.axisCB_2.itemData(parent.axisCB_2.currentIndex()):
 		iniContents.append('\n[JOINT_2]\n')
 		iniContents.append('AXIS = {}\n'.format(parent.axisCB_2.itemData(parent.axisCB_2.currentIndex())))
+		iniContents.append('MIN_LIMIT = {}\n'.format(parent.minLimit_2.text()))
+		iniContents.append('MAX_LIMIT = {}\n'.format(parent.maxLimit_2.text()))
+		iniContents.append('MAX_VELOCITY = {}\n'.format(parent.maxVelocity_2.text()))
+		iniContents.append('MAX_ACCELERATION = {}\n'.format(parent.maxAccel_2.text()))
 		iniContents.append('TYPE = {}\n'.format(parent.axisType_2.text()))
 		iniContents.append('SCALE = {}\n'.format(str(parent.scale_2.value())))
 		iniContents.append('STEPGEN_MAX_VEL = {}\n'.format(str(int(parent.maxVelocity_2.text()) * 1.2)))
@@ -271,6 +283,10 @@ def buildini(parent):
 	if parent.axisCB_3.itemData(parent.axisCB_3.currentIndex()):
 		iniContents.append('\n[JOINT_3]\n')
 		iniContents.append('AXIS = {}\n'.format(parent.axisCB_3.itemData(parent.axisCB_3.currentIndex())))
+		iniContents.append('MIN_LIMIT = {}\n'.format(parent.minLimit_3.text()))
+		iniContents.append('MAX_LIMIT = {}\n'.format(parent.maxLimit_3.text()))
+		iniContents.append('MAX_VELOCITY = {}\n'.format(parent.maxVelocity_3.text()))
+		iniContents.append('MAX_ACCELERATION = {}\n'.format(parent.maxAccel_3.text()))
 		iniContents.append('TYPE = {}\n'.format(parent.axisType_3.text()))
 		iniContents.append('SCALE = {}\n'.format(str(parent.scale_3.value())))
 		iniContents.append('STEPGEN_MAX_VEL = {}\n'.format(str(int(parent.maxVelocity_3.text()) * 1.2)))
@@ -303,6 +319,10 @@ def buildini(parent):
 	if parent.axisCB_4.itemData(parent.axisCB_4.currentIndex()):
 		iniContents.append('\n[JOINT_4]\n')
 		iniContents.append('AXIS = {}\n'.format(parent.axisCB_4.itemData(parent.axisCB_4.currentIndex())))
+		iniContents.append('MIN_LIMIT = {}\n'.format(parent.minLimit_4.text()))
+		iniContents.append('MAX_LIMIT = {}\n'.format(parent.maxLimit_4.text()))
+		iniContents.append('MAX_VELOCITY = {}\n'.format(parent.maxVelocity_4.text()))
+		iniContents.append('MAX_ACCELERATION = {}\n'.format(parent.maxAccel_4.text()))
 		iniContents.append('TYPE = {}\n'.format(parent.axisType_4.text()))
 		iniContents.append('SCALE = {}\n'.format(str(parent.scale_4.value())))
 		iniContents.append('STEPGEN_MAX_VEL = {}\n'.format(str(int(parent.maxVelocity_4.text()) * 1.2)))

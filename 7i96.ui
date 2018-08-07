@@ -137,6 +137,9 @@
         <layout class="QGridLayout" name="gridLayout_26">
          <item row="4" column="1">
           <widget class="QSpinBox" name="encodersSB">
+           <property name="minimum">
+            <number>0</number>
+           </property>
            <property name="maximum">
             <number>1</number>
            </property>

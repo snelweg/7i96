@@ -20,7 +20,6 @@ def iniList():
 	iniList.append(['TRAJ', 'COORDINATES', 'coordinatesL'])
 	iniList.append(['TRAJ', 'MAX_LINEAR_VELOCITY', 'maxLinearVelocity'])
 
-
 	iniList.append(['JOINT_0', 'AXIS', 'axisCB_0'])
 	iniList.append(['JOINT_0', 'STEPLEN', 'stepTime_0'])
 	iniList.append(['JOINT_0', 'STEPSPACE', 'stepSpace_0'])
@@ -160,6 +159,38 @@ def iniList():
 	iniList.append(['JOINT_4', 'BIAS', 'bias_4'])
 	iniList.append(['JOINT_4', 'MAX_OUTPUT', 'maxOutput_4'])
 	iniList.append(['JOINT_4', 'MAX_ERROR', 'maxError_4'])
+
+	iniList.append(['INPUTS', 'INPUT_0', 'input_0'])
+	iniList.append(['INPUTS', 'INPUT_1', 'input_1'])
+	iniList.append(['INPUTS', 'INPUT_2', 'input_2'])
+	iniList.append(['INPUTS', 'INPUT_3', 'input_3'])
+	iniList.append(['INPUTS', 'INPUT_4', 'input_4'])
+	iniList.append(['INPUTS', 'INPUT_5', 'input_5'])
+	iniList.append(['INPUTS', 'INPUT_6', 'input_6'])
+	iniList.append(['INPUTS', 'INPUT_7', 'input_7'])
+	iniList.append(['INPUTS', 'INPUT_8', 'input_8'])
+	iniList.append(['INPUTS', 'INPUT_9', 'input_9'])
+	iniList.append(['INPUTS', 'INPUT_10', 'input_10'])
+
+	iniList.append(['INPUTS', 'INPUT_JOINT_0', 'inputJoint_0'])
+	iniList.append(['INPUTS', 'INPUT_JOINT_1', 'inputJoint_1'])
+	iniList.append(['INPUTS', 'INPUT_JOINT_2', 'inputJoint_2'])
+	iniList.append(['INPUTS', 'INPUT_JOINT_3', 'inputJoint_3'])
+	iniList.append(['INPUTS', 'INPUT_JOINT_4', 'inputJoint_4'])
+	iniList.append(['INPUTS', 'INPUT_JOINT_5', 'inputJoint_5'])
+	iniList.append(['INPUTS', 'INPUT_JOINT_6', 'inputJoint_6'])
+	iniList.append(['INPUTS', 'INPUT_JOINT_7', 'inputJoint_7'])
+	iniList.append(['INPUTS', 'INPUT_JOINT_8', 'inputJoint_8'])
+	iniList.append(['INPUTS', 'INPUT_JOINT_9', 'inputJoint_9'])
+	iniList.append(['INPUTS', 'INPUT_JOINT_10', 'inputJoint_10'])
+
+	iniList.append(['OUTPUTS', 'OUTPUT_0', 'output_0'])
+	iniList.append(['OUTPUTS', 'OUTPUT_1', 'output_1'])
+	iniList.append(['OUTPUTS', 'OUTPUT_2', 'output_2'])
+	iniList.append(['OUTPUTS', 'OUTPUT_3', 'output_3'])
+	iniList.append(['OUTPUTS', 'OUTPUT_4', 'output_4'])
+
+
 
 	return iniList
 

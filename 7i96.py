@@ -118,6 +118,7 @@ class MainWindow(QMainWindow):
 				else:
 					getattr(self, 'axisType_' + jointTab).setText('ANGULAR')
 		self.coordinatesL.setText(''.join(coordList))
+		self.stepgensSB.setValue(len(coordList))
 
 	def pidSetDefault(self):
 		tab = self.sender().objectName()[11]

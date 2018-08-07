@@ -54,33 +54,33 @@ def setupCombo(combo):
 
 	if combo == 'input':
 		comboList = [['None', False],
-								['E-Stop In', 'estopin'],
-								['Home', 'home'],
-								['Both Limit', 'bothlimit'],
-								['Min Limit', 'minlimit'],
-								['Max Limit', 'maxlimit'],
-								['Home & Limit', 'homelimit'],
-								['Min Limit & Home', 'minlimithome'],
-								['Max Limit & Home', 'maxlimithome'],
-								['Probe', 'motion.probe-input'],
-								['Digital In 0', 'motion.digital-in-00'],
-								['Digital In 1', 'motion.digital-in-01'],
-								['Digital In 2', 'motion.digital-in-02'],
-								['Digital In 3', 'motion.digital-in-03']]
+								['E-Stop In', 'E-Stop In'],
+								['Home', 'Home'],
+								['Both Limit', 'Both Limit'],
+								['Min Limit', 'Min Limit'],
+								['Max Limit', 'Max Limit'],
+								['Home & Limit', 'Home & Limit'],
+								['Min Limit & Home', 'Min Limit & Home'],
+								['Max Limit & Home', 'Max Limit & Home'],
+								['Probe', 'Probe'],
+								['Digital In 0', 'Digital In 0'],
+								['Digital In 1', 'Digital In 1'],
+								['Digital In 2', 'Digital In 2'],
+								['Digital In 3', 'Digital In 3']]
 
 	if combo == 'output':
 		comboList = [['None', False],
-								['Coolant Flood', 'coolantflood'],
-								['Coolant Mist', 'coolantmist'],
-								['Spindle On', 'spindleon'],
-								['Spindle CW', 'spindlecw'],
-								['Spindle CCW', 'spindleccw'],
-								['Spindle Brake', 'spindlebrake'],
-								['E-Stop Out', 'estopout'],
-								['Digital Out 0', 'digitalout0'],
-								['Digital Out 1', 'digitalout1'],
-								['Digital Out 2', 'digitalout2'],
-								['Digital Out 3', 'digitalout3']]
+								['Coolant Flood', 'Coolant Flood'],
+								['Coolant Mist', 'Coolant Mist'],
+								['Spindle On', 'Spindle On'],
+								['Spindle CW', 'Spindle CW'],
+								['Spindle CCW', 'Spindle CCW'],
+								['Spindle Brake', 'Spindle Brake'],
+								['E-Stop Out', 'E-Stop Out'],
+								['Digital Out 0', 'Digital Out 0'],
+								['Digital Out 1', 'Digital Out 1'],
+								['Digital Out 2', 'Digital Out 2'],
+								['Digital Out 3', 'Digital Out 3']]
 
 	if combo == 'debug':
 		comboList = [['Debug Off', '0x00000000'],
