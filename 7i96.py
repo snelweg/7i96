@@ -30,8 +30,8 @@ class MainWindow(QMainWindow):
 		self.axisList = ['axisCB_0', 'axisCB_1', 'axisCB_2', 'axisCB_3', 'axisCB_4']
 
 		# for testing
-		self.config.read('/home/john/linuxcnc/configs/7i96_sample.ini')
-		self.iniLoad()
+		#self.config.read('/home/john/linuxcnc/configs/7i96_sample.ini')
+		#self.iniLoad()
 
 		self.show()
 
