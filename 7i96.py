@@ -180,11 +180,8 @@ class MainWindow(QMainWindow):
 				if isinstance(getattr(self, item[2]), QSpinBox):
 					getattr(self, item[2]).setValue(int(self.config[item[0]][item[1]]))
 				if isinstance(getattr(self, item[2]), QCheckBox):
+					getattr(self, item[2]).setChecked(eval(self.config[item[0]][item[1]]))
 					#print(self.config[item[0]][item[1]])
-					if self.config[item[0]][item[1]] in ['YES', 'yes']:
-						getattr(self, item[2]).setChecked(True)
-					else:
-						getattr(self, item[2]).setChecked(False)
 				if isinstance(getattr(self, item[2]), QComboBox):
 					index = getattr(self, item[2]).findData(self.config[item[0]][item[1]])
 					getattr(self, item[2]).setCurrentIndex(index)

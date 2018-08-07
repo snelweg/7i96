@@ -76,6 +76,8 @@ def buildini(parent):
 	iniContents.append('HALFILE = io.hal\n')
 	iniContents.append('HALFILE = custom.hal\n')
 	iniContents.append('HALFILE = postgui.hal\n')
+	if parent.haluiCB.isChecked():
+		iniContents.append('HALUI = halui\n')
 
 	# build the [HALUI] section
 	iniContents.append('\n[HALUI]\n')
@@ -387,6 +389,10 @@ def buildini(parent):
 	iniContents.append('OUTPUT_3 = {}\n'.format(parent.output_3.currentText()))
 	iniContents.append('OUTPUT_4 = {}\n'.format(parent.output_4.currentText()))
 
+	# build the [OPTIIONS] section
+	iniContents.append('\n[OPTIONS]\n')
+	iniContents.append('MANUAL_TOOL_CHANGE = {}\n'.format(parent.manualToolChangeCB.isChecked()))
+	iniContents.append('HALUI = {}\n'.format(parent.haluiCB.isChecked()))
 
 	with open(iniFilePath, 'w') as iniFile:
 		iniFile.writelines(iniContents)

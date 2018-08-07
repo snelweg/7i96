@@ -4481,7 +4481,7 @@
        <attribute name="title">
         <string>Options</string>
        </attribute>
-       <widget class="QCheckBox" name="manualToolChange">
+       <widget class="QCheckBox" name="manualToolChangeCB">
         <property name="geometry">
          <rect>
           <x>20</x>
@@ -4494,7 +4494,7 @@
          <string>On Screen Prompt for Manual Tool Change</string>
         </property>
        </widget>
-       <widget class="QCheckBox" name="halui">
+       <widget class="QCheckBox" name="haluiCB">
         <property name="geometry">
          <rect>
           <x>20</x>
@@ -4507,7 +4507,7 @@
          <string>Halui User Interface</string>
         </property>
        </widget>
-       <widget class="QCheckBox" name="pyvcp">
+       <widget class="QCheckBox" name="pyvcpCB">
         <property name="geometry">
          <rect>
           <x>20</x>
@@ -4520,7 +4520,7 @@
          <string>PyVCP Panel</string>
         </property>
        </widget>
-       <widget class="QCheckBox" name="gladevcp">
+       <widget class="QCheckBox" name="gladevcpCB">
         <property name="geometry">
          <rect>
           <x>20</x>
@@ -4533,7 +4533,7 @@
          <string>GladeVCP Panel</string>
         </property>
        </widget>
-       <widget class="QCheckBox" name="classicladder">
+       <widget class="QCheckBox" name="classicladderCB">
         <property name="geometry">
          <rect>
           <x>20</x>
@@ -4846,11 +4846,11 @@
   <tabstop>output_2</tabstop>
   <tabstop>output_3</tabstop>
   <tabstop>output_4</tabstop>
-  <tabstop>manualToolChange</tabstop>
-  <tabstop>halui</tabstop>
-  <tabstop>pyvcp</tabstop>
-  <tabstop>gladevcp</tabstop>
-  <tabstop>classicladder</tabstop>
+  <tabstop>manualToolChangeCB</tabstop>
+  <tabstop>haluiCB</tabstop>
+  <tabstop>pyvcpCB</tabstop>
+  <tabstop>gladevcpCB</tabstop>
+  <tabstop>classicladderCB</tabstop>
   <tabstop>debugCombo</tabstop>
  </tabstops>
  <resources/>

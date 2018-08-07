@@ -77,9 +77,10 @@ def buildhal(parent):
 	halContents.append('# Standard I/O Block - EStop, Etc\n\n')
 	halContents.append('# create a signal for the estop loopback\n')
 	halContents.append('net estop-loop iocontrol.0.user-enable-out => iocontrol.0.emc-enable-in\n\n')
-	halContents.append('# create signals for tool loading loopback\n')
-	halContents.append('net tool-prep-loop iocontrol.0.tool-prepare => iocontrol.0.tool-prepared\n')
-	halContents.append('net tool-change-loop iocontrol.0.tool-change => iocontrol.0.tool-changed\n')
+	if parent.manualToolChangeCB.isChecked():
+		halContents.append('# create signals for tool loading loopback\n')
+		halContents.append('net tool-prep-loop iocontrol.0.tool-prepare => iocontrol.0.tool-prepared\n')
+		halContents.append('net tool-change-loop iocontrol.0.tool-change => iocontrol.0.tool-changed\n')
 
 	with open(halFilePath, 'w') as halFile:
 		halFile.writelines(halContents)

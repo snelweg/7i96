@@ -190,8 +190,8 @@ def iniList():
 	iniList.append(['OUTPUTS', 'OUTPUT_3', 'output_3'])
 	iniList.append(['OUTPUTS', 'OUTPUT_4', 'output_4'])
 
-
-
+	iniList.append(['OPTIONS', 'MANUAL_TOOL_CHANGE', 'manualToolChangeCB'])
+	iniList.append(['OPTIONS', 'HALUI', 'haluiCB'])
 	return iniList
 
 #iniList.append(['', '', ''])
