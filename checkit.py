@@ -41,13 +41,25 @@ def config(parent):
 		tabError = True
 		configErrors.append('\tThe Max Feed Override must be greater than zero, 1.2 is suggested')
 
-
-
 	if tabError:
 		configErrors.insert(nextHeader, 'Display Tab:')
 		nextHeader = len(configErrors)
 		print(nextHeader)
 		tabError = False
+	# end of Display Tab
+
+	# check the Axis Tab for errors
+	if len(parent.coordinatesLB.text()) == 0:
+		tabError = True
+		configErrors.append('\tAt least one Joint must be configured starting with Joint 0')
+
+	if tabError:
+		configErrors.insert(nextHeader, 'Axis Tab:')
+		nextHeader = len(configErrors)
+		print(nextHeader)
+		tabError = False
+	# end of Axis Tab
+
 
 	if configErrors:
 		config.result = '\n'.join(configErrors)

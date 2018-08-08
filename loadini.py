@@ -18,7 +18,7 @@ def iniList():
 	iniList.append(['DISPLAY', 'MAX_FEED_OVERRIDE', 'maxFeedOverrideSB'])
 
 	iniList.append(['TRAJ', 'LINEAR_UNITS', 'linearUnitsCB'])
-	iniList.append(['TRAJ', 'COORDINATES', 'coordinatesL'])
+	iniList.append(['TRAJ', 'COORDINATES', 'coordinatesLB'])
 	iniList.append(['TRAJ', 'MAX_LINEAR_VELOCITY', 'maxLinearVelocity'])
 
 	iniList.append(['JOINT_0', 'AXIS', 'axisCB_0'])

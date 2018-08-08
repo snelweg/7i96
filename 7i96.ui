@@ -257,7 +257,7 @@
          <string>Coordinates</string>
         </property>
        </widget>
-       <widget class="QLabel" name="coordinatesL">
+       <widget class="QLabel" name="coordinatesLB">
         <property name="geometry">
          <rect>
           <x>110</x>

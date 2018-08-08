@@ -35,8 +35,8 @@ class MainWindow(QMainWindow):
 			'ladderS32OuputsSB', 'ladderFloatInputsSB', 'ladderFloatOutputsSB']
 
 		# for testing
-		self.config.read('/home/john/linuxcnc/configs/fred/fred.ini')
-		self.iniLoad()
+		#self.config.read('/home/john/linuxcnc/configs/fred/fred.ini')
+		#self.iniLoad()
 
 		self.show()
 
@@ -120,7 +120,7 @@ class MainWindow(QMainWindow):
 					getattr(self, 'axisType_' + jointTab).setText('LINEAR')
 				else:
 					getattr(self, 'axisType_' + jointTab).setText('ANGULAR')
-		self.coordinatesL.setText(''.join(coordList))
+		self.coordinatesLB.setText(''.join(coordList))
 		self.stepgensSB.setValue(len(coordList))
 
 	def pidSetDefault(self):
