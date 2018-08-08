@@ -1,7 +1,7 @@
 def iniList():
 	# Section, Item, Object Name
 	iniList = []
-	iniList.append(['EMC', 'VERSION', 'version'])
+	iniList.append(['EMC', 'VERSION', 'versionLE'])
 	iniList.append(['EMC', 'MACHINE', 'configName'])
 	iniList.append(['EMC', 'DEBUG', 'debugCombo'])
 
@@ -15,6 +15,7 @@ def iniList():
 	iniList.append(['DISPLAY', 'DISPLAY', 'guiCB'])
 	iniList.append(['DISPLAY', 'POSITION_OFFSET', 'positionOffsetCB'])
 	iniList.append(['DISPLAY', 'POSITION_FEEDBACK', 'positionFeedbackCB'])
+	iniList.append(['DISPLAY', 'MAX_FEED_OVERRIDE', 'maxFeedOverrideSB'])
 
 	iniList.append(['TRAJ', 'LINEAR_UNITS', 'linearUnitsCB'])
 	iniList.append(['TRAJ', 'COORDINATES', 'coordinatesL'])

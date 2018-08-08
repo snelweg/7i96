@@ -78,19 +78,11 @@ def buildhal(parent):
 	if parent.ladderGB.isChecked():
 		halContents.append('\n# # Load Classicladder without GUI\n')
 		# this line needs to be built from the options if any are above 0
-		ladderOptionsList = ['ladderRungsSB', 'ladderBitsSB', 'ladderWordsSB',
-			'ladderTimersSB', 'iecTimerSB', 'ladderMonostablesSB', 'ladderCountersSB',
-			'ladderInputsSB', 'ladderOutputsSB', 'ladderExpresionsSB',
-			'ladderSectionsSB', 'ladderSymbolsSB', 'ladderS32InputsSB',
-			'ladderS32OuputsSB', 'ladderFloatInputsSB', 'ladderFloatOutputsSB']
-		halOptions = []
-
-		for option in ladderOptionsList:
+		ladderOptions = []
+		for option in parent.ladderOptionsList:
 			if getattr(parent, option).value() > 0:
-				halOptions.append(getattr(parent, option).property('option') + '=' + str(getattr(parent, option).value()))
-		print(len(halOptions))
-		print(' '.join(halOptions))
-		if halOptions:
+				ladderOptions.append(getattr(parent, option).property('option') + '=' + str(getattr(parent, option).value()))
+		if ladderOptions:
 			halContents.append('loadrt classicladder_rt {}\n'.format(' '.join(halOptions)))
 		else:
 			halContents.append('loadrt classicladder_rt\n')

@@ -102,7 +102,7 @@
          <string>Version</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="version">
+       <widget class="QLineEdit" name="versionLE">
         <property name="geometry">
          <rect>
           <x>490</x>
@@ -110,6 +110,9 @@
           <width>113</width>
           <height>23</height>
          </rect>
+        </property>
+        <property name="text">
+         <string>1.0</string>
         </property>
        </widget>
        <widget class="QComboBox" name="linearUnitsCB">
@@ -380,14 +383,39 @@
          <string>Maximum Feed Override</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="maxFeedOverrideLE">
+       <widget class="QDoubleSpinBox" name="maxFeedOverrideSB">
         <property name="geometry">
          <rect>
-          <x>200</x>
+          <x>190</x>
           <y>150</y>
-          <width>113</width>
-          <height>23</height>
+          <width>66</width>
+          <height>24</height>
          </rect>
+        </property>
+        <property name="decimals">
+         <number>1</number>
+        </property>
+        <property name="maximum">
+         <double>2.000000000000000</double>
+        </property>
+        <property name="singleStep">
+         <double>0.100000000000000</double>
+        </property>
+        <property name="value">
+         <double>1.200000000000000</double>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_179">
+        <property name="geometry">
+         <rect>
+          <x>270</x>
+          <y>150</y>
+          <width>81</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>1.0 = 100%</string>
         </property>
        </widget>
       </widget>
@@ -4643,6 +4671,9 @@
            <property name="option" stdset="0">
             <string>numRungs</string>
            </property>
+           <property name="item" stdset="0">
+            <string>LADDER_RUNGS</string>
+           </property>
           </widget>
          </item>
          <item row="4" column="0">
@@ -5108,7 +5139,7 @@
  <layoutdefault spacing="5" margin="8"/>
  <tabstops>
   <tabstop>configName</tabstop>
-  <tabstop>version</tabstop>
+  <tabstop>versionLE</tabstop>
   <tabstop>ipAddressCB</tabstop>
   <tabstop>jointType_3</tabstop>
   <tabstop>stepper_0</tabstop>
@@ -5303,7 +5334,4 @@
    <bool>true</bool>
   </property>
  </designerdata>
- <buttongroups>
-  <buttongroup name="unitsGroup"/>
- </buttongroups>
 </ui>

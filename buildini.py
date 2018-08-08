@@ -33,6 +33,7 @@ def buildini(parent):
 	iniContents.append('DISPLAY = {}\n'.format(parent.guiCB.itemData(parent.guiCB.currentIndex())))
 	iniContents.append('POSITION_OFFSET = {}\n'.format(parent.positionOffsetCB.itemData(parent.positionOffsetCB.currentIndex())))
 	iniContents.append('POSITION_FEEDBACK = {}\n'.format(parent.positionFeedbackCB.itemData(parent.positionFeedbackCB.currentIndex())))
+	iniContents.append('MAX_FEED_OVERRIDE = {}\n'.format(parent.maxFeedOverrideSB.value()))
 	iniContents.append('CYCLE_TIME = {}\n'.format('0.1'))
 	iniContents.append('INTRO_GRAPHIC = {}\n'.format('emc2.gif'))
 	iniContents.append('INTRO_TIME = {}\n'.format('0'))
@@ -398,6 +399,11 @@ def buildini(parent):
 	iniContents.append('PYVCP = {}\n'.format(parent.pyvcpCB.isChecked()))
 	iniContents.append('GLADEVCP = {}\n'.format(parent.gladevcpCB.isChecked()))
 	iniContents.append('LADDER = {}\n'.format(parent.ladderGB.isChecked()))
+	if parent.ladderGB.isChecked(): # check for any options
+		for option in parent.ladderOptionsList:
+			if getattr(parent, option).value() > 0: #******** work to be done here
+				pass
+
 
 	with open(iniFilePath, 'w') as iniFile:
 		iniFile.writelines(iniContents)

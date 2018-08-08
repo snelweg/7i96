@@ -1,7 +1,7 @@
 def setupCombo(combo):
 	comboList = []
 	if combo == 'ipAddress':
-		comboList = [['Select an IP Address', False],
+		comboList = [['None', False],
 								['10.10.10.10', '"10.10.10.10"'],
 								['192.168.1.121', '"192.168.1.121"']]
 
@@ -31,12 +31,12 @@ def setupCombo(combo):
 								['CCW', 'ccw']]
 
 	if combo == 'display':
-		comboList = [['Select a GUI', False],
+		comboList = [['None', False],
 								['Axis', 'axis'],
 								['Touchy', 'touchy']]
 
 	if combo == 'linearUnits':
-		comboList = [['Select Units', False],
+		comboList = [['None', False],
 								['Imperial', 'imperial'],
 								['Metric', 'metric']]
 
@@ -45,11 +45,13 @@ def setupCombo(combo):
 
 
 	if combo == 'positionOffset':
-		comboList = [['Relative', 'RELATIVE'],
+		comboList = [['None', False],
+								['Relative', 'RELATIVE'],
 								['Machine', 'MACHINE'],]
 
 	if combo == 'positionFeedback':
-		comboList = [['Commanded', 'COMMANDED'],
+		comboList = [['None', False],
+								['Commanded', 'COMMANDED'],
 								['Actual', 'ACTUAL'],]
 
 	if combo == 'input':

@@ -7,7 +7,7 @@ import sys, os, configparser
 from PyQt5 import uic, QtWidgets
 from PyQt5.QtCore import pyqtSlot
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QFileDialog, QLineEdit,
-	QSpinBox, QCheckBox, QComboBox, QLabel, QGroupBox)
+	QSpinBox, QCheckBox, QComboBox, QLabel, QGroupBox, QDoubleSpinBox, QMessageBox)
 import setup, loadini, checkit, buildini, buildhal, buildio
 from dialog import Ui_Dialog as errorDialog
 
@@ -28,10 +28,15 @@ class MainWindow(QMainWindow):
 		self.buildCB()
 		self.setupConnections()
 		self.axisList = ['axisCB_0', 'axisCB_1', 'axisCB_2', 'axisCB_3', 'axisCB_4']
+		self.ladderOptionsList = ['ladderRungsSB', 'ladderBitsSB', 'ladderWordsSB',
+			'ladderTimersSB', 'iecTimerSB', 'ladderMonostablesSB', 'ladderCountersSB',
+			'ladderInputsSB', 'ladderOutputsSB', 'ladderExpresionsSB',
+			'ladderSectionsSB', 'ladderSymbolsSB', 'ladderS32InputsSB',
+			'ladderS32OuputsSB', 'ladderFloatInputsSB', 'ladderFloatOutputsSB']
 
 		# for testing
-		#self.config.read('/home/john/linuxcnc/configs/fred/fred.ini')
-		#self.iniLoad()
+		self.config.read('/home/john/linuxcnc/configs/fred/fred.ini')
+		self.iniLoad()
 
 		self.show()
 
@@ -63,9 +68,9 @@ class MainWindow(QMainWindow):
 	@pyqtSlot()
 	def on_actionCheck_triggered(self):
 		if self.checkConfig(self):
-			print('OkDokey')
+			QMessageBox.about(self, 'Configuration', '---- Checked OK ----')
 		else:
-			self.dialog(self.checkConfig.result)
+			self.errorDialog(self.checkConfig.result)
 
 	@pyqtSlot()
 	def on_actionBuild_triggered(self):
@@ -177,6 +182,8 @@ class MainWindow(QMainWindow):
 					getattr(self, item[2]).setText(self.config[item[0]][item[1]])
 				if isinstance(getattr(self, item[2]), QSpinBox):
 					getattr(self, item[2]).setValue(int(self.config[item[0]][item[1]]))
+				if isinstance(getattr(self, item[2]), QDoubleSpinBox):
+					getattr(self, item[2]).setValue(float(self.config[item[0]][item[1]]))
 				if isinstance(getattr(self, item[2]), QCheckBox):
 					getattr(self, item[2]).setChecked(eval(self.config[item[0]][item[1]]))
 				if isinstance(getattr(self, item[2]), QGroupBox):
@@ -186,13 +193,14 @@ class MainWindow(QMainWindow):
 					index = getattr(self, item[2]).findData(self.config[item[0]][item[1]])
 					getattr(self, item[2]).setCurrentIndex(index)
 
-	def dialog(self, text):
+	def errorDialog(self, text):
 		dialog = QtWidgets.QDialog()
 		dialog.ui = errorDialog()
 		dialog.ui.setupUi(dialog)
 		#dialog.ui.windowTitle('Configuration Errors')
 		dialog.ui.label.setText(text)
 		dialog.exec_()
+
 
 if __name__ == "__main__":
 	app = QApplication(sys.argv)
