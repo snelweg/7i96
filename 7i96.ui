@@ -4581,7 +4581,7 @@
          <rect>
           <x>40</x>
           <y>30</y>
-          <width>261</width>
+          <width>271</width>
           <height>451</height>
          </rect>
         </property>
@@ -4627,6 +4627,9 @@
            <property name="option" stdset="0">
             <string>numWords</string>
            </property>
+           <property name="item" stdset="0">
+            <string>LADDER_WORDS</string>
+           </property>
           </widget>
          </item>
          <item row="1" column="2">
@@ -4651,10 +4654,16 @@
            <property name="option" stdset="0">
             <string>numTimers</string>
            </property>
+           <property name="item" stdset="0">
+            <string>LADDER_TIMERS</string>
+           </property>
           </widget>
          </item>
          <item row="1" column="1">
           <widget class="QSpinBox" name="ladderRungsSB">
+           <property name="maximum">
+            <number>200</number>
+           </property>
            <property name="option" stdset="0">
             <string>numRungs</string>
            </property>
@@ -4678,6 +4687,9 @@
            <property name="option" stdset="0">
             <string>numPhysInputs</string>
            </property>
+           <property name="item" stdset="0">
+            <string>LADDER_HAL_INPUTS</string>
+           </property>
           </widget>
          </item>
          <item row="0" column="2">
@@ -4698,6 +4710,9 @@
           <widget class="QSpinBox" name="iecTimerSB">
            <property name="option" stdset="0">
             <string>numTimersIec</string>
+           </property>
+           <property name="item" stdset="0">
+            <string>LADDER_IEC_TIMERS</string>
            </property>
           </widget>
          </item>
@@ -4726,6 +4741,9 @@
            <property name="option" stdset="0">
             <string>numPhysOutputs</string>
            </property>
+           <property name="item" stdset="0">
+            <string>LADDER_HAL_OUTPUTS</string>
+           </property>
           </widget>
          </item>
          <item row="5" column="2">
@@ -4739,6 +4757,9 @@
           <widget class="QSpinBox" name="ladderSectionsSB">
            <property name="option" stdset="0">
             <string>numSections</string>
+           </property>
+           <property name="item" stdset="0">
+            <string>LADDER_SECTIONS</string>
            </property>
           </widget>
          </item>
@@ -4784,6 +4805,9 @@
            <property name="option" stdset="0">
             <string>numArithmExpr</string>
            </property>
+           <property name="item" stdset="0">
+            <string>LADDER_EXPRESSIONS</string>
+           </property>
           </widget>
          </item>
          <item row="8" column="2">
@@ -4805,12 +4829,18 @@
            <property name="option" stdset="0">
             <string>numBits</string>
            </property>
+           <property name="item" stdset="0">
+            <string>LADDER_BITS</string>
+           </property>
           </widget>
          </item>
          <item row="6" column="1">
           <widget class="QSpinBox" name="ladderMonostablesSB">
            <property name="option" stdset="0">
             <string>numMonostables</string>
+           </property>
+           <property name="item" stdset="0">
+            <string>LADDER_MONOSTABLES</string>
            </property>
           </widget>
          </item>
@@ -4842,6 +4872,9 @@
           <widget class="QSpinBox" name="ladderCountersSB">
            <property name="option" stdset="0">
             <string>numCounters</string>
+           </property>
+           <property name="item" stdset="0">
+            <string>LADDER_COUNTERS</string>
            </property>
           </widget>
          </item>
@@ -4924,12 +4957,18 @@
            <property name="option" stdset="0">
             <string>numSymbols</string>
            </property>
+           <property name="item" stdset="0">
+            <string>LADDER_SYMBOLS</string>
+           </property>
           </widget>
          </item>
          <item row="13" column="1">
           <widget class="QSpinBox" name="ladderS32InputsSB">
            <property name="option" stdset="0">
             <string>numS32in</string>
+           </property>
+           <property name="item" stdset="0">
+            <string>LADDER_S32_INPUTS</string>
            </property>
           </widget>
          </item>
@@ -4938,6 +4977,9 @@
            <property name="option" stdset="0">
             <string>numS32out</string>
            </property>
+           <property name="item" stdset="0">
+            <string>LADDER_S32_OUTPUTS</string>
+           </property>
           </widget>
          </item>
          <item row="15" column="1">
@@ -4945,12 +4987,18 @@
            <property name="option" stdset="0">
             <string>numFloatIn</string>
            </property>
+           <property name="item" stdset="0">
+            <string>LADDER_FLOAT_INPUTS</string>
+           </property>
           </widget>
          </item>
          <item row="16" column="1">
           <widget class="QSpinBox" name="ladderFloatOutputsSB">
            <property name="option" stdset="0">
             <string>numFloatOut</string>
+           </property>
+           <property name="item" stdset="0">
+            <string>LADDER_FLOAT_OUTPUTS</string>
            </property>
           </widget>
          </item>

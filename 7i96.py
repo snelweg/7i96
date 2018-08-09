@@ -6,7 +6,7 @@ from PyQt5 import uic, QtWidgets
 from PyQt5.QtCore import pyqtSlot
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QFileDialog, QLineEdit,
 	QSpinBox, QCheckBox, QComboBox, QLabel, QGroupBox, QDoubleSpinBox, QMessageBox)
-import setup, loadini, checkit, buildini, buildhal, buildio
+import setup, loadini, checkit, buildfiles
 from dialog import Ui_Dialog as errorDialog
 
 class MainWindow(QMainWindow):
@@ -20,10 +20,12 @@ class MainWindow(QMainWindow):
 		self.setWindowTitle('7i96 Configuration Tool Version {}'.format(self.version))
 		self.configNameUnderscored = ''
 		self.checkConfig = checkit.config
-		self.buildini = buildini.buildini
-		self.buildhal = buildhal.buildhal
-		self.buildio = buildio.buildio
-		self.buildmisc = buildhal.buildmisc
+		#self.buildini = buildini.buildini
+		self.buildini = buildfiles.buildini
+		self.buildhal = buildfiles.buildhal
+		self.buildio = buildfiles.buildio
+		self.buildmisc = buildfiles.buildmisc
+
 		self.buildCB()
 		self.setupConnections()
 		self.axisList = ['axisCB_0', 'axisCB_1', 'axisCB_2', 'axisCB_3', 'axisCB_4']

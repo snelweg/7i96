@@ -142,10 +142,10 @@ def buildmisc(parent):
 		pyvcpContents.append('The contents of this file will not be overwritten\n')
 		pyvcpContents.append('when you run this wizard again.\n')
 		pyvcpContents.append('-->\n')
-		pyvcpContents.append('<label>\n')
-		pyvcpContents.append('<text>"This is a Sample Label:"</text>\n')
-		pyvcpContents.append('<font>("Helvetica",20)</font>\n')
-		pyvcpContents.append('</label>\n')
+		pyvcpContents.append('	<label>\n')
+		pyvcpContents.append('		<text>"This is a Sample Label:"</text>\n')
+		pyvcpContents.append('		<font>("Helvetica",20)</font>\n')
+		pyvcpContents.append('	</label>\n')
 		pyvcpContents.append('</pyvcp>\n')
 		try: # if this file exists don't write over it
 			with open(pyvcpFilePath, 'x') as pyvcpFile:
