@@ -36,8 +36,8 @@ class MainWindow(QMainWindow):
 			'ladderS32OuputsSB', 'ladderFloatInputsSB', 'ladderFloatOutputsSB']
 
 		# for testing
-		self.config.read('/home/john/linuxcnc/configs/fred/fred.ini')
-		self.iniLoad()
+		#self.config.read('/home/john/linuxcnc/configs/fred/fred.ini')
+		#self.iniLoad()
 
 		self.show()
 
