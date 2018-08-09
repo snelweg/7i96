@@ -15,7 +15,7 @@ def buildini(parent):
 
 	# build the [EMC] section
 	iniContents.append('\n[EMC]\n')
-	iniContents.append('VERSION = {}\n'.format(parent.version.text()))
+	iniContents.append('VERSION = {}\n'.format(parent.version))
 	iniContents.append('MACHINE = {}\n'.format(parent.configName.text()))
 	iniContents.append('DEBUG = {}\n'.format(parent.debugCombo.itemData(parent.debugCombo.currentIndex())))
 
@@ -44,7 +44,7 @@ def buildini(parent):
 	# build the [KINS] section
 	iniContents.append('\n[KINS]\n')
 	iniContents.append('KINEMATICS = {}\n'.format('trivkins'))
-	iniContents.append('JOINTS = {}\n'.format(len(parent.coordinatesL.text())))
+	iniContents.append('JOINTS = {}\n'.format(len(parent.coordinatesLB.text())))
 
 	# build the [EMCIO] section
 	iniContents.append('\n[EMCIO]\n')
@@ -68,7 +68,7 @@ def buildini(parent):
 
 	# build the [TRAJ] section
 	iniContents.append('\n[TRAJ]\n')
-	iniContents.append('COORDINATES = {}\n'.format(parent.coordinatesL.text()))
+	iniContents.append('COORDINATES = {}\n'.format(parent.coordinatesLB.text()))
 	iniContents.append('LINEAR_UNITS = {}\n'.format(parent.linearUnitsCB.itemData(parent.linearUnitsCB.currentIndex())))
 	iniContents.append('ANGULAR_UNITS = {}\n'.format(parent.angularUnitsCB.itemData(parent.angularUnitsCB.currentIndex())))
 	iniContents.append('MAX_LINEAR_VELOCITY = {}\n'.format(parent.maxLinearVelocity.text()))

@@ -4371,19 +4371,6 @@
          </rect>
         </property>
        </widget>
-       <widget class="QLabel" name="label_142">
-        <property name="geometry">
-         <rect>
-          <x>420</x>
-          <y>60</y>
-          <width>181</width>
-          <height>61</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;going to get probe and&lt;/p&gt;&lt;p&gt;digital inputs working first&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-        </property>
-       </widget>
       </widget>
       <widget class="QWidget" name="outputs">
        <attribute name="title">

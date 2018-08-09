@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
-version = 0.8
-
 import sys, os, configparser
 from PyQt5 import uic, QtWidgets
 from PyQt5.QtCore import pyqtSlot
@@ -15,10 +13,11 @@ class MainWindow(QMainWindow):
 	def __init__(self):
 		super(MainWindow, self).__init__()
 		uic.loadUi("7i96.ui", self)
+		self.version = '0.8'
 		self.config = configparser.ConfigParser(strict=False)
 		self.linuxcncDir = os.path.expanduser('~/linuxcnc')
 		self.configsDir = os.path.expanduser('~/linuxcnc/configs')
-		self.setWindowTitle('7i96 Configuration Tool Version {}'.format(str(version)))
+		self.setWindowTitle('7i96 Configuration Tool Version {}'.format(self.version))
 		self.configNameUnderscored = ''
 		self.checkConfig = checkit.config
 		self.buildini = buildini.buildini
@@ -35,8 +34,8 @@ class MainWindow(QMainWindow):
 			'ladderS32OuputsSB', 'ladderFloatInputsSB', 'ladderFloatOutputsSB']
 
 		# for testing
-		#self.config.read('/home/john/linuxcnc/configs/fred/fred.ini')
-		#self.iniLoad()
+		self.config.read('/home/john/linuxcnc/configs/fred/fred.ini')
+		self.iniLoad()
 
 		self.show()
 

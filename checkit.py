@@ -44,7 +44,6 @@ def config(parent):
 	if tabError:
 		configErrors.insert(nextHeader, 'Display Tab:')
 		nextHeader = len(configErrors)
-		print(nextHeader)
 		tabError = False
 	# end of Display Tab
 
@@ -52,6 +51,58 @@ def config(parent):
 	if len(parent.coordinatesLB.text()) == 0:
 		tabError = True
 		configErrors.append('\tAt least one Joint must be configured starting with Joint 0')
+	else: #check the joints
+		# make this a loop getattr(parent, '_' + str(index))
+		for index in range(5):
+			if getattr(parent, 'axisCB_' + str(index)).currentText() != 'None':
+				if getattr(parent, 'scale_' + str(index)).value() == 0:
+					tabError = True
+					configErrors.append('\tThe Scale must be greater than zero for Joint {}'.format(index))
+				if not getattr(parent, 'minLimit_' + str(index)).text():
+					tabError = True
+					configErrors.append('\tThe for Mininum Limit Joint {} must be specified'.format(index))
+				if not getattr(parent, 'maxLimit_' + str(index)).text():
+					tabError = True
+					configErrors.append('\tThe Maximum Limit for Joint {} must be specified'.format(index))
+				if not getattr(parent, 'maxVelocity_' + str(index)).text():
+					tabError = True
+					configErrors.append('\tThe for Maximum Velocity for Joint {} must be specified'.format(index))
+				if not getattr(parent, 'maxAccel_' + str(index)).text():
+					tabError = True
+					configErrors.append('\tThe for Maximum Acceleration for Joint {} must be specified'.format(index))
+				if not getattr(parent, 'p_' + str(index)).text():
+					tabError = True
+					configErrors.append('\tThe for P for Joint {} must be specified'.format(index))
+				if not getattr(parent, 'i_' + str(index)).text():
+					tabError = True
+					configErrors.append('\tThe for I for Joint {} must be specified'.format(index))
+				if not getattr(parent, 'd_' + str(index)).text():
+					tabError = True
+					configErrors.append('\tThe for D for Joint {} must be specified'.format(index))
+				if not getattr(parent, 'ff0_' + str(index)).text():
+					tabError = True
+					configErrors.append('\tThe for FF0 for Joint {} must be specified'.format(index))
+				if not getattr(parent, 'ff1_' + str(index)).text():
+					tabError = True
+					configErrors.append('\tThe for FF1 for Joint {} must be specified'.format(index))
+				if not getattr(parent, 'ff2_' + str(index)).text():
+					tabError = True
+					configErrors.append('\tThe for FF2 for Joint {} must be specified'.format(index))
+				if not getattr(parent, 'stepTime_' + str(index)).text():
+					tabError = True
+					configErrors.append('\tThe for Step Time for Joint {} must be specified'.format(index))
+				if not getattr(parent, 'stepSpace_' + str(index)).text():
+					tabError = True
+					configErrors.append('\tThe for Step Space for Joint {} must be specified'.format(index))
+				if not getattr(parent, 'dirSetup_' + str(index)).text():
+					tabError = True
+					configErrors.append('\tThe for Direction Setup for Joint {} must be specified'.format(index))
+				if not getattr(parent, 'dirHold_' + str(index)).text():
+					tabError = True
+					configErrors.append('\tThe for Direction Hold for Joint {} must be specified'.format(index))
+
+
+
 
 	if tabError:
 		configErrors.insert(nextHeader, 'Axis Tab:')

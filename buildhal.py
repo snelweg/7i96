@@ -16,7 +16,7 @@ def buildhal(parent):
 	halContents.append('servo_period_nsec=[EMCMOT]SERVO_PERIOD ')
 	halContents.append('num_joints=[KINS]JOINTS\n\n')
 	halContents.append('# standard components\n')
-	halContents.append('loadrt pid num_chan={} \n\n'.format(len(parent.coordinatesL.text())))
+	halContents.append('loadrt pid num_chan={} \n\n'.format(len(parent.coordinatesLB.text())))
 	halContents.append('# hostmot2 driver\n')
 	halContents.append('loadrt hostmot2\n\n')
 	halContents.append('loadrt [HOSTMOT2](DRIVER) ')
@@ -29,10 +29,10 @@ def buildhal(parent):
 	halContents.append('addf hm2_[HOSTMOT2](BOARD).0.read servo-thread\n')
 	halContents.append('addf motion-command-handler servo-thread\n')
 	halContents.append('addf motion-controller servo-thread\n')
-	for index in range(len(parent.coordinatesL.text())):
+	for index in range(len(parent.coordinatesLB.text())):
 		halContents.append('addf pid.{}.do-pid-calcs servo-thread\n'.format(str(index)))
 	halContents.append('addf hm2_[HOSTMOT2](BOARD).0.write servo-thread\n\n')
-	for index in range(len(parent.coordinatesL.text())):
+	for index in range(len(parent.coordinatesLB.text())):
 		halContents.append('# Joint {0}\n\n'.format(str(index)))
 		halContents.append('# axis enable chain\n')
 		halContents.append('newsig emcmot.{0}.enable bit\n'.format(str(index)))
