@@ -522,6 +522,29 @@ def buildio(parent):
 def buildmisc(parent):
 	configPath = os.path.join(parent.configsDir, parent.configName.text())
 
+	# create the custom.hal file if not there
+	customFilePath = os.path.join(configPath, 'custom.hal')
+	customContents = []
+	customContents = ['# Place any HAL commands in this file that you want to run before the GUI.\n']
+	customContents.append('# This file will not be written over by the configuration tool.\n')
+	try: # if this file exists don't write over it
+		with open(customFilePath, 'x') as customFile:
+			customFile.writelines(customContents)
+	except FileExistsError:
+		pass
+
+	# create the postgui.hal file if not there
+	postguiFilePath = os.path.join(configPath, 'postgui.hal')
+	postguiContents = []
+	postguiContents = ['# Place any HAL commands in this file that you want to run AFTER the GUI finishes loading.\n']
+	postguiContents.append('# GUI HAL pins are not visible until after the GUI loads.\n')
+	postguiContents.append('# This file will not be written over by the configuration tool.\n')
+	try: # if this file exists don't write over it
+		with open(postguiFilePath, 'x') as postguiFile:
+			postguiFile.writelines(postguiContents)
+	except FileExistsError:
+		pass
+
 	# create the tool file if not there
 	toolFilePath = os.path.join(configPath, parent.configName.text() + '.tbl')
 	toolContents = []
