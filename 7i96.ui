@@ -5103,6 +5103,7 @@
     </property>
     <addaction name="actionCheck"/>
     <addaction name="actionBuild"/>
+    <addaction name="actionCard_Check"/>
    </widget>
    <widget class="QMenu" name="menuHelp">
     <property name="title">
@@ -5168,6 +5169,11 @@
   <action name="actionBuild">
    <property name="text">
     <string>Build</string>
+   </property>
+  </action>
+  <action name="actionCard_Check">
+   <property name="text">
+    <string>Card Check</string>
    </property>
   </action>
  </widget>

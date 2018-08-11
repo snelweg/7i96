@@ -1,3 +1,0 @@
-config.has_section(section)
-config.has_option(section, option)
-config.get(section, key)

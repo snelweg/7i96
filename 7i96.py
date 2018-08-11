@@ -81,6 +81,10 @@ class MainWindow(QMainWindow):
 		self.buildmisc(self)
 
 	@pyqtSlot()
+	def on_actionCardCheck_triggered(self):
+		self.cardCheck(self)
+
+	@pyqtSlot()
 	def on_actionSaveAs_triggered(self):
 		 print('File Save As')
 
