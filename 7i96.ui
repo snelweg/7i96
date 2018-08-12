@@ -296,6 +296,19 @@
          </rect>
         </property>
        </widget>
+       <widget class="QLabel" name="pcStatsLB">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>490</y>
+          <width>361</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>TextLabel</string>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="tab_8">
        <attribute name="title">
@@ -5103,7 +5116,7 @@
     </property>
     <addaction name="actionCheck"/>
     <addaction name="actionBuild"/>
-    <addaction name="actionCard_Check"/>
+    <addaction name="actionCardCheck"/>
    </widget>
    <widget class="QMenu" name="menuHelp">
     <property name="title">
@@ -5129,6 +5142,7 @@
    <addaction name="actionOpen"/>
    <addaction name="actionCheck"/>
    <addaction name="actionBuild"/>
+   <addaction name="actionCardCheck"/>
    <addaction name="actionExit"/>
   </widget>
   <action name="actionNew">
@@ -5171,7 +5185,7 @@
     <string>Build</string>
    </property>
   </action>
-  <action name="actionCard_Check">
+  <action name="actionCardCheck">
    <property name="text">
     <string>Card Check</string>
    </property>

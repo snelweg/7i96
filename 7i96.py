@@ -1,13 +1,14 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
-import sys, os, configparser
+import sys, os, configparser, platform
 from PyQt5 import uic, QtWidgets
 from PyQt5.QtCore import pyqtSlot
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QFileDialog, QLineEdit,
 	QSpinBox, QCheckBox, QComboBox, QLabel, QGroupBox, QDoubleSpinBox, QMessageBox)
-import setup, loadini, checkit, buildfiles
+import setup, loadini, checkit, buildfiles, card
 from dialog import Ui_Dialog as errorDialog
+from about import Ui_about as aboutDialog
 
 class MainWindow(QMainWindow):
 	def __init__(self):
@@ -25,6 +26,8 @@ class MainWindow(QMainWindow):
 		self.buildhal = buildfiles.buildhal
 		self.buildio = buildfiles.buildio
 		self.buildmisc = buildfiles.buildmisc
+		self.cardCheck = card.check
+		self.pcStats = platform.uname()
 
 		self.buildCB()
 		self.setupConnections()
@@ -34,6 +37,8 @@ class MainWindow(QMainWindow):
 			'ladderInputsSB', 'ladderOutputsSB', 'ladderExpresionsSB',
 			'ladderSectionsSB', 'ladderSymbolsSB', 'ladderS32InputsSB',
 			'ladderS32OuputsSB', 'ladderFloatInputsSB', 'ladderFloatOutputsSB']
+
+		self.pcStatsLB.setText(platform.system())
 
 		# for testing
 		#self.config.read('/home/john/linuxcnc/configs/fred/fred.ini')
@@ -64,7 +69,19 @@ class MainWindow(QMainWindow):
 
 	@pyqtSlot()
 	def on_actionAbout_triggered(self):
-		pass
+		dialog = QtWidgets.QDialog()
+		dialog.ui = aboutDialog()
+		dialog.ui.setupUi(dialog)
+		#dialog.ui.label.setText(text)
+		dialog.ui.versionLB.setText('Version {}'.format(self.version))
+		dialog.ui.systemLB.setText(self.pcStats.system)
+		dialog.ui.releaseLB.setText('Kernel {}'.format(self.pcStats.release))
+		dialog.ui.machineLB.setText('Processor {}'.format(self.pcStats.machine))
+		if sys.maxsize > 2**32: # test for 64bit OS
+			dialog.ui.bitsLB.setText('64 bit OS')
+		else:
+			dialog.ui.bitsLB.setText('32 bit OS')
+		dialog.exec_()
 
 	@pyqtSlot()
 	def on_actionCheck_triggered(self):
