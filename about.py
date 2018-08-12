@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'about.ui'
 #
-# Created: Sun Aug 12 08:20:17 2018
+# Created: Sun Aug 12 12:18:13 2018
 #      by: PyQt5 UI code generator 5.2.1
 #
 # WARNING! All changes made in this file will be lost!
@@ -64,7 +64,7 @@ class Ui_about(object):
         self.label.setText(_translate("about", "7i96 Configuration Tool"))
         self.versionLB.setText(_translate("about", "TextLabel"))
         self.label_2.setText(_translate("about", "Author John Thornton"))
-        self.label_3.setText(_translate("about", "Licence GP3"))
+        self.label_3.setText(_translate("about", "Licence GPL3"))
         self.groupBox.setTitle(_translate("about", "PC Information"))
         self.systemLB.setText(_translate("about", "TextLabel"))
         self.releaseLB.setText(_translate("about", "TextLabel"))

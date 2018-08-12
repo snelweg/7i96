@@ -87,7 +87,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Licence GP3</string>
+    <string>Licence GPL3</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
