@@ -26,7 +26,6 @@ class MainWindow(QMainWindow):
 		self.buildhal = buildfiles.buildhal
 		self.buildio = buildfiles.buildio
 		self.buildmisc = buildfiles.buildmisc
-		self.cardCheck = card.check
 		self.pcStats = platform.uname()
 
 		self.buildCB()
@@ -121,6 +120,10 @@ class MainWindow(QMainWindow):
 		self.pidDefault_2.clicked.connect(self.pidSetDefault)
 		self.pidDefault_3.clicked.connect(self.pidSetDefault)
 		self.pidDefault_4.clicked.connect(self.pidSetDefault)
+		self.testConnectionPB.clicked.connect(self.cardCheck)
+
+	def cardCheck(self):
+		card.check(self)
 
 	def onConfigNameChanged(self, text):
 		# update the iniDictionary when text is changed
