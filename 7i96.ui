@@ -296,19 +296,6 @@
          </rect>
         </property>
        </widget>
-       <widget class="QLabel" name="pcStatsLB">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>490</y>
-          <width>361</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>TextLabel</string>
-        </property>
-       </widget>
        <widget class="QPushButton" name="testConnectionPB">
         <property name="geometry">
          <rect>
@@ -340,8 +327,8 @@
          <rect>
           <x>20</x>
           <y>300</y>
-          <width>331</width>
-          <height>101</height>
+          <width>371</width>
+          <height>211</height>
          </rect>
         </property>
         <property name="frameShape">
