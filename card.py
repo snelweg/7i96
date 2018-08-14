@@ -7,7 +7,7 @@ def check(parent):
 
 	if parent.ipAddressCB.currentText() == 'None':
 		parent.testConnectionLB.setText('An IP address must be selected')
-		return
+		return 'An IP address must be selected'
 	ipAddress = parent.ipAddressCB.currentText()
 
 	if sys.maxsize > 2**32:
@@ -19,9 +19,11 @@ def check(parent):
 	try:
 		output = subprocess.check_output(command, stderr=subprocess.PIPE)
 		parent.testConnectionLB.setText(output.decode(sys.getfilesystemencoding()))
+		return output.decode(sys.getfilesystemencoding())
 	except subprocess.CalledProcessError as e:
 		#print('exit code: {}'.format(e.returncode))
 		#print('stdout: {}'.format(e.output.decode(sys.getfilesystemencoding())))
 		parent.testConnectionLB.setText(e.output.decode(sys.getfilesystemencoding()))
+		return e.output.decode(sys.getfilesystemencoding())
 
 

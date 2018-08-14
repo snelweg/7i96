@@ -2,4 +2,4 @@
 __pycache__/
 *.pyc
 /old files
-/*.txt
+*.txt

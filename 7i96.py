@@ -96,6 +96,9 @@ class MainWindow(QMainWindow):
 	@pyqtSlot()
 	def on_actionCardCheck_triggered(self):
 		self.cardCheck(self)
+		resultSplit = result.splitlines()
+		for line in resultSplit:
+			print(line)
 
 	@pyqtSlot()
 	def on_actionSaveAs_triggered(self):
@@ -120,7 +123,10 @@ class MainWindow(QMainWindow):
 		self.testConnectionPB.clicked.connect(self.cardCheck)
 
 	def cardCheck(self):
-		card.check(self)
+		result = card.check(self)
+		resultSplit = result.splitlines()
+		for line in resultSplit:
+			print(line)
 
 	def onConfigNameChanged(self, text):
 		# update the iniDictionary when text is changed
