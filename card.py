@@ -18,7 +18,7 @@ def check(parent):
 
 	try:
 		output = subprocess.check_output(command, stderr=subprocess.PIPE)
-		parent.testConnectionLB.setText(output)
+		parent.testConnectionLB.setText(output.decode(sys.getfilesystemencoding()))
 	except subprocess.CalledProcessError as e:
 		#print('exit code: {}'.format(e.returncode))
 		#print('stdout: {}'.format(e.output.decode(sys.getfilesystemencoding())))
