@@ -21,7 +21,6 @@ class MainWindow(QMainWindow):
 		self.setWindowTitle('7i96 Configuration Tool Version {}'.format(self.version))
 		self.configNameUnderscored = ''
 		self.checkConfig = checkit.config
-		#self.buildini = buildini.buildini
 		self.buildini = buildfiles.buildini
 		self.buildhal = buildfiles.buildhal
 		self.buildio = buildfiles.buildio
@@ -36,8 +35,6 @@ class MainWindow(QMainWindow):
 			'ladderInputsSB', 'ladderOutputsSB', 'ladderExpresionsSB',
 			'ladderSectionsSB', 'ladderSymbolsSB', 'ladderS32InputsSB',
 			'ladderS32OuputsSB', 'ladderFloatInputsSB', 'ladderFloatOutputsSB']
-
-		self.pcStatsLB.setText(platform.system())
 
 		# for testing
 		#self.config.read('/home/john/linuxcnc/configs/fred/fred.ini')
