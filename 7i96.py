@@ -133,8 +133,8 @@ class MainWindow(QMainWindow):
 	def cardCheck(self):
 		result = card.check(self)
 		resultSplit = result.splitlines()
-		for line in resultSplit:
-			print(line)
+		#for line in resultSplit:
+		#	print(line)
 
 	def flashCard(self):
 		card.flashCard(self)

@@ -5,7 +5,7 @@ def check(parent):
 
 	if parent.ipAddressCB.currentText() == 'None':
 		parent.testConnectionLB.setText('An IP address must be selected')
-		return 'An IP address must be selected'
+		return
 	ipAddress = parent.ipAddressCB.currentText()
 
 	if parent.is64bit:
