@@ -42,8 +42,9 @@ def flashCard(parent):
 	else:
 		mesaflash = os.path.join(parent.cwd, 'mesaflash32')
 	# hmm pkexec must want a string vs subprocess which wants a list
-	command = ''.join([mesaflash, '--device', '7i96', '--addr', ipAddress, '--write', firmware])
-	proc = subprocess.Popen(['/usr/bin/pkexec', command])
+	command = ' '.join([mesaflash, '--device', '7i96', '--addr', ipAddress, '--write', firmware])
+	print(command)
+	#proc = subprocess.Popen(['/usr/bin/pkexec', command])
 
 
 	#text, ok = QInputDialog.getText(None, "Flash", "User Password Needed!")
