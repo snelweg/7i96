@@ -41,8 +41,8 @@ def flashCard(parent):
 		mesaflash = os.path.join(parent.cwd, 'mesaflash64')
 	else:
 		mesaflash = os.path.join(parent.cwd, 'mesaflash32')
-
-	command = [mesaflash, '--device', '7i96', '--addr', ipAddress, '--write', firmware]
+	# hmm pkexec must want a string vs subprocess which wants a list
+	command = ''.join([mesaflash, '--device', '7i96', '--addr', ipAddress, '--write', firmware])
 	proc = subprocess.Popen(['/usr/bin/pkexec', command])
 
 
