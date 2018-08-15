@@ -1,5 +1,7 @@
 def setupCombo(combo):
 	comboList = []
+
+	# might take a look at the data and see if we can simply use '10.10.10.10' format
 	if combo == 'ipAddress':
 		comboList = [['None', False],
 								['10.10.10.10', '"10.10.10.10"'],

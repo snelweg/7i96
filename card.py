@@ -8,7 +8,7 @@ def check(parent):
 		return 'An IP address must be selected'
 	ipAddress = parent.ipAddressCB.currentText()
 
-	if sys.maxsize > 2**32:
+	if parent.is64bit:
 		mesaflash = "./mesaflash64"
 	else:
 		mesaflash = "./mesaflash32"
@@ -29,10 +29,20 @@ def flashCard(parent):
 		parent.testConnectionLB.setText('A firmware must be selected')
 		return
 
+	if not parent.ipAddressCB.currentData():
+		parent.testConnectionLB.setText('An IP address must be selected')
+		return
+
+	ipAddress = parent.ipAddressCB.currentText()
+	firmware = os.path.join(parent.cwd, parent.firmwareCB.currentData())
+
+
 	if parent.is64bit:
-		command = os.path.join(parent.cwd, 'mesaflash64')
+		mesaflash = os.path.join(parent.cwd, 'mesaflash64')
 	else:
-		command = os.path.join(parent.cwd, 'mesaflash32')
+		mesaflash = os.path.join(parent.cwd, 'mesaflash32')
+
+	command = [mesaflash, '--device', '7i96', '--addr', ipAddress, '--write', firmware]
 	proc = subprocess.Popen(['/usr/bin/pkexec', command])
 
 
