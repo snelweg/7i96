@@ -126,13 +126,14 @@ class MainWindow(QMainWindow):
 		self.pidDefault_2.clicked.connect(self.pidSetDefault)
 		self.pidDefault_3.clicked.connect(self.pidSetDefault)
 		self.pidDefault_4.clicked.connect(self.pidSetDefault)
-		self.testConnectionPB.clicked.connect(self.cardCheck)
+		self.testConnectionPB.clicked.connect(self.cardRead)
 		self.flashPB.clicked.connect(self.flashCard)
 		self.reloadPB.clicked.connect(self.reloadCard)
 
-	def cardCheck(self):
-		result = card.check(self)
-		resultSplit = result.splitlines()
+	def cardRead(self):
+		card.read(self)
+		# if the results are good then set up the stepgens etc
+		#resultSplit = result.splitlines()
 		#for line in resultSplit:
 		#	print(line)
 

@@ -1,7 +1,7 @@
 import os, sys, subprocess
 from PyQt5.QtWidgets import QInputDialog, QLineEdit
 
-def check(parent):
+def read(parent):
 
 	if parent.ipAddressCB.currentText() == 'None':
 		parent.testConnectionLB.setText('An IP address must be selected')
