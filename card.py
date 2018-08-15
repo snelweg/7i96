@@ -1,7 +1,5 @@
-#from subprocess import PIPE, run
-#import sys, subprocess
-#from subprocess import check_output, CalledProcessError, STDOUT
-import sys, subprocess
+import os, sys, subprocess
+from PyQt5.QtWidgets import QInputDialog, QLineEdit
 
 def check(parent):
 
@@ -26,4 +24,23 @@ def check(parent):
 		parent.testConnectionLB.setText(e.output.decode(sys.getfilesystemencoding()))
 		return e.output.decode(sys.getfilesystemencoding())
 
+def flashCard(parent):
+	if not parent.firmwareCB.currentData():
+		parent.testConnectionLB.setText('A firmware must be selected')
+		return
+
+	if parent.is64bit:
+		command = os.path.join(parent.cwd, 'mesaflash64')
+	else:
+		command = os.path.join(parent.cwd, 'mesaflash32')
+	proc = subprocess.Popen(['/usr/bin/pkexec', command])
+
+
+	#text, ok = QInputDialog.getText(None, "Flash", "User Password Needed!")
+	#if ok and text:
+	#	print("password={}".format(text))
+
+
+def reloadCard(parent):
+	print('reloading')
 

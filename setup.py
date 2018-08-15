@@ -111,4 +111,9 @@ def setupCombo(combo):
 	if combo == 'driver':
 		comboList = [['HostMot2 Ethernet', 'hm2_eth']]
 
+	if combo == 'firmware':
+		comboList = [['None', False],
+								['5 StepGens No PWM', '7i96d.bit'],
+								['4 StepGens and PWM', '7i96_1pwm.bit']]
+
 	return comboList

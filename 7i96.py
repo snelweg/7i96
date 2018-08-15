@@ -16,6 +16,11 @@ class MainWindow(QMainWindow):
 		uic.loadUi("7i96.ui", self)
 		self.version = '0.8'
 		self.config = configparser.ConfigParser(strict=False)
+		self.cwd = os.getcwd()
+		if sys.maxsize > 2**32: # test for 64bit OS
+			self.is64bit = True
+		else:
+			self.is64bit = False
 		self.linuxcncDir = os.path.expanduser('~/linuxcnc')
 		self.configsDir = os.path.expanduser('~/linuxcnc/configs')
 		self.setWindowTitle('7i96 Configuration Tool Version {}'.format(self.version))
@@ -39,6 +44,7 @@ class MainWindow(QMainWindow):
 		# for testing
 		#self.config.read('/home/john/linuxcnc/configs/fred/fred.ini')
 		#self.iniLoad()
+
 
 		self.show()
 
@@ -121,12 +127,20 @@ class MainWindow(QMainWindow):
 		self.pidDefault_3.clicked.connect(self.pidSetDefault)
 		self.pidDefault_4.clicked.connect(self.pidSetDefault)
 		self.testConnectionPB.clicked.connect(self.cardCheck)
+		self.flashPB.clicked.connect(self.flashCard)
+		self.reloadPB.clicked.connect(self.reloadCard)
 
 	def cardCheck(self):
 		result = card.check(self)
 		resultSplit = result.splitlines()
 		for line in resultSplit:
 			print(line)
+
+	def flashCard(self):
+		card.flashCard(self)
+
+	def reloadCard(self):
+		pass
 
 	def onConfigNameChanged(self, text):
 		# update the iniDictionary when text is changed
@@ -181,6 +195,8 @@ class MainWindow(QMainWindow):
 			self.positionOffsetCB.addItem(item[0], item[1])
 		for item in setup.setupCombo('positionFeedback'):
 			self.positionFeedbackCB.addItem(item[0], item[1])
+		for item in setup.setupCombo('firmware'):
+			self.firmwareCB.addItem(item[0], item[1])
 
 		for i in range(5):
 			for item in setup.setupCombo('axis'):
