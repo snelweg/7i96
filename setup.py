@@ -116,6 +116,6 @@ def setupCombo(combo):
 	if combo == 'firmware':
 		comboList = [['None', False],
 								['5 StepGens No PWM', '7i96d.bit'],
-								['4 StepGens and PWM', '7i96_1pwm.bit']]
+								['4 StepGens and PWM', '7i96d_1pwm.bit']]
 
 	return comboList
