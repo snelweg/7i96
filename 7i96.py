@@ -27,6 +27,7 @@ class MainWindow(QMainWindow):
 		self.buildio = buildfiles.buildio
 		self.buildmisc = buildfiles.buildmisc
 		self.pcStats = platform.uname()
+		self.qclip = QtWidgets.QApplication.clipboard()
 
 		self.buildCB()
 		self.setupConnections()
@@ -126,6 +127,7 @@ class MainWindow(QMainWindow):
 		self.testConnectionPB.clicked.connect(self.cardRead)
 		self.flashPB.clicked.connect(self.flashCard)
 		self.reloadPB.clicked.connect(self.reloadCard)
+		self.copyPB.clicked.connect(self.copyOutput)
 
 	def cardRead(self):
 		card.readCard(self)
@@ -139,6 +141,9 @@ class MainWindow(QMainWindow):
 
 	def reloadCard(self):
 		card.reloadCard(self)
+
+	def copyOutput(self):
+		self.qclip.setText(self.outputLB.text())
 
 	def onConfigNameChanged(self, text):
 		# update the iniDictionary when text is changed

@@ -347,7 +347,7 @@
          <rect>
           <x>0</x>
           <y>200</y>
-          <width>281</width>
+          <width>351</width>
           <height>101</height>
          </rect>
         </property>
@@ -369,13 +369,6 @@
            </property>
           </widget>
          </item>
-         <item row="1" column="0">
-          <widget class="QPushButton" name="testConnectionPB">
-           <property name="text">
-            <string>Read</string>
-           </property>
-          </widget>
-         </item>
          <item row="0" column="0" colspan="3">
           <widget class="QComboBox" name="firmwareCB">
            <property name="sizePolicy">
@@ -383,6 +376,23 @@
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QPushButton" name="testConnectionPB">
+           <property name="text">
+            <string>Read</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="3">
+          <widget class="QPushButton" name="copyPB">
+           <property name="toolTip">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Copy the Output&lt;br/&gt;to the clipboard&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+           <property name="text">
+            <string>Copy</string>
            </property>
           </widget>
          </item>
