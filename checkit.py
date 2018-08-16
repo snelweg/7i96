@@ -101,16 +101,12 @@ def config(parent):
 					tabError = True
 					configErrors.append('\tThe for Direction Hold for Joint {} must be specified'.format(index))
 
-
-
-
 	if tabError:
 		configErrors.insert(nextHeader, 'Axis Tab:')
 		nextHeader = len(configErrors)
 		print(nextHeader)
 		tabError = False
 	# end of Axis Tab
-
 
 	if configErrors:
 		config.result = '\n'.join(configErrors)

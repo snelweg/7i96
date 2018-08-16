@@ -144,6 +144,7 @@ class MainWindow(QMainWindow):
 
 	def copyOutput(self):
 		self.qclip.setText(self.outputLB.text())
+		self.statusbar.showMessage('Output copied to clipboard')
 
 	def onConfigNameChanged(self, text):
 		# update the iniDictionary when text is changed
