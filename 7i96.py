@@ -6,8 +6,9 @@ from PyQt5 import uic, QtWidgets
 from PyQt5.QtCore import pyqtSlot
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QFileDialog, QLineEdit,
 	QSpinBox, QCheckBox, QComboBox, QLabel, QGroupBox, QDoubleSpinBox, QMessageBox)
-import setup, loadini, checkit, buildfiles, card
+import setup, loadini, checkit, buildfiles, card, helptext
 from dialog import Ui_Dialog as errorDialog
+from help import Ui_Dialog as helpDialog
 from about import Ui_about as aboutDialog
 
 class MainWindow(QMainWindow):
@@ -28,7 +29,7 @@ class MainWindow(QMainWindow):
 		self.buildmisc = buildfiles.buildmisc
 		self.pcStats = platform.uname()
 		self.qclip = QtWidgets.QApplication.clipboard()
-
+		self.helpInfo = helptext.descriptions
 		self.buildCB()
 		self.setupConnections()
 		self.miscStuff()
@@ -111,6 +112,10 @@ class MainWindow(QMainWindow):
 	@pyqtSlot()
 	def on_actionExit_triggered(self):
 		exit()
+
+	@pyqtSlot()
+	def on_actionHelp_triggered(self):
+		self.help()
 
 	def setupConnections(self):
 		self.configName.textChanged[str].connect(self.onConfigNameChanged)
@@ -253,6 +258,13 @@ class MainWindow(QMainWindow):
 		dialog.ui.setupUi(dialog)
 		#dialog.ui.windowTitle('Configuration Errors')
 		dialog.ui.label.setText(text)
+		dialog.exec_()
+
+	def help(self):
+		dialog = QtWidgets.QDialog()
+		dialog.ui = helpDialog()
+		dialog.ui.setupUi(dialog)
+		dialog.ui.label.setText(self.helpInfo(self.tabWidget.currentIndex()))
 		dialog.exec_()
 
 
