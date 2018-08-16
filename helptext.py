@@ -4,33 +4,26 @@ Return text based on the tab number passed
 
 def descriptions(index):
 	if index == 0:
-		#print('tab number {}'.format(index))
 		return text_0
 	elif index == 1:
-		#print('tab number {}'.format(index))
 		return text_1
 	elif index == 2:
-		#print('tab number {}'.format(index))
 		return text_2
 	elif index == 3:
-		#print('tab number {}'.format(index))
 		return text_3
 	elif index == 4:
-		#print('tab number {}'.format(index))
 		return text_4
 	elif index == 5:
-		#print('tab number {}'.format(index))
 		return text_5
 	elif index == 6:
-		#print('tab number {}'.format(index))
 		return text_6
 	elif index == 7:
-		#print('tab number {}'.format(index))
 		return text_7
+	elif index == 8:
+		return text_8
 	else:
-		#print('tab number {}'.format(index))
 		return text_no
-	
+
 text_0 = """
 Help Text for Machine Tab
 
@@ -49,7 +42,7 @@ To flash a card select the firmware and IP Address first.
 """
 
 text_1 = """
-Help Text for Displa Tab
+Help Text for Display Tab
 Offset and Feedback display use reletive (including offsets) or machine.
 Overrides use percent of programed value.
 """
