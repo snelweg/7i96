@@ -35,7 +35,7 @@ def flashCard(parent):
 
 	with subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT) as proc:
 		for line in proc.stdout:
-			output.append(line.decode().rstrip())
+			output.append(line.decode())
 	parent.outputLB.setText(''.join(output))
 
 def reloadCard(parent):
@@ -49,6 +49,6 @@ def reloadCard(parent):
 
 	with subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT) as proc:
 		for line in proc.stdout:
-			output.append(line.decode().rstrip())
+			output.append(line.decode())
 	parent.outputLB.setText(''.join(output))
 
