@@ -319,7 +319,7 @@
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout">
           <item>
-           <widget class="QLabel" name="testConnectionLB">
+           <widget class="QLabel" name="outputLB">
             <property name="font">
              <font>
               <family>Courier 10 Pitch</family>

@@ -17,10 +17,6 @@ class MainWindow(QMainWindow):
 		self.version = '0.8'
 		self.config = configparser.ConfigParser(strict=False)
 		self.cwd = os.getcwd()
-		if sys.maxsize > 2**32: # test for 64bit OS
-			self.is64bit = True
-		else:
-			self.is64bit = False
 		self.linuxcncDir = os.path.expanduser('~/linuxcnc')
 		self.configsDir = os.path.expanduser('~/linuxcnc/configs')
 		self.setWindowTitle('7i96 Configuration Tool Version {}'.format(self.version))
@@ -34,6 +30,7 @@ class MainWindow(QMainWindow):
 
 		self.buildCB()
 		self.setupConnections()
+		self.miscStuff()
 		self.axisList = ['axisCB_0', 'axisCB_1', 'axisCB_2', 'axisCB_3', 'axisCB_4']
 		self.ladderOptionsList = ['ladderRungsSB', 'ladderBitsSB', 'ladderWordsSB',
 			'ladderTimersSB', 'iecTimerSB', 'ladderMonostablesSB', 'ladderCountersSB',
@@ -131,7 +128,7 @@ class MainWindow(QMainWindow):
 		self.reloadPB.clicked.connect(self.reloadCard)
 
 	def cardRead(self):
-		card.read(self)
+		card.readCard(self)
 		# if the results are good then set up the stepgens etc
 		#resultSplit = result.splitlines()
 		#for line in resultSplit:
@@ -141,7 +138,7 @@ class MainWindow(QMainWindow):
 		card.flashCard(self)
 
 	def reloadCard(self):
-		pass
+		card.reloadCard(self)
 
 	def onConfigNameChanged(self, text):
 		# update the iniDictionary when text is changed
@@ -216,6 +213,12 @@ class MainWindow(QMainWindow):
 				getattr(self, 'output_' + str(i)).addItem(item[0], item[1])
 		for item in setup.setupCombo('debug'):
 			self.debugCombo.addItem(item[0], item[1])
+
+	def miscStuff(self):
+		if sys.maxsize > 2**32: # test for 64bit OS
+			self.mesaflash = "./mesaflash64"
+		else:
+			self.mesaflash = "./mesaflash32"
 
 	def iniLoad(self):
 		# iniList section, item, value
