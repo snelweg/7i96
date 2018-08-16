@@ -47,8 +47,11 @@ def reloadCard(parent):
 	command = [parent.mesaflash, '--device', '7i96', '--addr', ipAddress, '--reload']
 	output = []
 
-	with subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT) as proc:
-		for line in proc.stdout:
-			output.append(line.decode())
-	parent.outputLB.setText(''.join(output))
-
+	process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+	process.communicate()[0]
+	if process.returncode == 0:
+		parent.outputLB.setText('Reload Sucessful')
+	elif process.returncode == 255:
+		parent.outputLB.setText('No 7i96 board found')
+	else:
+		parent.outputLB.setText('Reload returned an error code of {}'.format(process.returncode))
