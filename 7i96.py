@@ -99,13 +99,6 @@ class MainWindow(QMainWindow):
 		self.buildmisc(self)
 
 	@pyqtSlot()
-	def on_actionCardCheck_triggered(self):
-		self.cardCheck(self)
-		resultSplit = result.splitlines()
-		for line in resultSplit:
-			print(line)
-
-	@pyqtSlot()
 	def on_actionSaveAs_triggered(self):
 		 print('File Save As')
 
@@ -114,8 +107,17 @@ class MainWindow(QMainWindow):
 		exit()
 
 	@pyqtSlot()
-	def on_actionHelp_triggered(self):
-		self.help()
+	def on_actionTabHelp_triggered(self):
+		self.help(self.tabWidget.currentIndex())
+
+	@pyqtSlot()
+	def on_actionBuildHelp_triggered(self):
+		self.help(20)
+
+	@pyqtSlot()
+	def on_actionPCHelp_triggered(self):
+		self.help(30)
+
 
 	def setupConnections(self):
 		self.configName.textChanged[str].connect(self.onConfigNameChanged)
@@ -260,11 +262,11 @@ class MainWindow(QMainWindow):
 		dialog.ui.label.setText(text)
 		dialog.exec_()
 
-	def help(self):
+	def help(self, index):
 		dialog = QtWidgets.QDialog()
 		dialog.ui = helpDialog()
 		dialog.ui.setupUi(dialog)
-		dialog.ui.label.setText(self.helpInfo(self.tabWidget.currentIndex()))
+		dialog.ui.label.setText(self.helpInfo(index))
 		dialog.exec_()
 
 

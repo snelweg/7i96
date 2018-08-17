@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'help.ui'
 #
-# Created: Thu Aug 16 06:39:35 2018
+# Created: Fri Aug 17 06:41:13 2018
 #      by: PyQt5 UI code generator 5.2.1
 #
 # WARNING! All changes made in this file will be lost!
@@ -18,16 +18,26 @@ class Ui_Dialog(object):
         self.buttonBox.setOrientation(QtCore.Qt.Horizontal)
         self.buttonBox.setStandardButtons(QtWidgets.QDialogButtonBox.Ok)
         self.buttonBox.setObjectName("buttonBox")
-        self.label = QtWidgets.QLabel(Dialog)
-        self.label.setGeometry(QtCore.QRect(10, 10, 621, 421))
+        self.toClipboard = QtWidgets.QPushButton(Dialog)
+        self.toClipboard.setGeometry(QtCore.QRect(30, 440, 161, 23))
+        self.toClipboard.setObjectName("toClipboard")
+        self.scrollArea = QtWidgets.QScrollArea(Dialog)
+        self.scrollArea.setGeometry(QtCore.QRect(9, 9, 621, 421))
+        self.scrollArea.setWidgetResizable(True)
+        self.scrollArea.setObjectName("scrollArea")
+        self.scrollAreaWidgetContents = QtWidgets.QWidget()
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 619, 419))
+        self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
+        self.horizontalLayout = QtWidgets.QHBoxLayout(self.scrollAreaWidgetContents)
+        self.horizontalLayout.setObjectName("horizontalLayout")
+        self.label = QtWidgets.QLabel(self.scrollAreaWidgetContents)
         self.label.setFrameShape(QtWidgets.QFrame.Box)
         self.label.setFrameShadow(QtWidgets.QFrame.Plain)
         self.label.setText("")
         self.label.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
         self.label.setObjectName("label")
-        self.toClipboard = QtWidgets.QPushButton(Dialog)
-        self.toClipboard.setGeometry(QtCore.QRect(30, 440, 161, 23))
-        self.toClipboard.setObjectName("toClipboard")
+        self.horizontalLayout.addWidget(self.label)
+        self.scrollArea.setWidget(self.scrollAreaWidgetContents)
 
         self.retranslateUi(Dialog)
         self.buttonBox.accepted.connect(Dialog.accept)
