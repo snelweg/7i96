@@ -1,13 +1,33 @@
 import os
 from datetime import datetime
 
+"""
+	linuxcncDir = os.path.expanduser('~/linuxcnc')
+	test = '~/linuxcnc/configs/' + 'fred'
+	print(os.path.expanduser(self.test))
+	configsDir = os.path.expanduser('~/linuxcnc/configs')
+	gcodeDir = os.path.expanduser('~/linuxcnc/nc_files')
+	subroutineDir = os.path.expanduser('~/linuxcnc/subroutines')
+
+"""
+
+def builddirs(parent):
+	if not os.path.exists(os.path.expanduser('~/linuxcnc')):
+		os.mkdir(os.path.expanduser('~/linuxcnc'))
+	if not os.path.exists(os.path.expanduser('~/linuxcnc/configs')):
+		os.mkdir(os.path.expanduser('~/linuxcnc/configs'))
+	if not os.path.exists(os.path.expanduser('~/linuxcnc/nc_files')):
+		os.mkdir(os.path.expanduser('~/linuxcnc/nc_files'))
+	if not os.path.exists(os.path.expanduser('~/linuxcnc/subroutines')):
+		os.mkdir(os.path.expanduser('~/linuxcnc/subroutines'))
+
 def buildini(parent):
 	buildErrors = []
 	buildini.result = ''
-	configPath = os.path.join(parent.configsDir, parent.configName.text())
-	iniFilePath = os.path.join(configPath, parent.configName.text() + '.ini')
-	if not os.path.exists(configPath):
-		os.mkdir(configPath)
+	iniFilePath = os.path.join(parent.configPath, parent.configName.text() + '.ini')
+
+	if not os.path.exists(parent.configPath):
+		os.mkdir(parent.configPath)
 
 	iniContents = ['# This file was created with the 7i96 Wizard on ']
 	iniContents.append(datetime.now().strftime('%b %d %Y %H:%M:%S') + '\n')
@@ -411,8 +431,7 @@ def buildini(parent):
 
 
 def buildhal(parent):
-	configPath = os.path.join(parent.configsDir, parent.configName.text())
-	halFilePath = os.path.join(configPath, parent.configName.text() + '.hal')
+	halFilePath = os.path.join(parent.configPath, parent.configName.text() + '.hal')
 	halContents = []
 	halContents = ['# This file was created with the 7i96 Wizard on ']
 	halContents.append(datetime.now().strftime('%b %d %Y %H:%M:%S') + '\n')
@@ -503,8 +522,7 @@ def buildhal(parent):
 	return True
 
 def buildio(parent):
-	configPath = os.path.join(parent.configsDir, parent.configName.text())
-	ioFilePath = os.path.join(configPath, 'io.hal')
+	ioFilePath = os.path.join(parent.configPath, 'io.hal')
 	ioContents = []
 	ioContents = ['# This file was created with the 7i96 Wizard on ']
 	ioContents.append(datetime.now().strftime('%b %d %Y %H:%M:%S') + '\n')
@@ -520,10 +538,7 @@ def buildio(parent):
 	return True
 
 def buildmisc(parent):
-	configPath = os.path.join(parent.configsDir, parent.configName.text())
-
-	# create the custom.hal file if not there
-	customFilePath = os.path.join(configPath, 'custom.hal')
+	customFilePath = os.path.join(parent.configPath, 'custom.hal')
 	customContents = []
 	customContents = ['# Place any HAL commands in this file that you want to run before the GUI.\n']
 	customContents.append('# This file will not be written over by the configuration tool.\n')
@@ -534,7 +549,7 @@ def buildmisc(parent):
 		pass
 
 	# create the postgui.hal file if not there
-	postguiFilePath = os.path.join(configPath, 'postgui.hal')
+	postguiFilePath = os.path.join(parent.configPath, 'postgui.hal')
 	postguiContents = []
 	postguiContents = ['# Place any HAL commands in this file that you want to run AFTER the GUI finishes loading.\n']
 	postguiContents.append('# GUI HAL pins are not visible until after the GUI loads.\n')
@@ -546,7 +561,7 @@ def buildmisc(parent):
 		pass
 
 	# create the tool file if not there
-	toolFilePath = os.path.join(configPath, parent.configName.text() + '.tbl')
+	toolFilePath = os.path.join(parent.configPath, parent.configName.text() + '.tbl')
 	toolContents = []
 	toolContents = [';\n']
 	toolContents.append('T1 P1\n')
@@ -557,7 +572,7 @@ def buildmisc(parent):
 		pass
 
 	# create the var file if not there
-	varFilePath = os.path.join(configPath, parent.configName.text() + '.var')
+	varFilePath = os.path.join(parent.configPath, parent.configName.text() + '.var')
 	try: #
 		open(varFilePath, 'x')
 	except FileExistsError:
@@ -565,7 +580,7 @@ def buildmisc(parent):
 
 	# create the pyvcp panel if checked and not there
 	if parent.pyvcpCB.isChecked():
-		pyvcpFilePath = os.path.join(configPath, parent.configName.text() + '.xml')
+		pyvcpFilePath = os.path.join(parent.configPath, parent.configName.text() + '.xml')
 		pyvcpContents = ["<?xml version='1.0' encoding='UTF-8'?>\n"]
 		pyvcpContents.append('<pyvcp>\n')
 		pyvcpContents.append('<!--\n')
@@ -587,7 +602,7 @@ def buildmisc(parent):
 
 	# create the clp file if selected
 	if parent.ladderGB.isChecked():
-		ladderFilePath = os.path.join(configPath, parent.configName.text() + '.clp')
+		ladderFilePath = os.path.join(parent.configPath, parent.configName.text() + '.clp')
 		ladderContents = """_FILES_CLASSICLADDER
 _FILE-symbols.csv
 #VER=1.0
@@ -712,8 +727,7 @@ _/FILES_CLASSICLADDER
 
 
 def buildio(parent):
-	configPath = os.path.join(parent.configsDir, parent.configName.text())
-	ioFilePath = os.path.join(configPath, 'io.hal')
+	ioFilePath = os.path.join(parent.configPath, 'io.hal')
 	ioContents = []
 	ioContents = ['# This file was created with the 7i96 Wizard on ']
 	ioContents.append(datetime.now().strftime('%b %d %Y %H:%M:%S') + '\n')

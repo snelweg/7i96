@@ -18,11 +18,16 @@ class MainWindow(QMainWindow):
 		self.version = '0.8'
 		self.config = configparser.ConfigParser(strict=False)
 		self.cwd = os.getcwd()
-		self.linuxcncDir = os.path.expanduser('~/linuxcnc')
-		self.configsDir = os.path.expanduser('~/linuxcnc/configs')
+		#self.linuxcncDir = os.path.expanduser('~/linuxcnc')
+		#self.test = '~/linuxcnc/configs/' + 'fred'
+		#print(os.path.expanduser(self.test))
+		#self.configsDir = os.path.expanduser('~/linuxcnc/configs')
+		#self.gcodeDir = os.path.expanduser('~/linuxcnc/nc_files')
+		#self.subroutineDir = os.path.expanduser('~/linuxcnc/subroutines')
 		self.setWindowTitle('7i96 Configuration Tool Version {}'.format(self.version))
 		self.configNameUnderscored = ''
 		self.checkConfig = checkit.config
+		self.builddirs = buildfiles.builddirs
 		self.buildini = buildfiles.buildini
 		self.buildhal = buildfiles.buildhal
 		self.buildio = buildfiles.buildio
@@ -44,7 +49,6 @@ class MainWindow(QMainWindow):
 		#self.config.read('/home/john/linuxcnc/configs/fred/fred.ini')
 		#self.iniLoad()
 
-
 		self.show()
 
 	# Auto connected menu action callbacks
@@ -54,10 +58,10 @@ class MainWindow(QMainWindow):
 
 	@pyqtSlot()
 	def on_actionOpen_triggered(self):
-		if not os.path.isdir(self.configsDir):
-			self.configsDir = os.path.expanduser('~/')
+		if not os.path.isdir(os.path.exists(os.path.expanduser('~/linuxcnc/configs'))):
+			configsDir = os.path.expanduser('~/')
 		fileName = QFileDialog.getOpenFileName(self,
-		caption="Select Configuration INI File", directory=self.configsDir,
+		caption="Select Configuration INI File", directory=configsDir,
 		filter='*.ini', options=QFileDialog.DontUseNativeDialog,)
 		if fileName:
 			iniFile = (fileName[0])
@@ -93,6 +97,7 @@ class MainWindow(QMainWindow):
 
 	@pyqtSlot()
 	def on_actionBuild_triggered(self):
+		self.builddirs(self)
 		self.buildini(self)
 		self.buildhal(self)
 		self.buildio(self)
@@ -158,7 +163,7 @@ class MainWindow(QMainWindow):
 		# update the iniDictionary when text is changed
 		if text:
 			self.configNameUnderscored = text.replace(' ','_')
-			self.configPath = self.configsDir + '/' + self.configNameUnderscored
+			self.configPath = os.path.expanduser('~/linuxcnc/configs') + '/' + self.configNameUnderscored
 			self.pathLabel.setText(self.configPath)
 		else:
 			self.pathLabel.setText('')
