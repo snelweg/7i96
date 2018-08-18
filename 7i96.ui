@@ -260,7 +260,7 @@
        <widget class="QLabel" name="coordinatesLB">
         <property name="geometry">
          <rect>
-          <x>580</x>
+          <x>600</x>
           <y>10</y>
           <width>111</width>
           <height>21</height>

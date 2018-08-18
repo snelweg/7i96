@@ -490,7 +490,6 @@ def buildhal(parent):
 		halContents.append('setp hm2_[HOSTMOT2](BOARD).0.stepgen.0{}.step_type 0\n'.format(str(index)))
 		halContents.append('setp hm2_[HOSTMOT2](BOARD).0.stepgen.0{}.control-type 1\n\n'.format(str(index)))
 
-		halContents.append('setp pid.{}.error-previous-target true\n'.format(str(index)))
 		halContents.append('setp pid.{0}.Pgain [JOINT_{0}]P\n'.format(str(index)))
 		halContents.append('setp pid.{0}.Igain [JOINT_{0}]I\n'.format(str(index)))
 		halContents.append('setp pid.{0}.Dgain [JOINT_{0}]D\n'.format(str(index)))
@@ -500,7 +499,7 @@ def buildhal(parent):
 		halContents.append('setp pid.{0}.FF2 [JOINT_{0}]FF2\n'.format(str(index)))
 		halContents.append('setp pid.{0}.deadband [JOINT_{0}]DEADBAND\n'.format(str(index)))
 		halContents.append('setp pid.{0}.maxoutput [JOINT_{0}]MAX_OUTPUT\n'.format(str(index)))
-		halContents.append('setp pid.{0}.maxerror [JOINT_{0}]MAX_ERROR\n'.format(str(index)))
+		halContents.append('setp pid.{0}.maxerror [JOINT_{0}]MAX_ERROR\n\n'.format(str(index)))
 
 	halContents.append('# Standard I/O Block - EStop, Etc\n\n')
 	halContents.append('# create a signal for the estop loopback\n')

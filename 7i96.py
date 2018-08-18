@@ -179,8 +179,10 @@ class MainWindow(QMainWindow):
 				coordList.append(axisLetter)
 				if axisLetter in ['X', 'Y', 'Z', 'U', 'V', 'W']:
 					getattr(self, 'axisType_' + jointTab).setText('LINEAR')
-				else:
+				elif axisLetter in ['A', 'B', 'C']:
 					getattr(self, 'axisType_' + jointTab).setText('ANGULAR')
+				else:
+					getattr(self, 'axisType_' + jointTab).setText('')
 		self.coordinatesLB.setText(''.join(coordList))
 		self.stepgensSB.setValue(len(coordList))
 
