@@ -21,11 +21,11 @@ def setupCombo(combo):
 
 	if combo == 'joint':
 		comboList = [['None', False],
-								['Joint 0', '0'],
-								['Joint 1', '1'],
-								['Joint 2', '2'],
-								['Joint 3', '3'],
-								['Joint 4', '4']]
+								['Joint 0', 'Joint 0'],
+								['Joint 1', 'Joint 1'],
+								['Joint 2', 'Joint 2'],
+								['Joint 3', 'Joint 3'],
+								['Joint 4', 'Joint 4']]
 
 	if combo == 'direction':
 		comboList = [['None', False],

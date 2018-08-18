@@ -525,6 +525,7 @@ def buildhal(parent):
 		halFile.writelines(halContents)
 	return True
 
+"""
 def buildio(parent):
 	ioFilePath = os.path.join(parent.configPath, 'io.hal')
 	ioContents = []
@@ -540,6 +541,7 @@ def buildio(parent):
 	except FileExistsError:
 		pass
 	return True
+"""
 
 def buildmisc(parent):
 	customFilePath = os.path.join(parent.configPath, 'custom.hal')

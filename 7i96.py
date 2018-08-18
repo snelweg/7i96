@@ -58,7 +58,9 @@ class MainWindow(QMainWindow):
 
 	@pyqtSlot()
 	def on_actionOpen_triggered(self):
-		if not os.path.isdir(os.path.exists(os.path.expanduser('~/linuxcnc/configs'))):
+		if os.path.isdir(os.path.expanduser('~/linuxcnc/configs')):
+			configsDir = os.path.expanduser('~/linuxcnc/configs')
+		else:
 			configsDir = os.path.expanduser('~/')
 		fileName = QFileDialog.getOpenFileName(self,
 		caption="Select Configuration INI File", directory=configsDir,
