@@ -39,7 +39,7 @@ def setupCombo(combo):
 
 	if combo == 'linearUnits':
 		comboList = [['None', False],
-								['Imperial', 'imperial'],
+								['Imperial', 'inch'],
 								['Metric', 'metric']]
 
 	if combo == 'angularUnits':
