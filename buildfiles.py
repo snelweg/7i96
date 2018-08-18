@@ -544,6 +544,18 @@ def buildio(parent):
 """
 
 def buildmisc(parent):
+
+	# if Axis is the GUI add the shutup file
+	if parent.guiCB.currentData() == 'axis':
+		shutupFilepath = os.path.expanduser('~/.axisrc')
+		shutupContents = ['root_window.tk.call("wm","protocol",".","WM_DELETE_WINDOW","destroy .")']
+	try: # if this file exists don't write over it
+		with open(shutupFilepath, 'x') as shutupFile:
+			shutupFile.writelines(shutupContents)
+	except FileExistsError:
+		pass
+
+
 	customFilePath = os.path.join(parent.configPath, 'custom.hal')
 	customContents = []
 	customContents = ['# Place any HAL commands in this file that you want to run before the GUI.\n']
@@ -597,7 +609,7 @@ def buildmisc(parent):
 		pyvcpContents.append('-->\n')
 		pyvcpContents.append('	<label>\n')
 		pyvcpContents.append('		<text>"This is a Sample Label:"</text>\n')
-		pyvcpContents.append('		<font>("Helvetica",20)</font>\n')
+		pyvcpContents.append('		<font>("Helvetica",10)</font>\n')
 		pyvcpContents.append('	</label>\n')
 		pyvcpContents.append('</pyvcp>\n')
 		try: # if this file exists don't write over it
