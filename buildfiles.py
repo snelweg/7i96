@@ -67,7 +67,10 @@ def buildini(parent):
 
 	# build the [KINS] section
 	iniContents.append('\n[KINS]\n')
-	iniContents.append('KINEMATICS = {}\n'.format('trivkins'))
+	if len(set(parent.coordinatesLB.text())) == len(parent.coordinatesLB.text()): # 1 joint for each axis
+		iniContents.append('KINEMATICS = {}\n'.format('trivkins'))
+	else: # more than one joint per axis
+		iniContents.append('KINEMATICS = {} coordinates={} kinstype=BOTH\n'.format('trivkins', parent.coordinatesLB.text()))
 	iniContents.append('JOINTS = {}\n'.format(len(parent.coordinatesLB.text())))
 
 	# build the [EMCIO] section
