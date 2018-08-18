@@ -60,6 +60,10 @@ def buildini(parent):
 	iniContents.append('OPEN_FILE = "{}"\n'.format(''))
 	if parent.pyvcpCB.isChecked():
 		iniContents.append('PYVCP = {}.xml\n'.format(parent.configName.text()))
+	if parent.frontToolLatheCB.isChecked():
+		iniContents.append('LATHE = 1\n')
+	if parent.frontToolLatheCB.isChecked():
+		iniContents.append('BACK_TOOL_LATHE = 1\n')
 
 	# build the [KINS] section
 	iniContents.append('\n[KINS]\n')

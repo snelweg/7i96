@@ -520,6 +520,35 @@
          <string>1.0 = 100%</string>
         </property>
        </widget>
+       <widget class="QGroupBox" name="gridGroupBox">
+        <property name="geometry">
+         <rect>
+          <x>480</x>
+          <y>20</y>
+          <width>160</width>
+          <height>80</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>Axis Display Options</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_32">
+         <item row="0" column="0">
+          <widget class="QCheckBox" name="frontToolLatheCB">
+           <property name="text">
+            <string>Front Tool Lathe</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QCheckBox" name="backToolLatheCB">
+           <property name="text">
+            <string>Back Tool Lathe</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
       </widget>
       <widget class="QWidget" name="axis">
        <attribute name="title">
@@ -4089,11 +4118,11 @@
          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Spindle PWM requires the 4 axis plus PWM configuration.&lt;br/&gt;For Spindle On, Spindle CW/CCW use an output.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
-       <widget class="QGroupBox" name="groupBox_6">
+       <widget class="QGroupBox" name="spindlepidGB">
         <property name="geometry">
          <rect>
-          <x>20</x>
-          <y>90</y>
+          <x>10</x>
+          <y>320</y>
           <width>353</width>
           <height>197</height>
          </rect>
@@ -4323,6 +4352,47 @@
             <string>Default Values</string>
            </property>
           </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QGroupBox" name="spindleGB">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>80</y>
+          <width>331</width>
+          <height>201</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>Spindle Settings</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_31">
+         <item row="0" column="1">
+          <widget class="QLineEdit" name="spindleScale"/>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_178">
+           <property name="text">
+            <string>Encoder Scale</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_180">
+           <property name="text">
+            <string>Max RPM</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLineEdit" name="spindleMaxRpm"/>
          </item>
         </layout>
        </widget>

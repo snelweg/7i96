@@ -21,7 +21,7 @@ def config(parent):
 		configErrors.append('\tAn IP address must be selected, 10.10.10.10 is recommended')
 
 	if tabError:
-		configErrors.insert(nextHeader, 'Machine Tab":')
+		configErrors.insert(nextHeader, 'Machine Tab:')
 		nextHeader = len(configErrors)
 		print(nextHeader)
 		tabError = False
@@ -40,7 +40,9 @@ def config(parent):
 	if parent.maxFeedOverrideSB.value() == 0.0:
 		tabError = True
 		configErrors.append('\tThe Max Feed Override must be greater than zero, 1.2 is suggested')
-
+	if parent.frontToolLatheCB.isChecked() and parent.backToolLatheCB.isChecked():
+		configErrors.append('\tOnly one lathe display option can be checked')
+		tabError = True
 	if tabError:
 		configErrors.insert(nextHeader, 'Display Tab:')
 		nextHeader = len(configErrors)
@@ -104,7 +106,6 @@ def config(parent):
 	if tabError:
 		configErrors.insert(nextHeader, 'Axis Tab:')
 		nextHeader = len(configErrors)
-		print(nextHeader)
 		tabError = False
 	# end of Axis Tab
 
