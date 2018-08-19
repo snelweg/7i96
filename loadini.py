@@ -47,6 +47,7 @@ def iniList():
 	iniList.append(['JOINT_0', 'DEADBAND', 'deadband_0'])
 	iniList.append(['JOINT_0', 'BIAS', 'bias_0'])
 	iniList.append(['JOINT_0', 'MAX_OUTPUT', 'maxOutput_0'])
+	iniList.append(['JOINT_0', 'MAX_ERROR', 'maxError_0'])
 
 	iniList.append(['JOINT_1', 'AXIS', 'axisCB_1'])
 	iniList.append(['JOINT_1', 'STEPLEN', 'stepTime_1'])
@@ -74,6 +75,7 @@ def iniList():
 	iniList.append(['JOINT_1', 'DEADBAND', 'deadband_1'])
 	iniList.append(['JOINT_1', 'BIAS', 'bias_1'])
 	iniList.append(['JOINT_1', 'MAX_OUTPUT', 'maxOutput_1'])
+	iniList.append(['JOINT_1', 'MAX_ERROR', 'maxError_1'])
 
 	iniList.append(['JOINT_2', 'AXIS', 'axisCB_2'])
 	iniList.append(['JOINT_2', 'STEPLEN', 'stepTime_2'])
@@ -101,6 +103,7 @@ def iniList():
 	iniList.append(['JOINT_2', 'DEADBAND', 'deadband_2'])
 	iniList.append(['JOINT_2', 'BIAS', 'bias_2'])
 	iniList.append(['JOINT_2', 'MAX_OUTPUT', 'maxOutput_2'])
+	iniList.append(['JOINT_2', 'MAX_ERROR', 'maxError_2'])
 
 	iniList.append(['JOINT_3', 'AXIS', 'axisCB_3'])
 	iniList.append(['JOINT_3', 'STEPLEN', 'stepTime_3'])
@@ -128,6 +131,7 @@ def iniList():
 	iniList.append(['JOINT_3', 'DEADBAND', 'deadband_3'])
 	iniList.append(['JOINT_3', 'BIAS', 'bias_3'])
 	iniList.append(['JOINT_3', 'MAX_OUTPUT', 'maxOutput_3'])
+	iniList.append(['JOINT_3', 'MAX_ERROR', 'maxError_3'])
 
 	iniList.append(['JOINT_4', 'AXIS', 'axisCB_4'])
 	iniList.append(['JOINT_4', 'STEPLEN', 'stepTime_4'])
@@ -144,7 +148,7 @@ def iniList():
 	iniList.append(['JOINT_4', 'HOME_SEARCH_VEL', 'homeSearchVel_4'])
 	iniList.append(['JOINT_4', 'HOME_LATCH_VEL', 'homeLatchVel_4'])
 	iniList.append(['JOINT_4', 'HOME_USE_INDEX', 'homeUseIndex_4'])
-	iniList.append(['JOINT_4', 'HOME_IGNORE_LIMITS', 'homeIgnoreLimits_40'])
+	iniList.append(['JOINT_4', 'HOME_IGNORE_LIMITS', 'homeIgnoreLimits_4'])
 	iniList.append(['JOINT_4', 'HOME_SEQUENCE', 'homeSequence_4'])
 	iniList.append(['JOINT_4', 'P', 'p_4'])
 	iniList.append(['JOINT_4', 'I', 'i_4'])
@@ -155,6 +159,7 @@ def iniList():
 	iniList.append(['JOINT_4', 'DEADBAND', 'deadband_4'])
 	iniList.append(['JOINT_4', 'BIAS', 'bias_4'])
 	iniList.append(['JOINT_4', 'MAX_OUTPUT', 'maxOutput_4'])
+	iniList.append(['JOINT_4', 'MAX_ERROR', 'maxError_4'])
 
 	iniList.append(['INPUTS', 'INPUT_0', 'input_0'])
 	iniList.append(['INPUTS', 'INPUT_1', 'input_1'])

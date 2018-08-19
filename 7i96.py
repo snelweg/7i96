@@ -139,16 +139,19 @@ class MainWindow(QMainWindow):
 
 	def setupConnections(self):
 		self.configName.textChanged[str].connect(self.onConfigNameChanged)
-		self.axisCB_0.currentIndexChanged.connect(self.onAxisChanged)
-		self.axisCB_1.currentIndexChanged.connect(self.onAxisChanged)
-		self.axisCB_2.currentIndexChanged.connect(self.onAxisChanged)
-		self.axisCB_3.currentIndexChanged.connect(self.onAxisChanged)
-		self.axisCB_4.currentIndexChanged.connect(self.onAxisChanged)
-		self.pidDefault_0.clicked.connect(self.pidSetDefault)
-		self.pidDefault_1.clicked.connect(self.pidSetDefault)
-		self.pidDefault_2.clicked.connect(self.pidSetDefault)
-		self.pidDefault_3.clicked.connect(self.pidSetDefault)
-		self.pidDefault_4.clicked.connect(self.pidSetDefault)
+		for i in range(5):
+			getattr(self, 'axisCB_' + str(i)).currentIndexChanged.connect(self.onAxisChanged)
+		for i in range(5):
+			getattr(self, 'scale_' + str(i)).valueChanged.connect(self.updateAxisInfo)
+		for i in range(5):
+			getattr(self, 'maxVelocity_' + str(i)).textChanged.connect(self.updateAxisInfo)
+		for i in range(5):
+			getattr(self, 'maxAccel_' + str(i)).textChanged.connect(self.updateAxisInfo)
+
+
+		for i in range(5):
+			getattr(self, 'pidDefault_' + str(i)).clicked.connect(self.pidSetDefault)
+
 		self.pidDefault_s.clicked.connect(self.pidSetDefault)
 		self.testConnectionPB.clicked.connect(self.cardRead)
 		self.flashPB.clicked.connect(self.flashCard)
@@ -193,8 +196,28 @@ class MainWindow(QMainWindow):
 		self.coordinatesLB.setText(''.join(coordList))
 		self.stepgensSB.setValue(len(coordList))
 
+	def updateAxisInfo(self):
+		joint = self.sender().objectName()[-1]
+		scale = getattr(self, 'scale_' + joint).value()
+		if getattr(self, 'maxVelocity_' + joint).text():
+			maxVelocity = float(getattr(self, 'maxVelocity_' + joint).text())
+		else:
+			return
+		if getattr(self, 'maxAccel_' + joint).text():
+			maxAccel = float(getattr(self, 'maxAccel_' + joint).text())
+		else:
+			return
+		accelTime = maxVelocity / maxAccel
+		getattr(self, 'timeJoint_' + joint).setText('{:.2f} seconds'.format(accelTime))
+		accelDistance = accelTime * 0.5 * maxVelocity
+		getattr(self, 'distanceJoint_' + joint).setText('{:.2f} inches'.format(accelDistance))
+		stepRate = scale * maxVelocity
+		getattr(self, 'stepRateJoint_' + joint).setText('{:.2f} pulses'.format(stepRate))
+
 	def pidSetDefault(self):
 		tab = self.sender().objectName()[11]
+		print(self.sender().objectName()[11])
+		print(self.sender().objectName()[-1])
 		getattr(self, 'p_' + tab).setText('1000')
 		getattr(self, 'i_' + tab).setText('0')
 		getattr(self, 'd_' + tab).setText('0')

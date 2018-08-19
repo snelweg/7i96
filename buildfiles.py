@@ -230,6 +230,8 @@ def buildini(parent):
 		iniContents.append('FF2 = {}\n'.format(parent.ff2_0.text()))
 		iniContents.append('BIAS = {}\n'.format(parent.bias_0.text()))
 		iniContents.append('MAX_OUTPUT = {}\n'.format(parent.maxOutput_0.text()))
+		iniContents.append('MAX_ERROR = {}\n'.format(parent.maxError_0.text()))
+
 		if parent.home_0.text():
 			iniContents.append('HOME = {}\n'.format(parent.home_0.text()))
 		if parent.homeOffset_0.text():
@@ -271,6 +273,7 @@ def buildini(parent):
 		iniContents.append('FF2 = {}\n'.format(parent.ff2_1.text()))
 		iniContents.append('BIAS = {}\n'.format(parent.bias_1.text()))
 		iniContents.append('MAX_OUTPUT = {}\n'.format(parent.maxOutput_1.text()))
+		iniContents.append('MAX_ERROR = {}\n'.format(parent.maxError_1.text()))
 		if parent.home_1.text():
 			iniContents.append('HOME = {}\n'.format(parent.home_1.text()))
 		if parent.homeOffset_1.text():
@@ -311,6 +314,7 @@ def buildini(parent):
 		iniContents.append('FF2 = {}\n'.format(parent.ff2_2.text()))
 		iniContents.append('BIAS = {}\n'.format(parent.bias_2.text()))
 		iniContents.append('MAX_OUTPUT = {}\n'.format(parent.maxOutput_2.text()))
+		iniContents.append('MAX_ERROR = {}\n'.format(parent.maxError_2.text()))
 		if parent.home_2.text():
 			iniContents.append('HOME = {}\n'.format(parent.home_2.text()))
 		if parent.homeOffset_2.text():
@@ -351,6 +355,7 @@ def buildini(parent):
 		iniContents.append('FF2 = {}\n'.format(parent.ff2_3.text()))
 		iniContents.append('BIAS = {}\n'.format(parent.bias_3.text()))
 		iniContents.append('MAX_OUTPUT = {}\n'.format(parent.maxOutput_3.text()))
+		iniContents.append('MAX_ERROR = {}\n'.format(parent.maxError_3.text()))
 		if parent.home_3.text():
 			iniContents.append('HOME = {}\n'.format(parent.home_3.text()))
 		if parent.homeOffset_3.text():
@@ -391,6 +396,7 @@ def buildini(parent):
 		iniContents.append('FF2 = {}\n'.format(parent.ff2_4.text()))
 		iniContents.append('BIAS = {}\n'.format(parent.bias_4.text()))
 		iniContents.append('MAX_OUTPUT = {}\n'.format(parent.maxOutput_4.text()))
+		iniContents.append('MAX_ERROR = {}\n'.format(parent.maxError_4.text()))
 		if parent.home_4.text():
 			iniContents.append('HOME = {}\n'.format(parent.home_4.text()))
 		if parent.homeOffset_4.text():
@@ -519,6 +525,7 @@ def buildhal(parent):
 		halContents.append('setp pid.{0}.FF2 [JOINT_{0}]FF2\n'.format(str(index)))
 		halContents.append('setp pid.{0}.deadband [JOINT_{0}]DEADBAND\n'.format(str(index)))
 		halContents.append('setp pid.{0}.maxoutput [JOINT_{0}]MAX_OUTPUT\n'.format(str(index)))
+		halContents.append('setp pid.{0}.maxerror [JOINT_{0}]MAX_ERROR\n\n'.format(str(index)))
 
 	halContents.append('# Standard I/O Block - EStop, Etc\n\n')
 	halContents.append('# create a signal for the estop loopback\n')
