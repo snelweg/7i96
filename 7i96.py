@@ -197,6 +197,8 @@ class MainWindow(QMainWindow):
 		self.stepgensSB.setValue(len(coordList))
 
 	def updateAxisInfo(self):
+		if self.sender().objectName() == 'actionOpen':
+			return
 		joint = self.sender().objectName()[-1]
 		scale = getattr(self, 'scale_' + joint).value()
 		if getattr(self, 'maxVelocity_' + joint).text():
