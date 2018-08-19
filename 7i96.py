@@ -147,16 +147,14 @@ class MainWindow(QMainWindow):
 			getattr(self, 'maxVelocity_' + str(i)).textChanged.connect(self.updateAxisInfo)
 		for i in range(5):
 			getattr(self, 'maxAccel_' + str(i)).textChanged.connect(self.updateAxisInfo)
-
-
 		for i in range(5):
 			getattr(self, 'pidDefault_' + str(i)).clicked.connect(self.pidSetDefault)
-
 		self.pidDefault_s.clicked.connect(self.pidSetDefault)
 		self.testConnectionPB.clicked.connect(self.cardRead)
 		self.flashPB.clicked.connect(self.flashCard)
 		self.reloadPB.clicked.connect(self.reloadCard)
 		self.copyPB.clicked.connect(self.copyOutput)
+		self.spindleGB.clicked.connect(self.spindleClicked)
 
 	def cardRead(self):
 		card.readCard(self)
@@ -215,6 +213,12 @@ class MainWindow(QMainWindow):
 		getattr(self, 'distanceJoint_' + joint).setText('{:.2f} inches'.format(accelDistance))
 		stepRate = scale * maxVelocity
 		getattr(self, 'stepRateJoint_' + joint).setText('{:.2f} pulses'.format(stepRate))
+
+	def spindleClicked(self):
+		if self.spindleGB.isChecked():
+			self.spindlepidGB.setEnabled(True)
+		else:
+			self.spindlepidGB.setEnabled(False)
 
 	def pidSetDefault(self):
 		tab = self.sender().objectName()[11]

@@ -113,6 +113,7 @@ def buildini(parent):
 	# build the [HALUI] section
 	iniContents.append('\n[HALUI]\n')
 
+	# need to loop-a-fy this
 	for item in parent.axisList:
 		if getattr(parent,item).itemData(getattr(parent,item).currentIndex()) == 'X':
 			jointTab = getattr(parent,item).objectName()[7]
@@ -409,6 +410,22 @@ def buildini(parent):
 			iniContents.append('HOME_SEQUENCE = {}\n'.format(parent.homeSequence_4.text()))
 		iniContents.append('HOME_USE_INDEX = {}\n'.format(parent.homeUseIndex_4.isChecked()))
 		iniContents.append('HOME_IGNORE_LIMITS = {}\n'.format(parent.homeIgnoreLimits_4.isChecked()))
+
+	# build the [SPINDLE] section if enabled
+	if parent.spindleGB.isChecked():
+		iniContents.append('\n[SPINDLE]\n')
+		iniContents.append('SCALE = {}\n'.format(parent.spindleScale.text))
+		iniContents.append('MAX_RPM = {}\n'.format(parent.spindleMaxRpm.text))
+		iniContents.append('MIN_RPM = {}\n'.format(parent.spindleMinRpm.text))
+		iniContents.append('DEADBAND = {}\n'.format(parent.deadband_s.text()))
+		iniContents.append('P = {}\n'.format(parent.p_s.text()))
+		iniContents.append('I = {}\n'.format(parent.i_s.text()))
+		iniContents.append('D = {}\n'.format(parent.d_s.text()))
+		iniContents.append('FF0 = {}\n'.format(parent.ff0_s.text()))
+		iniContents.append('FF1 = {}\n'.format(parent.ff1_s.text()))
+		iniContents.append('FF2 = {}\n'.format(parent.ff2_s.text()))
+		iniContents.append('BIAS = {}\n'.format(parent.bias_s.text()))
+		iniContents.append('MAX_ERROR = {}\n'.format(parent.maxError_s.text()))
 
 	# build the [INPUTS] section
 	iniContents.append('\n[INPUTS]\n')

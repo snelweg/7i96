@@ -4349,10 +4349,13 @@ max speed</string>
         </property>
        </widget>
        <widget class="QGroupBox" name="spindlepidGB">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="geometry">
          <rect>
-          <x>10</x>
-          <y>320</y>
+          <x>390</x>
+          <y>10</y>
           <width>353</width>
           <height>197</height>
          </rect>
@@ -4591,7 +4594,7 @@ max speed</string>
           <x>30</x>
           <y>80</y>
           <width>331</width>
-          <height>201</height>
+          <height>111</height>
          </rect>
         </property>
         <property name="title">
@@ -4601,7 +4604,7 @@ max speed</string>
          <bool>true</bool>
         </property>
         <property name="checked">
-         <bool>true</bool>
+         <bool>false</bool>
         </property>
         <layout class="QGridLayout" name="gridLayout_31">
          <item row="0" column="1">
@@ -4614,15 +4617,25 @@ max speed</string>
            </property>
           </widget>
          </item>
-         <item row="1" column="0">
+         <item row="2" column="1">
+          <widget class="QLineEdit" name="spindleMaxRpm"/>
+         </item>
+         <item row="2" column="0">
           <widget class="QLabel" name="label_180">
            <property name="text">
             <string>Max RPM</string>
            </property>
           </widget>
          </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_192">
+           <property name="text">
+            <string>Min RPM</string>
+           </property>
+          </widget>
+         </item>
          <item row="1" column="1">
-          <widget class="QLineEdit" name="spindleMaxRpm"/>
+          <widget class="QLineEdit" name="spindleMinRpm"/>
          </item>
         </layout>
        </widget>
