@@ -216,8 +216,9 @@ class MainWindow(QMainWindow):
 
 	def pidSetDefault(self):
 		tab = self.sender().objectName()[11]
-		print(self.sender().objectName()[11])
-		print(self.sender().objectName()[-1])
+		if not self.linearUnitsCB.itemData(self.linearUnitsCB.currentIndex()):
+			QMessageBox.warning(self,'Warning', 'Machine Tab\nLinear Units\nmust be selected', QMessageBox.Ok)
+			return
 		getattr(self, 'p_' + tab).setText('1000')
 		getattr(self, 'i_' + tab).setText('0')
 		getattr(self, 'd_' + tab).setText('0')
@@ -226,7 +227,11 @@ class MainWindow(QMainWindow):
 		getattr(self, 'ff2_' + tab).setText('0.00013')
 		getattr(self, 'bias_' + tab).setText('0')
 		getattr(self, 'maxOutput_' + tab).setText('0')
-		getattr(self, 'maxError_' + tab).setText('0.0005')
+		if self.linearUnitsCB.itemData(self.linearUnitsCB.currentIndex()) == 'inch':
+			maxError = '0.0005'
+		else:
+			maxError = '0.0127'
+		getattr(self, 'maxError_' + tab).setText(maxError)
 		getattr(self, 'deadband_' + tab).setText('0')
 
 	def buildCB(self):

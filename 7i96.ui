@@ -966,7 +966,11 @@
                 </widget>
                </item>
                <item row="3" column="3">
-                <widget class="QLineEdit" name="maxError_0"/>
+                <widget class="QLineEdit" name="maxError_0">
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                </widget>
                </item>
               </layout>
              </widget>
@@ -1742,7 +1746,7 @@
                  </property>
                 </widget>
                </item>
-               <item row="3" column="3">
+               <item row="3" column="3" alignment="Qt::AlignRight">
                 <widget class="QLineEdit" name="maxError_1"/>
                </item>
               </layout>
@@ -2480,7 +2484,7 @@
                  </property>
                 </widget>
                </item>
-               <item row="3" column="3">
+               <item row="3" column="3" alignment="Qt::AlignRight">
                 <widget class="QLineEdit" name="maxError_2"/>
                </item>
               </layout>
@@ -3215,7 +3219,7 @@ to max speed</string>
                  </property>
                 </widget>
                </item>
-               <item row="3" column="3">
+               <item row="3" column="3" alignment="Qt::AlignRight">
                 <widget class="QLineEdit" name="maxError_3"/>
                </item>
                <item row="3" column="2">
@@ -3965,7 +3969,7 @@ max speed</string>
                  </property>
                 </widget>
                </item>
-               <item row="3" column="3">
+               <item row="3" column="3" alignment="Qt::AlignRight">
                 <widget class="QLineEdit" name="maxError_4"/>
                </item>
                <item row="3" column="2">
