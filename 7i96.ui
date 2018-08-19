@@ -604,10 +604,17 @@
                <property name="spacing">
                 <number>5</number>
                </property>
-               <item row="1" column="1">
+               <item row="1" column="7">
+                <widget class="QLineEdit" name="maxAccel_0">
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
                 <widget class="QComboBox" name="axisCB_0"/>
                </item>
-               <item row="0" column="5">
+               <item row="0" column="4">
                 <widget class="QLabel" name="label_62">
                  <property name="text">
                   <string>Mininum Limit</string>
@@ -620,14 +627,7 @@
                  </property>
                 </widget>
                </item>
-               <item row="1" column="0">
-                <widget class="QCheckBox" name="stepper_0">
-                 <property name="text">
-                  <string>Enable</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="1">
+               <item row="0" column="0">
                 <widget class="QLabel" name="label_43">
                  <property name="text">
                   <string>Axis</string>
@@ -637,14 +637,14 @@
                  </property>
                 </widget>
                </item>
-               <item row="1" column="4">
+               <item row="1" column="3">
                 <widget class="QSpinBox" name="scale_0">
                  <property name="maximum">
                   <number>25000</number>
                  </property>
                 </widget>
                </item>
-               <item row="0" column="3">
+               <item row="0" column="2">
                 <widget class="QLabel" name="label_46">
                  <property name="text">
                   <string>Direction</string>
@@ -654,24 +654,24 @@
                  </property>
                 </widget>
                </item>
-               <item row="1" column="3">
+               <item row="1" column="2">
                 <widget class="QComboBox" name="stepDir_0"/>
                </item>
-               <item row="1" column="5">
+               <item row="1" column="4">
                 <widget class="QLineEdit" name="minLimit_0">
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
                 </widget>
                </item>
-               <item row="1" column="6">
+               <item row="1" column="5">
                 <widget class="QLineEdit" name="maxLimit_0">
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
                 </widget>
                </item>
-               <item row="0" column="6">
+               <item row="0" column="5">
                 <widget class="QLabel" name="label_67">
                  <property name="text">
                   <string>Maximum Limit</string>
@@ -687,7 +687,7 @@
                  </property>
                 </widget>
                </item>
-               <item row="0" column="7">
+               <item row="0" column="6">
                 <widget class="QLabel" name="label_72">
                  <property name="text">
                   <string>Maximum Velocity</string>
@@ -700,14 +700,14 @@
                  </property>
                 </widget>
                </item>
-               <item row="1" column="7">
+               <item row="1" column="6">
                 <widget class="QLineEdit" name="maxVelocity_0">
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
                 </widget>
                </item>
-               <item row="0" column="4">
+               <item row="0" column="3">
                 <widget class="QLabel" name="label_45">
                  <property name="text">
                   <string>Scale</string>
@@ -717,7 +717,7 @@
                  </property>
                 </widget>
                </item>
-               <item row="0" column="8">
+               <item row="0" column="7">
                 <widget class="QLabel" name="label_73">
                  <property name="text">
                   <string>Maximum Acceleration</string>
@@ -730,21 +730,14 @@
                  </property>
                 </widget>
                </item>
-               <item row="1" column="8">
-                <widget class="QLineEdit" name="maxAccel_0">
-                 <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="2">
+               <item row="0" column="1">
                 <widget class="QLabel" name="label_4">
                  <property name="text">
                   <string>Axis Type</string>
                  </property>
                 </widget>
                </item>
-               <item row="1" column="2">
+               <item row="1" column="1">
                 <widget class="QLabel" name="axisType_0">
                  <property name="frameShape">
                   <enum>QFrame::Box</enum>
@@ -910,26 +903,6 @@
                </item>
                <item row="3" column="1">
                 <widget class="QLineEdit" name="ff0_0">
-                 <property name="text">
-                  <string/>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="3" column="2">
-                <widget class="QLabel" name="label_223">
-                 <property name="text">
-                  <string>Max Error</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="3" column="3">
-                <widget class="QLineEdit" name="maxError_0">
                  <property name="text">
                   <string/>
                  </property>
@@ -1343,10 +1316,26 @@
                <property name="spacing">
                 <number>5</number>
                </property>
-               <item row="1" column="1">
+               <item row="1" column="0">
                 <widget class="QComboBox" name="axisCB_1"/>
                </item>
-               <item row="0" column="5">
+               <item row="1" column="2">
+                <widget class="QComboBox" name="stepDir_1"/>
+               </item>
+               <item row="0" column="7">
+                <widget class="QLabel" name="label_75">
+                 <property name="text">
+                  <string>Maximum Acceleration</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="4">
                 <widget class="QLabel" name="label_63">
                  <property name="text">
                   <string>Mininum Limit</string>
@@ -1359,14 +1348,7 @@
                  </property>
                 </widget>
                </item>
-               <item row="1" column="0">
-                <widget class="QCheckBox" name="stepper_1">
-                 <property name="text">
-                  <string>Enable</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="1">
+               <item row="0" column="0">
                 <widget class="QLabel" name="label_50">
                  <property name="text">
                   <string>Axis</string>
@@ -1376,17 +1358,14 @@
                  </property>
                 </widget>
                </item>
-               <item row="1" column="4">
+               <item row="1" column="3">
                 <widget class="QSpinBox" name="scale_1">
                  <property name="maximum">
                   <number>25000</number>
                  </property>
                 </widget>
                </item>
-               <item row="1" column="3">
-                <widget class="QComboBox" name="stepDir_1"/>
-               </item>
-               <item row="0" column="3">
+               <item row="0" column="2">
                 <widget class="QLabel" name="label_51">
                  <property name="text">
                   <string>Direction</string>
@@ -1396,21 +1375,21 @@
                  </property>
                 </widget>
                </item>
-               <item row="1" column="5">
+               <item row="1" column="4">
                 <widget class="QLineEdit" name="minLimit_1">
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
                 </widget>
                </item>
-               <item row="1" column="6">
+               <item row="1" column="5">
                 <widget class="QLineEdit" name="maxLimit_1">
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
                 </widget>
                </item>
-               <item row="0" column="6">
+               <item row="0" column="5">
                 <widget class="QLabel" name="label_68">
                  <property name="text">
                   <string>Maximum Limit</string>
@@ -1426,7 +1405,7 @@
                  </property>
                 </widget>
                </item>
-               <item row="0" column="7">
+               <item row="0" column="6">
                 <widget class="QLabel" name="label_74">
                  <property name="text">
                   <string>Maximum Velocity</string>
@@ -1439,7 +1418,14 @@
                  </property>
                 </widget>
                </item>
-               <item row="0" column="4">
+               <item row="1" column="6">
+                <widget class="QLineEdit" name="maxVelocity_1">
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="3">
                 <widget class="QLabel" name="label_52">
                  <property name="text">
                   <string>Scale</string>
@@ -1449,41 +1435,21 @@
                  </property>
                 </widget>
                </item>
-               <item row="0" column="8">
-                <widget class="QLabel" name="label_75">
-                 <property name="text">
-                  <string>Maximum Acceleration</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignBottom|Qt::AlignHCenter</set>
-                 </property>
-                 <property name="wordWrap">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
                <item row="1" column="7">
-                <widget class="QLineEdit" name="maxVelocity_1">
-                 <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="8">
                 <widget class="QLineEdit" name="maxAccel_1">
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
                 </widget>
                </item>
-               <item row="0" column="2">
+               <item row="0" column="1">
                 <widget class="QLabel" name="label_5">
                  <property name="text">
                   <string>Axis Type</string>
                  </property>
                 </widget>
                </item>
-               <item row="1" column="2">
+               <item row="1" column="1">
                 <widget class="QLabel" name="axisType_1">
                  <property name="frameShape">
                   <enum>QFrame::Box</enum>
@@ -1649,26 +1615,6 @@
                </item>
                <item row="3" column="1">
                 <widget class="QLineEdit" name="ff0_1">
-                 <property name="text">
-                  <string/>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="3" column="2">
-                <widget class="QLabel" name="label_231">
-                 <property name="text">
-                  <string>Max Error</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="3" column="3">
-                <widget class="QLineEdit" name="maxError_1">
                  <property name="text">
                   <string/>
                  </property>
@@ -2038,10 +1984,10 @@
                <property name="spacing">
                 <number>5</number>
                </property>
-               <item row="1" column="1">
+               <item row="1" column="0">
                 <widget class="QComboBox" name="axisCB_2"/>
                </item>
-               <item row="0" column="5">
+               <item row="0" column="4">
                 <widget class="QLabel" name="label_64">
                  <property name="text">
                   <string>Mininum Limit</string>
@@ -2054,14 +2000,7 @@
                  </property>
                 </widget>
                </item>
-               <item row="1" column="0">
-                <widget class="QCheckBox" name="stepper_2">
-                 <property name="text">
-                  <string>Enable</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="1">
+               <item row="0" column="0">
                 <widget class="QLabel" name="label_53">
                  <property name="text">
                   <string>Axis</string>
@@ -2071,14 +2010,14 @@
                  </property>
                 </widget>
                </item>
-               <item row="1" column="4">
+               <item row="1" column="3">
                 <widget class="QSpinBox" name="scale_2">
                  <property name="maximum">
                   <number>25000</number>
                  </property>
                 </widget>
                </item>
-               <item row="0" column="3">
+               <item row="0" column="2">
                 <widget class="QLabel" name="label_54">
                  <property name="text">
                   <string>Direction</string>
@@ -2088,24 +2027,24 @@
                  </property>
                 </widget>
                </item>
-               <item row="1" column="3">
+               <item row="1" column="2">
                 <widget class="QComboBox" name="stepDir_2"/>
                </item>
-               <item row="1" column="5">
+               <item row="1" column="4">
                 <widget class="QLineEdit" name="minLimit_2">
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
                 </widget>
                </item>
-               <item row="1" column="6">
+               <item row="1" column="5">
                 <widget class="QLineEdit" name="maxLimit_2">
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
                 </widget>
                </item>
-               <item row="0" column="6">
+               <item row="0" column="5">
                 <widget class="QLabel" name="label_69">
                  <property name="text">
                   <string>Maximum Limit</string>
@@ -2121,7 +2060,7 @@
                  </property>
                 </widget>
                </item>
-               <item row="0" column="7">
+               <item row="0" column="6">
                 <widget class="QLabel" name="label_76">
                  <property name="text">
                   <string>Maximum Velocity</string>
@@ -2134,7 +2073,14 @@
                  </property>
                 </widget>
                </item>
-               <item row="0" column="4">
+               <item row="1" column="6">
+                <widget class="QLineEdit" name="maxVelocity_2">
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="3">
                 <widget class="QLabel" name="label_55">
                  <property name="text">
                   <string>Scale</string>
@@ -2144,7 +2090,7 @@
                  </property>
                 </widget>
                </item>
-               <item row="0" column="8">
+               <item row="0" column="7">
                 <widget class="QLabel" name="label_77">
                  <property name="text">
                   <string>Maximum Acceleration</string>
@@ -2158,27 +2104,20 @@
                 </widget>
                </item>
                <item row="1" column="7">
-                <widget class="QLineEdit" name="maxVelocity_2">
-                 <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="8">
                 <widget class="QLineEdit" name="maxAccel_2">
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
                 </widget>
                </item>
-               <item row="0" column="2">
+               <item row="0" column="1">
                 <widget class="QLabel" name="label_6">
                  <property name="text">
                   <string>Axis Type</string>
                  </property>
                 </widget>
                </item>
-               <item row="1" column="2">
+               <item row="1" column="1">
                 <widget class="QLabel" name="axisType_2">
                  <property name="frameShape">
                   <enum>QFrame::Box</enum>
@@ -2344,26 +2283,6 @@
                </item>
                <item row="3" column="1">
                 <widget class="QLineEdit" name="ff0_2">
-                 <property name="text">
-                  <string/>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="3" column="2">
-                <widget class="QLabel" name="label_241">
-                 <property name="text">
-                  <string>Max Error</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="3" column="3">
-                <widget class="QLineEdit" name="maxError_2">
                  <property name="text">
                   <string/>
                  </property>
@@ -2733,10 +2652,17 @@
                <property name="spacing">
                 <number>5</number>
                </property>
-               <item row="1" column="1">
+               <item row="1" column="3">
+                <widget class="QSpinBox" name="scale_3">
+                 <property name="maximum">
+                  <number>25000</number>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
                 <widget class="QComboBox" name="axisCB_3"/>
                </item>
-               <item row="0" column="5">
+               <item row="0" column="4">
                 <widget class="QLabel" name="label_65">
                  <property name="text">
                   <string>Mininum Limit</string>
@@ -2749,14 +2675,7 @@
                  </property>
                 </widget>
                </item>
-               <item row="1" column="0">
-                <widget class="QCheckBox" name="stepper_3">
-                 <property name="text">
-                  <string>Enable</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="1">
+               <item row="0" column="0">
                 <widget class="QLabel" name="label_56">
                  <property name="text">
                   <string>Axis</string>
@@ -2766,14 +2685,7 @@
                  </property>
                 </widget>
                </item>
-               <item row="1" column="4">
-                <widget class="QSpinBox" name="scale_3">
-                 <property name="maximum">
-                  <number>25000</number>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="3">
+               <item row="0" column="2">
                 <widget class="QLabel" name="label_57">
                  <property name="text">
                   <string>Direction</string>
@@ -2783,24 +2695,24 @@
                  </property>
                 </widget>
                </item>
-               <item row="1" column="3">
+               <item row="1" column="2">
                 <widget class="QComboBox" name="stepDir_3"/>
                </item>
-               <item row="1" column="5">
+               <item row="1" column="4">
                 <widget class="QLineEdit" name="minLimit_3">
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
                 </widget>
                </item>
-               <item row="1" column="6">
+               <item row="1" column="5">
                 <widget class="QLineEdit" name="maxLimit_3">
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
                 </widget>
                </item>
-               <item row="0" column="6">
+               <item row="0" column="5">
                 <widget class="QLabel" name="label_70">
                  <property name="text">
                   <string>Maximum Limit</string>
@@ -2816,7 +2728,7 @@
                  </property>
                 </widget>
                </item>
-               <item row="0" column="7">
+               <item row="0" column="6">
                 <widget class="QLabel" name="label_78">
                  <property name="text">
                   <string>Maximum Velocity</string>
@@ -2829,14 +2741,21 @@
                  </property>
                 </widget>
                </item>
-               <item row="1" column="7">
+               <item row="1" column="6">
                 <widget class="QLineEdit" name="maxVelocity_3">
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
                 </widget>
                </item>
-               <item row="0" column="4">
+               <item row="1" column="7">
+                <widget class="QLineEdit" name="maxAccel_3">
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="3">
                 <widget class="QLabel" name="label_58">
                  <property name="text">
                   <string>Scale</string>
@@ -2846,7 +2765,7 @@
                  </property>
                 </widget>
                </item>
-               <item row="0" column="8">
+               <item row="0" column="7">
                 <widget class="QLabel" name="label_79">
                  <property name="text">
                   <string>Maximum Acceleration</string>
@@ -2859,21 +2778,14 @@
                  </property>
                 </widget>
                </item>
-               <item row="1" column="8">
-                <widget class="QLineEdit" name="maxAccel_3">
-                 <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="2">
+               <item row="0" column="1">
                 <widget class="QLabel" name="label_7">
                  <property name="text">
                   <string>Axis Type</string>
                  </property>
                 </widget>
                </item>
-               <item row="1" column="2">
+               <item row="1" column="1">
                 <widget class="QLabel" name="axisType_3">
                  <property name="frameShape">
                   <enum>QFrame::Box</enum>
@@ -3039,26 +2951,6 @@
                </item>
                <item row="3" column="1">
                 <widget class="QLineEdit" name="ff0_3">
-                 <property name="text">
-                  <string/>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="3" column="2">
-                <widget class="QLabel" name="label_251">
-                 <property name="text">
-                  <string>Max Error</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="3" column="3">
-                <widget class="QLineEdit" name="maxError_3">
                  <property name="text">
                   <string/>
                  </property>
@@ -3428,10 +3320,10 @@
                <property name="spacing">
                 <number>5</number>
                </property>
-               <item row="1" column="1">
+               <item row="1" column="0">
                 <widget class="QComboBox" name="axisCB_4"/>
                </item>
-               <item row="0" column="5">
+               <item row="0" column="4">
                 <widget class="QLabel" name="label_66">
                  <property name="text">
                   <string>Mininum Limit</string>
@@ -3444,14 +3336,7 @@
                  </property>
                 </widget>
                </item>
-               <item row="1" column="0">
-                <widget class="QCheckBox" name="stepper_4">
-                 <property name="text">
-                  <string>Enable</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="1">
+               <item row="0" column="0">
                 <widget class="QLabel" name="label_59">
                  <property name="text">
                   <string>Axis</string>
@@ -3461,17 +3346,17 @@
                  </property>
                 </widget>
                </item>
-               <item row="1" column="4">
+               <item row="1" column="3">
                 <widget class="QSpinBox" name="scale_4">
                  <property name="maximum">
                   <number>25000</number>
                  </property>
                 </widget>
                </item>
-               <item row="1" column="3">
+               <item row="1" column="2">
                 <widget class="QComboBox" name="stepDir_4"/>
                </item>
-               <item row="0" column="3">
+               <item row="0" column="2">
                 <widget class="QLabel" name="label_60">
                  <property name="text">
                   <string>Direction</string>
@@ -3481,21 +3366,21 @@
                  </property>
                 </widget>
                </item>
-               <item row="1" column="5">
+               <item row="1" column="4">
                 <widget class="QLineEdit" name="minLimit_4">
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
                 </widget>
                </item>
-               <item row="1" column="6">
+               <item row="1" column="5">
                 <widget class="QLineEdit" name="maxLimit_4">
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
                 </widget>
                </item>
-               <item row="0" column="6">
+               <item row="0" column="5">
                 <widget class="QLabel" name="label_71">
                  <property name="text">
                   <string>Maximum Limit</string>
@@ -3511,7 +3396,7 @@
                  </property>
                 </widget>
                </item>
-               <item row="0" column="7">
+               <item row="0" column="6">
                 <widget class="QLabel" name="label_80">
                  <property name="text">
                   <string>Maximum Velocity</string>
@@ -3524,7 +3409,14 @@
                  </property>
                 </widget>
                </item>
-               <item row="0" column="4">
+               <item row="1" column="6">
+                <widget class="QLineEdit" name="maxVelocity_4">
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="3">
                 <widget class="QLabel" name="label_61">
                  <property name="text">
                   <string>Scale</string>
@@ -3534,7 +3426,7 @@
                  </property>
                 </widget>
                </item>
-               <item row="0" column="8">
+               <item row="0" column="7">
                 <widget class="QLabel" name="label_81">
                  <property name="text">
                   <string>Maximum Acceleration</string>
@@ -3548,27 +3440,20 @@
                 </widget>
                </item>
                <item row="1" column="7">
-                <widget class="QLineEdit" name="maxVelocity_4">
-                 <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="8">
                 <widget class="QLineEdit" name="maxAccel_4">
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
                 </widget>
                </item>
-               <item row="0" column="2">
+               <item row="0" column="1">
                 <widget class="QLabel" name="label_31">
                  <property name="text">
                   <string>Axis Type</string>
                  </property>
                 </widget>
                </item>
-               <item row="1" column="2">
+               <item row="1" column="1">
                 <widget class="QLabel" name="axisType_4">
                  <property name="frameShape">
                   <enum>QFrame::Box</enum>
@@ -3734,26 +3619,6 @@
                </item>
                <item row="3" column="1">
                 <widget class="QLineEdit" name="ff0_4">
-                 <property name="text">
-                  <string/>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="3" column="2">
-                <widget class="QLabel" name="label_261">
-                 <property name="text">
-                  <string>Max Error</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="3" column="3">
-                <widget class="QLineEdit" name="maxError_4">
                  <property name="text">
                   <string/>
                  </property>
@@ -5612,7 +5477,6 @@
   <tabstop>versionLE</tabstop>
   <tabstop>ipAddressCB</tabstop>
   <tabstop>jointType_3</tabstop>
-  <tabstop>stepper_0</tabstop>
   <tabstop>axisCB_0</tabstop>
   <tabstop>stepDir_0</tabstop>
   <tabstop>scale_0</tabstop>
@@ -5629,7 +5493,6 @@
   <tabstop>deadband_0</tabstop>
   <tabstop>bias_0</tabstop>
   <tabstop>maxOutput_0</tabstop>
-  <tabstop>maxError_0</tabstop>
   <tabstop>stepTime_0</tabstop>
   <tabstop>stepSpace_0</tabstop>
   <tabstop>dirSetup_0</tabstop>
@@ -5640,7 +5503,6 @@
   <tabstop>homeSearchVel_0</tabstop>
   <tabstop>homeLatchVel_0</tabstop>
   <tabstop>homeIgnoreLimits_0</tabstop>
-  <tabstop>stepper_1</tabstop>
   <tabstop>axisCB_1</tabstop>
   <tabstop>stepDir_1</tabstop>
   <tabstop>scale_1</tabstop>
@@ -5657,7 +5519,6 @@
   <tabstop>deadband_1</tabstop>
   <tabstop>bias_1</tabstop>
   <tabstop>maxOutput_1</tabstop>
-  <tabstop>maxError_1</tabstop>
   <tabstop>stepTime_1</tabstop>
   <tabstop>stepSpace_1</tabstop>
   <tabstop>dirSetup_1</tabstop>
@@ -5668,7 +5529,6 @@
   <tabstop>homeSearchVel_1</tabstop>
   <tabstop>homeLatchVel_1</tabstop>
   <tabstop>homeIgnoreLimits_1</tabstop>
-  <tabstop>stepper_2</tabstop>
   <tabstop>axisCB_2</tabstop>
   <tabstop>stepDir_2</tabstop>
   <tabstop>scale_2</tabstop>
@@ -5685,7 +5545,6 @@
   <tabstop>deadband_2</tabstop>
   <tabstop>bias_2</tabstop>
   <tabstop>maxOutput_2</tabstop>
-  <tabstop>maxError_2</tabstop>
   <tabstop>stepTime_2</tabstop>
   <tabstop>stepSpace_2</tabstop>
   <tabstop>dirSetup_2</tabstop>
@@ -5696,7 +5555,6 @@
   <tabstop>homeSearchVel_2</tabstop>
   <tabstop>homeLatchVel_2</tabstop>
   <tabstop>homeIgnoreLimits_2</tabstop>
-  <tabstop>stepper_3</tabstop>
   <tabstop>axisCB_3</tabstop>
   <tabstop>stepDir_3</tabstop>
   <tabstop>scale_3</tabstop>
@@ -5713,7 +5571,6 @@
   <tabstop>deadband_3</tabstop>
   <tabstop>bias_3</tabstop>
   <tabstop>maxOutput_3</tabstop>
-  <tabstop>maxError_3</tabstop>
   <tabstop>stepTime_3</tabstop>
   <tabstop>stepSpace_3</tabstop>
   <tabstop>dirSetup_3</tabstop>
@@ -5724,7 +5581,6 @@
   <tabstop>homeSearchVel_3</tabstop>
   <tabstop>homeLatchVel_3</tabstop>
   <tabstop>homeIgnoreLimits_3</tabstop>
-  <tabstop>stepper_4</tabstop>
   <tabstop>axisCB_4</tabstop>
   <tabstop>stepDir_4</tabstop>
   <tabstop>scale_4</tabstop>
@@ -5741,7 +5597,6 @@
   <tabstop>deadband_4</tabstop>
   <tabstop>bias_4</tabstop>
   <tabstop>maxOutput_4</tabstop>
-  <tabstop>maxError_4</tabstop>
   <tabstop>stepTime_4</tabstop>
   <tabstop>stepSpace_4</tabstop>
   <tabstop>dirSetup_4</tabstop>

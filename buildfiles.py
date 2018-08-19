@@ -229,12 +229,16 @@ def buildini(parent):
 		iniContents.append('FF2 = {}\n'.format(parent.ff2_0.text()))
 		iniContents.append('BIAS = {}\n'.format(parent.bias_0.text()))
 		iniContents.append('MAX_OUTPUT = {}\n'.format(parent.maxOutput_0.text()))
-		iniContents.append('MAX_ERROR = {}\n'.format(parent.maxError_0.text()))
-		iniContents.append('HOME = {}\n'.format(parent.home_0.text()))
-		iniContents.append('HOME_OFFSET = {}\n'.format(parent.homeOffset_0.text()))
-		iniContents.append('HOME_SEARCH_VEL = {}\n'.format(parent.homeSearchVel_0.text()))
-		iniContents.append('HOME_LATCH_VEL = {}\n'.format(parent.homeLatchVel_0.text()))
-		iniContents.append('HOME_SEQUENCE = {}\n'.format(parent.homeSequence_0.text()))
+		if parent.home_0.text():
+			iniContents.append('HOME = {}\n'.format(parent.home_0.text()))
+		if parent.homeOffset_0.text():
+			iniContents.append('HOME_OFFSET = {}\n'.format(parent.homeOffset_0.text()))
+		if parent.homeSearchVel_0.text():
+			iniContents.append('HOME_SEARCH_VEL = {}\n'.format(parent.homeSearchVel_0.text()))
+		if parent.homeLatchVel_0.text():
+			iniContents.append('HOME_LATCH_VEL = {}\n'.format(parent.homeLatchVel_0.text()))
+		if parent.homeSequence_0.text():
+			iniContents.append('HOME_SEQUENCE = {}\n'.format(parent.homeSequence_0.text()))
 		iniContents.append('HOME_USE_INDEX = {}\n'.format(parent.homeUseIndex_0.isChecked()))
 		iniContents.append('HOME_IGNORE_LIMITS = {}\n'.format(parent.homeIgnoreLimits_0.isChecked()))
 
@@ -266,12 +270,16 @@ def buildini(parent):
 		iniContents.append('FF2 = {}\n'.format(parent.ff2_1.text()))
 		iniContents.append('BIAS = {}\n'.format(parent.bias_1.text()))
 		iniContents.append('MAX_OUTPUT = {}\n'.format(parent.maxOutput_1.text()))
-		iniContents.append('MAX_ERROR = {}\n'.format(parent.maxError_1.text()))
-		iniContents.append('HOME = {}\n'.format(parent.home_1.text()))
-		iniContents.append('HOME_OFFSET = {}\n'.format(parent.homeOffset_1.text()))
-		iniContents.append('HOME_SEARCH_VEL = {}\n'.format(parent.homeSearchVel_1.text()))
-		iniContents.append('HOME_LATCH_VEL = {}\n'.format(parent.homeLatchVel_1.text()))
-		iniContents.append('HOME_SEQUENCE = {}\n'.format(parent.homeSequence_1.text()))
+		if parent.home_1.text():
+			iniContents.append('HOME = {}\n'.format(parent.home_1.text()))
+		if parent.homeOffset_1.text():
+			iniContents.append('HOME_OFFSET = {}\n'.format(parent.homeOffset_1.text()))
+		if parent.homeSearchVel_1.text():
+			iniContents.append('HOME_SEARCH_VEL = {}\n'.format(parent.homeSearchVel_1.text()))
+		if parent.homeLatchVel_1.text():
+			iniContents.append('HOME_LATCH_VEL = {}\n'.format(parent.homeLatchVel_1.text()))
+		if parent.homeSequence_1.text():
+			iniContents.append('HOME_SEQUENCE = {}\n'.format(parent.homeSequence_1.text()))
 		iniContents.append('HOME_USE_INDEX = {}\n'.format(parent.homeUseIndex_1.isChecked()))
 		iniContents.append('HOME_IGNORE_LIMITS = {}\n'.format(parent.homeIgnoreLimits_1.isChecked()))
 
@@ -302,12 +310,16 @@ def buildini(parent):
 		iniContents.append('FF2 = {}\n'.format(parent.ff2_2.text()))
 		iniContents.append('BIAS = {}\n'.format(parent.bias_2.text()))
 		iniContents.append('MAX_OUTPUT = {}\n'.format(parent.maxOutput_2.text()))
-		iniContents.append('MAX_ERROR = {}\n'.format(parent.maxError_2.text()))
-		iniContents.append('HOME = {}\n'.format(parent.home_2.text()))
-		iniContents.append('HOME_OFFSET = {}\n'.format(parent.homeOffset_2.text()))
-		iniContents.append('HOME_SEARCH_VEL = {}\n'.format(parent.homeSearchVel_2.text()))
-		iniContents.append('HOME_LATCH_VEL = {}\n'.format(parent.homeLatchVel_2.text()))
-		iniContents.append('HOME_SEQUENCE = {}\n'.format(parent.homeSequence_2.text()))
+		if parent.home_2.text():
+			iniContents.append('HOME = {}\n'.format(parent.home_2.text()))
+		if parent.homeOffset_2.text():
+			iniContents.append('HOME_OFFSET = {}\n'.format(parent.homeOffset_2.text()))
+		if parent.homeSearchVel_2.text():
+			iniContents.append('HOME_SEARCH_VEL = {}\n'.format(parent.homeSearchVel_2.text()))
+		if parent.homeLatchVel_2.text():
+			iniContents.append('HOME_LATCH_VEL = {}\n'.format(parent.homeLatchVel_2.text()))
+		if parent.homeSequence_2.text():
+			iniContents.append('HOME_SEQUENCE = {}\n'.format(parent.homeSequence_2.text()))
 		iniContents.append('HOME_USE_INDEX = {}\n'.format(parent.homeUseIndex_2.isChecked()))
 		iniContents.append('HOME_IGNORE_LIMITS = {}\n'.format(parent.homeIgnoreLimits_2.isChecked()))
 
@@ -338,12 +350,16 @@ def buildini(parent):
 		iniContents.append('FF2 = {}\n'.format(parent.ff2_3.text()))
 		iniContents.append('BIAS = {}\n'.format(parent.bias_3.text()))
 		iniContents.append('MAX_OUTPUT = {}\n'.format(parent.maxOutput_3.text()))
-		iniContents.append('MAX_ERROR = {}\n'.format(parent.maxError_3.text()))
-		iniContents.append('HOME = {}\n'.format(parent.home_3.text()))
-		iniContents.append('HOME_OFFSET = {}\n'.format(parent.homeOffset_3.text()))
-		iniContents.append('HOME_SEARCH_VEL = {}\n'.format(parent.homeSearchVel_3.text()))
-		iniContents.append('HOME_LATCH_VEL = {}\n'.format(parent.homeLatchVel_3.text()))
-		iniContents.append('HOME_SEQUENCE = {}\n'.format(parent.homeSequence_3.text()))
+		if parent.home_3.text():
+			iniContents.append('HOME = {}\n'.format(parent.home_3.text()))
+		if parent.homeOffset_3.text():
+			iniContents.append('HOME_OFFSET = {}\n'.format(parent.homeOffset_3.text()))
+		if parent.homeSearchVel_3.text():
+			iniContents.append('HOME_SEARCH_VEL = {}\n'.format(parent.homeSearchVel_3.text()))
+		if parent.homeLatchVel_3.text():
+			iniContents.append('HOME_LATCH_VEL = {}\n'.format(parent.homeLatchVel_3.text()))
+		if parent.homeSequence_3.text():
+			iniContents.append('HOME_SEQUENCE = {}\n'.format(parent.homeSequence_3.text()))
 		iniContents.append('HOME_USE_INDEX = {}\n'.format(parent.homeUseIndex_3.isChecked()))
 		iniContents.append('HOME_IGNORE_LIMITS = {}\n'.format(parent.homeIgnoreLimits_3.isChecked()))
 
@@ -374,12 +390,16 @@ def buildini(parent):
 		iniContents.append('FF2 = {}\n'.format(parent.ff2_4.text()))
 		iniContents.append('BIAS = {}\n'.format(parent.bias_4.text()))
 		iniContents.append('MAX_OUTPUT = {}\n'.format(parent.maxOutput_4.text()))
-		iniContents.append('MAX_ERROR = {}\n'.format(parent.maxError_4.text()))
-		iniContents.append('HOME = {}\n'.format(parent.home_4.text()))
-		iniContents.append('HOME_OFFSET = {}\n'.format(parent.homeOffset_4.text()))
-		iniContents.append('HOME_SEARCH_VEL = {}\n'.format(parent.homeSearchVel_4.text()))
-		iniContents.append('HOME_LATCH_VEL = {}\n'.format(parent.homeLatchVel_4.text()))
-		iniContents.append('HOME_SEQUENCE = {}\n'.format(parent.homeSequence_4.text()))
+		if parent.home_4.text():
+			iniContents.append('HOME = {}\n'.format(parent.home_4.text()))
+		if parent.homeOffset_4.text():
+			iniContents.append('HOME_OFFSET = {}\n'.format(parent.homeOffset_4.text()))
+		if parent.homeSearchVel_4.text():
+			iniContents.append('HOME_SEARCH_VEL = {}\n'.format(parent.homeSearchVel_4.text()))
+		if parent.homeLatchVel_4.text():
+			iniContents.append('HOME_LATCH_VEL = {}\n'.format(parent.homeLatchVel_4.text()))
+		if parent.homeSequence_4.text():
+			iniContents.append('HOME_SEQUENCE = {}\n'.format(parent.homeSequence_4.text()))
 		iniContents.append('HOME_USE_INDEX = {}\n'.format(parent.homeUseIndex_4.isChecked()))
 		iniContents.append('HOME_IGNORE_LIMITS = {}\n'.format(parent.homeIgnoreLimits_4.isChecked()))
 
