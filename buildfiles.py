@@ -20,6 +20,7 @@ def builddirs(parent):
 		os.mkdir(os.path.expanduser('~/linuxcnc/nc_files'))
 	if not os.path.exists(os.path.expanduser('~/linuxcnc/subroutines')):
 		os.mkdir(os.path.expanduser('~/linuxcnc/subroutines'))
+	return True
 
 def buildini(parent):
 	buildErrors = []
@@ -763,7 +764,7 @@ _/FILES_CLASSICLADDER
 				ladderFile.writelines(ladderContents)
 		except FileExistsError:
 			pass
-
+	return True
 
 def buildio(parent):
 	ioFilePath = os.path.join(parent.configPath, 'io.hal')

@@ -23,7 +23,6 @@ def config(parent):
 	if tabError:
 		configErrors.insert(nextHeader, 'Machine Tab:')
 		nextHeader = len(configErrors)
-		print(nextHeader)
 		tabError = False
 	# end of Machine Tab
 

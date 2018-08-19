@@ -99,11 +99,22 @@ class MainWindow(QMainWindow):
 
 	@pyqtSlot()
 	def on_actionBuild_triggered(self):
-		self.builddirs(self)
-		self.buildini(self)
-		self.buildhal(self)
-		self.buildio(self)
-		self.buildmisc(self)
+		result = self.builddirs(self)
+		if result:
+			result = self.buildini(self)
+		else: self.statusbar.showMessage('Build Directories Failed')
+		if result:
+			result = self.buildhal(self)
+		else: self.statusbar.showMessage('Build INI File Failed')
+		if result:
+			result = self.buildio(self)
+		else: self.statusbar.showMessage('Build HAL Files Failed')
+		if result:
+			result = self.buildmisc(self)
+		else: self.statusbar.showMessage('Build Misc. Files Failed')
+		if result:
+			self.statusbar.showMessage('Build Files Completed')
+
 
 	@pyqtSlot()
 	def on_actionSaveAs_triggered(self):
@@ -146,10 +157,6 @@ class MainWindow(QMainWindow):
 
 	def cardRead(self):
 		card.readCard(self)
-		# if the results are good then set up the stepgens etc
-		#resultSplit = result.splitlines()
-		#for line in resultSplit:
-		#	print(line)
 
 	def flashCard(self):
 		card.flashCard(self)
@@ -262,7 +269,8 @@ class MainWindow(QMainWindow):
 					#print(self.config[item[0]][item[1]])
 				if isinstance(getattr(self, item[2]), QComboBox):
 					index = getattr(self, item[2]).findData(self.config[item[0]][item[1]])
-					getattr(self, item[2]).setCurrentIndex(index)
+					if index >= 0:
+						getattr(self, item[2]).setCurrentIndex(index)
 
 	def errorDialog(self, text):
 		dialog = QtWidgets.QDialog()
