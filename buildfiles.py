@@ -519,7 +519,6 @@ def buildhal(parent):
 		halContents.append('setp pid.{0}.FF2 [JOINT_{0}]FF2\n'.format(str(index)))
 		halContents.append('setp pid.{0}.deadband [JOINT_{0}]DEADBAND\n'.format(str(index)))
 		halContents.append('setp pid.{0}.maxoutput [JOINT_{0}]MAX_OUTPUT\n'.format(str(index)))
-		halContents.append('setp pid.{0}.maxerror [JOINT_{0}]MAX_ERROR\n\n'.format(str(index)))
 
 	halContents.append('# Standard I/O Block - EStop, Etc\n\n')
 	halContents.append('# create a signal for the estop loopback\n')
