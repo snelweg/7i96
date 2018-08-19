@@ -497,7 +497,6 @@ def buildhal(parent):
 		halContents.append('net emcmot.{0}.enable => hm2_[HOSTMOT2](BOARD).0.stepgen.0{0}.enable pid.{0}.enable\n\n'.format(str(index)))
 		halContents.append('# position command and feedback\n')
 		halContents.append('net emcmot.{0}.pos-cmd joint.{0}.motor-pos-cmd => pid.{0}.command\n'.format(str(index)))
-		halContents.append('net emcmot.{0}.vel-cmd joint.{0}.vel-cmd => pid.{0}.command-deriv\n'.format(str(index)))
 		halContents.append('net motor.{0}.pos-fb <= hm2_[HOSTMOT2](BOARD).0.stepgen.0{0}.position-fb joint.{0}.motor-pos-fb pid.{0}.feedback\n'.format(str(index)))
 		halContents.append('net motor.{0}.command pid.{0}.output hm2_[HOSTMOT2](BOARD).0.stepgen.0{0}.velocity-cmd\n'.format(str(index)))
 		halContents.append('setp pid.{}.error-previous-target true\n\n'.format(str(index)))
