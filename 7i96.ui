@@ -4697,17 +4697,17 @@ max speed</string>
          <item row="2" column="1">
           <widget class="QSpinBox" name="pwmFrequencySB">
            <property name="maximum">
-            <number>193</number>
+            <number>193000</number>
            </property>
            <property name="value">
-            <number>20</number>
+            <number>20000</number>
            </property>
           </widget>
          </item>
          <item row="2" column="2">
           <widget class="QLabel" name="label_198">
            <property name="text">
-            <string>kHz</string>
+            <string>Hz</string>
            </property>
           </widget>
          </item>

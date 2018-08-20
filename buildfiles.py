@@ -549,7 +549,7 @@ def buildhal(parent):
 	if parent.spindle:
 		halContents.append('\n# Spindle\n')
 		halContents.append('setp hm2_7i96.0.pwmgen.00.output-type 0\n')
-		halContents.append('setp hm2_7i96.0.pwmgen.00.scale [SPINDLE]MAX_RPM\n'))
+		halContents.append('setp hm2_7i96.0.pwmgen.00.scale [SPINDLE]MAX_RPM\n')
 		halContents.append('setp hm2_7i96.0.pwmgen.pwm_frequency [SPINDLE]PWM_FREQUENCY\n')
 
 
