@@ -154,7 +154,7 @@ class MainWindow(QMainWindow):
 		self.flashPB.clicked.connect(self.flashCard)
 		self.reloadPB.clicked.connect(self.reloadCard)
 		self.copyPB.clicked.connect(self.copyOutput)
-		self.spindleGB.clicked.connect(self.spindleClicked)
+		self.spindleTypeCB.currentIndexChanged.connect(self.spindleTypeChanged)
 
 	def cardRead(self):
 		card.readCard(self)
@@ -214,14 +214,40 @@ class MainWindow(QMainWindow):
 		stepRate = scale * maxVelocity
 		getattr(self, 'stepRateJoint_' + joint).setText('{:.2f} pulses'.format(stepRate))
 
-	def spindleClicked(self):
-		if self.spindleGB.isChecked():
-			self.spindlepidGB.setEnabled(True)
-		else:
+	def spindleTypeChanged(self): 
+		if self.spindleTypeCB.itemData(self.spindleTypeCB.currentIndex()) == 'openLoop':
+			pid = '0'
+			self.ff0_s.setText('1')
+			self.spindleGB.setEnabled(True)
+			self.encoderGB.setEnabled(False)
 			self.spindlepidGB.setEnabled(False)
+			self.spindle = True
+		if self.spindleTypeCB.itemData(self.spindleTypeCB.currentIndex()) == 'closedLoop':
+			self.spindle = True
+			pid = '0'
+			self.ff0_s.setText('1')
+			self.spindleGB.setEnabled(True)
+			self.encoderGB.setEnabled(True)
+			self.spindlepidGB.setEnabled(True)
+		if not self.spindleTypeCB.itemData(self.spindleTypeCB.currentIndex()):
+			self.spindle = False
+			pid = ''
+			self.ff0_s.setText('')
+			self.spindleGB.setEnabled(False)
+			self.encoderGB.setEnabled(False)
+			self.spindlepidGB.setEnabled(False)
+		self.p_s.setText(pid)
+		self.i_s.setText(pid)
+		self.d_s.setText(pid)
+		self.ff1_s.setText(pid)
+		self.ff2_s.setText(pid)
+		self.bias_s.setText(pid)
+		self.maxOutput_s.setText(pid)
+		self.maxError_s.setText(pid)
+		self.deadband_s.setText(pid)
 
 	def pidSetDefault(self):
-		tab = self.sender().objectName()[11]
+		tab = self.sender().objectName()[-1]
 		if not self.linearUnitsCB.itemData(self.linearUnitsCB.currentIndex()):
 			QMessageBox.warning(self,'Warning', 'Machine Tab\nLinear Units\nmust be selected', QMessageBox.Ok)
 			return
@@ -259,6 +285,8 @@ class MainWindow(QMainWindow):
 			self.positionFeedbackCB.addItem(item[0], item[1])
 		for item in setup.setupCombo('firmware'):
 			self.firmwareCB.addItem(item[0], item[1])
+		for item in setup.setupCombo('spindle'):
+			self.spindleTypeCB.addItem(item[0], item[1])
 
 		for i in range(5):
 			for item in setup.setupCombo('axis'):

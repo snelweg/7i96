@@ -50,7 +50,9 @@ def iniList():
 		iniList.append(['JOINT_{}'.format(i), 'MAX_OUTPUT', 'maxOutput_{}'.format(i)])
 		iniList.append(['JOINT_{}'.format(i), 'MAX_ERROR', 'maxError_{}'.format(i)])
 
+	iniList.append(['SPINDLE', 'SPINDLE_TYPE', 'spindleTypeCB'])
 	iniList.append(['SPINDLE', 'SCALE', 'spindleScale'])
+	iniList.append(['SPINDLE', 'PWM_FREQUENCY', 'pwmFrequencySB'])
 	iniList.append(['SPINDLE', 'MAX_RPM', 'spindleMaxRpm'])
 	iniList.append(['SPINDLE', 'MIN_RPM', 'spindleMinRpm'])
 	iniList.append(['SPINDLE', 'DEADBAND', 'deadband_s'])

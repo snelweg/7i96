@@ -118,4 +118,9 @@ def setupCombo(combo):
 								['5 StepGens No PWM', '7i96d.bit'],
 								['4 StepGens and PWM', '7i96d_1pwm.bit']]
 
+	if combo == 'spindle':
+		comboList = [['None', False],
+								['Open Loop', 'openLoop'],
+								['Closed Loop', 'closedLoop']]
+
 	return comboList

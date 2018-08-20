@@ -412,11 +412,13 @@ def buildini(parent):
 		iniContents.append('HOME_IGNORE_LIMITS = {}\n'.format(parent.homeIgnoreLimits_4.isChecked()))
 
 	# build the [SPINDLE] section if enabled
-	if parent.spindleGB.isChecked():
+	if parent.spindle:
 		iniContents.append('\n[SPINDLE]\n')
-		iniContents.append('SCALE = {}\n'.format(parent.spindleScale.text))
-		iniContents.append('MAX_RPM = {}\n'.format(parent.spindleMaxRpm.text))
-		iniContents.append('MIN_RPM = {}\n'.format(parent.spindleMinRpm.text))
+		iniContents.append('SPINDLE_TYPE = {}\n'.format(parent.spindleTypeCB.itemData(parent.spindleTypeCB.currentIndex())))
+		iniContents.append('SCALE = {}\n'.format(parent.spindleScale.text()))
+		iniContents.append('PWM_FREQUENCY = {}\n'.format(parent.pwmFrequencySB.value()))
+		iniContents.append('MAX_RPM = {}\n'.format(parent.spindleMaxRpm.text()))
+		iniContents.append('MIN_RPM = {}\n'.format(parent.spindleMinRpm.text()))
 		iniContents.append('DEADBAND = {}\n'.format(parent.deadband_s.text()))
 		iniContents.append('P = {}\n'.format(parent.p_s.text()))
 		iniContents.append('I = {}\n'.format(parent.i_s.text()))
@@ -504,18 +506,18 @@ def buildhal(parent):
 	halContents.append('num_stepgens=[HOSTMOT2](STEPGENS)"')
 	halContents.append('sserial_port_0=[HOSTMOT2](SSERIAL_PORT)\n')
 	halContents.append('setp hm2_[HOSTMOT2](BOARD).0.watchdog.timeout_ns 25000000\n')
-	halContents.append('# THREADS\n')
+	halContents.append('\n# THREADS\n')
 	halContents.append('addf hm2_[HOSTMOT2](BOARD).0.read servo-thread\n')
 	halContents.append('addf motion-command-handler servo-thread\n')
 	halContents.append('addf motion-controller servo-thread\n')
 	for index in range(len(parent.coordinatesLB.text())):
 		halContents.append('addf pid.{}.do-pid-calcs servo-thread\n'.format(str(index)))
-	halContents.append('addf hm2_[HOSTMOT2](BOARD).0.write servo-thread\n\n')
+	halContents.append('addf hm2_[HOSTMOT2](BOARD).0.write servo-thread\n')
 	for index in range(len(parent.coordinatesLB.text())):
-		halContents.append('# Joint {0}\n\n'.format(str(index)))
+		halContents.append('\n# Joint {0}\n'.format(str(index)))
 		halContents.append('# axis enable chain\n')
 		halContents.append('newsig emcmot.{0}.enable bit\n'.format(str(index)))
-		halContents.append('sets emcmot.{0}.enable FALSE\n\n'.format(str(index)))
+		halContents.append('sets emcmot.{0}.enable FALSE\n'.format(str(index)))
 		halContents.append('net emcmot.{0}.enable <= joint.{0}.amp-enable-out\n'.format(str(index)))
 		halContents.append('net emcmot.{0}.enable => hm2_[HOSTMOT2](BOARD).0.stepgen.0{0}.enable pid.{0}.enable\n\n'.format(str(index)))
 		halContents.append('# position command and feedback\n')
@@ -542,11 +544,18 @@ def buildhal(parent):
 		halContents.append('setp pid.{0}.FF2 [JOINT_{0}]FF2\n'.format(str(index)))
 		halContents.append('setp pid.{0}.deadband [JOINT_{0}]DEADBAND\n'.format(str(index)))
 		halContents.append('setp pid.{0}.maxoutput [JOINT_{0}]MAX_OUTPUT\n'.format(str(index)))
-		halContents.append('setp pid.{0}.maxerror [JOINT_{0}]MAX_ERROR\n\n'.format(str(index)))
+		halContents.append('setp pid.{0}.maxerror [JOINT_{0}]MAX_ERROR\n'.format(str(index)))
 
-	halContents.append('# Standard I/O Block - EStop, Etc\n\n')
+	if parent.spindle:
+		halContents.append('\n# Spindle\n')
+		halContents.append('setp hm2_7i96.0.pwmgen.00.output-type 0\n')
+		halContents.append('setp hm2_7i96.0.pwmgen.00.scale [SPINDLE]MAX_RPM\n'))
+		halContents.append('setp hm2_7i96.0.pwmgen.pwm_frequency [SPINDLE]PWM_FREQUENCY\n')
+
+
+	halContents.append('\n# Standard I/O Block - EStop, Etc\n')
 	halContents.append('# create a signal for the estop loopback\n')
-	halContents.append('net estop-loop iocontrol.0.user-enable-out => iocontrol.0.emc-enable-in\n\n')
+	halContents.append('net estop-loop iocontrol.0.user-enable-out => iocontrol.0.emc-enable-in\n')
 	if parent.manualToolChangeCB.isChecked():
 		halContents.append('\n# create signals for tool loading loopback\n')
 		halContents.append('net tool-prep-loop iocontrol.0.tool-prepare => iocontrol.0.tool-prepared\n')
@@ -564,7 +573,7 @@ def buildhal(parent):
 		else:
 			halContents.append('loadrt classicladder_rt\n')
 		halContents.append('addf classicladder.0.refresh servo-thread 1\n')
-		halContents.append('loadusr classicladder --nogui {}.clp\n'.format(parent.configName.text()))
+		halContents.append('setp hm2_7i96.0.pwmgen.00.scale {}\n'.format(parent.configName.text()))
 
 	with open(halFilePath, 'w') as halFile:
 		halFile.writelines(halContents)
