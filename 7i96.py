@@ -149,12 +149,16 @@ class MainWindow(QMainWindow):
 			getattr(self, 'maxAccel_' + str(i)).textChanged.connect(self.updateAxisInfo)
 		for i in range(5):
 			getattr(self, 'pidDefault_' + str(i)).clicked.connect(self.pidSetDefault)
+		for i in range(5):
+			getattr(self, 'driveCB_' + str(i)).currentIndexChanged.connect(self.driveChanged)
+
 		self.pidDefault_s.clicked.connect(self.pidSetDefault)
 		self.testConnectionPB.clicked.connect(self.cardRead)
 		self.flashPB.clicked.connect(self.flashCard)
 		self.reloadPB.clicked.connect(self.reloadCard)
 		self.copyPB.clicked.connect(self.copyOutput)
 		self.spindleTypeCB.currentIndexChanged.connect(self.spindleTypeChanged)
+		self.linearUnitsCB.currentIndexChanged.connect(self.linearUnitsChanged)
 
 	def cardRead(self):
 		card.readCard(self)
@@ -178,6 +182,20 @@ class MainWindow(QMainWindow):
 		else:
 			self.pathLabel.setText('')
 
+	def linearUnitsChanged(self):
+		if self.linearUnitsCB.itemData(self.linearUnitsCB.currentIndex()) == 'inch':
+			for i in range(5):
+				getattr(self, 'minLimit_' + str(i)).setToolTip('inches')
+				getattr(self, 'maxLimit_' + str(i)).setToolTip('inches')
+				getattr(self, 'maxVelocity_' + str(i)).setToolTip('inches per second')
+				getattr(self, 'maxAccel_' + str(i)).setToolTip('inches per second per second')
+		if self.linearUnitsCB.itemData(self.linearUnitsCB.currentIndex()) == 'metric':
+			for i in range(5):
+				getattr(self, 'minLimit_' + str(i)).setToolTip('millimeters')
+				getattr(self, 'maxLimit_' + str(i)).setToolTip('millimeters')
+				getattr(self, 'maxVelocity_' + str(i)).setToolTip('millimeters per second')
+				getattr(self, 'maxAccel_' + str(i)).setToolTip('millimeters per second per second')
+
 	def onAxisChanged(self):
 		coordList = []
 		for item in self.axisList:
@@ -193,6 +211,15 @@ class MainWindow(QMainWindow):
 					getattr(self, 'axisType_' + jointTab).setText('')
 		self.coordinatesLB.setText(''.join(coordList))
 		self.stepgensSB.setValue(len(coordList))
+
+	def driveChanged(self):
+		timing = self.sender().itemData(self.sender().currentIndex())
+		joint = self.sender().objectName()[-1]
+		getattr(self, 'stepTime_' + joint).setText(timing[0])
+		getattr(self, 'stepSpace_' + joint).setText(timing[1])
+		getattr(self, 'dirSetup_' + joint).setText(timing[2])
+		getattr(self, 'dirHold_' + joint).setText(timing[3])
+
 
 	def updateAxisInfo(self):
 		if self.sender().objectName() == 'actionOpen':
@@ -212,7 +239,7 @@ class MainWindow(QMainWindow):
 		accelDistance = accelTime * 0.5 * maxVelocity
 		getattr(self, 'distanceJoint_' + joint).setText('{:.2f} inches'.format(accelDistance))
 		stepRate = scale * maxVelocity
-		getattr(self, 'stepRateJoint_' + joint).setText('{:.2f} pulses'.format(stepRate))
+		getattr(self, 'stepRateJoint_' + joint).setText('{:.0f} pulses'.format(stepRate))
 
 	def spindleTypeChanged(self): 
 		if self.spindleTypeCB.itemData(self.spindleTypeCB.currentIndex()) == 'openLoop':
@@ -287,7 +314,6 @@ class MainWindow(QMainWindow):
 			self.firmwareCB.addItem(item[0], item[1])
 		for item in setup.setupCombo('spindle'):
 			self.spindleTypeCB.addItem(item[0], item[1])
-
 		for i in range(5):
 			for item in setup.setupCombo('axis'):
 				getattr(self, 'axisCB_' + str(i)).addItem(item[0], item[1])
@@ -305,6 +331,10 @@ class MainWindow(QMainWindow):
 				getattr(self, 'output_' + str(i)).addItem(item[0], item[1])
 		for item in setup.setupCombo('debug'):
 			self.debugCombo.addItem(item[0], item[1])
+		for i in range(5):
+			for item in setup.setupCombo('drive'):
+				getattr(self, 'driveCB_' + str(i)).addItem(item[0], item[1])
+
 
 	def miscStuff(self):
 		if sys.maxsize > 2**32: # test for 64bit OS

@@ -620,7 +620,7 @@
                <item row="0" column="4">
                 <widget class="QLabel" name="label_62">
                  <property name="text">
-                  <string>Mininum Limit</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mininum&lt;br/&gt;Limit&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignBottom|Qt::AlignHCenter</set>
@@ -1132,21 +1132,20 @@
                  </property>
                 </widget>
                </item>
-               <item row="0" column="1">
-                <widget class="QLineEdit" name="stepTime_0">
-                 <property name="inputMask">
-                  <string/>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                 </property>
-                </widget>
-               </item>
                <item row="0" column="2">
                 <widget class="QLabel" name="label_110">
+                 <property name="minimumSize">
+                  <size>
+                   <width>20</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>20</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
                  <property name="text">
                   <string>ns</string>
                  </property>
@@ -1165,18 +1164,20 @@
                  </property>
                 </widget>
                </item>
-               <item row="1" column="1">
-                <widget class="QLineEdit" name="stepSpace_0">
-                 <property name="text">
-                  <string/>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                 </property>
-                </widget>
-               </item>
                <item row="1" column="2">
                 <widget class="QLabel" name="label_102">
+                 <property name="minimumSize">
+                  <size>
+                   <width>20</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>20</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
                  <property name="text">
                   <string>ns</string>
                  </property>
@@ -1195,18 +1196,20 @@
                  </property>
                 </widget>
                </item>
-               <item row="2" column="1">
-                <widget class="QLineEdit" name="dirSetup_0">
-                 <property name="text">
-                  <string/>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                 </property>
-                </widget>
-               </item>
                <item row="2" column="2">
                 <widget class="QLabel" name="label_108">
+                 <property name="minimumSize">
+                  <size>
+                   <width>20</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>20</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
                  <property name="text">
                   <string>ns</string>
                  </property>
@@ -1225,18 +1228,20 @@
                  </property>
                 </widget>
                </item>
-               <item row="3" column="1">
-                <widget class="QLineEdit" name="dirHold_0">
-                 <property name="text">
-                  <string/>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                 </property>
-                </widget>
-               </item>
                <item row="3" column="2">
                 <widget class="QLabel" name="label_109">
+                 <property name="minimumSize">
+                  <size>
+                   <width>20</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>20</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
                  <property name="text">
                   <string>ns</string>
                  </property>
@@ -1246,56 +1251,135 @@
                 </widget>
                </item>
                <item row="0" column="3">
-                <spacer name="horizontalSpacer">
-                 <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
+                <widget class="QComboBox" name="driveCB_0">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
                  </property>
-                 <property name="sizeHint" stdset="0">
+                 <property name="minimumSize">
                   <size>
-                   <width>40</width>
-                   <height>20</height>
+                   <width>150</width>
+                   <height>0</height>
                   </size>
                  </property>
-                </spacer>
+                </widget>
                </item>
-               <item row="1" column="3">
-                <spacer name="horizontalSpacer_2">
-                 <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
+               <item row="2" column="1">
+                <widget class="QLineEdit" name="dirSetup_0">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
                  </property>
-                 <property name="sizeHint" stdset="0">
+                 <property name="minimumSize">
                   <size>
-                   <width>40</width>
-                   <height>20</height>
+                   <width>0</width>
+                   <height>0</height>
                   </size>
                  </property>
-                </spacer>
+                 <property name="maximumSize">
+                  <size>
+                   <width>60</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                </widget>
                </item>
-               <item row="2" column="3">
-                <spacer name="horizontalSpacer_3">
-                 <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
+               <item row="3" column="1">
+                <widget class="QLineEdit" name="dirHold_0">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
                  </property>
-                 <property name="sizeHint" stdset="0">
+                 <property name="minimumSize">
                   <size>
-                   <width>40</width>
-                   <height>20</height>
+                   <width>0</width>
+                   <height>0</height>
                   </size>
                  </property>
-                </spacer>
+                 <property name="maximumSize">
+                  <size>
+                   <width>60</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                </widget>
                </item>
-               <item row="3" column="3">
-                <spacer name="horizontalSpacer_4">
-                 <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
+               <item row="1" column="1">
+                <widget class="QLineEdit" name="stepSpace_0">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
                  </property>
-                 <property name="sizeHint" stdset="0">
+                 <property name="minimumSize">
                   <size>
-                   <width>40</width>
-                   <height>20</height>
+                   <width>0</width>
+                   <height>0</height>
                   </size>
                  </property>
-                </spacer>
+                 <property name="maximumSize">
+                  <size>
+                   <width>60</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QLineEdit" name="stepTime_0">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>60</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="inputMask">
+                  <string/>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                </widget>
                </item>
               </layout>
              </widget>
@@ -1410,7 +1494,7 @@
                <item row="0" column="4">
                 <widget class="QLabel" name="label_63">
                  <property name="text">
-                  <string>Mininum Limit</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mininum&lt;br/&gt;Limit&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignBottom|Qt::AlignHCenter</set>
@@ -1901,6 +1985,12 @@
                </property>
                <item row="0" column="1">
                 <widget class="QLineEdit" name="stepTime_1">
+                 <property name="maximumSize">
+                  <size>
+                   <width>60</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
                  <property name="inputMask">
                   <string/>
                  </property>
@@ -1924,6 +2014,18 @@
                </item>
                <item row="0" column="2">
                 <widget class="QLabel" name="label_111">
+                 <property name="minimumSize">
+                  <size>
+                   <width>20</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>20</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
                  <property name="text">
                   <string>ns</string>
                  </property>
@@ -1944,6 +2046,12 @@
                </item>
                <item row="1" column="1">
                 <widget class="QLineEdit" name="stepSpace_1">
+                 <property name="maximumSize">
+                  <size>
+                   <width>60</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
                  <property name="text">
                   <string/>
                  </property>
@@ -1954,6 +2062,18 @@
                </item>
                <item row="1" column="2">
                 <widget class="QLabel" name="label_113">
+                 <property name="minimumSize">
+                  <size>
+                   <width>20</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>20</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
                  <property name="text">
                   <string>ns</string>
                  </property>
@@ -1974,6 +2094,12 @@
                </item>
                <item row="2" column="1">
                 <widget class="QLineEdit" name="dirSetup_1">
+                 <property name="maximumSize">
+                  <size>
+                   <width>60</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
                  <property name="text">
                   <string/>
                  </property>
@@ -1984,6 +2110,18 @@
                </item>
                <item row="2" column="2">
                 <widget class="QLabel" name="label_115">
+                 <property name="minimumSize">
+                  <size>
+                   <width>20</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>20</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
                  <property name="text">
                   <string>ns</string>
                  </property>
@@ -2004,6 +2142,12 @@
                </item>
                <item row="3" column="1">
                 <widget class="QLineEdit" name="dirHold_1">
+                 <property name="maximumSize">
+                  <size>
+                   <width>60</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
                  <property name="text">
                   <string/>
                  </property>
@@ -2014,6 +2158,18 @@
                </item>
                <item row="3" column="2">
                 <widget class="QLabel" name="label_117">
+                 <property name="minimumSize">
+                  <size>
+                   <width>20</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>20</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
                  <property name="text">
                   <string>ns</string>
                  </property>
@@ -2023,17 +2179,14 @@
                 </widget>
                </item>
                <item row="0" column="3">
-                <spacer name="horizontalSpacer_5">
-                 <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
-                 </property>
-                 <property name="sizeHint" stdset="0">
+                <widget class="QComboBox" name="driveCB_1">
+                 <property name="minimumSize">
                   <size>
-                   <width>40</width>
-                   <height>20</height>
+                   <width>150</width>
+                   <height>0</height>
                   </size>
                  </property>
-                </spacer>
+                </widget>
                </item>
               </layout>
              </widget>
@@ -2132,7 +2285,7 @@
                <item row="0" column="4">
                 <widget class="QLabel" name="label_64">
                  <property name="text">
-                  <string>Mininum Limit</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mininum&lt;br/&gt;Limit&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignBottom|Qt::AlignHCenter</set>
@@ -2647,8 +2800,36 @@
                  </property>
                 </widget>
                </item>
+               <item row="1" column="2">
+                <widget class="QLabel" name="label_120">
+                 <property name="minimumSize">
+                  <size>
+                   <width>20</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>20</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string>ns</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
                <item row="0" column="1">
                 <widget class="QLineEdit" name="stepTime_2">
+                 <property name="maximumSize">
+                  <size>
+                   <width>60</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
                  <property name="inputMask">
                   <string/>
                  </property>
@@ -2662,6 +2843,18 @@
                </item>
                <item row="0" column="2">
                 <widget class="QLabel" name="label_118">
+                 <property name="minimumSize">
+                  <size>
+                   <width>20</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>20</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
                  <property name="text">
                   <string>ns</string>
                  </property>
@@ -2682,21 +2875,17 @@
                </item>
                <item row="1" column="1">
                 <widget class="QLineEdit" name="stepSpace_2">
+                 <property name="maximumSize">
+                  <size>
+                   <width>60</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
                  <property name="text">
                   <string/>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="2">
-                <widget class="QLabel" name="label_120">
-                 <property name="text">
-                  <string>ns</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
                  </property>
                 </widget>
                </item>
@@ -2712,6 +2901,12 @@
                </item>
                <item row="2" column="1">
                 <widget class="QLineEdit" name="dirSetup_2">
+                 <property name="maximumSize">
+                  <size>
+                   <width>60</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
                  <property name="text">
                   <string/>
                  </property>
@@ -2722,6 +2917,18 @@
                </item>
                <item row="2" column="2">
                 <widget class="QLabel" name="label_122">
+                 <property name="minimumSize">
+                  <size>
+                   <width>20</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>20</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
                  <property name="text">
                   <string>ns</string>
                  </property>
@@ -2742,6 +2949,12 @@
                </item>
                <item row="3" column="1">
                 <widget class="QLineEdit" name="dirHold_2">
+                 <property name="maximumSize">
+                  <size>
+                   <width>60</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
                  <property name="text">
                   <string/>
                  </property>
@@ -2752,6 +2965,18 @@
                </item>
                <item row="3" column="2">
                 <widget class="QLabel" name="label_124">
+                 <property name="minimumSize">
+                  <size>
+                   <width>20</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>20</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
                  <property name="text">
                   <string>ns</string>
                  </property>
@@ -2761,17 +2986,14 @@
                 </widget>
                </item>
                <item row="0" column="3">
-                <spacer name="horizontalSpacer_6">
-                 <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
-                 </property>
-                 <property name="sizeHint" stdset="0">
+                <widget class="QComboBox" name="driveCB_2">
+                 <property name="minimumSize">
                   <size>
-                   <width>40</width>
-                   <height>20</height>
+                   <width>150</width>
+                   <height>0</height>
                   </size>
                  </property>
-                </spacer>
+                </widget>
                </item>
               </layout>
              </widget>
@@ -2881,7 +3103,7 @@ to max speed</string>
                <item row="0" column="4">
                 <widget class="QLabel" name="label_65">
                  <property name="text">
-                  <string>Mininum Limit</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mininum&lt;br/&gt;Limit&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignBottom|Qt::AlignHCenter</set>
@@ -3379,6 +3601,16 @@ to max speed</string>
                <property name="spacing">
                 <number>5</number>
                </property>
+               <item row="0" column="3">
+                <widget class="QComboBox" name="driveCB_3">
+                 <property name="minimumSize">
+                  <size>
+                   <width>150</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                </widget>
+               </item>
                <item row="0" column="0">
                 <widget class="QLabel" name="label_105">
                  <property name="text">
@@ -3391,6 +3623,18 @@ to max speed</string>
                </item>
                <item row="1" column="2">
                 <widget class="QLabel" name="label_127">
+                 <property name="minimumSize">
+                  <size>
+                   <width>20</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>20</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
                  <property name="text">
                   <string>ns</string>
                  </property>
@@ -3401,6 +3645,12 @@ to max speed</string>
                </item>
                <item row="0" column="1">
                 <widget class="QLineEdit" name="stepTime_3">
+                 <property name="maximumSize">
+                  <size>
+                   <width>60</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
                  <property name="inputMask">
                   <string/>
                  </property>
@@ -3414,6 +3664,18 @@ to max speed</string>
                </item>
                <item row="0" column="2">
                 <widget class="QLabel" name="label_125">
+                 <property name="minimumSize">
+                  <size>
+                   <width>20</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>20</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
                  <property name="text">
                   <string>ns</string>
                  </property>
@@ -3434,6 +3696,12 @@ to max speed</string>
                </item>
                <item row="1" column="1">
                 <widget class="QLineEdit" name="stepSpace_3">
+                 <property name="maximumSize">
+                  <size>
+                   <width>60</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
                  <property name="text">
                   <string/>
                  </property>
@@ -3454,6 +3722,12 @@ to max speed</string>
                </item>
                <item row="2" column="1">
                 <widget class="QLineEdit" name="dirSetup_3">
+                 <property name="maximumSize">
+                  <size>
+                   <width>60</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
                  <property name="text">
                   <string/>
                  </property>
@@ -3464,6 +3738,18 @@ to max speed</string>
                </item>
                <item row="2" column="2">
                 <widget class="QLabel" name="label_129">
+                 <property name="minimumSize">
+                  <size>
+                   <width>20</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>20</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
                  <property name="text">
                   <string>ns</string>
                  </property>
@@ -3484,6 +3770,12 @@ to max speed</string>
                </item>
                <item row="3" column="1">
                 <widget class="QLineEdit" name="dirHold_3">
+                 <property name="maximumSize">
+                  <size>
+                   <width>60</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
                  <property name="text">
                   <string/>
                  </property>
@@ -3494,6 +3786,18 @@ to max speed</string>
                </item>
                <item row="3" column="2">
                 <widget class="QLabel" name="label_131">
+                 <property name="minimumSize">
+                  <size>
+                   <width>20</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>20</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
                  <property name="text">
                   <string>ns</string>
                  </property>
@@ -3501,19 +3805,6 @@ to max speed</string>
                   <set>Qt::AlignCenter</set>
                  </property>
                 </widget>
-               </item>
-               <item row="0" column="3">
-                <spacer name="horizontalSpacer_7">
-                 <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
-                 </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>40</width>
-                   <height>20</height>
-                  </size>
-                 </property>
-                </spacer>
                </item>
               </layout>
              </widget>
@@ -3624,7 +3915,7 @@ max speed</string>
                <item row="0" column="4">
                 <widget class="QLabel" name="label_66">
                  <property name="text">
-                  <string>Mininum Limit</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mininum&lt;br/&gt;Limit&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignBottom|Qt::AlignHCenter</set>
@@ -4141,6 +4432,12 @@ max speed</string>
                </item>
                <item row="0" column="1">
                 <widget class="QLineEdit" name="stepTime_4">
+                 <property name="maximumSize">
+                  <size>
+                   <width>60</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
                  <property name="inputMask">
                   <string/>
                  </property>
@@ -4154,6 +4451,18 @@ max speed</string>
                </item>
                <item row="0" column="2">
                 <widget class="QLabel" name="label_132">
+                 <property name="minimumSize">
+                  <size>
+                   <width>20</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>20</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
                  <property name="text">
                   <string>ns</string>
                  </property>
@@ -4174,6 +4483,12 @@ max speed</string>
                </item>
                <item row="1" column="1">
                 <widget class="QLineEdit" name="stepSpace_4">
+                 <property name="maximumSize">
+                  <size>
+                   <width>60</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
                  <property name="text">
                   <string/>
                  </property>
@@ -4184,6 +4499,18 @@ max speed</string>
                </item>
                <item row="1" column="2">
                 <widget class="QLabel" name="label_134">
+                 <property name="minimumSize">
+                  <size>
+                   <width>20</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>20</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
                  <property name="text">
                   <string>ns</string>
                  </property>
@@ -4204,6 +4531,12 @@ max speed</string>
                </item>
                <item row="2" column="1">
                 <widget class="QLineEdit" name="dirSetup_4">
+                 <property name="maximumSize">
+                  <size>
+                   <width>60</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
                  <property name="text">
                   <string/>
                  </property>
@@ -4214,6 +4547,18 @@ max speed</string>
                </item>
                <item row="2" column="2">
                 <widget class="QLabel" name="label_136">
+                 <property name="minimumSize">
+                  <size>
+                   <width>20</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>20</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
                  <property name="text">
                   <string>ns</string>
                  </property>
@@ -4234,6 +4579,12 @@ max speed</string>
                </item>
                <item row="3" column="1">
                 <widget class="QLineEdit" name="dirHold_4">
+                 <property name="maximumSize">
+                  <size>
+                   <width>60</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
                  <property name="text">
                   <string/>
                  </property>
@@ -4244,6 +4595,18 @@ max speed</string>
                </item>
                <item row="3" column="2">
                 <widget class="QLabel" name="label_138">
+                 <property name="minimumSize">
+                  <size>
+                   <width>20</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>20</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
                  <property name="text">
                   <string>ns</string>
                  </property>
@@ -4253,17 +4616,14 @@ max speed</string>
                 </widget>
                </item>
                <item row="0" column="3">
-                <spacer name="horizontalSpacer_8">
-                 <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
-                 </property>
-                 <property name="sizeHint" stdset="0">
+                <widget class="QComboBox" name="driveCB_4">
+                 <property name="minimumSize">
                   <size>
-                   <width>40</width>
-                   <height>20</height>
+                   <width>150</width>
+                   <height>0</height>
                   </size>
                  </property>
-                </spacer>
+                </widget>
                </item>
               </layout>
              </widget>
@@ -4653,7 +5013,7 @@ max speed</string>
        </widget>
        <widget class="QGroupBox" name="spindleGB">
         <property name="enabled">
-         <bool>true</bool>
+         <bool>false</bool>
         </property>
         <property name="geometry">
          <rect>
