@@ -27,7 +27,7 @@ def flashCard(parent):
 	if not parent.ipAddressCB.currentData():
 		parent.outputLB.setText('An IP address must be selected')
 		return
-	parent.outputLB.setText('Flashing the 7i96...')
+	parent.ostatusbar.showMessage('Flashing the 7i96...')
 	ipAddress = parent.ipAddressCB.currentText()
 	firmware = os.path.join(parent.cwd, parent.firmwareCB.currentData())
 	command = [parent.mesaflash, '--device', '7i96', '--addr', ipAddress, '--write', firmware]
@@ -36,6 +36,7 @@ def flashCard(parent):
 	with subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT) as proc:
 		for line in proc.stdout:
 			output.append(line.decode())
+	print('flash done')
 	parent.outputLB.setText(''.join(output))
 
 def reloadCard(parent):
