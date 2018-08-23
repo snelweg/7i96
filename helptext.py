@@ -21,6 +21,10 @@ def descriptions(index):
 		return text_7
 	elif index == 8:
 		return text_8
+	elif index == 9:
+		return text_9
+	elif index == 10:
+		return text_10
 	elif index == 20:
 		return text_20
 	elif index == 30:
@@ -119,6 +123,19 @@ text_8 = """
 Help Text for PinOut Tab
 
 To Do
+"""
+
+text_8 = """
+Help Text for Info Tab
+
+Get CPU information and NIC information
+"""
+text_8 = """
+Help Text for PC Tab
+
+To check if the network packet time is ok get the CPU speed from the Info Tab.
+Then get the tmax time and put those values into the boxes then hit calculate.
+Make sure you select if the CPU speed is gHz or mHz.
 """
 
 text_20 = """

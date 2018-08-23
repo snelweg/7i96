@@ -142,8 +142,8 @@ def setupCombo(combo):
 								['Keling 4030', ['5000', '5000', '20000', '20000']]]
 
 	if combo == 'speed':
-		comboList = [['gHz', 1000000],
-								['mHz', 1000]]
+		comboList = [['gHz', 1000],
+								['mHz', 1]]
 
 
 	return comboList
