@@ -6195,6 +6195,13 @@ max speed</string>
          <layout class="QGridLayout" name="gridLayout_38">
           <item row="0" column="0">
            <widget class="QLabel" name="infoLB">
+            <property name="font">
+             <font>
+              <family>Courier</family>
+              <weight>50</weight>
+              <bold>false</bold>
+             </font>
+            </property>
             <property name="frameShape">
              <enum>QFrame::Box</enum>
             </property>
