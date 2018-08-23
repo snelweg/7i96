@@ -17,6 +17,9 @@
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
      <widget class="QTabWidget" name="tabWidget">
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
       <property name="currentIndex">
        <number>0</number>
       </property>
@@ -6383,9 +6386,9 @@ max speed</string>
         <property name="geometry">
          <rect>
           <x>40</x>
-          <y>140</y>
-          <width>331</width>
-          <height>321</height>
+          <y>290</y>
+          <width>421</width>
+          <height>171</height>
          </rect>
         </property>
         <property name="widgetResizable">
@@ -6396,13 +6399,23 @@ max speed</string>
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>329</width>
-           <height>319</height>
+           <width>419</width>
+           <height>169</height>
           </rect>
          </property>
          <layout class="QGridLayout" name="gridLayout_40">
           <item row="0" column="0">
            <widget class="QLabel" name="tMaxLB">
+            <property name="font">
+             <font>
+              <family>Courier</family>
+              <weight>50</weight>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::ClickFocus</enum>
+            </property>
             <property name="frameShape">
              <enum>QFrame::Box</enum>
             </property>

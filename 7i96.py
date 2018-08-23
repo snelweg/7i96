@@ -3,7 +3,7 @@
 
 import sys, os, configparser, platform
 from PyQt5 import uic, QtWidgets
-from PyQt5.QtCore import pyqtSlot
+from PyQt5.QtCore import pyqtSlot, Qt
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QFileDialog, QLineEdit,
 	QSpinBox, QCheckBox, QComboBox, QLabel, QGroupBox, QDoubleSpinBox, QMessageBox)
 import setup, loadini, checkit, buildfiles, card, helptext
@@ -359,6 +359,8 @@ class MainWindow(QMainWindow):
 			self.mesaflash = "./mesaflash64"
 		else:
 			self.mesaflash = "./mesaflash32"
+		self.tMaxLB.setTextInteractionFlags(Qt.TextSelectableByMouse)
+		self.infoLB.setTextInteractionFlags(Qt.TextSelectableByMouse)
 
 	def iniLoad(self):
 		# iniList section, item, value
