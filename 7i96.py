@@ -159,6 +159,8 @@ class MainWindow(QMainWindow):
 		self.copyPB.clicked.connect(self.copyOutput)
 		self.spindleTypeCB.currentIndexChanged.connect(self.spindleTypeChanged)
 		self.linearUnitsCB.currentIndexChanged.connect(self.linearUnitsChanged)
+		self.cpuPB.clicked.connect(self.cpuInfo)
+		self.nicPB.clicked.connect(self.nicInfo)
 
 	def cardRead(self):
 		card.readCard(self)
@@ -168,6 +170,13 @@ class MainWindow(QMainWindow):
 
 	def reloadCard(self):
 		card.reloadCard(self)
+
+	def cpuInfo(self):
+		card.cpuInfo(self)
+
+	def nicInfo(self):
+		card.nicInfo(self)
+
 
 	def copyOutput(self):
 		self.qclip.setText(self.outputLB.text())

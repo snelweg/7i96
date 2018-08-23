@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>771</width>
-    <height>646</height>
+    <height>661</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -6163,6 +6163,81 @@ max speed</string>
        <attribute name="title">
         <string>PinOut</string>
        </attribute>
+      </widget>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>Info</string>
+       </attribute>
+       <widget class="QScrollArea" name="scrollArea_2">
+        <property name="geometry">
+         <rect>
+          <x>8</x>
+          <y>14</y>
+          <width>731</width>
+          <height>461</height>
+         </rect>
+        </property>
+        <property name="widgetResizable">
+         <bool>true</bool>
+        </property>
+        <widget class="QWidget" name="scrollAreaWidgetContents_2">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>729</width>
+           <height>459</height>
+          </rect>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_38">
+          <item row="0" column="0">
+           <widget class="QLabel" name="infoLB">
+            <property name="frameShape">
+             <enum>QFrame::Box</enum>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+       <widget class="QPushButton" name="cpuPB">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>500</y>
+          <width>80</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>Central Processing Unit</string>
+        </property>
+        <property name="text">
+         <string>CPU</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="nicPB">
+        <property name="geometry">
+         <rect>
+          <x>130</x>
+          <y>500</y>
+          <width>80</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Network Interface Card&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="text">
+         <string>NIC</string>
+        </property>
+       </widget>
       </widget>
      </widget>
     </item>

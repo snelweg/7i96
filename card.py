@@ -28,6 +28,7 @@ def flashCard(parent):
 		parent.outputLB.setText('An IP address must be selected')
 		return
 	parent.statusbar.showMessage('Flashing the 7i96...')
+	parent.outputLB.setText('')
 	ipAddress = parent.ipAddressCB.currentText()
 	firmware = os.path.join(parent.cwd, parent.firmwareCB.currentData())
 	command = [parent.mesaflash, '--device', '7i96', '--addr', ipAddress, '--write', firmware]
@@ -38,6 +39,7 @@ def flashCard(parent):
 			output.append(line.decode())
 	print('flash done')
 	parent.outputLB.setText(''.join(output))
+	parent.statusbar.clearMessage()
 
 def reloadCard(parent):
 	if not parent.ipAddressCB.currentData():
@@ -56,3 +58,18 @@ def reloadCard(parent):
 		parent.outputLB.setText('No 7i96 board found')
 	else:
 		parent.outputLB.setText('Reload returned an error code of {}'.format(process.returncode))
+
+def cpuInfo(parent):
+	output = []
+	with subprocess.Popen('lscpu', stdout=subprocess.PIPE, stderr=subprocess.STDOUT) as proc:
+		for line in proc.stdout:
+			output.append(line.decode())
+	parent.infoLB.setText(''.join(output))
+
+def nicInfo(parent):
+	# subprocess.check_output(('ps', '-A')) and then str.find on the output.
+	ps = subprocess.Popen('lspci', stdout=subprocess.PIPE)
+	output = subprocess.check_output(('grep', 'Ethernet'), stdin=ps.stdout)
+	#print(type(output))
+	parent.infoLB.setText(''.join(output.decode("utf-8")))
+
