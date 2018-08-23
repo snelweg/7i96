@@ -6259,7 +6259,7 @@ max speed</string>
           <x>30</x>
           <y>20</y>
           <width>701</width>
-          <height>111</height>
+          <height>101</height>
          </rect>
         </property>
         <property name="title">
@@ -6389,6 +6389,11 @@ max speed</string>
          </item>
          <item row="3" column="3" colspan="2">
           <widget class="QLabel" name="label_204">
+           <property name="font">
+            <font>
+             <pointsize>8</pointsize>
+            </font>
+           </property>
            <property name="text">
             <string>Packet Time must be less than Threshold</string>
            </property>
