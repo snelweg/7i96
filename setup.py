@@ -141,5 +141,9 @@ def setupCombo(combo):
 								['Hobbycnc', ['2000', '2000', '2000', '2000']],
 								['Keling 4030', ['5000', '5000', '20000', '20000']]]
 
+	if combo == 'speed':
+		comboList = [['gHz', 1000000],
+								['mHz', 1000]]
+
 
 	return comboList

@@ -161,6 +161,14 @@ class MainWindow(QMainWindow):
 		self.linearUnitsCB.currentIndexChanged.connect(self.linearUnitsChanged)
 		self.cpuPB.clicked.connect(self.cpuInfo)
 		self.nicPB.clicked.connect(self.nicInfo)
+		self.calcNicPB.clicked.connect(self.calcNic)
+		self.readTmaxPB.clicked.connect(self.readTmax)
+
+	def readTmax(self):
+		card.readTmax(self)
+
+	def calcNic(self):
+		card.nicCalc(self)
 
 	def cardRead(self):
 		card.readCard(self)
@@ -343,7 +351,8 @@ class MainWindow(QMainWindow):
 		for i in range(5):
 			for item in setup.setupCombo('drive'):
 				getattr(self, 'driveCB_' + str(i)).addItem(item[0], item[1])
-
+		for item in setup.setupCombo('speed'):
+			self.speedCB.addItem(item[0], item[1])
 
 	def miscStuff(self):
 		if sys.maxsize > 2**32: # test for 64bit OS

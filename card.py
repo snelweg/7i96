@@ -73,3 +73,26 @@ def nicInfo(parent):
 	#print(type(output))
 	parent.infoLB.setText(''.join(output.decode("utf-8")))
 
+def nicCalc(parent):
+	#print(parent.speedCB.itemData(parent.speedCB.currentIndex()))
+	tMax = int(int(parent.tMaxLE.text()) / 1000)
+	cpuSpeed = float(parent.cpuSpeedLE.text())
+	packetTime = tMax / cpuSpeed
+	parent.packetTimeLB.setText('{:0.2f}'.format(packetTime))
+	threshold = (cpuSpeed * 0.7) / cpuSpeed
+	parent.thresholdLB.setText('{:0.2f}'.format(threshold))
+
+def readTmax(parent):
+	command = ['halcmd', 'show', 'param', 'hm2*.tmax']
+	try:
+		output = subprocess.check_output(command, stderr=subprocess.PIPE)
+		parent.tMaxLB.setText(output.decode(sys.getfilesystemencoding()))
+		#return output.decode(sys.getfilesystemencoding())
+	except subprocess.CalledProcessError as e:
+		#print('exit code: {}'.format(e.returncode))
+		#print('stdout: {}'.format(e.output.decode(sys.getfilesystemencoding())))
+		parent.tMaxLB.setText(e.output.decode(sys.getfilesystemencoding()))
+		#return e.output.decode(sys.getfilesystemencoding())
+
+
+
