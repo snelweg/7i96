@@ -412,7 +412,7 @@ def buildini(parent):
 		iniContents.append('HOME_IGNORE_LIMITS = {}\n'.format(parent.homeIgnoreLimits_4.isChecked()))
 
 	# build the [SPINDLE] section if enabled
-	if parent.spindle:
+	if parent.spindleTypeCB.currentText() != 'None':
 		iniContents.append('\n[SPINDLE]\n')
 		iniContents.append('SPINDLE_TYPE = {}\n'.format(parent.spindleTypeCB.itemData(parent.spindleTypeCB.currentIndex())))
 		iniContents.append('SCALE = {}\n'.format(parent.spindleScale.text()))
@@ -546,12 +546,11 @@ def buildhal(parent):
 		halContents.append('setp pid.{0}.maxoutput [JOINT_{0}]MAX_OUTPUT\n'.format(str(index)))
 		halContents.append('setp pid.{0}.maxerror [JOINT_{0}]MAX_ERROR\n'.format(str(index)))
 
-	if parent.spindle:
+	if parent.spindleTypeCB.currentText() != 'None':
 		halContents.append('\n# Spindle\n')
 		halContents.append('setp hm2_7i96.0.pwmgen.00.output-type 0\n')
 		halContents.append('setp hm2_7i96.0.pwmgen.00.scale [SPINDLE]MAX_RPM\n')
 		halContents.append('setp hm2_7i96.0.pwmgen.pwm_frequency [SPINDLE]PWM_FREQUENCY\n')
-
 
 	halContents.append('\n# Standard I/O Block - EStop, Etc\n')
 	halContents.append('# create a signal for the estop loopback\n')
