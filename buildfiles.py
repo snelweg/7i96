@@ -87,7 +87,7 @@ def buildini(parent):
 	# build the [EMCMOT] section
 	iniContents.append('\n[EMCMOT]\n')
 	iniContents.append('EMCMOT = {}\n'.format('motmod'))
-	iniContents.append('SERVO_PERIOD = {}\n'.format('1000000'))
+	iniContents.append('SERVO_PERIOD = {}\n'.format(parent.threadPeriodSB.value()))
 
 	# build the [TASK] section
 	iniContents.append('\n[TASK]\n')

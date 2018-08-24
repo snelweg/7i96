@@ -76,11 +76,10 @@ def nicInfo(parent):
 def nicCalc(parent):
 	tMax = int(int(parent.tMaxLE.text()) / 1000)
 	cpuSpeed = float(parent.cpuSpeedLE.text()) * parent.speedCB.itemData(parent.speedCB.currentIndex())
-	print(cpuSpeed)
 	packetTime = tMax / cpuSpeed
-	parent.packetTimeLB.setText('{:0.2f}'.format(packetTime))
+	parent.packetTimeLB.setText('{:.1%}'.format(packetTime))
 	threshold = (cpuSpeed * 0.7) / cpuSpeed
-	parent.thresholdLB.setText('{:0.2f}'.format(threshold))
+	parent.thresholdLB.setText('{:.0%}'.format(threshold))
 
 def readTmax(parent):
 	command = ['halcmd', 'show', 'param', 'hm2*.tmax']
@@ -91,7 +90,7 @@ def readTmax(parent):
 	except subprocess.CalledProcessError as e:
 		#print('exit code: {}'.format(e.returncode))
 		#print('stdout: {}'.format(e.output.decode(sys.getfilesystemencoding())))
-		parent.tMaxLB.setText(e.output.decode(sys.getfilesystemencoding()))
+		parent.tMaxLB.setText('LinuxCNC must be running to get tmax')
 		#return e.output.decode(sys.getfilesystemencoding())
 
 

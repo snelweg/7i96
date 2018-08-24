@@ -5673,6 +5673,38 @@ max speed</string>
          <string>Debug Options</string>
         </property>
        </widget>
+       <widget class="QSpinBox" name="threadPeriodSB">
+        <property name="geometry">
+         <rect>
+          <x>480</x>
+          <y>110</y>
+          <width>91</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="maximum">
+         <number>250000</number>
+        </property>
+        <property name="singleStep">
+         <number>1000</number>
+        </property>
+        <property name="value">
+         <number>100000</number>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_211">
+        <property name="geometry">
+         <rect>
+          <x>480</x>
+          <y>80</y>
+          <width>161</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Thread Period</string>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="tab_7">
        <attribute name="title">
@@ -6463,6 +6495,22 @@ max speed</string>
         </property>
         <property name="text">
          <string>Read tMax</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_210">
+        <property name="geometry">
+         <rect>
+          <x>370</x>
+          <y>120</y>
+          <width>261</width>
+          <height>71</height>
+         </rect>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Box</enum>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Packet Time and Threshold are&lt;br/&gt;are in units of servo thread period.&lt;br/&gt;If the Packet Time is greater than 50%&lt;br/&gt;try increasing the thread period.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
       </widget>
