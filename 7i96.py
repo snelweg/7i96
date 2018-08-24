@@ -6,7 +6,7 @@ from PyQt5 import uic, QtWidgets
 from PyQt5.QtCore import pyqtSlot, Qt
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QFileDialog, QLineEdit,
 	QSpinBox, QCheckBox, QComboBox, QLabel, QGroupBox, QDoubleSpinBox, QMessageBox)
-import setup, loadini, checkit, buildfiles, card, helptext
+import buildcombos, loadini, checkit, buildfiles, card, helptext
 from dialog import Ui_Dialog as errorDialog
 from help import Ui_Dialog as helpDialog
 from about import Ui_about as aboutDialog
@@ -311,47 +311,47 @@ class MainWindow(QMainWindow):
 		getattr(self, 'deadband_' + tab).setText('0')
 
 	def buildCB(self):
-		for item in setup.setupCombo('ipAddress'):
+		for item in buildcombos.setupCombo('ipAddress'):
 			self.ipAddressCB.addItem(item[0], item[1])
-		for item in setup.setupCombo('board'):
+		for item in buildcombos.setupCombo('board'):
 			self.boardCB.addItem(item[0], item[1])
-		for item in setup.setupCombo('driver'):
+		for item in buildcombos.setupCombo('driver'):
 			self.driverCB.addItem(item[0], item[1])
-		for item in setup.setupCombo('display'):
+		for item in buildcombos.setupCombo('display'):
 			self.guiCB.addItem(item[0], item[1])
-		for item in setup.setupCombo('linearUnits'):
+		for item in buildcombos.setupCombo('linearUnits'):
 			self.linearUnitsCB.addItem(item[0], item[1])
-		for item in setup.setupCombo('angularUnits'):
+		for item in buildcombos.setupCombo('angularUnits'):
 			self.angularUnitsCB.addItem(item[0], item[1])
-		for item in setup.setupCombo('positionOffset'):
+		for item in buildcombos.setupCombo('positionOffset'):
 			self.positionOffsetCB.addItem(item[0], item[1])
-		for item in setup.setupCombo('positionFeedback'):
+		for item in buildcombos.setupCombo('positionFeedback'):
 			self.positionFeedbackCB.addItem(item[0], item[1])
-		for item in setup.setupCombo('firmware'):
+		for item in buildcombos.setupCombo('firmware'):
 			self.firmwareCB.addItem(item[0], item[1])
-		for item in setup.setupCombo('spindle'):
+		for item in buildcombos.setupCombo('spindle'):
 			self.spindleTypeCB.addItem(item[0], item[1])
 		for i in range(5):
-			for item in setup.setupCombo('axis'):
+			for item in buildcombos.setupCombo('axis'):
 				getattr(self, 'axisCB_' + str(i)).addItem(item[0], item[1])
 		for i in range(5):
-			for item in setup.setupCombo('direction'):
+			for item in buildcombos.setupCombo('direction'):
 				getattr(self, 'stepDir_' + str(i)).addItem(item[0], item[1])
 		for i in range(11):
-			for item in setup.setupCombo('input'):
+			for item in buildcombos.setupCombo('input'):
 				getattr(self, 'input_' + str(i)).addItem(item[0], item[1])
 		for i in range(11):
-			for item in setup.setupCombo('joint'):
+			for item in buildcombos.setupCombo('joint'):
 				getattr(self, 'inputJoint_' + str(i)).addItem(item[0], item[1])
 		for i in range(5):
-			for item in setup.setupCombo('output'):
+			for item in buildcombos.setupCombo('output'):
 				getattr(self, 'output_' + str(i)).addItem(item[0], item[1])
-		for item in setup.setupCombo('debug'):
+		for item in buildcombos.setupCombo('debug'):
 			self.debugCombo.addItem(item[0], item[1])
 		for i in range(5):
-			for item in setup.setupCombo('drive'):
+			for item in buildcombos.setupCombo('drive'):
 				getattr(self, 'driveCB_' + str(i)).addItem(item[0], item[1])
-		for item in setup.setupCombo('speed'):
+		for item in buildcombos.setupCombo('speed'):
 			self.speedCB.addItem(item[0], item[1])
 
 	def miscStuff(self):
