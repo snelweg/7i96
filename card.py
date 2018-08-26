@@ -111,6 +111,10 @@ def pins(parent):
 	data = ''.join(output)
 	if data.find('PWMGen'):
 		print('found it')
+		parent.tb2p2LB.setText(PWM -)
+		parent.tb2p3LB.setText(PWM +)
+		parent.tb2p4LB.setText(Direction -)
+		parent.tb2p5LB.setText(Direction -)
 	parent.pinsLB.setText(data)
 
 	os.remove('temp.hal')
