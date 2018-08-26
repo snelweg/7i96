@@ -94,9 +94,13 @@ def readTmax(parent):
 		#return e.output.decode(sys.getfilesystemencoding())
 
 def pins(parent):
+	if not parent.ipAddressCB.currentData():
+		parent.outputLB.setText('An IP address must be selected')
+		return
+
 	with open('temp.hal', 'w') as f:
 		f.write('loadrt hostmot2\n')
-		f.write('show pin\n')
+		f.write('loadrt hm2_eth board={}\n'.format(parent.ipAddressCB.currentData())
 
 	command = ['halrun', '-f', 'temp.hal']
 	output = []
