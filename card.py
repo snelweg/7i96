@@ -108,7 +108,10 @@ def pins(parent):
 	with subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT) as proc:
 		for line in proc.stdout:
 			output.append(line.decode())
-	parent.pinsLB.setText(''.join(output))
+	data = ''.join(output)
+	if data.find('PWMGen'):
+		print('found it')
+	parent.pinsLB.setText(data)
 
 	os.remove('temp.hal')
 
