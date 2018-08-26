@@ -97,7 +97,6 @@ def pins(parent):
 	with open('temp.hal', 'w') as f:
 		f.write('loadrt hostmot2\n')
 		f.write('show pin\n')
-		f.write('quit')
 
 	command = ['halrun', '-f', 'temp.hal']
 	output = []
@@ -106,7 +105,7 @@ def pins(parent):
 			output.append(line.decode())
 	parent.pinsLB.setText(''.join(output))
 
-	#print(''.join(output))
+	print(''.join(output))
 
 	os.remove('temp.hal')
 
