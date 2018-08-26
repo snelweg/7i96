@@ -159,6 +159,7 @@ class MainWindow(QMainWindow):
 		self.copyPB.clicked.connect(self.copyOutput)
 		self.spindleTypeCB.currentIndexChanged.connect(self.spindleTypeChanged)
 		self.linearUnitsCB.currentIndexChanged.connect(self.linearUnitsChanged)
+		self.pinsPB.clicked.connect(self.pins)
 		self.cpuPB.clicked.connect(self.cpuInfo)
 		self.nicPB.clicked.connect(self.nicInfo)
 		self.calcNicPB.clicked.connect(self.calcNic)
@@ -169,6 +170,9 @@ class MainWindow(QMainWindow):
 
 	def calcNic(self):
 		card.nicCalc(self)
+
+	def pins(self):
+		card.pins(self)
 
 	def cardRead(self):
 		card.readCard(self)
