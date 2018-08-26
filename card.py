@@ -101,6 +101,7 @@ def pins(parent):
 	with open('temp.hal', 'w') as f:
 		f.write('loadrt hostmot2\n')
 		f.write('loadrt hm2_eth board={}\n'.format(parent.ipAddressCB.currentData()))
+		f.write('quit')
 
 	command = ['halrun', '-f', 'temp.hal']
 	output = []
