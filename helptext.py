@@ -109,7 +109,6 @@ Debug Options
 	occours the error information is sent to dmesg. Open a terminal and clear
 	dmesg with sudo dmesg -c then run your configuration and to view the error
 	in a terminal type dmesg.
-
 """
 
 text_7 = """
@@ -120,17 +119,17 @@ the number of components that Classicladder starts with.
 """
 
 text_8 = """
-Help Text for PinOut Tab
+Help Text for Pins Tab
 
-To Do
+If you have the 7i96 connected press get pins to get the current pinout
 """
 
-text_8 = """
+text_9 = """
 Help Text for Info Tab
 
 Get CPU information and NIC information
 """
-text_8 = """
+text_10 = """
 Help Text for PC Tab
 
 To check if the network packet time is ok get the CPU speed from the Info Tab.
