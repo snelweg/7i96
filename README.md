@@ -7,10 +7,10 @@ Read in the ini configuration file for changes.
 
 Create a complete configuration from scratch.
 
-Depends on python3-pyqt5
+Depends on python3-pyqt5 and python3-setuptools
 
 sudo apt-get install python3-pqt5
-
+sudo apt-get install python3-setuptools
 Open the sample ini file then make changes as needed then build
 
 You can create a configuration then run it with the Axis GUI and use
