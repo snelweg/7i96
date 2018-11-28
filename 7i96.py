@@ -347,7 +347,7 @@ class MainWindow(QMainWindow):
 		for i in range(11):
 			for item in buildcombos.setupCombo('joint'):
 				getattr(self, 'inputJoint_' + str(i)).addItem(item[0], item[1])
-		for i in range(5):
+		for i in range(6):
 			for item in buildcombos.setupCombo('output'):
 				getattr(self, 'output_' + str(i)).addItem(item[0], item[1])
 		for item in buildcombos.setupCombo('debug'):

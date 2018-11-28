@@ -5499,120 +5499,80 @@ max speed</string>
        <attribute name="title">
         <string>Outputs</string>
        </attribute>
-       <widget class="QLabel" name="label_22">
+       <widget class="QGroupBox" name="gridGroupBox">
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>40</y>
-          <width>59</width>
-          <height>15</height>
+          <y>10</y>
+          <width>341</width>
+          <height>231</height>
          </rect>
         </property>
-        <property name="text">
-         <string>Output 0</string>
+        <property name="title">
+         <string>Outputs</string>
         </property>
-       </widget>
-       <widget class="QLabel" name="label_23">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>70</y>
-          <width>59</width>
-          <height>15</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Output 1</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_24">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>100</y>
-          <width>59</width>
-          <height>15</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Output 2</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_25">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>130</y>
-          <width>59</width>
-          <height>15</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Output 3</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_26">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>160</y>
-          <width>59</width>
-          <height>15</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Output 4</string>
-        </property>
-       </widget>
-       <widget class="QComboBox" name="output_0">
-        <property name="geometry">
-         <rect>
-          <x>100</x>
-          <y>40</y>
-          <width>120</width>
-          <height>23</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QComboBox" name="output_1">
-        <property name="geometry">
-         <rect>
-          <x>100</x>
-          <y>70</y>
-          <width>120</width>
-          <height>23</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QComboBox" name="output_2">
-        <property name="geometry">
-         <rect>
-          <x>100</x>
-          <y>100</y>
-          <width>120</width>
-          <height>23</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QComboBox" name="output_3">
-        <property name="geometry">
-         <rect>
-          <x>100</x>
-          <y>130</y>
-          <width>120</width>
-          <height>23</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QComboBox" name="output_4">
-        <property name="geometry">
-         <rect>
-          <x>100</x>
-          <y>160</y>
-          <width>120</width>
-          <height>23</height>
-         </rect>
-        </property>
+        <layout class="QGridLayout" name="gridLayout_45">
+         <item row="0" column="1">
+          <widget class="QComboBox" name="output_0"/>
+         </item>
+         <item row="3" column="1">
+          <widget class="QComboBox" name="output_3"/>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_22">
+           <property name="text">
+            <string>Output 0</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_23">
+           <property name="text">
+            <string>Output 1</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QComboBox" name="output_1"/>
+         </item>
+         <item row="4" column="1">
+          <widget class="QComboBox" name="output_4"/>
+         </item>
+         <item row="2" column="1">
+          <widget class="QComboBox" name="output_2"/>
+         </item>
+         <item row="5" column="1">
+          <widget class="QComboBox" name="output_5"/>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_24">
+           <property name="text">
+            <string>Output 2</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_25">
+           <property name="text">
+            <string>Output 3</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="label_26">
+           <property name="text">
+            <string>Output 4</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="0">
+          <widget class="QLabel" name="label_293">
+           <property name="text">
+            <string>Output 5</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </widget>
       </widget>
       <widget class="QWidget" name="tab_6">
