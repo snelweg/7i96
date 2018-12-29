@@ -17,6 +17,8 @@ def iniList():
 	iniList.append(['DISPLAY', 'POSITION_FEEDBACK', 'positionFeedbackCB'])
 	iniList.append(['DISPLAY', 'MAX_FEED_OVERRIDE', 'maxFeedOverrideSB'])
 
+	iniList.append(['EMCMOT', 'SERVO_PERIOD', 'servoPeriodSB'])
+
 	iniList.append(['TRAJ', 'LINEAR_UNITS', 'linearUnitsCB'])
 	iniList.append(['TRAJ', 'COORDINATES', 'coordinatesLB'])
 	iniList.append(['TRAJ', 'MAX_LINEAR_VELOCITY', 'maxLinearVelocity'])

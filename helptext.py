@@ -135,6 +135,9 @@ Help Text for PC Tab
 To check if the network packet time is ok get the CPU speed from the Info Tab.
 Then get the tmax time and put those values into the boxes then hit calculate.
 Make sure you select if the CPU speed is gHz or mHz.
+
+To get tMax you must have the 7i96 connected to the PC and be running the
+configuration with LinuxCNC.
 """
 
 text_20 = """

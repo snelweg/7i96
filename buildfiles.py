@@ -87,7 +87,7 @@ def buildini(parent):
 	# build the [EMCMOT] section
 	iniContents.append('\n[EMCMOT]\n')
 	iniContents.append('EMCMOT = {}\n'.format('motmod'))
-	iniContents.append('SERVO_PERIOD = {}\n'.format(parent.threadPeriodSB.value()))
+	iniContents.append('SERVO_PERIOD = {}\n'.format(parent.servoPeriodSB.value()))
 
 	# build the [TASK] section
 	iniContents.append('\n[TASK]\n')
@@ -216,8 +216,12 @@ def buildini(parent):
 		iniContents.append('SCALE = {}\n'.format(str(parent.scale_0.value())))
 		iniContents.append('STEPGEN_MAX_VEL = {}\n'.format(str(float(parent.maxVelocity_0.text()) * 1.2)))
 		iniContents.append('STEPGEN_MAX_ACC = {}\n'.format(str(float(parent.maxAccel_0.text()) * 1.2)))
-		iniContents.append('FERROR = {}\n'.format('0.0002'))
-		iniContents.append('MIN_FERROR = {}\n'.format('0.0001'))
+		if parent.units == 'inches':
+			iniContents.append('FERROR = {}\n'.format('0.0002'))
+			iniContents.append('MIN_FERROR = {}\n'.format('0.0001'))
+		else:
+			iniContents.append('FERROR = {}\n'.format('0.0051'))
+			iniContents.append('MIN_FERROR = {}\n'.format('0.0025'))
 		iniContents.append('DIRSETUP = {}\n'.format(parent.dirSetup_0.text()))
 		iniContents.append('DIRHOLD = {}\n'.format(parent.dirHold_0.text()))
 		iniContents.append('STEPLEN = {}\n'.format(parent.stepTime_0.text()))
@@ -259,8 +263,12 @@ def buildini(parent):
 		iniContents.append('SCALE = {}\n'.format(str(parent.scale_1.value())))
 		iniContents.append('STEPGEN_MAX_VEL = {}\n'.format(str(float(parent.maxVelocity_1.text()) * 1.2)))
 		iniContents.append('STEPGEN_MAX_ACC = {}\n'.format(str(float(parent.maxAccel_1.text()) * 1.2)))
-		iniContents.append('FERROR = {}\n'.format('0.0002'))
-		iniContents.append('MIN_FERROR = {}\n'.format('0.0001'))
+		if parent.units == 'inches':
+			iniContents.append('FERROR = {}\n'.format('0.0002'))
+			iniContents.append('MIN_FERROR = {}\n'.format('0.0001'))
+		else:
+			iniContents.append('FERROR = {}\n'.format('0.0051'))
+			iniContents.append('MIN_FERROR = {}\n'.format('0.0025'))
 		iniContents.append('DIRSETUP = {}\n'.format(parent.dirSetup_1.text()))
 		iniContents.append('DIRHOLD = {}\n'.format(parent.dirHold_1.text()))
 		iniContents.append('STEPLEN = {}\n'.format(parent.stepTime_1.text()))
@@ -300,8 +308,12 @@ def buildini(parent):
 		iniContents.append('SCALE = {}\n'.format(str(parent.scale_2.value())))
 		iniContents.append('STEPGEN_MAX_VEL = {}\n'.format(str(float(parent.maxVelocity_2.text()) * 1.2)))
 		iniContents.append('STEPGEN_MAX_ACC = {}\n'.format(str(float(parent.maxAccel_2.text()) * 1.2)))
-		iniContents.append('FERROR = {}\n'.format('0.0002'))
-		iniContents.append('MIN_FERROR = {}\n'.format('0.0001'))
+		if parent.units == 'inches':
+			iniContents.append('FERROR = {}\n'.format('0.0002'))
+			iniContents.append('MIN_FERROR = {}\n'.format('0.0001'))
+		else:
+			iniContents.append('FERROR = {}\n'.format('0.0051'))
+			iniContents.append('MIN_FERROR = {}\n'.format('0.0025'))
 		iniContents.append('DIRSETUP = {}\n'.format(parent.dirSetup_2.text()))
 		iniContents.append('DIRHOLD = {}\n'.format(parent.dirHold_2.text()))
 		iniContents.append('STEPLEN = {}\n'.format(parent.stepTime_2.text()))
@@ -341,8 +353,12 @@ def buildini(parent):
 		iniContents.append('SCALE = {}\n'.format(str(parent.scale_3.value())))
 		iniContents.append('STEPGEN_MAX_VEL = {}\n'.format(str(float(parent.maxVelocity_3.text()) * 1.2)))
 		iniContents.append('STEPGEN_MAX_ACC = {}\n'.format(str(float(parent.maxAccel_3.text()) * 1.2)))
-		iniContents.append('FERROR = {}\n'.format('0.0002'))
-		iniContents.append('MIN_FERROR = {}\n'.format('0.0001'))
+		if parent.units == 'inches':
+			iniContents.append('FERROR = {}\n'.format('0.0002'))
+			iniContents.append('MIN_FERROR = {}\n'.format('0.0001'))
+		else:
+			iniContents.append('FERROR = {}\n'.format('0.0051'))
+			iniContents.append('MIN_FERROR = {}\n'.format('0.0025'))
 		iniContents.append('DIRSETUP = {}\n'.format(parent.dirSetup_3.text()))
 		iniContents.append('DIRHOLD = {}\n'.format(parent.dirHold_3.text()))
 		iniContents.append('STEPLEN = {}\n'.format(parent.stepTime_3.text()))
@@ -382,8 +398,12 @@ def buildini(parent):
 		iniContents.append('SCALE = {}\n'.format(str(parent.scale_4.value())))
 		iniContents.append('STEPGEN_MAX_VEL = {}\n'.format(str(float(parent.maxVelocity_4.text()) * 1.2)))
 		iniContents.append('STEPGEN_MAX_ACC = {}\n'.format(str(float(parent.maxAccel_4.text()) * 1.2)))
-		iniContents.append('FERROR = {}\n'.format('0.0002'))
-		iniContents.append('MIN_FERROR = {}\n'.format('0.0001'))
+		if parent.units == 'inches':
+			iniContents.append('FERROR = {}\n'.format('0.0002'))
+			iniContents.append('MIN_FERROR = {}\n'.format('0.0001'))
+		else:
+			iniContents.append('FERROR = {}\n'.format('0.0051'))
+			iniContents.append('MIN_FERROR = {}\n'.format('0.0025'))
 		iniContents.append('DIRSETUP = {}\n'.format(parent.dirSetup_4.text()))
 		iniContents.append('DIRHOLD = {}\n'.format(parent.dirHold_4.text()))
 		iniContents.append('STEPLEN = {}\n'.format(parent.stepTime_4.text()))

@@ -124,7 +124,7 @@ def setupCombo(combo):
 								['Closed Loop', 'closedLoop']]
 
 	if combo == 'drive':
-		comboList = [['None', False],
+		comboList = [['Custom', False],
 								['Gecko 201', ['500', '4000', '20000', '1000']],
 								['Gecko 202', ['500', '4500', '20000', '1000']],
 								['Gecko 203v', ['1000', '2000', '200', '200']],

@@ -210,12 +210,14 @@ class MainWindow(QMainWindow):
 				getattr(self, 'maxLimit_' + str(i)).setToolTip('inches')
 				getattr(self, 'maxVelocity_' + str(i)).setToolTip('inches per second')
 				getattr(self, 'maxAccel_' + str(i)).setToolTip('inches per second per second')
+				self.units = 'inches'
 		if self.linearUnitsCB.itemData(self.linearUnitsCB.currentIndex()) == 'metric':
 			for i in range(5):
 				getattr(self, 'minLimit_' + str(i)).setToolTip('millimeters')
 				getattr(self, 'maxLimit_' + str(i)).setToolTip('millimeters')
 				getattr(self, 'maxVelocity_' + str(i)).setToolTip('millimeters per second')
 				getattr(self, 'maxAccel_' + str(i)).setToolTip('millimeters per second per second')
+				self.units = 'mm'
 
 	def onAxisChanged(self):
 		coordList = []
@@ -236,10 +238,20 @@ class MainWindow(QMainWindow):
 	def driveChanged(self):
 		timing = self.sender().itemData(self.sender().currentIndex())
 		joint = self.sender().objectName()[-1]
-		getattr(self, 'stepTime_' + joint).setText(timing[0])
-		getattr(self, 'stepSpace_' + joint).setText(timing[1])
-		getattr(self, 'dirSetup_' + joint).setText(timing[2])
-		getattr(self, 'dirHold_' + joint).setText(timing[3])
+		if timing:
+			getattr(self, 'stepTime_' + joint).setText(timing[0])
+			getattr(self, 'stepSpace_' + joint).setText(timing[1])
+			getattr(self, 'dirSetup_' + joint).setText(timing[2])
+			getattr(self, 'dirHold_' + joint).setText(timing[3])
+			getattr(self, 'stepTime_' + joint).setEnabled(False)
+			getattr(self, 'stepSpace_' + joint).setEnabled(False)
+			getattr(self, 'dirSetup_' + joint).setEnabled(False)
+			getattr(self, 'dirHold_' + joint).setEnabled(False)
+		else:
+			getattr(self, 'stepTime_' + joint).setEnabled(True)
+			getattr(self, 'stepSpace_' + joint).setEnabled(True)
+			getattr(self, 'dirSetup_' + joint).setEnabled(True)
+			getattr(self, 'dirHold_' + joint).setEnabled(True)
 
 
 	def updateAxisInfo(self):
@@ -258,7 +270,7 @@ class MainWindow(QMainWindow):
 		accelTime = maxVelocity / maxAccel
 		getattr(self, 'timeJoint_' + joint).setText('{:.2f} seconds'.format(accelTime))
 		accelDistance = accelTime * 0.5 * maxVelocity
-		getattr(self, 'distanceJoint_' + joint).setText('{:.2f} inches'.format(accelDistance))
+		getattr(self, 'distanceJoint_' + joint).setText('{:.2f} {}'.format(accelDistance, self.units))
 		stepRate = scale * maxVelocity
 		getattr(self, 'stepRateJoint_' + joint).setText('{:.0f} pulses'.format(stepRate))
 
