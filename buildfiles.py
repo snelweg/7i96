@@ -204,6 +204,7 @@ def buildini(parent):
 			iniContents.append('MAX_ACCELERATION = {}\n'.format(getattr(parent, 'maxAccel_' + jointTab).text()))
 			break
 
+	# need to loop-a-fy this section one day
 	# build the [JOINT_0] section
 	if parent.axisCB_0.itemData(parent.axisCB_0.currentIndex()):
 		iniContents.append('\n[JOINT_0]\n')
@@ -214,7 +215,7 @@ def buildini(parent):
 		iniContents.append('MAX_ACCELERATION = {}\n'.format(parent.maxAccel_0.text()))
 		iniContents.append('TYPE = {}\n'.format(parent.axisType_0.text()))
 		joint0StepDirection = parent.stepDir_0.itemData(parent.stepDir_0.currentIndex())
-		iniContents.append('SCALE = {}{}\n'.format(joint0StepDirection, str(parent.scale_0.value())))
+		iniContents.append('SCALE = {}\n'.format(parent.scale_0.text()))
 		iniContents.append('STEPGEN_MAX_VEL = {}\n'.format(str(float(parent.maxVelocity_0.text()) * 1.2)))
 		iniContents.append('STEPGEN_MAX_ACC = {}\n'.format(str(float(parent.maxAccel_0.text()) * 1.2)))
 		if parent.units == 'inches':
@@ -261,7 +262,7 @@ def buildini(parent):
 		iniContents.append('MAX_VELOCITY = {}\n'.format(parent.maxVelocity_1.text()))
 		iniContents.append('MAX_ACCELERATION = {}\n'.format(parent.maxAccel_1.text()))
 		iniContents.append('TYPE = {}\n'.format(parent.axisType_1.text()))
-		iniContents.append('SCALE = {}\n'.format(str(parent.scale_1.value())))
+		iniContents.append('SCALE = {}\n'.format(parent.scale_1.text()))
 		iniContents.append('STEPGEN_MAX_VEL = {}\n'.format(str(float(parent.maxVelocity_1.text()) * 1.2)))
 		iniContents.append('STEPGEN_MAX_ACC = {}\n'.format(str(float(parent.maxAccel_1.text()) * 1.2)))
 		if parent.units == 'inches':
@@ -306,7 +307,7 @@ def buildini(parent):
 		iniContents.append('MAX_VELOCITY = {}\n'.format(parent.maxVelocity_2.text()))
 		iniContents.append('MAX_ACCELERATION = {}\n'.format(parent.maxAccel_2.text()))
 		iniContents.append('TYPE = {}\n'.format(parent.axisType_2.text()))
-		iniContents.append('SCALE = {}\n'.format(str(parent.scale_2.value())))
+		iniContents.append('SCALE = {}\n'.format(parent.scale_2.text()))
 		iniContents.append('STEPGEN_MAX_VEL = {}\n'.format(str(float(parent.maxVelocity_2.text()) * 1.2)))
 		iniContents.append('STEPGEN_MAX_ACC = {}\n'.format(str(float(parent.maxAccel_2.text()) * 1.2)))
 		if parent.units == 'inches':
@@ -351,7 +352,7 @@ def buildini(parent):
 		iniContents.append('MAX_VELOCITY = {}\n'.format(parent.maxVelocity_3.text()))
 		iniContents.append('MAX_ACCELERATION = {}\n'.format(parent.maxAccel_3.text()))
 		iniContents.append('TYPE = {}\n'.format(parent.axisType_3.text()))
-		iniContents.append('SCALE = {}\n'.format(str(parent.scale_3.value())))
+		iniContents.append('SCALE = {}\n'.format(parent.scale_3.text()))
 		iniContents.append('STEPGEN_MAX_VEL = {}\n'.format(str(float(parent.maxVelocity_3.text()) * 1.2)))
 		iniContents.append('STEPGEN_MAX_ACC = {}\n'.format(str(float(parent.maxAccel_3.text()) * 1.2)))
 		if parent.units == 'inches':
@@ -396,7 +397,7 @@ def buildini(parent):
 		iniContents.append('MAX_VELOCITY = {}\n'.format(parent.maxVelocity_4.text()))
 		iniContents.append('MAX_ACCELERATION = {}\n'.format(parent.maxAccel_4.text()))
 		iniContents.append('TYPE = {}\n'.format(parent.axisType_4.text()))
-		iniContents.append('SCALE = {}\n'.format(str(parent.scale_4.value())))
+		iniContents.append('SCALE = {}\n'.format(parent.scale_4.text()))
 		iniContents.append('STEPGEN_MAX_VEL = {}\n'.format(str(float(parent.maxVelocity_4.text()) * 1.2)))
 		iniContents.append('STEPGEN_MAX_ACC = {}\n'.format(str(float(parent.maxAccel_4.text()) * 1.2)))
 		if parent.units == 'inches':

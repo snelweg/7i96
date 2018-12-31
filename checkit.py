@@ -56,9 +56,9 @@ def config(parent):
 		# make this a loop getattr(parent, '_' + str(index))
 		for index in range(5):
 			if getattr(parent, 'axisCB_' + str(index)).currentText() != 'None':
-				if getattr(parent, 'scale_' + str(index)).value() == 0:
+				if not getattr(parent, 'scale_' + str(index)).text():
 					tabError = True
-					configErrors.append('\tThe Scale must be greater than zero for Joint {}'.format(index))
+					configErrors.append('\tThe Scale must be specified for Joint {}'.format(index))
 				if not getattr(parent, 'minLimit_' + str(index)).text():
 					tabError = True
 					configErrors.append('\tThe for Mininum Limit Joint {} must be specified'.format(index))

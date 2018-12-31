@@ -194,6 +194,14 @@ class MainWindow(QMainWindow):
 		self.qclip.setText(self.outputLB.text())
 		self.statusbar.showMessage('Output copied to clipboard')
 
+	def isNumber(self, s):
+		try:
+			s[-1].isdigit()
+			float(s)
+			return True
+		except ValueError:
+			return False
+
 	def onConfigNameChanged(self, text):
 		# update the iniDictionary when text is changed
 		if text:
@@ -263,12 +271,15 @@ class MainWindow(QMainWindow):
 		if self.sender().objectName() == 'actionOpen':
 			return
 		joint = self.sender().objectName()[-1]
-		scale = float(getattr(self, 'scale_' + joint).text())
-		if getattr(self, 'maxVelocity_' + joint).text():
+		if self.isNumber(getattr(self, 'scale_' + joint).text()):
+			scale = float(getattr(self, 'scale_' + joint).text())
+		else:
+			return
+		if self.isNumber(getattr(self, 'maxVelocity_' + joint).text()):
 			maxVelocity = float(getattr(self, 'maxVelocity_' + joint).text())
 		else:
 			return
-		if getattr(self, 'maxAccel_' + joint).text():
+		if self.isNumber(getattr(self, 'maxAccel_' + joint).text()):
 			maxAccel = float(getattr(self, 'maxAccel_' + joint).text())
 		else:
 			return
