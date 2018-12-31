@@ -27,11 +27,6 @@ def setupCombo(combo):
 								['Joint 3', '3'],
 								['Joint 4', '4']]
 
-	if combo == 'direction':
-		comboList = [['None', False],
-								['CW', 'cw'],
-								['CCW', 'ccw']]
-
 	if combo == 'display':
 		comboList = [['None', False],
 								['Axis', 'axis'],
@@ -142,8 +137,8 @@ def setupCombo(combo):
 								['Keling 4030', ['5000', '5000', '20000', '20000']]]
 
 	if combo == 'speed':
-		comboList = [['gHz', 1000],
-								['mHz', 1]]
+		comboList = [['GHz', 1000],
+								['MHz', 1]]
 
 
 	return comboList

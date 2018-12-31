@@ -93,7 +93,7 @@ class MainWindow(QMainWindow):
 	@pyqtSlot()
 	def on_actionCheck_triggered(self):
 		if self.checkConfig(self):
-			QMessageBox.about(self, 'Configuration', '---- Checked OK ----')
+			QMessageBox.about(self, 'Configuration', '        Checked OK        ')
 		else:
 			self.errorDialog(self.checkConfig.result)
 
@@ -142,7 +142,7 @@ class MainWindow(QMainWindow):
 		for i in range(5):
 			getattr(self, 'axisCB_' + str(i)).currentIndexChanged.connect(self.onAxisChanged)
 		for i in range(5):
-			getattr(self, 'scale_' + str(i)).valueChanged.connect(self.updateAxisInfo)
+			getattr(self, 'scale_' + str(i)).textChanged.connect(self.updateAxisInfo)
 		for i in range(5):
 			getattr(self, 'maxVelocity_' + str(i)).textChanged.connect(self.updateAxisInfo)
 		for i in range(5):
@@ -159,7 +159,7 @@ class MainWindow(QMainWindow):
 		self.copyPB.clicked.connect(self.copyOutput)
 		self.spindleTypeCB.currentIndexChanged.connect(self.spindleTypeChanged)
 		self.linearUnitsCB.currentIndexChanged.connect(self.linearUnitsChanged)
-		self.pinsPB.clicked.connect(self.pins)
+		self.pinsPB.clicked.connect(self.getPins)
 		self.cpuPB.clicked.connect(self.cpuInfo)
 		self.nicPB.clicked.connect(self.nicInfo)
 		self.calcNicPB.clicked.connect(self.calcNic)
@@ -171,7 +171,7 @@ class MainWindow(QMainWindow):
 	def calcNic(self):
 		card.nicCalc(self)
 
-	def pins(self):
+	def getPins(self):
 		card.pins(self)
 
 	def cardRead(self):
@@ -218,6 +218,11 @@ class MainWindow(QMainWindow):
 				getattr(self, 'maxVelocity_' + str(i)).setToolTip('millimeters per second')
 				getattr(self, 'maxAccel_' + str(i)).setToolTip('millimeters per second per second')
 				self.units = 'mm'
+		if self.linearUnitsCB.itemData(self.linearUnitsCB.currentIndex()):
+			self.axisTab.setEnabled(True)
+			self.joint0tab.setEnabled(True)
+		else:
+			self.axisTab.setEnabled(False)
 
 	def onAxisChanged(self):
 		coordList = []
@@ -258,7 +263,7 @@ class MainWindow(QMainWindow):
 		if self.sender().objectName() == 'actionOpen':
 			return
 		joint = self.sender().objectName()[-1]
-		scale = getattr(self, 'scale_' + joint).value()
+		scale = float(getattr(self, 'scale_' + joint).text())
 		if getattr(self, 'maxVelocity_' + joint).text():
 			maxVelocity = float(getattr(self, 'maxVelocity_' + joint).text())
 		else:
@@ -272,7 +277,7 @@ class MainWindow(QMainWindow):
 		accelDistance = accelTime * 0.5 * maxVelocity
 		getattr(self, 'distanceJoint_' + joint).setText('{:.2f} {}'.format(accelDistance, self.units))
 		stepRate = scale * maxVelocity
-		getattr(self, 'stepRateJoint_' + joint).setText('{:.0f} pulses'.format(stepRate))
+		getattr(self, 'stepRateJoint_' + joint).setText('{:.0f} pulses'.format(abs(stepRate)))
 
 	def spindleTypeChanged(self): 
 		if self.spindleTypeCB.itemData(self.spindleTypeCB.currentIndex()) == 'openLoop':
@@ -350,9 +355,6 @@ class MainWindow(QMainWindow):
 		for i in range(5):
 			for item in buildcombos.setupCombo('axis'):
 				getattr(self, 'axisCB_' + str(i)).addItem(item[0], item[1])
-		for i in range(5):
-			for item in buildcombos.setupCombo('direction'):
-				getattr(self, 'stepDir_' + str(i)).addItem(item[0], item[1])
 		for i in range(11):
 			for item in buildcombos.setupCombo('input'):
 				getattr(self, 'input_' + str(i)).addItem(item[0], item[1])
@@ -387,7 +389,7 @@ class MainWindow(QMainWindow):
 				if isinstance(getattr(self, item[2]), QLineEdit):
 					getattr(self, item[2]).setText(self.config[item[0]][item[1]])
 				if isinstance(getattr(self, item[2]), QSpinBox):
-					getattr(self, item[2]).setValue(int(self.config[item[0]][item[1]]))
+					getattr(self, item[2]).setValue(abs(int(self.config[item[0]][item[1]])))
 				if isinstance(getattr(self, item[2]), QDoubleSpinBox):
 					getattr(self, item[2]).setValue(float(self.config[item[0]][item[1]]))
 				if isinstance(getattr(self, item[2]), QCheckBox):

@@ -213,7 +213,8 @@ def buildini(parent):
 		iniContents.append('MAX_VELOCITY = {}\n'.format(parent.maxVelocity_0.text()))
 		iniContents.append('MAX_ACCELERATION = {}\n'.format(parent.maxAccel_0.text()))
 		iniContents.append('TYPE = {}\n'.format(parent.axisType_0.text()))
-		iniContents.append('SCALE = {}\n'.format(str(parent.scale_0.value())))
+		joint0StepDirection = parent.stepDir_0.itemData(parent.stepDir_0.currentIndex())
+		iniContents.append('SCALE = {}{}\n'.format(joint0StepDirection, str(parent.scale_0.value())))
 		iniContents.append('STEPGEN_MAX_VEL = {}\n'.format(str(float(parent.maxVelocity_0.text()) * 1.2)))
 		iniContents.append('STEPGEN_MAX_ACC = {}\n'.format(str(float(parent.maxAccel_0.text()) * 1.2)))
 		if parent.units == 'inches':
@@ -508,7 +509,8 @@ def buildhal(parent):
 	halContents = []
 	halContents = ['# This file was created with the 7i96 Wizard on ']
 	halContents.append(datetime.now().strftime('%b %d %Y %H:%M:%S') + '\n')
-	halContents.append('# If you make changes to this file your screwed\n\n')
+	halContents.append('# If you make changes to this file DO NOT run the configuration tool again!\n')
+	halContents.append('# This file will be replaced with a new file if you do!\n\n')
 	# build the standard header
 	halContents.append('# kinematics\n')
 	halContents.append('loadrt [KINS]KINEMATICS\n\n')
@@ -530,6 +532,8 @@ def buildhal(parent):
 	halContents.append('addf hm2_[HOSTMOT2](BOARD).0.read servo-thread\n')
 	halContents.append('addf motion-command-handler servo-thread\n')
 	halContents.append('addf motion-controller servo-thread\n')
+	halContents.append('setp hm2_[HOSTMOT2](BOARD).0.dpll.01.timer-us -100\n')
+	halContents.append('setp hm2_[HOSTMOT2](BOARD).0.stepgen.timer-number 1 \n')
 	for index in range(len(parent.coordinatesLB.text())):
 		halContents.append('addf pid.{}.do-pid-calcs servo-thread\n'.format(str(index)))
 	halContents.append('addf hm2_[HOSTMOT2](BOARD).0.write servo-thread\n')

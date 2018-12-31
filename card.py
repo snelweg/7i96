@@ -74,12 +74,20 @@ def nicInfo(parent):
 	parent.infoLB.setText(''.join(output.decode("utf-8")))
 
 def nicCalc(parent):
-	tMax = int(int(parent.tMaxLE.text()) / 1000)
-	cpuSpeed = float(parent.cpuSpeedLE.text()) * parent.speedCB.itemData(parent.speedCB.currentIndex())
-	packetTime = tMax / cpuSpeed
-	parent.packetTimeLB.setText('{:.1%}'.format(packetTime))
-	threshold = (cpuSpeed * 0.7) / cpuSpeed
-	parent.thresholdLB.setText('{:.0%}'.format(threshold))
+	if parent.tMaxLE.text() != '' and parent.cpuSpeedLE.text() != '':
+		tMax = int(int(parent.tMaxLE.text()) / 1000)
+		cpuSpeed = float(parent.cpuSpeedLE.text()) * parent.speedCB.itemData(parent.speedCB.currentIndex())
+		packetTime = tMax / cpuSpeed
+		parent.packetTimeLB.setText('{:.1%}'.format(packetTime))
+		threshold = (cpuSpeed * 0.7) / cpuSpeed
+		parent.thresholdLB.setText('{:.0%}'.format(threshold))
+	else:
+		errorText = []
+		if parent.cpuSpeedLE.text() == '':
+			errorText.append('CPU Speed can not be empty')
+		if parent.tMaxLE.text() == '':
+			errorText.append('tMax can not be empty')
+		parent.errorDialog('\n'.join(errorText))
 
 def readTmax(parent):
 	command = ['halcmd', 'show', 'param', 'hm2*.tmax']
