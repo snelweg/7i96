@@ -69,7 +69,7 @@ def buildini(parent):
 	# build the [KINS] section
 	iniContents.append('\n[KINS]\n')
 	if len(set(parent.coordinatesLB.text())) == len(parent.coordinatesLB.text()): # 1 joint for each axis
-		iniContents.append('KINEMATICS = {}\n'.format('trivkins'))
+		iniContents.append('KINEMATICS = {} coordinates={}\n'.format('trivkins', parent.coordinatesLB.text()))
 	else: # more than one joint per axis
 		iniContents.append('KINEMATICS = {} coordinates={} kinstype=BOTH\n'.format('trivkins', parent.coordinatesLB.text()))
 	iniContents.append('JOINTS = {}\n'.format(len(parent.coordinatesLB.text())))
@@ -214,7 +214,6 @@ def buildini(parent):
 		iniContents.append('MAX_VELOCITY = {}\n'.format(parent.maxVelocity_0.text()))
 		iniContents.append('MAX_ACCELERATION = {}\n'.format(parent.maxAccel_0.text()))
 		iniContents.append('TYPE = {}\n'.format(parent.axisType_0.text()))
-		joint0StepDirection = parent.stepDir_0.itemData(parent.stepDir_0.currentIndex())
 		iniContents.append('SCALE = {}\n'.format(parent.scale_0.text()))
 		iniContents.append('STEPGEN_MAX_VEL = {}\n'.format(str(float(parent.maxVelocity_0.text()) * 1.2)))
 		iniContents.append('STEPGEN_MAX_ACC = {}\n'.format(str(float(parent.maxAccel_0.text()) * 1.2)))
@@ -627,11 +626,11 @@ def buildmisc(parent):
 	if parent.guiCB.currentData() == 'axis':
 		shutupFilepath = os.path.expanduser('~/.axisrc')
 		shutupContents = ['root_window.tk.call("wm","protocol",".","WM_DELETE_WINDOW","destroy .")']
-	try: # if this file exists don't write over it
-		with open(shutupFilepath, 'x') as shutupFile:
-			shutupFile.writelines(shutupContents)
-	except FileExistsError:
-		pass
+		try: # if this file exists don't write over it
+			with open(shutupFilepath, 'x') as shutupFile:
+				shutupFile.writelines(shutupContents)
+		except FileExistsError:
+			pass
 
 
 	customFilePath = os.path.join(parent.configPath, 'custom.hal')
