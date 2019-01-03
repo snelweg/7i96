@@ -44,7 +44,7 @@ class MainWindow(QMainWindow):
 			'ladderInputsSB', 'ladderOutputsSB', 'ladderExpresionsSB',
 			'ladderSectionsSB', 'ladderSymbolsSB', 'ladderS32InputsSB',
 			'ladderS32OuputsSB', 'ladderFloatInputsSB', 'ladderFloatOutputsSB']
-
+		self.units = False
 		# for testing
 		#self.config.read('/home/john/linuxcnc/configs/fred/fred.ini')
 		#self.iniLoad()
@@ -271,17 +271,26 @@ class MainWindow(QMainWindow):
 		if self.sender().objectName() == 'actionOpen':
 			return
 		joint = self.sender().objectName()[-1]
-		if self.isNumber(getattr(self, 'scale_' + joint).text()):
-			scale = float(getattr(self, 'scale_' + joint).text())
+		scale = getattr(self, 'scale_' + joint).text()
+		if scale and self.isNumber(scale):
+			scale = float(scale)
 		else:
 			return
-		if self.isNumber(getattr(self, 'maxVelocity_' + joint).text()):
-			maxVelocity = float(getattr(self, 'maxVelocity_' + joint).text())
+
+		maxVelocity = getattr(self, 'maxVelocity_' + joint).text()
+		if maxVelocity and self.isNumber(maxVelocity):
+			maxVelocity = float(maxVelocity)
 		else:
 			return
-		if self.isNumber(getattr(self, 'maxAccel_' + joint).text()):
-			maxAccel = float(getattr(self, 'maxAccel_' + joint).text())
+
+		maxAccel = getattr(self, 'maxAccel_' + joint).text()
+		if maxAccel and self.isNumber(maxAccel):
+			maxAccel = float(maxAccel)
 		else:
+			return
+
+		if not self.units:
+			self.errorDialog('Machine Tab:\nLinear Units must be selected')
 			return
 		accelTime = maxVelocity / maxAccel
 		getattr(self, 'timeJoint_' + joint).setText('{:.2f} seconds'.format(accelTime))
