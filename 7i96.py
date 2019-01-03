@@ -99,6 +99,10 @@ class MainWindow(QMainWindow):
 
 	@pyqtSlot()
 	def on_actionBuild_triggered(self):
+		if not self.checkConfig(self):
+			self.errorDialog(self.checkConfig.result)
+			return
+
 		result = self.builddirs(self)
 		if result:
 			result = self.buildini(self)
@@ -135,7 +139,6 @@ class MainWindow(QMainWindow):
 	@pyqtSlot()
 	def on_actionPCHelp_triggered(self):
 		self.help(30)
-
 
 	def setupConnections(self):
 		self.configName.textChanged[str].connect(self.onConfigNameChanged)
