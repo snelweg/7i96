@@ -25,7 +25,7 @@ def builddirs(parent):
 def buildini(parent):
 	buildErrors = []
 	buildini.result = ''
-	iniFilePath = os.path.join(parent.configPath, parent.configName.text() + '.ini')
+	iniFilePath = os.path.join(parent.configPath, parent.configNameUnderscored + '.ini')
 
 	if not os.path.exists(parent.configPath):
 		os.mkdir(parent.configPath)
@@ -37,7 +37,7 @@ def buildini(parent):
 	# build the [EMC] section
 	iniContents.append('\n[EMC]\n')
 	iniContents.append('VERSION = {}\n'.format(parent.versionLE.text()))
-	iniContents.append('MACHINE = {}\n'.format(parent.configName.text()))
+	iniContents.append('MACHINE = {}\n'.format(parent.configNameUnderscored))
 	iniContents.append('DEBUG = {}\n'.format(parent.debugCombo.itemData(parent.debugCombo.currentIndex())))
 
 	# build the [HOSTMOT2] section
@@ -60,7 +60,7 @@ def buildini(parent):
 	iniContents.append('INTRO_TIME = {}\n'.format('0'))
 	iniContents.append('OPEN_FILE = "{}"\n'.format(''))
 	if parent.pyvcpCB.isChecked():
-		iniContents.append('PYVCP = {}.xml\n'.format(parent.configName.text()))
+		iniContents.append('PYVCP = {}.xml\n'.format(parent.configNameUnderscored))
 	if parent.frontToolLatheCB.isChecked():
 		iniContents.append('LATHE = 1\n')
 	if parent.frontToolLatheCB.isChecked():
@@ -78,7 +78,7 @@ def buildini(parent):
 	iniContents.append('\n[EMCIO]\n')
 	iniContents.append('EMCIO = {}\n'.format('io'))
 	iniContents.append('CYCLE_TIME = {}\n'.format('0.100'))
-	iniContents.append('TOOL_TABLE = {}.tbl\n'.format(parent.configNameUnderscored))
+	iniContents.append('TOOL_TABLE = tool.tbl\n')
 
 	# build the [RS274NGC] section
 	iniContents.append('\n[RS274NGC]\n')
@@ -505,7 +505,7 @@ def buildini(parent):
 
 
 def buildhal(parent):
-	halFilePath = os.path.join(parent.configPath, parent.configName.text() + '.hal')
+	halFilePath = os.path.join(parent.configPath, parent.configNameUnderscored + '.hal')
 	halContents = []
 	halContents = ['# This file was created with the 7i96 Wizard on ']
 	halContents.append(datetime.now().strftime('%b %d %Y %H:%M:%S') + '\n')
@@ -596,7 +596,6 @@ def buildhal(parent):
 		else:
 			halContents.append('loadrt classicladder_rt\n')
 		halContents.append('addf classicladder.0.refresh servo-thread 1\n')
-		halContents.append('setp hm2_7i96.0.pwmgen.00.scale {}\n'.format(parent.configName.text()))
 
 	with open(halFilePath, 'w') as halFile:
 		halFile.writelines(halContents)
@@ -656,7 +655,7 @@ def buildmisc(parent):
 		pass
 
 	# create the tool file if not there
-	toolFilePath = os.path.join(parent.configPath, parent.configName.text() + '.tbl')
+	toolFilePath = os.path.join(parent.configPath, 'tool.tbl')
 	toolContents = []
 	toolContents = [';\n']
 	toolContents.append('T1 P1\n')
@@ -667,7 +666,7 @@ def buildmisc(parent):
 		pass
 
 	# create the var file if not there
-	varFilePath = os.path.join(parent.configPath, parent.configName.text() + '.var')
+	varFilePath = os.path.join(parent.configPath, parent.configNameUnderscored + '.var')
 	try: #
 		open(varFilePath, 'x')
 	except FileExistsError:
@@ -675,7 +674,7 @@ def buildmisc(parent):
 
 	# create the pyvcp panel if checked and not there
 	if parent.pyvcpCB.isChecked():
-		pyvcpFilePath = os.path.join(parent.configPath, parent.configName.text() + '.xml')
+		pyvcpFilePath = os.path.join(parent.configPath, parent.configNameUnderscored + '.xml')
 		pyvcpContents = ["<?xml version='1.0' encoding='UTF-8'?>\n"]
 		pyvcpContents.append('<pyvcp>\n')
 		pyvcpContents.append('<!--\n')
@@ -697,7 +696,7 @@ def buildmisc(parent):
 
 	# create the clp file if selected
 	if parent.ladderGB.isChecked():
-		ladderFilePath = os.path.join(parent.configPath, parent.configName.text() + '.clp')
+		ladderFilePath = os.path.join(parent.configPath, parent.configNameUnderscored + '.clp')
 		ladderContents = """_FILES_CLASSICLADDER
 _FILE-symbols.csv
 #VER=1.0
@@ -847,10 +846,10 @@ def buildio(parent):
 			ioContents.append('net home-limit-joint-{0} joint.{0}.pos-lim-sw-in\n'.format(inputJoint))
 		elif inputText == 'Min Limit & Home':
 			ioContents.append('net min-limit-home-joint-{0} joint.{0}.neg-lim-sw-in <= hm2_7i96.0.gpio.00{1}.in\n'.format(inputJoint, index))
-			ioContents.append('net min-limit-home-limit-joint-{0} joint.{0}.neg-lim-sw-in\n'.format(inputJoint))
+			ioContents.append('net min-limit-home-joint-{0} joint.{0}.home-sw-in\n'.format(inputJoint))
 		elif inputText == 'Max Limit & Home':
 			ioContents.append('net max-limit-home-joint-{0} joint.{0}.pos-lim-sw-in <= hm2_7i96.0.gpio.00{1}.in\n'.format(inputJoint, index))
-			ioContents.append('net max-limit-home-limit-joint-{0} joint.{0}.neg-lim-sw-in\n'.format(inputJoint))
+			ioContents.append('net max-limit-home-joint-{0} joint.{0}.home-sw-in\n'.format(inputJoint))
 		elif inputText == 'Probe':
 			ioContents.append('net probe-input motion.probe-input <= hm2_7i96.0.gpio.00{}.in\n'.format(index))
 		elif inputText == 'Digital In 0':
@@ -868,7 +867,7 @@ def buildio(parent):
 		if outputText == 'Coolant Flood':
 			ioContents.append('net flood-output iocontrol.0.coolant-flood => hm2_7i96.0.ssr.00.out-0{}\n'.format(index))
 		if outputText == 'Coolant Mist':
-			ioContents.append('net flood-output iocontrol.0.coolant-mist => hm2_7i96.0.ssr.00.out-0{}\n'.format(index))
+			ioContents.append('net mist-output iocontrol.0.coolant-mist => hm2_7i96.0.ssr.00.out-0{}\n'.format(index))
 		if outputText == 'Spindle On':
 			ioContents.append('net spindle-on motion.spindle-on => hm2_7i96.0.ssr.00.out-0{}\n'.format(index))
 		if outputText == 'Spindle CW':

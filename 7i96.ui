@@ -115,7 +115,7 @@
          </rect>
         </property>
         <property name="text">
-         <string>1.0</string>
+         <string>1.1</string>
         </property>
        </widget>
        <widget class="QComboBox" name="linearUnitsCB">
@@ -342,6 +342,9 @@
             </property>
             <property name="alignment">
              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+            </property>
+            <property name="textInteractionFlags">
+             <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
             </property>
            </widget>
           </item>
@@ -592,6 +595,9 @@
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
+          </property>
+          <property name="toolTip">
+           <string/>
           </property>
           <property name="tabPosition">
            <enum>QTabWidget::North</enum>
@@ -991,6 +997,9 @@
                </item>
                <item row="0" column="1">
                 <widget class="QLineEdit" name="home_0">
+                 <property name="toolTip">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Home is usually set to 0&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
@@ -1008,6 +1017,9 @@
                </item>
                <item row="1" column="1">
                 <widget class="QLineEdit" name="homeOffset_0">
+                 <property name="toolTip">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Home Offset can be used to back off of the home switch&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
@@ -1025,6 +1037,9 @@
                </item>
                <item row="2" column="1">
                 <widget class="QLineEdit" name="homeSearchVel_0">
+                 <property name="toolTip">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Search Velocity is in units per second&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
@@ -1042,6 +1057,9 @@
                </item>
                <item row="3" column="1">
                 <widget class="QLineEdit" name="homeLatchVel_0">
+                 <property name="toolTip">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Latch Velocity is in user units per second&lt;br/&gt;usually set slower than Search Velocity&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
@@ -1789,6 +1807,9 @@
                </property>
                <item row="0" column="1">
                 <widget class="QLineEdit" name="home_1">
+                 <property name="toolTip">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Home is usually set to 0&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
@@ -1816,6 +1837,9 @@
                </item>
                <item row="1" column="1">
                 <widget class="QLineEdit" name="homeOffset_1">
+                 <property name="toolTip">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Home Offset can be used to back off of the home switch&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
@@ -1823,6 +1847,9 @@
                </item>
                <item row="2" column="1">
                 <widget class="QLineEdit" name="homeSearchVel_1">
+                 <property name="toolTip">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Search Velocity is in units per second&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
@@ -1850,6 +1877,9 @@
                </item>
                <item row="3" column="1">
                 <widget class="QLineEdit" name="homeLatchVel_1">
+                 <property name="toolTip">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Latch Velocity is in user units per second&lt;br/&gt;usually set slower than Search Velocity&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
@@ -2553,6 +2583,9 @@
                </item>
                <item row="0" column="1">
                 <widget class="QLineEdit" name="home_2">
+                 <property name="toolTip">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Home is usually set to 0&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
@@ -2570,6 +2603,9 @@
                </item>
                <item row="1" column="1">
                 <widget class="QLineEdit" name="homeOffset_2">
+                 <property name="toolTip">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Home Offset can be used to back off of the home switch&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
@@ -2587,6 +2623,9 @@
                </item>
                <item row="2" column="1">
                 <widget class="QLineEdit" name="homeSearchVel_2">
+                 <property name="toolTip">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Search Velocity is in units per second&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
@@ -2604,6 +2643,9 @@
                </item>
                <item row="3" column="1">
                 <widget class="QLineEdit" name="homeLatchVel_2">
+                 <property name="toolTip">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Latch Velocity is in user units per second&lt;br/&gt;usually set slower than Search Velocity&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
@@ -3301,6 +3343,9 @@ to max speed</string>
                </property>
                <item row="1" column="1">
                 <widget class="QLineEdit" name="homeOffset_3">
+                 <property name="toolTip">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Home Offset can be used to back off of the home switch&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
@@ -3318,6 +3363,9 @@ to max speed</string>
                </item>
                <item row="0" column="1">
                 <widget class="QLineEdit" name="home_3">
+                 <property name="toolTip">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Home is usually set to 0&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
@@ -3345,6 +3393,9 @@ to max speed</string>
                </item>
                <item row="2" column="1">
                 <widget class="QLineEdit" name="homeSearchVel_3">
+                 <property name="toolTip">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Search Velocity is in units per second&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
@@ -3362,6 +3413,9 @@ to max speed</string>
                </item>
                <item row="3" column="1">
                 <widget class="QLineEdit" name="homeLatchVel_3">
+                 <property name="toolTip">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Latch Velocity is in user units per second&lt;br/&gt;usually set slower than Search Velocity&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
@@ -4077,6 +4131,9 @@ max speed</string>
                </item>
                <item row="0" column="1">
                 <widget class="QLineEdit" name="home_4">
+                 <property name="toolTip">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Home is usually set to 0&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
@@ -4094,6 +4151,9 @@ max speed</string>
                </item>
                <item row="1" column="1">
                 <widget class="QLineEdit" name="homeOffset_4">
+                 <property name="toolTip">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Home Offset can be used to back off of the home switch&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
@@ -4111,6 +4171,9 @@ max speed</string>
                </item>
                <item row="2" column="1">
                 <widget class="QLineEdit" name="homeSearchVel_4">
+                 <property name="toolTip">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Search Velocity is in units per second&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
@@ -4128,6 +4191,9 @@ max speed</string>
                </item>
                <item row="3" column="1">
                 <widget class="QLineEdit" name="homeLatchVel_4">
+                 <property name="toolTip">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Latch Velocity is in user units per second&lt;br/&gt;usually set slower than Search Velocity&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>

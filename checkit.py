@@ -12,10 +12,13 @@ def config(parent):
 		configErrors.append('\tA configuration name must be entered')
 	if not parent.versionLE.text():
 		tabError = True
-		configErrors.append('\tA version must be entered, use 1.0')
+		configErrors.append('\tA version must be entered, use 1.1')
 	if parent.linearUnitsCB.currentText() == 'None':
 		tabError = True
 		configErrors.append('\tLinear Units must be selected')
+	if not parent.maxLinearVelocity.text():
+		tabError = True
+		configErrors.append('\tMaximum Linear Velocity must be set')
 	if parent.ipAddressCB.currentText() == 'None':
 		tabError = True
 		configErrors.append('\tAn IP address must be selected, 10.10.10.10 is recommended')

@@ -36,11 +36,13 @@ text_0 = """
 Help Text for Machine Tab
 
 Configuration Name is letters, numbers, spaces (replaced by underscore)
-Version = 1.0 or higher
+Version = 1.1 or higher
 
 IP Address 10.10.10.10 is recommended to avoid conflicts on your LAN
 	10.10.10.10 W5 Down W6 Up
 	192.168.1.121 W5 Down W6 Down
+
+Maximum Linear Velocity is in User Units per second.
 
 Firmware
 To read the current firmware select the IP Address first.
@@ -58,6 +60,10 @@ Overrides use percent of programed value.
 text_2 = """
 Help Text for Axis Tab
 Joints must be configured in order starting with 0 and not skipping any.
+
+Scale is the number of steps to move one user unit (inch or mm).
+Limits are in user units.
+Velocity is user units per second, Acceleration is user units per second per second
 
 Axis, PID Settings and StepGen Settings are required.
 
