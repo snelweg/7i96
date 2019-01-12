@@ -7,9 +7,9 @@ Read in the ini configuration file for changes.
 
 Create a complete configuration from scratch.
 
-Depends on python3-pyqt5 and python3-setuptools
+Depends on python3-pyqt5 and python3-setuptools and libpci
 
-sudo apt-get install python3-pqt5
+sudo apt-get install python3-pqt5 libpci
 sudo apt-get install python3-setuptools
 Open the sample ini file then make changes as needed then build
 
