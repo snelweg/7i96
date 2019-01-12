@@ -53,8 +53,9 @@ To flash a card select the firmware and IP Address first.
 
 text_1 = """
 Help Text for Display Tab
-Offset and Feedback display use relative (including offsets) or machine.
+Offset and Feedback display use relative (including offsets) or absolute machine.
 Overrides use percent of programed value.
+QtPyVCP can only be installed on Debian 9
 """
 
 text_2 = """

@@ -322,7 +322,7 @@ QGroupBox::title {
          <rect>
           <x>10</x>
           <y>550</y>
-          <width>221</width>
+          <width>261</width>
           <height>21</height>
          </rect>
         </property>
@@ -602,7 +602,13 @@ QGroupBox::title {
           <number>9</number>
          </property>
          <item row="0" column="0">
-          <widget class="QPushButton" name="pushButton">
+          <widget class="QPushButton" name="qtpyvcpPB">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="toolTip">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This can only be installed&lt;br/&gt;if your running Debian 9&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
            <property name="text">
             <string>Install QtPyVCP</string>
            </property>
@@ -7171,6 +7177,9 @@ max speed</string>
             <property name="alignment">
              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
             </property>
+            <property name="textInteractionFlags">
+             <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
+            </property>
            </widget>
           </item>
          </layout>
@@ -7413,6 +7422,9 @@ max speed</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+            </property>
+            <property name="textInteractionFlags">
+             <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
             </property>
            </widget>
           </item>

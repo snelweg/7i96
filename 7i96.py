@@ -400,8 +400,10 @@ class MainWindow(QMainWindow):
 			self.mesaflash = "./mesaflash64"
 		else:
 			self.mesaflash = "./mesaflash32"
-		self.tMaxLB.setTextInteractionFlags(Qt.TextSelectableByMouse)
-		self.infoLB.setTextInteractionFlags(Qt.TextSelectableByMouse)
+		if platform.linux_distribution()[0] == "debian":
+			if platform.linux_distribution()[1][0] == "9":
+				self.qtpyvcpPB.setEnabled(True)
+
 
 	def iniLoad(self):
 		# iniList section, item, value
