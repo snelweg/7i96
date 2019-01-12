@@ -9,7 +9,7 @@ Create a complete configuration from scratch.
 
 Depends on python3-pyqt5 and python3-setuptools and libpci
 
-sudo apt-get install python3-pqt5 libpci
+sudo apt-get install python3-pyqt5 libpci-dev
 
 sudo apt-get install python3-setuptools
 
