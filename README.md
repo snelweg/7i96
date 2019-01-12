@@ -11,9 +11,14 @@ Depends on python3-pyqt5 and python3-setuptools and libpci
 
 sudo apt-get install python3-pyqt5 libpci-dev
 
-At this point you can download or clone the tool and run it.
+At this point you can download or clone the tool and run it. If you clone it's
+easier to get updates
 
- git clone https://github.com/jethornton/7i96.git
+``git clone https://github.com/jethornton/7i96.git``
+
+Open a terminal in the 7i96 directory and to run
+
+``./7i96.py``
 
 sudo apt-get install python3-setuptools
 
