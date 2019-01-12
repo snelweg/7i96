@@ -11,6 +11,10 @@ Depends on python3-pyqt5 and python3-setuptools and libpci
 
 sudo apt-get install python3-pyqt5 libpci-dev
 
+At this point you can download or clone the tool and run it.
+
+ git clone https://github.com/jethornton/7i96.git
+
 sudo apt-get install python3-setuptools
 
 Open the sample ini file then make changes as needed then build
