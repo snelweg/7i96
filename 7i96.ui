@@ -21,7 +21,7 @@
        <enum>Qt::NoFocus</enum>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="machine">
        <attribute name="title">
@@ -431,16 +431,6 @@ QGroupBox::title {
          </item>
         </layout>
        </widget>
-       <zorder>label_30</zorder>
-       <zorder>versionLE</zorder>
-       <zorder>gridGroupBox</zorder>
-       <zorder>label_10</zorder>
-       <zorder>coordinatesLB</zorder>
-       <zorder>scrollArea</zorder>
-       <zorder>gridGroupBox</zorder>
-       <zorder>label_292</zorder>
-       <zorder>gridGroupBox</zorder>
-       <zorder>label</zorder>
       </widget>
       <widget class="QWidget" name="display">
        <attribute name="title">
