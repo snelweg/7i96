@@ -10,7 +10,9 @@ Create a complete configuration from scratch.
 Depends on python3-pyqt5 and python3-setuptools and libpci
 
 sudo apt-get install python3-pqt5 libpci
+
 sudo apt-get install python3-setuptools
+
 Open the sample ini file then make changes as needed then build
 
 You can create a configuration then run it with the Axis GUI and use
