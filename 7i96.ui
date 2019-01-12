@@ -571,51 +571,6 @@ QGroupBox::title {
          </item>
         </layout>
        </widget>
-       <widget class="QGroupBox" name="gridGroupBox">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>190</y>
-          <width>201</width>
-          <height>81</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QGroupBox {
-    font: bold;
-    border: 2px solid silver;
-    border-radius: 6px;
-    margin-top: 6px;
-}
-
-QGroupBox::title {
-    subcontrol-origin: margin;
-    left: 7px;
-    padding: 0px 5px 0px 5px;
-}</string>
-        </property>
-        <property name="title">
-         <string>QtPyVCP</string>
-        </property>
-        <layout class="QGridLayout" name="gridLayout_48">
-         <property name="margin">
-          <number>9</number>
-         </property>
-         <item row="0" column="0">
-          <widget class="QPushButton" name="qtpyvcpPB">
-           <property name="enabled">
-            <bool>false</bool>
-           </property>
-           <property name="toolTip">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This can only be installed&lt;br/&gt;if your running Debian 9&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-           <property name="text">
-            <string>Install QtPyVCP</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
       </widget>
       <widget class="QWidget" name="axisTab">
        <property name="enabled">

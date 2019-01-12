@@ -9,7 +9,7 @@ Create a complete configuration from scratch.
 
 Depends on python3-pyqt5 and python3-setuptools and libpci
 
-sudo apt-get install python3-pyqt5 libpci-dev
+``sudo apt-get install python3-pyqt5 libpci-dev``
 
 At this point you can download or clone the tool and run it. If you clone it's
 easier to get updates
@@ -19,6 +19,10 @@ easier to get updates
 Open a terminal in the 7i96 directory and to run
 
 ``./7i96.py``
+
+To get updates open a terminal in the 7i96 directory and run
+
+``git pull``
 
 sudo apt-get install python3-setuptools
 
