@@ -1,1 +1,1 @@
-recursive-include m7i96/*.ui
+include m7i96/*.ui
