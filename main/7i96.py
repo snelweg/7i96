@@ -4,18 +4,24 @@
 import sys, os, configparser, platform
 from PyQt5 import uic, QtWidgets
 from PyQt5.QtCore import pyqtSlot, Qt
-from PyQt5.QtWidgets import (QApplication, QMainWindow, QFileDialog, QLineEdit,
-	QSpinBox, QCheckBox, QComboBox, QLabel, QGroupBox, QDoubleSpinBox, QMessageBox)
-import buildcombos, loadini, checkit, buildfiles, card, helptext
-from dialog import Ui_Dialog as errorDialog
-from help import Ui_Dialog as helpDialog
-from about import Ui_about as aboutDialog
+from PyQt5.QtWidgets import (QApplication, QMainWindow, QFileDialog, QLineEdit, QSpinBox, QCheckBox, QComboBox, QLabel, QGroupBox, QDoubleSpinBox, QMessageBox)
+import main.buildcombos as buildcombos
+import main.loadini as loadini
+import main.checkit as checkit
+import main.buildfiles as buildfiles
+import main.card as card
+import main.helptext as helptext
+from main.dialog import Ui_Dialog as errorDialog
+from main.help import Ui_Dialog as helpDialog
+from main.about import Ui_about as aboutDialog
+
+UI_FILE = os.path.join(os.path.dirname(__file__), "7i96.ui")
 
 class MainWindow(QMainWindow):
 	def __init__(self):
 		super(MainWindow, self).__init__()
-		uic.loadUi("7i96.ui", self)
-		self.version = '1.0'
+		uic.loadUi(UI_FILE, self)
+		self.version = '0.0.1'
 		self.config = configparser.ConfigParser(strict=False)
 		self.cwd = os.getcwd()
 		#self.linuxcncDir = os.path.expanduser('~/linuxcnc')
@@ -439,7 +445,10 @@ class MainWindow(QMainWindow):
 		dialog.exec_()
 
 
-if __name__ == "__main__":
+def main():
 	app = QApplication(sys.argv)
 	ex = MainWindow()
 	sys.exit(app.exec_())
+
+if __name__ == "__main__":
+	main()

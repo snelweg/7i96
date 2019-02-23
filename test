@@ -1,0 +1,28 @@
+#!/usr/bin/python3
+#import subprocess
+from subprocess import PIPE, run
+
+command = ['./mesaflash64']
+result = run(['./mesaflash64'], stdout=PIPE, stderr=PIPE, universal_newlines=True)
+
+print(result.returncode)
+print(result.stdout)
+print(result.stderr)
+
+if result.returncode != 0:
+	if result.stderr.find("`LIBPCI_3.5' not found"):
+		print('Library libpci-dev is not installed, install from a terminal with\n\
+sudo apt-get install libpci-dev')
+
+'''
+result = subprocess.check_output("./mesaflash64")
+print('the result is {}'.format(result))
+
+
+rc = subprocess.call(['which', 'mesaflash'])
+if rc == 0:
+    print('mesaflash installed!')
+else:
+    print('mesaflash missing in path!')
+'''
+
