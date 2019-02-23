@@ -5,10 +5,10 @@ You may need to install pip3 if so open a terminal and do
 ``sudo apt install python3-pip``
 
 To install from GitHub (recommended)
-``pip3 git+https://github.com/jethornton/7i96.git``
+``pip3 install git+https://github.com/jethornton/7i96.git``
 
 To upgrade from GitHub
-``pip3 git+https://github.com/jethornton/7i96.git upgrade``
+``pip3 install git+https://github.com/jethornton/7i96.git upgrade``
 
 
 To clone the repository and install
