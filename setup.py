@@ -19,7 +19,7 @@ setup(
     install_requires=[
     python3-pyqt5,
     libpci-dev
-    ]
+    ],
     entry_points={
         'gui_scripts': ['7i96=main.7i96:main',],
     },
