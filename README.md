@@ -2,9 +2,16 @@
 7i96 Configuration Tool
 
 You may need to install pip3 if so open a terminal and do
+
 ``sudo apt install python3-pip``
 
+Depends on python3-pyqt5 and python3-setuptools and libpci
+
+``sudo apt-get install python3-pyqt5 libpci-dev``
+
+
 To install from GitHub (recommended)
+
 ``pip3 install git+https://github.com/jethornton/7i96.git``
 
 To upgrade from GitHub
@@ -40,9 +47,6 @@ Read in the ini configuration file for changes.
 
 Create a complete configuration from scratch.
 
-Depends on python3-pyqt5 and python3-setuptools and libpci
-
-``sudo apt-get install python3-pyqt5 libpci-dev``
 
 At this point you can download or clone the tool and run it. If you clone it's
 easier to get updates
