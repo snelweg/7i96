@@ -1,6 +1,36 @@
 # 7i96
 7i96 Configuration Tool
 
+To install from GitHub (recommended)
+``pip3 git+https://github.com/jethornton/7i96.git``
+
+To upgrade from GitHub
+``pip3 git+https://github.com/jethornton/7i96.git upgrade``
+
+
+To clone the repository and install
+``git clone https://github.com/jethornton/7i96.git``
+
+Change to the repository
+``cd 7i96``
+
+To install from the clone for general use
+``pip3 install .``
+
+
+For Developers only
+To install from the clone and be able to edit
+``pip3 install -e .``
+
+To uninstall
+``pip3 uninstall 7i96``
+
+To upgrade a cloned repository
+``git pull``
+
+To upgrade a regular install
+``pip3 install .``
+
 Scope
 
 Read in the ini configuration file for changes.
