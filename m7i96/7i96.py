@@ -5,12 +5,12 @@ import sys, os, configparser, platform
 from PyQt5 import uic, QtWidgets
 from PyQt5.QtCore import pyqtSlot, Qt
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QFileDialog, QLineEdit, QSpinBox, QCheckBox, QComboBox, QLabel, QGroupBox, QDoubleSpinBox, QMessageBox)
-import main.buildcombos as buildcombos
-import main.loadini as loadini
-import main.checkit as checkit
-import main.buildfiles as buildfiles
-import main.card as card
-import main.helptext as helptext
+import m7i96.buildcombos as buildcombos
+import m7i96.loadini as loadini
+import m7i96.checkit as checkit
+import m7i96.buildfiles as buildfiles
+import m7i96.card as card
+import m7i96.helptext as helptext
 from main.dialog import Ui_Dialog as errorDialog
 from main.help import Ui_Dialog as helpDialog
 from main.about import Ui_about as aboutDialog
