@@ -11,9 +11,9 @@ import m7i96.checkit as checkit
 import m7i96.buildfiles as buildfiles
 import m7i96.card as card
 import m7i96.helptext as helptext
-from main.dialog import Ui_Dialog as errorDialog
-from main.help import Ui_Dialog as helpDialog
-from main.about import Ui_about as aboutDialog
+from m7i96.dialog import Ui_Dialog as errorDialog
+from m7i96.help import Ui_Dialog as helpDialog
+from m7i96.about import Ui_about as aboutDialog
 
 UI_FILE = os.path.join(os.path.dirname(__file__), "7i96.ui")
 
