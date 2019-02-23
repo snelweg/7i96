@@ -1,6 +1,9 @@
 # 7i96
 7i96 Configuration Tool
 
+You may need to install pip3 if so open a terminal and do
+``sudo apt install python3-pip``
+
 To install from GitHub (recommended)
 ``pip3 git+https://github.com/jethornton/7i96.git``
 
