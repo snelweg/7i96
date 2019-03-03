@@ -6,7 +6,7 @@ Machine Tab
     :align: center
 
 Machine Group
--------------
+^^^^^^^^^^^^^
 
 The `Machine Group` contains overall configuration information for the machine.
 
@@ -24,7 +24,7 @@ The `Machine Group` contains overall configuration information for the machine.
   axes to run at their maximum velocity.
 
 Firmware Group
---------------
+^^^^^^^^^^^^^^
 
 In `Firmware Group` you can view and change the 7i96 firmware. Before using the
 `Firmware` buttons you must select the IP Address in the `Board Setup Group`.
@@ -42,7 +42,7 @@ The 7i76 must be connected to the PC and 5vdc power supplied.
   can paste the output to a file for later use.
 
 Board Setup Group
------------------
+^^^^^^^^^^^^^^^^^
 
 The `Board Setup Group` contains options for the 7i96 card.
 
