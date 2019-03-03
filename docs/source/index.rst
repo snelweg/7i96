@@ -10,6 +10,7 @@ Welcome to 7i96's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   install
    machine
    display
    axis
