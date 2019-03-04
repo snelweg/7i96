@@ -1,4 +1,7 @@
 # 7i96
+
+Read the Docs <https://jethornton.github.io/7i96/>
+
 7i96 Configuration Tool
 
 You may need to install pip3 if so open a terminal and do
