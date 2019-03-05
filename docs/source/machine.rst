@@ -4,6 +4,7 @@ Machine Tab
 
 .. image:: images/machine-tab.png
     :align: center
+    :scale: 75%
 
 Machine Group
 ^^^^^^^^^^^^^
