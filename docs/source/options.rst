@@ -6,3 +6,4 @@ Options Tab
     :align: center
     :scale: 75%
 
+Here you can select some options.

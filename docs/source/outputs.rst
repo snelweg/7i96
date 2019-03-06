@@ -6,3 +6,4 @@ Outputs Tab
     :align: center
     :scale: 75%
 
+Select the outputs you need.

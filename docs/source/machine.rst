@@ -20,9 +20,10 @@ The `Machine Group` contains overall configuration information for the machine.
 
 * **Angular Units** default is Degree... nothing else is used at this time.
 
-* **Max Linear Velocity** is the maximum linear velocity of all axes combined.
-  The maximum linear velocity can be higher than the fastest axis to allow all
-  axes to run at their maximum velocity.
+* **Max Linear Velocity** is the maximum linear velocity of all axes combined in
+  linear units per second. The maximum linear velocity can be higher than the
+  fastest axis to allow all axes to run at their maximum velocity in a combined
+  move.
 
 Firmware Group
 ^^^^^^^^^^^^^^
