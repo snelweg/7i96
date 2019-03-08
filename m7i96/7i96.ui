@@ -7621,10 +7621,10 @@ max speed</string>
  </widget>
  <layoutdefault spacing="5" margin="8"/>
  <tabstops>
-  <tabstop>versionLE</tabstop>
-  <tabstop>ipAddressCB</tabstop>
-  <tabstop>jointType_3</tabstop>
-  <tabstop>axisCB_0</tabstop>
+  <tabstop>configName</tabstop>
+  <tabstop>linearUnitsCB</tabstop>
+  <tabstop>angularUnitsCB</tabstop>
+  <tabstop>maxLinearVelocity</tabstop>
   <tabstop>minLimit_0</tabstop>
   <tabstop>maxLimit_0</tabstop>
   <tabstop>maxVelocity_0</tabstop>
@@ -7776,6 +7776,99 @@ max speed</string>
   <tabstop>pyvcpCB</tabstop>
   <tabstop>gladevcpCB</tabstop>
   <tabstop>debugCombo</tabstop>
+  <tabstop>encodersSB</tabstop>
+  <tabstop>stepgensSB</tabstop>
+  <tabstop>boardCB</tabstop>
+  <tabstop>driverCB</tabstop>
+  <tabstop>sserialSB</tabstop>
+  <tabstop>scrollArea</tabstop>
+  <tabstop>reloadPB</tabstop>
+  <tabstop>flashPB</tabstop>
+  <tabstop>firmwareCB</tabstop>
+  <tabstop>testConnectionPB</tabstop>
+  <tabstop>copyPB</tabstop>
+  <tabstop>jointType_3</tabstop>
+  <tabstop>versionLE</tabstop>
+  <tabstop>ipAddressCB</tabstop>
+  <tabstop>axisCB_0</tabstop>
+  <tabstop>frontToolLatheCB</tabstop>
+  <tabstop>backToolLatheCB</tabstop>
+  <tabstop>positionOffsetCB</tabstop>
+  <tabstop>positionFeedbackCB</tabstop>
+  <tabstop>maxFeedOverrideSB</tabstop>
+  <tabstop>guiCB</tabstop>
+  <tabstop>scale_0</tabstop>
+  <tabstop>pidDefault_0</tabstop>
+  <tabstop>maxError_0</tabstop>
+  <tabstop>homeSequence_0</tabstop>
+  <tabstop>driveCB_0</tabstop>
+  <tabstop>scale_1</tabstop>
+  <tabstop>pidDefault_1</tabstop>
+  <tabstop>maxError_1</tabstop>
+  <tabstop>homeSequence_1</tabstop>
+  <tabstop>driveCB_1</tabstop>
+  <tabstop>scale_2</tabstop>
+  <tabstop>pidDefault_2</tabstop>
+  <tabstop>maxError_2</tabstop>
+  <tabstop>homeSequence_2</tabstop>
+  <tabstop>driveCB_2</tabstop>
+  <tabstop>scale_3</tabstop>
+  <tabstop>pidDefault_3</tabstop>
+  <tabstop>maxError_3</tabstop>
+  <tabstop>homeSequence_3</tabstop>
+  <tabstop>driveCB_3</tabstop>
+  <tabstop>scale_4</tabstop>
+  <tabstop>pidDefault_4</tabstop>
+  <tabstop>maxError_4</tabstop>
+  <tabstop>homeSequence_4</tabstop>
+  <tabstop>driveCB_4</tabstop>
+  <tabstop>p_s</tabstop>
+  <tabstop>deadband_s</tabstop>
+  <tabstop>i_s</tabstop>
+  <tabstop>bias_s</tabstop>
+  <tabstop>d_s</tabstop>
+  <tabstop>maxOutput_s</tabstop>
+  <tabstop>ff0_s</tabstop>
+  <tabstop>maxError_s</tabstop>
+  <tabstop>ff1_s</tabstop>
+  <tabstop>ff2_s</tabstop>
+  <tabstop>pidDefault_s</tabstop>
+  <tabstop>spindleScale</tabstop>
+  <tabstop>spindleTypeCB</tabstop>
+  <tabstop>spindleMaxRpm</tabstop>
+  <tabstop>spindleMinRpm</tabstop>
+  <tabstop>pwmFrequencySB</tabstop>
+  <tabstop>output_5</tabstop>
+  <tabstop>servoPeriodSB</tabstop>
+  <tabstop>ladderGB</tabstop>
+  <tabstop>ladderWordsSB</tabstop>
+  <tabstop>ladderTimersSB</tabstop>
+  <tabstop>ladderRungsSB</tabstop>
+  <tabstop>ladderInputsSB</tabstop>
+  <tabstop>iecTimerSB</tabstop>
+  <tabstop>ladderOutputsSB</tabstop>
+  <tabstop>ladderSectionsSB</tabstop>
+  <tabstop>ladderExpresionsSB</tabstop>
+  <tabstop>ladderBitsSB</tabstop>
+  <tabstop>ladderMonostablesSB</tabstop>
+  <tabstop>ladderCountersSB</tabstop>
+  <tabstop>ladderSymbolsSB</tabstop>
+  <tabstop>ladderS32InputsSB</tabstop>
+  <tabstop>ladderS32OuputsSB</tabstop>
+  <tabstop>ladderFloatInputsSB</tabstop>
+  <tabstop>ladderFloatOutputsSB</tabstop>
+  <tabstop>tabWidget_2</tabstop>
+  <tabstop>scrollArea_4</tabstop>
+  <tabstop>pinsPB</tabstop>
+  <tabstop>scrollArea_2</tabstop>
+  <tabstop>cpuPB</tabstop>
+  <tabstop>nicPB</tabstop>
+  <tabstop>calcNicPB</tabstop>
+  <tabstop>speedCB</tabstop>
+  <tabstop>cpuSpeedLE</tabstop>
+  <tabstop>tMaxLE</tabstop>
+  <tabstop>scrollArea_3</tabstop>
+  <tabstop>readTmaxPB</tabstop>
  </tabstops>
  <resources/>
  <connections/>
