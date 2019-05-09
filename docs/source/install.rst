@@ -16,6 +16,7 @@ Installing
 
 3. Create a file in your home directory called ``.xsessionrc`` and add the
 following if your using Debian 9.
+
 ::
 
   if [ -d $HOME/.local/bin ]; then
