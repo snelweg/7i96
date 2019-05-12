@@ -1,1 +1,3 @@
 include m7i96/*.ui
+include m7i76e/mesaflash32
+include m7i76e/mesaflash64
