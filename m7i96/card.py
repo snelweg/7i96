@@ -39,7 +39,8 @@ def flashCard(parent):
 	parent.statusbar.showMessage('Flashing the 7i96...')
 	parent.outputLB.setText('')
 	ipAddress = parent.ipAddressCB.currentText()
-	firmware = os.path.join(parent.cwd, parent.firmwareCB.currentData())
+
+	firmware = os.path.join(os.path.dirname(__file__), parent.firmwareCB.currentData())
 	command = [parent.mesaflash, '--device', '7i96', '--addr', ipAddress, '--write', firmware]
 	output = []
 
