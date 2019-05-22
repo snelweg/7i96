@@ -403,9 +403,9 @@ class MainWindow(QMainWindow):
 
     def miscStuff(self):
         if sys.maxsize > 2**32: # test for 64bit OS
-            self.mesaflash = "./mesaflash64"
+            self.mesaflash = "mesaflash64"
         else:
-            self.mesaflash = "./mesaflash32"
+            self.mesaflash = "mesaflash32"
 
     def iniLoad(self):
         # iniList section, item, value
