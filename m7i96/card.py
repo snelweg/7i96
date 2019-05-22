@@ -5,7 +5,7 @@ def readCard(parent):
 
 	result = subprocess.run([parent.mesaflash], stdout=subprocess.PIPE,\
 	stderr=subprocess.PIPE, universal_newlines=True)
-	#print(result.returncode)
+	print(result.returncode)
 	if result.returncode != 0:
 		if result.stderr.find("`LIBPCI_3.5' not found"):
 			parent.outputLB.setText('Library libpci-dev is not installed, install from\
