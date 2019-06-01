@@ -3,12 +3,12 @@ def setupCombo(combo):
 
 	# might take a look at the data and see if we can simply use '10.10.10.10' format
 	if combo == 'ipAddress':
-		comboList = [['None', False],
+		comboList = [['Select', False],
 								['10.10.10.10', '"10.10.10.10"'],
 								['192.168.1.121', '"192.168.1.121"']]
 
 	if combo == 'axis':
-		comboList = [['None', False],
+		comboList = [['Select', False],
 								['X', 'X'],
 								['Y', 'Y'],
 								['Z', 'Z'],
@@ -20,7 +20,7 @@ def setupCombo(combo):
 								['W', 'W']]
 
 	if combo == 'joint':
-		comboList = [['None', False],
+		comboList = [['Select', False],
 								['Joint 0', '0'],
 								['Joint 1', '1'],
 								['Joint 2', '2'],
@@ -28,12 +28,12 @@ def setupCombo(combo):
 								['Joint 4', '4']]
 
 	if combo == 'display':
-		comboList = [['None', False],
+		comboList = [['Select', False],
 								['Axis', 'axis'],
 								['Touchy', 'touchy']]
 
 	if combo == 'linearUnits':
-		comboList = [['None', False],
+		comboList = [['Select', False],
 								['Imperial', 'inch'],
 								['Metric', 'metric']]
 
@@ -42,17 +42,17 @@ def setupCombo(combo):
 
 
 	if combo == 'positionOffset':
-		comboList = [['None', False],
+		comboList = [['Select', False],
 								['Relative', 'RELATIVE'],
 								['Machine', 'MACHINE'],]
 
 	if combo == 'positionFeedback':
-		comboList = [['None', False],
+		comboList = [['Select', False],
 								['Commanded', 'COMMANDED'],
 								['Actual', 'ACTUAL'],]
 
 	if combo == 'input':
-		comboList = [['None', False],
+		comboList = [['Select', False],
 								['E-Stop In', 'E-Stop In'],
 								['Home', 'Home'],
 								['Both Limit', 'Both Limit'],
@@ -68,7 +68,7 @@ def setupCombo(combo):
 								['Digital In 3', 'Digital In 3']]
 
 	if combo == 'output':
-		comboList = [['None', False],
+		comboList = [['Select', False],
 								['Coolant Flood', 'Coolant Flood'],
 								['Coolant Mist', 'Coolant Mist'],
 								['Spindle On', 'Spindle On'],
@@ -109,12 +109,12 @@ def setupCombo(combo):
 		comboList = [['HostMot2 Ethernet', 'hm2_eth']]
 
 	if combo == 'firmware':
-		comboList = [['None', False],
+		comboList = [['Select', False],
 								['5 StepGens No PWM', '7i96d.bit'],
 								['4 StepGens and PWM', '7i96d_1pwm.bit']]
 
 	if combo == 'spindle':
-		comboList = [['None', False],
+		comboList = [['Select', False],
 								['Open Loop', 'openLoop'],
 								['Closed Loop', 'closedLoop']]
 
