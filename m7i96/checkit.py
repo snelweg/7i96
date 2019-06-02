@@ -13,13 +13,13 @@ def config(parent):
 	if not parent.versionLE.text():
 		tabError = True
 		configErrors.append('\tA version must be entered, use 1.1')
-	if parent.linearUnitsCB.currentText() == 'None':
+	if parent.linearUnitsCB.currentText() == 'Select':
 		tabError = True
 		configErrors.append('\tLinear Units must be selected')
 	if not parent.maxLinearVelocity.text():
 		tabError = True
 		configErrors.append('\tMaximum Linear Velocity must be set')
-	if parent.ipAddressCB.currentText() == 'None':
+	if parent.ipAddressCB.currentText() == 'Select':
 		tabError = True
 		configErrors.append('\tAn IP address must be selected, 10.10.10.10 is recommended')
 
@@ -30,13 +30,13 @@ def config(parent):
 	# end of Machine Tab
 
 	# check the Display Tab for errors
-	if parent.guiCB.currentText() == 'None':
+	if parent.guiCB.currentText() == 'Select':
 		tabError = True
 		configErrors.append('\tA GUI must be selected')
-	if parent.positionOffsetCB.currentText() == 'None':
+	if parent.positionOffsetCB.currentText() == 'Select':
 		tabError = True
 		configErrors.append('\tA Position Offset must be selected')
-	if parent.positionFeedbackCB.currentText() == 'None':
+	if parent.positionFeedbackCB.currentText() == 'Select':
 		tabError = True
 		configErrors.append('\tA Position Feedback must be selected')
 	if parent.maxFeedOverrideSB.value() == 0.0:
@@ -58,7 +58,7 @@ def config(parent):
 	else: #check the joints
 		# make this a loop getattr(parent, '_' + str(index))
 		for index in range(5):
-			if getattr(parent, 'axisCB_' + str(index)).currentText() != 'None':
+			if getattr(parent, 'axisCB_' + str(index)).currentText() != 'Select':
 				if not getattr(parent, 'scale_' + str(index)).text():
 					tabError = True
 					configErrors.append('\tThe Scale must be specified for Joint {}'.format(index))
