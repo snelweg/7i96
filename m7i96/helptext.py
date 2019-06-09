@@ -60,7 +60,10 @@ QtPyVCP can only be installed on Debian 9
 
 text_2 = """
 Help Text for Axis Tab
-Joints must be configured in order starting with 0 and not skipping any.
+
+Joints must be configured starting with 0 and not skipping any.
+
+Any joint can have any axis letter.
 
 Scale is the number of steps to move one user unit (inch or mm).
 Limits are in user units.
@@ -69,6 +72,8 @@ Velocity is user units per second, Acceleration is user units per second per sec
 Axis, PID Settings and StepGen Settings are required.
 
 Homing fields are optional.
+
+For gantry type of machines just select the same axis for each joint.
 """
 
 text_3 = """
