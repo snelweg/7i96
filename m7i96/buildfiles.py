@@ -106,7 +106,7 @@ def buildini(parent):
 	iniContents.append('HALFILE = {}.hal\n'.format(parent.configNameUnderscored))
 	iniContents.append('HALFILE = io.hal\n')
 	iniContents.append('HALFILE = custom.hal\n')
-	iniContents.append('HALFILE = postgui.hal\n')
+	iniContents.append('POSTGUI_HALFILE = postgui.hal\n')
 	if parent.haluiCB.isChecked():
 		iniContents.append('HALUI = halui\n')
 
