@@ -121,9 +121,10 @@ class MainWindow(QMainWindow):
         else: self.statusbar.showMessage('Build HAL Files Failed')
         if result:
             result = self.buildmisc(self)
-        else: self.statusbar.showMessage('Build Misc. Files Failed')
+        else: self.statusbar.showMessage('Build I/O Files Failed')
         if result:
             self.statusbar.showMessage('Build Files Completed')
+        else: self.statusbar.showMessage('Build Misc Files Failed')
 
 
     @pyqtSlot()
