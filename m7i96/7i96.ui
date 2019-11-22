@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>788</width>
-    <height>716</height>
+    <height>743</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -56,9 +56,9 @@
        <widget class="QGroupBox" name="gridGroupBox">
         <property name="geometry">
          <rect>
-          <x>460</x>
+          <x>390</x>
           <y>100</y>
-          <width>281</width>
+          <width>351</width>
           <height>201</height>
          </rect>
         </property>
@@ -172,9 +172,9 @@ QGroupBox::title {
        <widget class="QLabel" name="label_10">
         <property name="geometry">
          <rect>
-          <x>520</x>
+          <x>510</x>
           <y>10</y>
-          <width>71</width>
+          <width>91</width>
           <height>16</height>
          </rect>
         </property>
@@ -365,7 +365,16 @@ QGroupBox::title {
          <string>Machine</string>
         </property>
         <layout class="QGridLayout" name="gridLayout_46">
-         <property name="margin">
+         <property name="leftMargin">
+          <number>9</number>
+         </property>
+         <property name="topMargin">
+          <number>9</number>
+         </property>
+         <property name="rightMargin">
+          <number>9</number>
+         </property>
+         <property name="bottomMargin">
           <number>9</number>
          </property>
          <item row="1" column="0">
@@ -506,7 +515,16 @@ QGroupBox::title {
          <string>Display</string>
         </property>
         <layout class="QGridLayout" name="gridLayout_47">
-         <property name="margin">
+         <property name="leftMargin">
+          <number>9</number>
+         </property>
+         <property name="topMargin">
+          <number>9</number>
+         </property>
+         <property name="rightMargin">
+          <number>9</number>
+         </property>
+         <property name="bottomMargin">
           <number>9</number>
          </property>
          <item row="1" column="1">
@@ -628,7 +646,16 @@ QGroupBox::title {
                <string>Axis</string>
               </property>
               <layout class="QGridLayout" name="gridLayout_4">
-               <property name="margin">
+               <property name="leftMargin">
+                <number>10</number>
+               </property>
+               <property name="topMargin">
+                <number>10</number>
+               </property>
+               <property name="rightMargin">
+                <number>10</number>
+               </property>
+               <property name="bottomMargin">
                 <number>10</number>
                </property>
                <property name="spacing">
@@ -783,7 +810,16 @@ QGroupBox::title {
                <string>PID Settings</string>
               </property>
               <layout class="QGridLayout" name="gridLayout">
-               <property name="margin">
+               <property name="leftMargin">
+                <number>10</number>
+               </property>
+               <property name="topMargin">
+                <number>10</number>
+               </property>
+               <property name="rightMargin">
+                <number>10</number>
+               </property>
+               <property name="bottomMargin">
                 <number>10</number>
                </property>
                <property name="spacing">
@@ -1013,7 +1049,16 @@ QGroupBox::title {
                <string>Homing</string>
               </property>
               <layout class="QGridLayout" name="gridLayout_3">
-               <property name="margin">
+               <property name="leftMargin">
+                <number>10</number>
+               </property>
+               <property name="topMargin">
+                <number>10</number>
+               </property>
+               <property name="rightMargin">
+                <number>10</number>
+               </property>
+               <property name="bottomMargin">
                 <number>10</number>
                </property>
                <property name="spacing">
@@ -1153,7 +1198,16 @@ QGroupBox::title {
                <string>StepGen Settings</string>
               </property>
               <layout class="QGridLayout" name="gridLayout_5">
-               <property name="margin">
+               <property name="leftMargin">
+                <number>10</number>
+               </property>
+               <property name="topMargin">
+                <number>10</number>
+               </property>
+               <property name="rightMargin">
+                <number>10</number>
+               </property>
+               <property name="bottomMargin">
                 <number>10</number>
                </property>
                <property name="spacing">
@@ -1508,7 +1562,16 @@ QGroupBox::title {
                <string>Axis</string>
               </property>
               <layout class="QGridLayout" name="gridLayout_7">
-               <property name="margin">
+               <property name="leftMargin">
+                <number>10</number>
+               </property>
+               <property name="topMargin">
+                <number>10</number>
+               </property>
+               <property name="rightMargin">
+                <number>10</number>
+               </property>
+               <property name="bottomMargin">
                 <number>10</number>
                </property>
                <property name="spacing">
@@ -1649,7 +1712,16 @@ QGroupBox::title {
                <string>PID Settings</string>
               </property>
               <layout class="QGridLayout" name="gridLayout_8">
-               <property name="margin">
+               <property name="leftMargin">
+                <number>10</number>
+               </property>
+               <property name="topMargin">
+                <number>10</number>
+               </property>
+               <property name="rightMargin">
+                <number>10</number>
+               </property>
+               <property name="bottomMargin">
                 <number>10</number>
                </property>
                <property name="spacing">
@@ -1861,7 +1933,16 @@ QGroupBox::title {
                <string>Homing</string>
               </property>
               <layout class="QGridLayout" name="gridLayout_6">
-               <property name="margin">
+               <property name="leftMargin">
+                <number>10</number>
+               </property>
+               <property name="topMargin">
+                <number>10</number>
+               </property>
+               <property name="rightMargin">
+                <number>10</number>
+               </property>
+               <property name="bottomMargin">
                 <number>10</number>
                </property>
                <property name="spacing">
@@ -1987,7 +2068,16 @@ QGroupBox::title {
                <string>StepGen Settings</string>
               </property>
               <layout class="QGridLayout" name="gridLayout_9">
-               <property name="margin">
+               <property name="leftMargin">
+                <number>10</number>
+               </property>
+               <property name="topMargin">
+                <number>10</number>
+               </property>
+               <property name="rightMargin">
+                <number>10</number>
+               </property>
+               <property name="bottomMargin">
                 <number>10</number>
                </property>
                <property name="spacing">
@@ -2274,7 +2364,16 @@ QGroupBox::title {
                <string>Axis</string>
               </property>
               <layout class="QGridLayout" name="gridLayout_12">
-               <property name="margin">
+               <property name="leftMargin">
+                <number>10</number>
+               </property>
+               <property name="topMargin">
+                <number>10</number>
+               </property>
+               <property name="rightMargin">
+                <number>10</number>
+               </property>
+               <property name="bottomMargin">
                 <number>10</number>
                </property>
                <property name="spacing">
@@ -2415,7 +2514,16 @@ QGroupBox::title {
                <string>PID Settings</string>
               </property>
               <layout class="QGridLayout" name="gridLayout_13">
-               <property name="margin">
+               <property name="leftMargin">
+                <number>10</number>
+               </property>
+               <property name="topMargin">
+                <number>10</number>
+               </property>
+               <property name="rightMargin">
+                <number>10</number>
+               </property>
+               <property name="bottomMargin">
                 <number>10</number>
                </property>
                <property name="spacing">
@@ -2627,7 +2735,16 @@ QGroupBox::title {
                <string>Homing</string>
               </property>
               <layout class="QGridLayout" name="gridLayout_11">
-               <property name="margin">
+               <property name="leftMargin">
+                <number>10</number>
+               </property>
+               <property name="topMargin">
+                <number>10</number>
+               </property>
+               <property name="rightMargin">
+                <number>10</number>
+               </property>
+               <property name="bottomMargin">
                 <number>10</number>
                </property>
                <property name="spacing">
@@ -2753,7 +2870,16 @@ QGroupBox::title {
                <string>StepGen Settings</string>
               </property>
               <layout class="QGridLayout" name="gridLayout_14">
-               <property name="margin">
+               <property name="leftMargin">
+                <number>10</number>
+               </property>
+               <property name="topMargin">
+                <number>10</number>
+               </property>
+               <property name="rightMargin">
+                <number>10</number>
+               </property>
+               <property name="bottomMargin">
                 <number>10</number>
                </property>
                <property name="spacing">
@@ -3044,7 +3170,16 @@ to max speed</string>
                <string>Axis</string>
               </property>
               <layout class="QGridLayout" name="gridLayout_17">
-               <property name="margin">
+               <property name="leftMargin">
+                <number>10</number>
+               </property>
+               <property name="topMargin">
+                <number>10</number>
+               </property>
+               <property name="rightMargin">
+                <number>10</number>
+               </property>
+               <property name="bottomMargin">
                 <number>10</number>
                </property>
                <property name="spacing">
@@ -3185,7 +3320,16 @@ to max speed</string>
                <string>PID Settings</string>
               </property>
               <layout class="QGridLayout" name="gridLayout_18">
-               <property name="margin">
+               <property name="leftMargin">
+                <number>10</number>
+               </property>
+               <property name="topMargin">
+                <number>10</number>
+               </property>
+               <property name="rightMargin">
+                <number>10</number>
+               </property>
+               <property name="bottomMargin">
                 <number>10</number>
                </property>
                <property name="spacing">
@@ -3397,7 +3541,16 @@ to max speed</string>
                <string>Homing</string>
               </property>
               <layout class="QGridLayout" name="gridLayout_16">
-               <property name="margin">
+               <property name="leftMargin">
+                <number>10</number>
+               </property>
+               <property name="topMargin">
+                <number>10</number>
+               </property>
+               <property name="rightMargin">
+                <number>10</number>
+               </property>
+               <property name="bottomMargin">
                 <number>10</number>
                </property>
                <property name="spacing">
@@ -3523,7 +3676,16 @@ to max speed</string>
                <string>StepGen Settings</string>
               </property>
               <layout class="QGridLayout" name="gridLayout_19">
-               <property name="margin">
+               <property name="leftMargin">
+                <number>10</number>
+               </property>
+               <property name="topMargin">
+                <number>10</number>
+               </property>
+               <property name="rightMargin">
+                <number>10</number>
+               </property>
+               <property name="bottomMargin">
                 <number>10</number>
                </property>
                <property name="spacing">
@@ -3822,7 +3984,16 @@ max speed</string>
                <string>Axis</string>
               </property>
               <layout class="QGridLayout" name="gridLayout_22">
-               <property name="margin">
+               <property name="leftMargin">
+                <number>10</number>
+               </property>
+               <property name="topMargin">
+                <number>10</number>
+               </property>
+               <property name="rightMargin">
+                <number>10</number>
+               </property>
+               <property name="bottomMargin">
                 <number>10</number>
                </property>
                <property name="spacing">
@@ -3963,7 +4134,16 @@ max speed</string>
                <string>PID Settings</string>
               </property>
               <layout class="QGridLayout" name="gridLayout_23">
-               <property name="margin">
+               <property name="leftMargin">
+                <number>10</number>
+               </property>
+               <property name="topMargin">
+                <number>10</number>
+               </property>
+               <property name="rightMargin">
+                <number>10</number>
+               </property>
+               <property name="bottomMargin">
                 <number>10</number>
                </property>
                <property name="spacing">
@@ -4175,7 +4355,16 @@ max speed</string>
                <string>Homing</string>
               </property>
               <layout class="QGridLayout" name="gridLayout_21">
-               <property name="margin">
+               <property name="leftMargin">
+                <number>10</number>
+               </property>
+               <property name="topMargin">
+                <number>10</number>
+               </property>
+               <property name="rightMargin">
+                <number>10</number>
+               </property>
+               <property name="bottomMargin">
                 <number>10</number>
                </property>
                <property name="spacing">
@@ -4301,7 +4490,16 @@ max speed</string>
                <string>StepGen Settings</string>
               </property>
               <layout class="QGridLayout" name="gridLayout_24">
-               <property name="margin">
+               <property name="leftMargin">
+                <number>10</number>
+               </property>
+               <property name="topMargin">
+                <number>10</number>
+               </property>
+               <property name="rightMargin">
+                <number>10</number>
+               </property>
+               <property name="bottomMargin">
                 <number>10</number>
                </property>
                <property name="spacing">
@@ -4617,7 +4815,16 @@ max speed</string>
          <bool>false</bool>
         </property>
         <layout class="QGridLayout" name="gridLayout_30">
-         <property name="margin">
+         <property name="leftMargin">
+          <number>10</number>
+         </property>
+         <property name="topMargin">
+          <number>10</number>
+         </property>
+         <property name="rightMargin">
+          <number>10</number>
+         </property>
+         <property name="bottomMargin">
           <number>10</number>
          </property>
          <property name="spacing">
@@ -7510,12 +7717,12 @@ max speed</string>
      <x>0</x>
      <y>0</y>
      <width>788</width>
-     <height>27</height>
+     <height>24</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
     <property name="title">
-     <string>File</string>
+     <string>Fi&amp;le</string>
     </property>
     <addaction name="actionNew"/>
     <addaction name="actionOpen"/>
@@ -7526,7 +7733,7 @@ max speed</string>
    </widget>
    <widget class="QMenu" name="menuTools">
     <property name="title">
-     <string>Tools</string>
+     <string>&amp;Tools</string>
     </property>
     <addaction name="actionCheck"/>
     <addaction name="actionBuild"/>
@@ -7562,47 +7769,47 @@ max speed</string>
   </widget>
   <action name="actionNew">
    <property name="text">
-    <string>New</string>
+    <string>&amp;New</string>
    </property>
   </action>
   <action name="actionOpen">
    <property name="text">
-    <string>Open an INI File</string>
+    <string>&amp;Open an INI File</string>
    </property>
   </action>
   <action name="actionSave">
    <property name="text">
-    <string>Save</string>
+    <string>&amp;Save</string>
    </property>
   </action>
   <action name="actionSaveAs">
    <property name="text">
-    <string>Save As</string>
+    <string>Sa&amp;ve As</string>
    </property>
   </action>
   <action name="actionExit">
    <property name="text">
-    <string>Exit</string>
+    <string>&amp;Exit</string>
    </property>
   </action>
   <action name="actionCheck">
    <property name="text">
-    <string>Check Configuration</string>
+    <string>&amp;Check Configuration</string>
    </property>
   </action>
   <action name="actionAbout">
    <property name="text">
-    <string>About</string>
+    <string>&amp;About</string>
    </property>
   </action>
   <action name="actionBuild">
    <property name="text">
-    <string>Build Configuration</string>
+    <string>&amp;Build Configuration</string>
    </property>
   </action>
   <action name="actionTabHelp">
    <property name="text">
-    <string>Tab Help</string>
+    <string>&amp;Tab Help</string>
    </property>
    <property name="shortcut">
     <string>F1</string>
@@ -7610,12 +7817,12 @@ max speed</string>
   </action>
   <action name="actionBuildHelp">
    <property name="text">
-    <string>Build Help</string>
+    <string>&amp;Build Help</string>
    </property>
   </action>
   <action name="actionPCHelp">
    <property name="text">
-    <string>PC Help</string>
+    <string>&amp;PC Help</string>
    </property>
   </action>
  </widget>
