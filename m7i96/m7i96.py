@@ -15,13 +15,13 @@ from m7i96.dialog import Ui_Dialog as errorDialog
 from m7i96.help import Ui_Dialog as helpDialog
 from m7i96.about import Ui_about as aboutDialog
 
-UI_FILE = os.path.join(os.path.dirname(__file__), "7i96.ui")
+UI_FILE = os.path.join(os.path.dirname(__file__), "m7i96.ui")
 
 class MainWindow(QMainWindow):
 	def __init__(self):
 		super(MainWindow, self).__init__()
 		uic.loadUi(UI_FILE, self)
-		self.version = '0.1.2'
+		self.version = '0.1.3'
 		self.config = configparser.ConfigParser(strict=False)
 		self.cwd = os.getcwd()
 		#self.linuxcncDir = os.path.expanduser('~/linuxcnc')

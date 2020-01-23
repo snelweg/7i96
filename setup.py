@@ -10,7 +10,7 @@ data_files = [(os.path.expanduser(dest), src_list) for dest, src_list in DATA_FI
 
 setup(
     name="7i96",
-    version="0.1.2",
+    version="0.1.3",
     author="John Thornton",
     author_email="<jt@gnipsel.com>",
     description="Mesa configuration tool for 7i96",
@@ -23,7 +23,7 @@ setup(
     data_files=data_files,
     include_package_data=True,
     entry_points={
-        'gui_scripts': ['7i96=m7i96.7i96:main',],
+        'gui_scripts': ['7i96=m7i96.m7i96:main',],
     },
 )
 
